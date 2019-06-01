@@ -1,0 +1,192 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{titling}
+\setlength{\droptitle}{-6em}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 4cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Project Proposal
+\end_layout
+
+\begin_layout Author
+Avia Efrat 300928538
+\begin_inset Newline newline
+\end_inset
+
+Elad Segal 305546590
+\begin_inset Newline newline
+\end_inset
+
+Mor Shoham 300953965
+\end_layout
+
+\begin_layout Paragraph*
+Problem Statement
+\end_layout
+
+\begin_layout Standard
+[Missing - should write about multi-span]
+\end_layout
+
+\begin_layout Paragraph*
+Related Work
+\end_layout
+
+\begin_layout Standard
+[Missing]
+\end_layout
+
+\begin_layout Paragraph*
+Initial Idea
+\end_layout
+
+\begin_layout Standard
+We have several ideas that we'd like to combine in order to create a better
+ model:
+\end_layout
+
+\begin_layout Enumerate
+[Avia's attention idea here]
+\end_layout
+
+\begin_layout Enumerate
+[Elad's data augmentation idea here]
+\end_layout
+
+\begin_layout Paragraph*
+Dataset
+\end_layout
+
+\begin_layout Standard
+As specified in the problem statement, we will use the DROP dataset: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://allennlp.org/drop
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+It has a train set and we will use it for our model's training.
+\end_layout
+
+\begin_layout Paragraph*
+Evaluation
+\end_layout
+
+\begin_layout Standard
+We will use DROP's dev set to evaluate our model through development.
+ 
+\begin_inset Newline newline
+\end_inset
+
+When the development is done, we will make a submission for our model to
+ be tested on DROP's hidden test set.
+\end_layout
+
+\begin_layout Bibliography
+
+\lang american
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "1"
+key "key-1"
+literal "false"
+
+\end_inset
+
+Example
+\end_layout
+
+\end_body
+\end_document
