@@ -8,6 +8,7 @@
 \begin_preamble
 \usepackage{titling}
 \setlength{\droptitle}{-6em}
+\usepackage{hyperref}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -50,9 +51,9 @@ theorems-ams
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
-\biblio_style plain
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -104,40 +105,266 @@ Elad Segal 305546590
 Mor Shoham 300953965
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Section*
 Problem Statement
 \end_layout
 
 \begin_layout Standard
-[Missing - should write about multi-span]
+The DROP dataset (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Dua2019DROP"
+literal "true"
+
+\end_inset
+
+) is a Q&A dataset, with the intention to present additional and harder
+ challenges than those of SQuAD, while keeping the focus on paragraph understand
+ing.
+ In SQuAD (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rajpurkar2016SQuAD10"
+literal "true"
+
+\end_inset
+
+), the answer was always a single span from the paragraph with its starting
+ index already in the gold label.
+ Among its innovations, DROP adds questions that require simple arithmetic
+ reasoning and answers that comprise of multiple spans in the paragraph.
+ 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
+The architecture presented in the accompanying paper, called NAQANet, is
+ simply QANet (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Yu2018QANetCL"
+literal "true"
+
+\end_inset
+
+) with 4 different “output heads” on top, each solving a different “kind”
+ of question.
+ These “kinds” (e.g arithmetic, counting, single span) were identified and
+ decided on by the paper’s authors.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Handling multiple spans 
+\end_layout
+
+\begin_layout Standard
+One new challenge that the paper presents, that is not addressed in the
+ NAQANet architecture (there was no dedicated “output head”), is answers
+ that span multiple parts of the paragraph.
+ When handling single span answers, NAQANet calculates, for each word in
+ the paragraph, the probability that this word is the start or the end of
+ the span.
+ This approach does seem to scale well to to multiple spans.
+ Furthermore, manually adding a head for each additional question “kind”
+ (note the paper didn’t even address all “kinds” identified by the authors)
+ does not seem as a very generalizable approach.
+\end_layout
+
+\begin_layout Section*
 Related Work
 \end_layout
 
 \begin_layout Standard
-[Missing]
+[Add]
 \end_layout
 
-\begin_layout Paragraph*
-Initial Idea
+\begin_layout Section*
+Initial Ideas
 \end_layout
 
 \begin_layout Standard
-We have several ideas that we'd like to combine in order to create a better
- model:
+We will describe several rough ideas to improve results for the DROP dataset.
 \end_layout
 
-\begin_layout Enumerate
-[Avia's attention idea here]
+\begin_layout Subsection*
+Attend to the paragraph based on the question using transformers
 \end_layout
 
-\begin_layout Enumerate
-[Elad's data augmentation idea here]
+\begin_layout Subsubsection*
+Overview 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
+The basic building blocks are two transformer encoders and one transformer
+ decoder.
+ One encoder encodes the question, and the other encodes the paragraph,
+ based on the question’s encoding.
+ Generating the answer will be done via the decoder, word by word.
+ Between the two encoders and between the paragraph’s encoder and the decoder,
+ there will be an attention mechanism indicating the usefulness of each
+ previous stack’s layer to each current stack layer.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Architecture
+\end_layout
+
+\begin_layout Standard
+We suggest trying a more “holistic” approach, taking into account the empirical
+ success of the transformer and the special relationship between a question
+ and a paragraph encapsulated in the standard “context-query attention layer”
+ found in NAQANet and additional reading comprehension models (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Weissenborn2017MakingNQ,Chen2017ReadingWT"
+literal "true"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+For a given paragraph-question pair, the relevant parts of the paragraph
+ required for answering the question are usually quite short.
+ Some questions can be answered correctly even if some parts of the paragraph
+ are missing.
+ In addition, most of the time, just looking at the question itself can
+ tell us the type of words/phrases that are relevant for answering the question.
+\end_layout
+
+\begin_layout Standard
+Borrowing inspiration from the encoder-decoder attention mechanism of the
+ transformer (
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Vaswani2017AttentionIA"
+literal "true"
+
+\end_inset
+
+), where the information from the encoder directs our attention to the relevant
+ decoded data (see the redded section in the figure), we can use the question’s
+ encoding at different layers as keys and values to the self-attention at
+ each layer in the paragraph encoder, while the self attention values are
+ the paragraph’s embedding (at the first layer.
+ Later they would be just the output of the previous paragraph encoder layer).
+\end_layout
+
+\begin_layout Standard
+As a side note, one could hope even that the question encoder will capture
+ different aspects of the question (syntax, semantics, relevant word types
+ for an answer) at different layers, and that the intra-stack attention
+ mechanism will properly route each to the different layers of the paragraph
+ encoder.
+\end_layout
+
+\begin_layout Standard
+In addition to word-by-word decoding, another option of predicting multi-span
+ answers is to add a module for a prediction of the number of spans in the
+ answer and than extracting the appropriate number of top result spans,
+ as in NAQANet.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Data Augmentation
+\end_layout
+
+\begin_layout Standard
+Using data augmentation might be useful in order to remove bias and allow
+ for a more generalized model.
+\end_layout
+
+\begin_layout Subsubsection*
+Multi-Span Answers
+\end_layout
+
+\begin_layout Standard
+The distribution of questions with multi-span answers for the train and
+ dev sets can be seen in figure [
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:dist"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+].
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename counts_train.png
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename counts_dev.png
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:dist"
+
+\end_inset
+
+Distributions of the number of spans in a multi-span answer 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For samples with multi-span answers, we suggest augmentation by permutations
+ - replace each answer span tokens with the others.
+ This is a relatively easy augmentation and is inspired by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Goldman2018WeaklySS"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It should be done carefully, as an entity might appear in the answer with
+ certain tokens, but have an occurrence in the paragraph with other tokens
+ - for example, "John Kasay" and "Kasay".
+ We can try to use entity linking in order to handle this issue.
+ 
+\end_layout
+
+\begin_layout Section*
 Dataset
 \end_layout
 
@@ -154,38 +381,35 @@ https://allennlp.org/drop
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
-
-It has a train set and we will use it for our model's training.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Section*
 Evaluation
 \end_layout
 
 \begin_layout Standard
-We will use DROP's dev set to evaluate our model through development.
- 
+As in the DROP paper, we will use the “F1” and “exact match” evaluation
+ metrics.
+ For each prediction, the output of the decoder will be compared against
+ the gold answer using both these metrics.
 \begin_inset Newline newline
 \end_inset
 
-When the development is done, we will make a submission for our model to
- be tested on DROP's hidden test set.
+We will use DROP's dev set to evaluate our model through development, and
+ when development is done we will make a submission for our model to be
+ tested on DROP's hidden test set.
 \end_layout
 
-\begin_layout Bibliography
-
-\lang american
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-label "1"
-key "key-1"
-literal "false"
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "references"
+options "plainnat"
 
 \end_inset
 
-Example
+
 \end_layout
 
 \end_body
