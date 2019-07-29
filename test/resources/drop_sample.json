@@ -1,0 +1,1363 @@
+{
+    "history_1891": {
+        "passage": "The 2010 United States Census reported that Huntington Beach had a population of 189,992. The population density was 5,959.1 people per square mile (2,300.8/km\u00b2). The racial makeup of Huntington Beach was 145,661 (76.7%) White (U.S. Census), 1,813 (1.0%) African American (U.S. Census), 992 (0.5%) Native American (U.S. Census), 21,070 (11.1%) Asian (U.S. Census), 635 (0.3%) Pacific Islander (U.S. Census), 11,193 (5.9%) from Race (United States Census), and 8,628 (4.5%) from two or more races. Hispanic (U.S. Census) or Latino (U.S. Census) of any race were 32,411 persons (17.1%). Non-Hispanic Whites were 67.2% of the population in 2010, compared to 90.8% in 1970.",
+        "qa_pairs": [
+            {
+                "question": "How many more whites were there in the 2010 United States Census report of Huntington Beach compared to African American?",
+                "answer": {
+                    "number": "143848",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "330add8c-afa8-42c1-a9fe-3a66c7c52795",
+                "validated_answers": [
+                    {
+                        "number": "143848",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "143848",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "143848",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "What race had a higher population on the 2010 United States Census report in Huntington Beach, African Americans or Native Americans?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "African American"
+                    ]
+                },
+                "query_id": "28e247e2-f9b5-4c59-8395-08b680c95f1d",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "How many more non-hispanic whites were reported by percent in 1970 compared to 2010?",
+                "answer": {
+                    "number": "23.6",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "845ae939-f240-4e06-8cc9-fb9724e5fcbf",
+                "validated_answers": [
+                    {
+                        "number": "23.6",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "23.6",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "Which group in percent of Huntington Beach from the 2010 United States Census is larger: White or African American?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "White"
+                    ]
+                },
+                "query_id": "636276a4-db1c-48b6-b0f6-a7bde178a0ef",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "White"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "White"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Which group in percent of Huntington Beach from the 2010 United States Census is smaller: White or Native American?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Native American"
+                    ]
+                },
+                "query_id": "464008e3-b1b6-4c96-8a04-497a538bbf65",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Native American"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Native American"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Which group in percent of Huntington Beach from the 2010 United States Census is larger: Asian or Pacific Islander?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Asian"
+                    ]
+                },
+                "query_id": "fe6461c3-6fc3-4f19-93d0-7f13d189d478",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Pacific Islander"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Asian"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Which group in percent of Huntington Beach from the 2010 United States Census is larger: African American or Native American?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "African American"
+                    ]
+                },
+                "query_id": "7498a273-b510-41e3-89dd-12ac52e60cb1",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Which group in percent of Huntington Beach from the 2010 United States Census is smaller: African American or Native American?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Native American"
+                    ]
+                },
+                "query_id": "119d4433-514b-4337-89c7-e925b8e97f15",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Native American"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Native American"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Which group in percent of Huntington Beach from the 2010 United States Census is smaller: Asian or Pacific Islander?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Pacific Islander"
+                    ]
+                },
+                "query_id": "11a9f680-fd0b-44ac-b62e-cb2bf319d6b4",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Pacific Islander"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Pacific Islander"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Were there more Non-Hispanic Whites in 2010 or in 1970?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1970"
+                    ]
+                },
+                "query_id": "f262d5c0-49d3-4dad-86fe-8856e5035afd",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "1970"
+                        ]
+                    },
+                    {
+                        "number": "1970",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "Which race was second-most prevalent in Huntington Beach?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Asian"
+                    ]
+                },
+                "query_id": "b71708a5-6c1e-47af-8385-c627fe6742f4",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Asian"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Latino"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Were there more African Americans or Native Americans in Huntington Beach?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "African American"
+                    ]
+                },
+                "query_id": "52e7a14a-4600-4fe9-a018-523345c9046a",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African Americans"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Were more people in Huntington Beach in 2010 White or African American?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "White"
+                    ]
+                },
+                "query_id": "3a4b3189-60b5-474f-ba4c-1e8c6f315377",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "White"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "White"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Were more people in Huntington Beach in 2010 Asian or African American?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Asian"
+                    ]
+                },
+                "query_id": "cd9b95cc-27d9-4bc3-b1a1-0e81b7bac7fc",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Asian"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Were more people in Huntington Beach in 2010 Native American or African American?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "African American"
+                    ]
+                },
+                "query_id": "b057b298-4f02-4952-a5c2-2bb543443d80",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Were more people in Huntington Beach in 2010 Asian or Pacific Islander?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Asian"
+                    ]
+                },
+                "query_id": "ef8d46df-c693-477a-a1d6-50806c770bd3",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Asian"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Asian"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Was the Non-Hispanic White percentage of the population higher in 2010 or 1970?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": "1970"
+                    },
+                    "spans": []
+                },
+                "query_id": "52048789-a1a2-4212-ae93-367f2b96a420",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "1970"
+                        ]
+                    },
+                    {
+                        "number": "1970",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many people in Huntington Beach in 2010, in terms of percentage, were not Non-Hispanic Whites?",
+                "answer": {
+                    "number": "32.8",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "483bca3d-99db-403d-81c3-2e1cc488277c",
+                "validated_answers": [
+                    {
+                        "number": "32.8",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "67.2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many more White people were there compared to African American people in 2010?",
+                "answer": {
+                    "number": "143848",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "cee22a81-5513-44b3-a3e9-8973d8a191d3",
+                "validated_answers": [
+                    {
+                        "number": "143848",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "143848",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many more Asian people were there compared to Native American people in 2010?",
+                "answer": {
+                    "number": "20078",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "c8b0e443-f866-47cd-af2b-f2e969d5f7c1",
+                "validated_answers": [
+                    {
+                        "number": "20078",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "20078",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "Were more people Asian or from two or more races in 2010?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Asian"
+                    ]
+                },
+                "query_id": "42988045-9e2d-4ae5-a9b2-db5de5c18f96",
+                "validated_answers": [
+                    {
+                        "number": "12442",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Asian"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "How many people, in terms of percentage, were not African American in 2010 in Huntington Beach?",
+                "answer": {
+                    "number": "99",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "e303bc0c-983d-4c60-af79-a19c0f0929cf",
+                "validated_answers": [
+                    {
+                        "number": "1",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "99",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many people, in terms of percentage, were not Hispanic or Latino of any race in 2010?",
+                "answer": {
+                    "number": "82.9",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "a8ed5ea3-1464-4bc8-9ae9-f3dc79c5953a",
+                "validated_answers": [
+                    {
+                        "number": "82.9",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "82.9",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many more Native American people were there compared to Pacific Islanders in Huntington Beach in 2010?",
+                "answer": {
+                    "number": "357",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "45d30882-0059-4153-8ba2-aa6bdecdd68d",
+                "validated_answers": [
+                    {
+                        "number": "357",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "357",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "What two ethnic groups had the highest populations in Huntington Beach in 2010?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "White",
+                        "Asian"
+                    ]
+                },
+                "query_id": "084d9915-4af4-429e-9b30-002ebc62cc58",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "White",
+                            "Asian"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "White",
+                            "Asian"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Were there more African Americans or Native Americans in Huntington Beach in 2010?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "African American"
+                    ]
+                },
+                "query_id": "8f493902-c60a-43fb-a48e-4092afa894c7",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African Americans"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "African American"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "How many percent of people were not white?",
+                "answer": {
+                    "number": "23.3",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "d2629697-3362-4829-87d4-12d6d4fa947d",
+                "validated_answers": [
+                    {
+                        "number": "23.3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "23.3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many percent of people were not African American?",
+                "answer": {
+                    "number": "99",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "a7f4246c-d8d0-4b2a-b6b8-ae3f131bb4ed",
+                "validated_answers": [
+                    {
+                        "number": "99",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "99",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many percent of people were not Native American?",
+                "answer": {
+                    "number": "99.5",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "97896d1d-5023-430c-81a6-7e91de2db473",
+                "validated_answers": [
+                    {
+                        "number": "99.5",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "99.5",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many percent of people were not Asian?",
+                "answer": {
+                    "number": "88.9",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "aaadfdb6-4a2b-4f4d-af87-37cac0469287",
+                "validated_answers": [
+                    {
+                        "number": "88.9",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "88.9",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many percent of people were not Pacific Islander?",
+                "answer": {
+                    "number": "99.7",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "061d1c29-9a2c-409d-b8f8-f682161d6fe1",
+                "validated_answers": [
+                    {
+                        "number": "99.7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "99.7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many percent of people were not from 2 or more races?",
+                "answer": {
+                    "number": "95.5",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "fc72d87c-4d28-43ee-a251-c2ff5928c9e7",
+                "validated_answers": [
+                    {
+                        "number": "95.5",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "95.5",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many percent of people were not Hispanic?",
+                "answer": {
+                    "number": "82.9",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "240dff94-7b42-4950-ba69-1911b6c391af",
+                "validated_answers": [
+                    {
+                        "number": "82.9",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "82.9",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many percent of people were not non-Hispanic whites in 1970?",
+                "answer": {
+                    "number": "9.2",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "4a9b65ef-2438-475d-87b2-783f8190f507",
+                "validated_answers": [
+                    {
+                        "number": "9.2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "9.2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many people are there per 2 square miles?",
+                "answer": {
+                    "number": "11918",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "8d5b2fe8-a0a2-4a51-afd5-5b7154babbf8",
+                "validated_answers": [
+                    {
+                        "number": "11918.2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "11918",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many people are there per 4 square miles?",
+                "answer": {
+                    "number": "23836",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "49ea18fc-c09b-437f-a805-2aea644535bc",
+                "validated_answers": [
+                    {
+                        "number": "23836.4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "23836",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many people are there per 10 square miles?",
+                "answer": {
+                    "number": "59590",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "7bece337-96ad-4fdd-a599-8ed46bde99b5",
+                "validated_answers": [
+                    {
+                        "number": "59591",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "59590",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            }
+        ],
+        "wiki_url": "https://en.wikipedia.org/wiki/Earl's_Court"
+    }
+}
