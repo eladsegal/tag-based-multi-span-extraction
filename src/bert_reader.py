@@ -96,11 +96,11 @@ class BertDropReader(DatasetReader):
         qp_field = TextField(qp_tokens, self.token_indexers)
         fields['question_and_passage'] = qp_field
 
-        if answer_type == 'single_span':
+        if answer_type == 'single_span' or 'multiple_span':
             # We use first answer annotation, like in NABERT
             bio_labels, bio_mask = self.generate_bio_labels(qp_tokens, answer_annotations[0]['spans'])
-        else:
-            bio_labels, bio_mask = np.zeros(len(qp_field)), np.zeros(len(qp_field))
+            if bio_labels is None or bio_mask is None:
+                return None
 
         fields['multi_span_bio'] = ArrayField(array=bio_labels)
         fields['multi_span_bio_mask'] = ArrayField(array=bio_mask)
@@ -120,7 +120,48 @@ class BertDropReader(DatasetReader):
         return Instance(fields)
 
     def generate_bio_labels(self, qp_tokens, answer_texts):
-        pass
+
+        qp_token_indices: Dict[Token, List[int]] = defaultdict(list)
+        for i, token in enumerate(qp_tokens):
+            qp_token_indices[token].append(i)
+
+        spans = list()
+        for answer_text in answer_texts:
+            answer_tokens = self.tokenizer.tokenize(answer_text)
+            span = find_span(answer_tokens, qp_token_indices, len(qp_tokens))
+
+            if len(span) != 1:
+                if len(span) == 0:
+                    logger.warning(f'no match was found for answer `{answer_text}` in tokens: `{qp_tokens}`')
+                # if len(span) > 1:
+                #     logger.warning(f'multiple matches were found for answer `{answer_text}` in tokens: `{qp_tokens}`\n'
+                #                    f'span indices: `{span}`')
+                return None, None
+            spans += span
+
+        # create bio labels from the spans
+        # create mask from the spans
+
+        return None, None
+
+
+def find_span(answer_tokens: List[Token], qp_token_indices: Dict[Token, List[int]],
+              num_qp_tokens) -> List[Tuple[int, int]]:
+    num_answer_tokens = len(answer_tokens)
+    span = []
+    for span_start in qp_token_indices[answer_tokens[0]]:
+        if num_answer_tokens == 1:
+            span.append((span_start, span_start))
+        elif span_start + num_answer_tokens - 1 <= num_qp_tokens:
+            for i, answer_token in enumerate(answer_tokens[1:], 1):
+                if not span_start + i in qp_token_indices[answer_token]:
+                    break
+            else:
+                span_end = span_start + i  # span_end is inclusive
+                span.append((span_start, span_end))
+    return span
+
+
 
 def get_answer_type(answer):
     if answer['number']:
