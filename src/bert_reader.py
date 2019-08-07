@@ -5,10 +5,15 @@ from allennlp.data.instance import Instance
 from allennlp.data.fields import Field, TextField, IndexField, LabelField, ListField, \
                                  MetadataField, SequenceLabelField, SpanField, ArrayField
 
+from collections import defaultdict
 import json
+import logging
 from overrides import overrides
-from typing import Dict, List, Union, Tuple, Any
+from typing import Dict, List, Tuple, Any, Optional
+
 import numpy as np
+
+logger = logging.getLogger(__name__)
 
 @DatasetReader.register("multi_span_drop")
 class BertDropReader(DatasetReader):
@@ -21,7 +26,7 @@ class BertDropReader(DatasetReader):
         super().__init__(lazy=lazy)
         self.tokenizer = tokenizer
         self.token_indexers = token_indexers
-        self.answer_types = answer_types
+        self.answer_types = answer_types or ['single_span', 'multiple_span', 'number', 'date']
         self.max_instances = max_instances
 
     @overrides
@@ -30,27 +35,30 @@ class BertDropReader(DatasetReader):
             dataset = json.load(dataset_file)
 
         instances = []
-        for passage_id, passage_info in dataset.items():
-            passage_text = passage_info['passage']
+        for passage_id, passage_data in dataset.items():
+            passage_text = passage_data['passage']
             passage_tokens = self.tokenizer.tokenize(passage_text)
 
             #Note: NAQANET addded split by hyphen here
 
-            for question_answer in passage_info["qa_pairs"]:
-                question_id = question_answer["query_id"]
-                question_text = question_answer["question"].strip()
-                answer_annotations = []
+            for qa_pair in passage_data["qa_pairs"]:
+                question_id = qa_pair["query_id"]
+                question_text = qa_pair["question"].strip()
+                answer = qa_pair['answer']
 
-                answer_type = get_answer_type(question_answer['answer'])
+                answer_type = get_answer_type(answer)
+                if answer_type not in self.answer_types:
+                    if answer_type is None:
+                        logger.warning(f'answer for question `{question_text}` has no valid answer type.\n'
+                                       f'valid answer types: {self.answer_types}\n'
+                                       f'query_id: {question_id}')
+                    continue
 
-                if "answer" in question_answer:
-                    if self.answer_types is not None and answer_type not in self.answer_types:
-                        continue
+                answer_annotations: List[Dict] = list()
+                answer_annotations.append(answer)
 
-                    answer_annotations.append(question_answer["answer"])
-
-                if "validated_answers" in question_answer:
-                    answer_annotations += question_answer["validated_answers"]
+                if "validated_answers" in qa_pair:
+                    answer_annotations += qa_pair["validated_answers"]
                                     
                 instance = self.text_to_instance(question_text,
                                                  passage_text,
@@ -59,12 +67,11 @@ class BertDropReader(DatasetReader):
                                                  passage_id,
                                                  answer_annotations,
                                                  passage_tokens)
-                
                 if instance is not None:
                     instances.append(instance)
 
-                if self.max_instances > 0 and self.max_instances <= len(instances):
-                    return instances
+                if self.max_instances >= len(instances):
+                    break
 
         return instances
 
@@ -73,26 +80,27 @@ class BertDropReader(DatasetReader):
                          question_text: str,
                          passage_text: str,
                          answer_type: str,
-                         question_id: str = None,
-                         passage_id: str = None,
-                         answer_annotations: List[Dict] = None,
-                         passage_tokens: List[Token] = None) -> Union[Instance, None]:
+                         question_id: str,
+                         passage_id: str,
+                         answer_annotations: List[Dict],
+                         passage_tokens: List[Token] = None) -> Optional[Instance]:
 
         fields: Dict[str, Field] = {}
 
         question_tokens = self.tokenizer.tokenize(question_text)
         # Note: NAQANET add split by hyphen here
 
-        question_passage_tokens = [Token('[CLS]')] + question_tokens + [Token("[SEP]")] + passage_tokens
-        question_passage_tokens += [Token('[SEP]')]
-        question_and_passage_field = TextField(question_passage_tokens, self.token_indexers)
-        fields['question_and_passage'] = question_and_passage_field
+        qp_tokens: List[Token] = \
+            [Token('[CLS]')] + question_tokens + [Token('[SEP]')] + passage_tokens + [Token('[SEP]')]
 
-        if answer_type == 'multiple_span':
+        qp_field = TextField(qp_tokens, self.token_indexers)
+        fields['question_and_passage'] = qp_field
+
+        if answer_type == 'single_span':
             # We use first answer annotation, like in NABERT
-            bio_labels, bio_mask = generate_bio_labels(question_passage_tokens, answer_annotations[0])
+            bio_labels, bio_mask = self.generate_bio_labels(qp_tokens, answer_annotations[0]['spans'])
         else:
-            bio_labels, bio_mask = np.zeros(len(question_and_passage_field)), np.zeros(len(question_and_passage_field))
+            bio_labels, bio_mask = np.zeros(len(qp_field)), np.zeros(len(qp_field))
 
         fields['multi_span_bio'] = ArrayField(array=bio_labels)
         fields['multi_span_bio_mask'] = ArrayField(array=bio_mask)
@@ -111,16 +119,17 @@ class BertDropReader(DatasetReader):
         fields['metadata'] = MetadataField(metadata)
         return Instance(fields)
 
-def get_answer_type(answers):
-    if answers['number']:
+    def generate_bio_labels(self, qp_tokens, answer_texts):
+        pass
+
+def get_answer_type(answer):
+    if answer['number']:
         return 'number'
-    elif answers['spans']:
-        if len(answers['spans']) == 1:
+    elif answer['spans']:
+        if len(answer['spans']) == 1:
             return 'single_span'
         return 'multiple_span'
-    elif any(answers['date'].values()):
+    elif any(answer['date'].values()):
         return 'date'
-
-# A mock for a method that creates an array of b(0),i(1),o(2) labels for the tokens
-def generate_bio_labels(question_passage_tokens, answer_annotation):
-    return np.ones(len(question_passage_tokens)), np.ones(len(question_passage_tokens))
+    else:
+        return None
