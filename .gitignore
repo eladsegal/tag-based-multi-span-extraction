@@ -105,3 +105,7 @@ venv.bak/
 
 # visual studio
 *.vs*
+
+# PyCharm
+.idea/
+
