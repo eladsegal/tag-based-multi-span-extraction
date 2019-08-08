@@ -1,5 +1,3 @@
-from typing import Iterator, List, Dict
-
 import torch
 import numpy as np
 from allennlp import pretrained
