@@ -1,0 +1,18 @@
+.ReactTable.-striped-passage .rt-tr.-odd {
+    background: rgba(0, 0, 255, 0.07);
+}
+.ReactTable.-striped-passage .rt-tr.-even {
+    background: rgba(0, 0, 255, 0.04);
+}
+.ReactTable.-highlight-passage .rt-tbody .rt-tr:not(.-padRow):hover {
+    background: rgba(0, 0, 255, 0.15);
+}
+.ReactTable.-striped-question .rt-tr.-odd {
+    background: rgba(231, 216, 82, 0.241);
+}
+.ReactTable.-striped-question .rt-tr.-even {
+    background: rgba(231, 216, 82, 0.121);
+}
+.ReactTable.-highlight-question .rt-tbody .rt-tr:not(.-padRow):hover {
+    background: rgba(231, 216, 82, 0.541);
+}
