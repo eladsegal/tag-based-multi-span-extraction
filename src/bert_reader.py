@@ -19,11 +19,13 @@ class BertDropReader(DatasetReader):
                  token_indexers: Dict[str, TokenIndexer],
                  lazy=False,
                  answer_types: List[str] = None,
+                 max_pieces: int = 512,
                  max_instances: int = -1):
         super().__init__(lazy=lazy)
         self.tokenizer = tokenizer
         self.token_indexers = token_indexers
         self.answer_types = answer_types or ['single_span', 'multiple_span', 'number', 'date']
+        self.max_pieces = max_pieces
         self.max_instances = max_instances
 
     @overrides
@@ -80,15 +82,21 @@ class BertDropReader(DatasetReader):
 
         fields: Dict[str, Field] = {}
 
+        # tokenize question
         question_tokens = self.tokenizer.tokenize(question_text)
         # Note: NAQANET add split by hyphen here
 
-        qp_tokens: List[Token] = \
-            [Token('[CLS]')] + question_tokens + [Token('[SEP]')] + passage_tokens + [Token('[SEP]')]
+        # truncate question+passage
+        qp_tokens: List[Token] = []
+        qp_tokens.extend([Token('[CLS]')] + question_tokens + [Token('[SEP]')] + passage_tokens)
+        qp_tokens = qp_tokens[:self.max_pieces-1]  # `-1` as we still need to add [SEP] at the end
+        qp_tokens.append(Token('[SEP]'))
 
+        # create question+passage token field
         qp_field = TextField(qp_tokens, self.token_indexers)
         fields['question_and_passage'] = qp_field
 
+        # handle span questions
         if answer_type in ('single_span', 'multiple_span'):
             qp_token_indices: Dict[Token, List[int]] = defaultdict(list)
             for i, token in enumerate(qp_tokens):
@@ -108,13 +116,13 @@ class BertDropReader(DatasetReader):
             bio_labels = create_bio_labels(spans, len(qp_field))
             fields['span_labels'] = SequenceLabelField(bio_labels, sequence_field=qp_field)
 
-            # in a word broken into pieces, subsequent pieces should be ignored when calculating the loss
+            # in a word broken up into pieces, every piece except the first should be ignored when calculating the loss
             wordpiece_mask = [not token.text.startswith('##') for token in qp_tokens]
             wordpiece_mask = np.array(wordpiece_mask)
             fields['span_wordpiece_mask'] = ArrayField(wordpiece_mask)
 
         metadata = {
-            'original_passage': passage_text, 
+            'original_passage': passage_text,
             "original_question": question_text,
             "passage_id": passage_id,
             "question_id": question_id,
