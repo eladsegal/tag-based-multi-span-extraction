@@ -1,0 +1,39 @@
+{
+    "dataset_reader": {
+      "type": "multi_span_drop",
+      "answer_types": [ "multiple_span" ],
+        "tokenizer": {
+            "type": "bert-drop",
+            "pretrained_model": "bert-base-cased"
+        },
+        "token_indexers": {
+            "tokens": {
+                "type": "bert-drop",
+                "pretrained_model": "bert-base-cased"
+            }   
+        }
+    },
+    "train_data_path": "data/drop_dataset_train.json",
+    "validation_data_path": "data/drop_dataset_dev.json",
+    "model": {
+        "type": "multi_span_bert",
+        "bert_pretrained_model": "bert-base-cased",
+        "dropout_prob": 0.1
+    },
+    "iterator": {
+        "type": "basic",
+        "batch_size": 4
+    },
+    "trainer": {
+        "num_epochs": 1,
+        "patience": 10,
+        "validation_metric": "+f1",
+        "cuda_device": -1,
+        "optimizer": {
+            "type": "bert_adam",
+            "lr": 1e-5
+        },
+        "summary_interval": 100,
+        "keep_serialized_model_every_num_seconds": 3600
+    }
+}
