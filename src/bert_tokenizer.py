@@ -3,7 +3,7 @@ from allennlp.data.tokenizers import Token, Tokenizer, WordTokenizer
 from typing import Dict, List, Union, Tuple, Any
 from overrides import overrides
 
-@Tokenizer.register("multi_span_drop")
+@Tokenizer.register("bert-drop")
 class BertDropTokenizer(Tokenizer):
     def __init__(self, pretrained_model: str):
         self.tokenizer = BertTokenizer.from_pretrained(pretrained_model)

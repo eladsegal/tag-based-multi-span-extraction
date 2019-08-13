@@ -4,7 +4,7 @@ from pytorch_pretrained_bert import BertTokenizer
 from typing import Dict, List, Union, Tuple, Any
 from overrides import overrides
 
-@TokenIndexer.register("multi_span_drop")
+@TokenIndexer.register("bert-drop")
 class BertDropTokenIndexer(WordpieceIndexer):
     def __init__(self,
                  pretrained_model: str,

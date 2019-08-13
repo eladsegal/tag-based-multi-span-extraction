@@ -22,7 +22,6 @@ class MultiSpanBert(Model):
                  vocab: Vocabulary, 
                  bert_pretrained_model: str, 
                  dropout_prob: float = 0.1, 
-                 max_count: int = 10,
                  initializer: InitializerApplicator = InitializerApplicator(),
                  regularizer: Optional[RegularizerApplicator] = None) -> None:
         super().__init__(vocab, regularizer)
