@@ -22,6 +22,7 @@ class MultiSpanBert(Model):
                  vocab: Vocabulary, 
                  bert_pretrained_model: str, 
                  dropout_prob: float = 0.1, 
+                 finetune_bert: bool = True,
                  initializer: InitializerApplicator = InitializerApplicator(),
                  regularizer: Optional[RegularizerApplicator] = None) -> None:
         super().__init__(vocab, regularizer)
@@ -29,6 +30,10 @@ class MultiSpanBert(Model):
         self.answering_abilities = ["multiple_span"]
                 
         self.BERT = BertModel.from_pretrained(bert_pretrained_model)
+        
+        if not finetune_bert:
+            self.BERT.eval()
+
         self.tokenizer = BertTokenizer.from_pretrained(bert_pretrained_model)
         bert_dim = self.BERT.pooler.dense.out_features
         

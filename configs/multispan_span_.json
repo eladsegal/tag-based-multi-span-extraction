@@ -1,7 +1,7 @@
 {
     "dataset_reader": {
       "type": "multi_span_drop",
-      "answer_types": [ "multiple_span" ],
+      "answer_types": [ "single_span", "multiple_span" ],
         "tokenizer": {
             "type": "bert-drop",
             "pretrained_model": "bert-base-cased"
