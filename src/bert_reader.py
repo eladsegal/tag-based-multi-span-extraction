@@ -68,7 +68,7 @@ class BertDropReader(DatasetReader):
                     instances.append(instance)
 
                 if 0 < self.max_instances <= len(instances):
-                    break
+                    return instances
 
         return instances
 
@@ -120,8 +120,8 @@ class BertDropReader(DatasetReader):
 
             # in a word broken up into pieces, every piece except the first should be ignored when calculating the loss
             wordpiece_mask = [not token.text.startswith('##') for token in qp_tokens]
-            wordpiece_mask = np.array(wordpiece_mask)
-            fields['span_wordpiece_mask'] = ArrayField(wordpiece_mask)
+            wordpiece_mask = np.array(wordpiece_mask, dtype=np.int64)
+            fields['span_wordpiece_mask'] = ArrayField(wordpiece_mask, dtype=np.int64)
 
         metadata = {
             'original_passage': passage_text,
@@ -129,8 +129,7 @@ class BertDropReader(DatasetReader):
             "passage_id": passage_id,
             "question_id": question_id,
             "answer_annotations": answer_annotations,
-            'question_tokens': [token.text for token in question_tokens],
-            'passage_tokens': [token.text for token in passage_tokens],
+            "question_passage_tokens": qp_tokens,
             "answer_type": answer_type
           }
 
