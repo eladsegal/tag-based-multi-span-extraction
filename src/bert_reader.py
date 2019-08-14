@@ -1,15 +1,16 @@
-from allennlp.data.dataset_readers.dataset_reader import DatasetReader
-from allennlp.data.token_indexers.token_indexer import TokenIndexer
-from allennlp.data.tokenizers import Token, Tokenizer
-from allennlp.data.instance import Instance
-from allennlp.data.fields import Field, TextField, MetadataField, SequenceLabelField, ArrayField
-
 from collections import defaultdict
 import json
 from overrides import overrides
 from typing import Dict, List, Tuple, Optional
 
+from allennlp.data.dataset_readers.dataset_reader import DatasetReader
+from allennlp.data.token_indexers.token_indexer import TokenIndexer
+from allennlp.data.tokenizers import Token, Tokenizer
+from allennlp.data.instance import Instance
+from allennlp.data.fields import Field, TextField, MetadataField, SequenceLabelField, ArrayField
 import numpy as np
+
+from src.preprocessing.utils import get_answer_type, find_span
 
 
 @DatasetReader.register("multi_span_drop")
@@ -134,37 +135,6 @@ class BertDropReader(DatasetReader):
 
         fields['metadata'] = MetadataField(metadata)
         return Instance(fields)
-
-
-def get_answer_type(answer: Dict):
-    # TODO make sure that only a single answer type is assigned a value
-    if answer['number']:
-        return 'number'
-    elif answer['spans']:
-        if len(answer['spans']) == 1:
-            return 'single_span'
-        return 'multiple_span'
-    elif any(answer['date'].values()):
-        return 'date'
-    else:
-        return None
-
-
-def find_span(answer_tokens: List[Token], qp_token_indices: Dict[Token, List[int]],
-              num_qp_tokens) -> List[Tuple[int, int]]:
-    num_answer_tokens = len(answer_tokens)
-    span = []
-    for span_start in qp_token_indices[answer_tokens[0]]:
-        if num_answer_tokens == 1:
-            span.append((span_start, span_start))
-        elif span_start + num_answer_tokens - 1 <= num_qp_tokens:
-            for i, answer_token in enumerate(answer_tokens[1:], 1):
-                if not span_start + i in qp_token_indices[answer_token]:
-                    break
-            else:
-                span_end = span_start + i  # span_end is inclusive
-                span.append((span_start, span_end))
-    return span
 
 
 def create_bio_labels(spans: List[Tuple[int, int]], n_labels: int):
