@@ -10,6 +10,7 @@ from pytorch_pretrained_bert import BertModel, BertTokenizer
 from allennlp.modules import ConditionalRandomField, FeedForward
 from allennlp.modules.conditional_random_field import allowed_transitions
 from allennlp.training.metrics.drop_em_and_f1 import DropEmAndF1
+from allennlp.tools.drop_eval import answer_json_to_strings
 
 import numpy as np
 
@@ -83,21 +84,29 @@ class MultiSpanBert(Model):
         predicted_tags_with_score = self.crf.viterbi_tags(logits, pad_mask) #TODO does it ignore the mask?
 
         predicted_tags = [x for x, y in predicted_tags_with_score]
-
-        output = {"logits": logits, "mask": mask, "tags": predicted_tags}
+        
+        #output = {"logits": logits, "mask": mask, "tags": predicted_tags}
+        output = dict()
 
         if span_labels is not None:
             log_likelihood = self.crf(logits, span_labels, mask)
             output["loss"] = -log_likelihood
 
         with torch.no_grad():
+            output["passage_id"] = []
+            output["query_id"] = []
             output['answer'] = []
+            output['ground_truth'] = []
             for i in np.arange(batch_size):
+                output["passage_id"].append(metadata[i]["passage_id"])
+                output["query_id"].append(metadata[i]["question_id"])
                 answer_annotations = metadata[i].get('answer_annotations', [])
                 if answer_annotations:                
                     answer_spans = self.decode_spans_from_tags(predicted_tags[i],  metadata[i]['question_passage_tokens'])
-                    output['answer'].append(answer_spans)
+                    output['answer'].append(answer_spans)                    
                     self._drop_metrics(answer_spans, answer_annotations)
+
+                    output['ground_truth'].append([answer_json_to_strings(annotation)[0] for annotation in answer_annotations])
 
         return output
 
