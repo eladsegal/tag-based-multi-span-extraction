@@ -10,6 +10,7 @@ from allennlp.data.instance import Instance
 from allennlp.data.fields import Field, TextField, MetadataField, SequenceLabelField, ArrayField
 import numpy as np
 
+from src.preprocessing.utils import SPAN_ANSWER_TYPES
 from src.preprocessing.utils import get_answer_type, find_span
 
 
@@ -98,7 +99,7 @@ class BertDropReader(DatasetReader):
         fields['question_and_passage'] = qp_field
 
         # handle span questions
-        if answer_type in ('single_span', 'multiple_span'):
+        if answer_type in SPAN_ANSWER_TYPES:
             qp_token_indices: Dict[Token, List[int]] = defaultdict(list)
             for i, token in enumerate(qp_tokens):
                 qp_token_indices[token].append(i)

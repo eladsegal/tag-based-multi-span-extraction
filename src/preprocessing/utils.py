@@ -6,7 +6,12 @@ from allennlp.data.tokenizers import Token
 
 TRAIN_PATH = os.path.join('data', 'drop_dataset_train.json')
 
-SPAN_ANSWER_TYPES = ['single_span', 'multiple_span']
+SPAN_ANSWER_TYPE = 'span'
+NUMBER_ANSWER_TYPE = 'number'
+DATE_ANSWER_TYPE = 'date'
+SINGLE_SPAN = 'single_span'
+MULTIPLE_SPAN = 'multiple_span'
+SPAN_ANSWER_TYPES = [SINGLE_SPAN, MULTIPLE_SPAN]
 ANSWER_TYPES = SPAN_ANSWER_TYPES + ['number', 'date']
 
 
@@ -15,8 +20,8 @@ def get_answer_type(answer):
         return 'number'
     elif answer['spans']:
         if len(answer['spans']) == 1:
-            return 'single_span'
-        return 'multiple_span'
+            return SINGLE_SPAN
+        return MULTIPLE_SPAN
     elif any(answer['date'].values()):
         return 'date'
     else:

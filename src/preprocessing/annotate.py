@@ -2,7 +2,8 @@ import json
 import re
 from typing import List, Tuple
 
-from src.preprocessing.utils import SPAN_ANSWER_TYPES
+from src.preprocessing.utils import (SPAN_ANSWER_TYPE, SPAN_ANSWER_TYPES, NUMBER_ANSWER_TYPE,
+                                     DATE_ANSWER_TYPE)
 from src.preprocessing.utils import get_answer_type, deep_dict_update
 
 
@@ -15,11 +16,19 @@ class DatasetAnnotator:
 
 class DatasetErrorAnnotator(DatasetAnnotator):
 
-    def annotate_missing_spans(self):
-        with open(self.dataset_path) as dataset_file:
-            dataset = json.load(dataset_file)
+    def annotate_errors(self):
+        self.annotate_span_errors()
 
-        for passage_id, passage_data in dataset.items():
+        original_dataset_path = self.dataset_path
+        self.dataset_path = self.annotated_dataset_output_path
+
+        self.annotate_answer_type_errors()
+        self.dataset_path = original_dataset_path
+
+    def annotate_span_errors(self):
+        dataset = self._load_dataset()
+
+        for passage_data in dataset.values():
             passage_text = passage_data['passage']
             for qa_pair in passage_data["qa_pairs"]:
                 question_text = qa_pair["question"]
@@ -51,30 +60,63 @@ class DatasetErrorAnnotator(DatasetAnnotator):
                         all_p_spans.append(p_spans)
 
                 if answer_indices_with_missing_span:
-                    missing_spans = self.create_missing_spans_error(answer_indices_with_missing_span)
+                    missing_spans = self._create_missing_spans_error(answer_indices_with_missing_span)
                     deep_dict_update(answer, missing_spans)
 
                 if answer_indices_with_ambiguous_span:
-                    ambiguous_spans = self.create_ambiguous_spans_error(
+                    ambiguous_spans = self._create_ambiguous_spans_error(
                         answer_indices_with_ambiguous_span, all_q_spans, all_p_spans)
                     deep_dict_update(answer, ambiguous_spans)
 
-        # save the new annotated dataset
+        self._save_annotated_dataset(dataset)
+
+    def annotate_answer_type_errors(self):
+        dataset = self._load_dataset()
+
+        for passage_data in dataset.values():
+            for qa_pair in passage_data["qa_pairs"]:
+                answer = qa_pair['answer']
+
+                # get all answer types
+                answer_types = []
+                if answer['spans']:
+                    answer_types.append(SPAN_ANSWER_TYPE)
+                if answer['number']:
+                    answer_types.append(NUMBER_ANSWER_TYPE)
+                if any(answer['date'].values()):
+                    answer_types.append(DATE_ANSWER_TYPE)
+
+                if len(answer_types) != 1:
+                    print(1)
+                    type_error = self._create_answer_type_error(answer_types)
+                    deep_dict_update(answer, type_error)
+
+        self._save_annotated_dataset(dataset)
+
+    def _load_dataset(self):
+        with open(self.dataset_path) as dataset_file:
+            return json.load(dataset_file)
+
+    def _save_annotated_dataset(self, annotated_dataset):
         with open(self.annotated_dataset_output_path, 'w') as f:
-            json.dump(dataset, f, indent=2)
+            json.dump(annotated_dataset, f, indent=2)
 
     @staticmethod
-    def create_missing_spans_error(answer_indices):
+    def _create_missing_spans_error(answer_indices):
         return {
             'errors': {
                 'missing_spans': {'answer_indices': answer_indices}}}
 
     @staticmethod
-    def create_ambiguous_spans_error(answer_indices, q_spans, p_spans):
-
+    def _create_ambiguous_spans_error(answer_indices, q_spans, p_spans):
         return {
             'errors': {
                 'ambiguous_spans': {'answer_indices': answer_indices,
                                     'q_spans': q_spans,
                                     'p_spans': p_spans
                                     }}}
+    @staticmethod
+    def _create_answer_type_error(types):
+        return {
+            'errors': {
+                'invalid_type': types}}
