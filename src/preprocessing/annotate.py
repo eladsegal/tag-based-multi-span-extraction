@@ -87,7 +87,6 @@ class DatasetErrorAnnotator(DatasetAnnotator):
                     answer_types.append(DATE_ANSWER_TYPE)
 
                 if len(answer_types) != 1:
-                    print(1)
                     type_error = self._create_answer_type_error(answer_types)
                     deep_dict_update(answer, type_error)
 

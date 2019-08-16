@@ -1,3 +1,4 @@
+import json
 import os
 from typing import Dict, List, Tuple
 
@@ -13,6 +14,16 @@ SINGLE_SPAN = 'single_span'
 MULTIPLE_SPAN = 'multiple_span'
 SPAN_ANSWER_TYPES = [SINGLE_SPAN, MULTIPLE_SPAN]
 ANSWER_TYPES = SPAN_ANSWER_TYPES + ['number', 'date']
+
+
+def load_dataset(path):
+    with open(path) as dataset_file:
+        return json.load(dataset_file)
+
+
+def save_dataset(dataset, path):
+    with open(path, 'w') as f:
+        json.dump(dataset, f, indent=2)
 
 
 def get_answer_type(answer):
