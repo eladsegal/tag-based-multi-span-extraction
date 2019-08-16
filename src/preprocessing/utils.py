@@ -7,7 +7,7 @@ from allennlp.data.tokenizers import Token
 
 TRAIN_PATH = os.path.join('data', 'drop_dataset_train.json')
 
-SPAN_ANSWER_TYPE = 'span'
+SPAN_ANSWER_TYPE = 'spans'
 NUMBER_ANSWER_TYPE = 'number'
 DATE_ANSWER_TYPE = 'date'
 SINGLE_SPAN = 'single_span'

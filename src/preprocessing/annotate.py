@@ -6,6 +6,12 @@ from src.preprocessing.utils import (SPAN_ANSWER_TYPE, SPAN_ANSWER_TYPES, NUMBER
                                      DATE_ANSWER_TYPE)
 from src.preprocessing.utils import get_answer_type, deep_dict_update
 
+MISSING_SPANS = 'missing_spans'
+AMBIGUOUS_SPANS = 'ambiguous_spans'
+INVALID_TYPE = 'invalid_type'
+ERRORS_KEYNAME = 'errors'
+ERROR_TYPES = {MISSING_SPANS, AMBIGUOUS_SPANS, INVALID_TYPE}
+
 
 class DatasetAnnotator:
     def __init__(self, dataset_path, annotated_dataset_output_path=None):
@@ -30,8 +36,8 @@ class DatasetErrorAnnotator(DatasetAnnotator):
 
         for passage_data in dataset.values():
             passage_text = passage_data['passage']
-            for qa_pair in passage_data["qa_pairs"]:
-                question_text = qa_pair["question"]
+            for qa_pair in passage_data['qa_pairs']:
+                question_text = qa_pair['question']
                 answer = qa_pair['answer']
 
                 # skip if not a span question
@@ -74,7 +80,7 @@ class DatasetErrorAnnotator(DatasetAnnotator):
         dataset = self._load_dataset()
 
         for passage_data in dataset.values():
-            for qa_pair in passage_data["qa_pairs"]:
+            for qa_pair in passage_data['qa_pairs']:
                 answer = qa_pair['answer']
 
                 # get all answer types
@@ -103,19 +109,19 @@ class DatasetErrorAnnotator(DatasetAnnotator):
     @staticmethod
     def _create_missing_spans_error(answer_indices):
         return {
-            'errors': {
-                'missing_spans': {'answer_indices': answer_indices}}}
+            ERRORS_KEYNAME: {
+                MISSING_SPANS: {'answer_indices': answer_indices}}}
 
     @staticmethod
     def _create_ambiguous_spans_error(answer_indices, q_spans, p_spans):
         return {
-            'errors': {
-                'ambiguous_spans': {'answer_indices': answer_indices,
-                                    'q_spans': q_spans,
-                                    'p_spans': p_spans
+            ERRORS_KEYNAME: {
+                AMBIGUOUS_SPANS: {'answer_indices': answer_indices,
+                                   'q_spans': q_spans,
+                                   'p_spans': p_spans
                                     }}}
     @staticmethod
     def _create_answer_type_error(types):
         return {
-            'errors': {
-                'invalid_type': types}}
+            ERRORS_KEYNAME: {
+                INVALID_TYPE: types}}
