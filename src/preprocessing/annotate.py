@@ -19,6 +19,14 @@ class DatasetAnnotator:
         self.annotated_dataset_output_path = \
             annotated_dataset_output_path or dataset_path.replace('.json', '_annotated.json')
 
+    def _load_dataset(self):
+        with open(self.dataset_path) as dataset_file:
+            return json.load(dataset_file)
+
+    def _save_annotated_dataset(self, annotated_dataset):
+        with open(self.annotated_dataset_output_path, 'w') as f:
+            json.dump(annotated_dataset, f, indent=2)
+
 
 class DatasetErrorAnnotator(DatasetAnnotator):
 
@@ -97,14 +105,6 @@ class DatasetErrorAnnotator(DatasetAnnotator):
                     deep_dict_update(answer, type_error)
 
         self._save_annotated_dataset(dataset)
-
-    def _load_dataset(self):
-        with open(self.dataset_path) as dataset_file:
-            return json.load(dataset_file)
-
-    def _save_annotated_dataset(self, annotated_dataset):
-        with open(self.annotated_dataset_output_path, 'w') as f:
-            json.dump(annotated_dataset, f, indent=2)
 
     @staticmethod
     def _create_missing_spans_error(answer_indices):

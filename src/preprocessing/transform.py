@@ -1,6 +1,7 @@
-from src.preprocessing.annotate import ERROR_TYPES, ERRORS_KEYNAME
+import json
 
-from src.preprocessing.utils import save_dataset, load_dataset
+from src.preprocessing.annotate import ERROR_TYPES, ERRORS_KEYNAME
+from src.preprocessing.utils import save_dataset, load_dataset, deep_dict_update
 
 
 def create_dataset_with_no_errors(original_dataset_path, output_path=None):
@@ -42,6 +43,26 @@ def create_dataset_with_error_type(original_dataset_path, error_type, output_pat
             passages_no_question_of_the_error_type.add(passage_id)
 
     dataset = {k: v for k, v in dataset.items() if k not in passages_no_question_of_the_error_type}
+
+    save_dataset(dataset, output_path)
+
+
+def apply_fixes(dataset, fixes, output_path):
+    dataset = load_dataset(dataset)
+    with open(fixes) as dataset_file:
+        fixes = json.load(dataset_file)
+
+    for passage_id, fixes in fixes.items():
+        org_qa = dataset[passage_id]['qa_pairs']
+
+        # updates
+        for str_idx, update in fixes.get('updates', {}).items():
+            deep_dict_update(org_qa[int(str_idx)], update)
+
+        # deletions
+        indices_to_delete = fixes.get('deletions', [])
+        for index in reversed(indices_to_delete):
+            del org_qa[index]
 
     save_dataset(dataset, output_path)
 
