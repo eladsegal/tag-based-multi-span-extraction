@@ -1,0 +1,12 @@
+{
+  "passage_id": {
+    "deletions": [1],
+    "updates": {
+      "0": {
+        "answer": {
+          "spans": ["one", "two"]
+        }
+      }
+    }
+  }
+}
