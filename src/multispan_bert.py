@@ -14,6 +14,8 @@ from allennlp.tools.drop_eval import answer_json_to_strings
 
 import numpy as np
 
+from src.multispan_handler import MultiSpanHandler
+
 @Model.register('multi_span_bert')
 class MultiSpanBert(Model):
     '''
@@ -40,15 +42,7 @@ class MultiSpanBert(Model):
         
         self.dropout = dropout_prob
 
-        self._passage_weights_predictor = torch.nn.Linear(bert_dim, 1)
-        self._question_weights_predictor = torch.nn.Linear(bert_dim, 1)
-            
-        self.multi_span_predictor = self.ff(bert_dim, bert_dim, 3)
-
-        include_start_end_transitions = True
-        constraints = allowed_transitions('BIO', {0: 'O', 1: 'B', 2: 'I'})
-
-        self.crf = ConditionalRandomField(3, constraints, include_start_end_transitions)
+        self.multi_span_handler = MultiSpanHandler(bert_dim, dropout_prob)
 
         self._drop_metrics = DropEmAndF1()
         initializer(self)
@@ -79,18 +73,15 @@ class MultiSpanBert(Model):
         # Shape: (batch_size, seqlen, bert_dim)
         bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask, output_all_encoded_layers=False)
 
-        logits = self.multi_span_predictor(bert_out)
+        multi_span_result = self.multi_span_handler.forward(bert_out, span_labels, pad_mask, mask)
 
-        predicted_tags_with_score = self.crf.viterbi_tags(logits, pad_mask) #TODO does it ignore the mask?
-
-        predicted_tags = [x for x, y in predicted_tags_with_score]
+        predicted_tags = multi_span_result['predicted_tags']
         
         #output = {"logits": logits, "mask": mask, "tags": predicted_tags}
         output = dict()
 
-        if span_labels is not None:
-            log_likelihood = self.crf(logits, span_labels, mask)
-            output["loss"] = -log_likelihood
+        if "loss" in multi_span_result:
+            output["loss"] = multi_span_result["loss"]
 
         with torch.no_grad():
             output["passage_id"] = []
@@ -102,7 +93,7 @@ class MultiSpanBert(Model):
                 output["query_id"].append(metadata[i]["question_id"])
                 answer_annotations = metadata[i].get('answer_annotations', [])
                 if answer_annotations:                
-                    answer_spans = self.decode_spans_from_tags(predicted_tags[i],  metadata[i]['question_passage_tokens'])
+                    answer_spans = self.multi_span_handler.decode_spans_from_tags(predicted_tags[i],  metadata[i]['question_passage_tokens'])
                     output['answer'].append(answer_spans)                    
                     self._drop_metrics(answer_spans, answer_annotations)
 
@@ -114,59 +105,3 @@ class MultiSpanBert(Model):
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
         exact_match, f1_score = self._drop_metrics.get_metric(reset)
         return {'em': exact_match, 'f1': f1_score}
-
-    def ff(self, input_dim, hidden_dim, output_dim):
-        return torch.nn.Sequential(torch.nn.Linear(input_dim, hidden_dim),
-                                    torch.nn.ReLU(),
-                                    torch.nn.Dropout(self.dropout),
-                                    torch.nn.Linear(hidden_dim, output_dim))
-
-    def decode_spans_from_tags(self, tags, question_passage_tokens):
-        spans_tokens = []
-        prev = 0 # 0 = O
-            
-        current_tokens = []
-
-        for i in np.arange(len(tags)):      
-            token = question_passage_tokens[i].text
-
-            # If it is the same word so just add it to current tokens
-            if token[:2] == '##':
-                if prev != 0:
-                    current_tokens.append(token)
-                continue
-
-            if tags[i] == 1: # 1 = B
-                if prev != 0:
-                    spans_tokens.append(current_tokens)
-                    current_tokens = []
-
-                current_tokens.append(token)
-                prev = 1
-                continue
-
-            if tags[i] == 2: # 2 = I
-                current_tokens.append(token)
-                prev = 2
-                continue
-
-            if tags[i] == 0 and prev != 0:
-                spans_tokens.append(current_tokens)
-                current_tokens = []
-                prev = 0
-
-        if current_tokens:
-            spans_tokens.append(current_tokens)
-
-        spans = [tokenlist_to_passage(tokens) for tokens in spans_tokens]              
-
-        return spans
-
-
-def tokenlist_to_passage(token_text):
-    str_list = list(map(lambda x : x[2:] if len(x)>2 and x[:2]=="##" else " " + x, token_text))
-    string = "".join(str_list)
-    if string[0] == " ":
-        string = string[1:]
-    return string
-
