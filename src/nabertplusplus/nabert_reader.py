@@ -330,7 +330,7 @@ class NaBertDropReader(DatasetReader):
             
             if answer_type in SPAN_ANSWER_TYPES or answer_type == SPAN_ANSWER_TYPE:
                 qp_token_indices: Dict[Token, List[int]] = defaultdict(list)
-                for i, token in enumerate(question_passage_tokens): #TODO ************** qp_tokens not defined. it is ok to prepare here for single and multi - in the model we need to choose if to do something with single or not 
+                for i, token in enumerate(question_passage_tokens): 
                     qp_token_indices[token].append(i)
 
                 # We use the first answer annotation, like in NABERT
@@ -340,8 +340,6 @@ class NaBertDropReader(DatasetReader):
                 for answer_text in answer_texts:
                     answer_tokens = self.tokenizer.tokenize(answer_text)
                     answer_span = find_span(answer_tokens, qp_token_indices, len(question_passage_field))
-                    if len(answer_span) != 1:
-                        return None
                     spans.extend(answer_span)
 
                 bio_labels = create_bio_labels(spans, len(question_passage_field))
