@@ -62,18 +62,13 @@ class MultiSpanBert(Model):
         # Shape: (batch_size, seqlen)
         seqlen_ids = question_and_passage["tokens-type-ids"]
 
-        mask = pad_mask
-
-        if span_wordpiece_mask is not None:
-            mask = span_wordpiece_mask & mask
-
         max_seqlen = question_passage_tokens.shape[-1]
         batch_size = question_passage_tokens.shape[0]
 
         # Shape: (batch_size, seqlen, bert_dim)
         bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask, output_all_encoded_layers=False)
 
-        multi_span_result = self.multi_span_handler.forward(bert_out, span_labels, pad_mask, mask)
+        multi_span_result = self.multi_span_handler.forward(bert_out, span_labels, pad_mask, span_wordpiece_mask)
 
         predicted_tags = multi_span_result['predicted_tags']
         

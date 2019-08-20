@@ -16,7 +16,15 @@ class MultiSpanHandler:
 
         self.crf = ConditionalRandomField(3, constraints, include_start_end_transitions)
 
-    def forward(self, bert_out, span_labels, pad_mask, loss_mask):
+    def forward(self, bert_out, span_labels, pad_mask, span_wordpiece_mask):
+        if span_labels is None:
+            return {"loss": 0, "log_likelihood": torch.zeros(bert_out.shape[0]), "predicted_tags": []}
+
+        loss_mask = pad_mask
+
+        if span_wordpiece_mask is not None:
+            loss_mask = span_wordpiece_mask & loss_mask
+
         logits = self.multi_span_predictor(bert_out)
 
         predicted_tags_with_score = self.crf.viterbi_tags(logits, pad_mask) 
@@ -26,8 +34,13 @@ class MultiSpanHandler:
         result = {"logits": logits, "predicted_tags": predicted_tags}
 
         if span_labels is not None:
-            log_likelihood = self.crf(logits, span_labels, loss_mask)           
-            result["loss"] = -log_likelihood
+            log_denominator = self.crf._input_likelihood(logits, loss_mask)
+            log_numerator = self.crf._joint_likelihood(logits, span_labels, loss_mask)
+
+            log_likelihood = log_numerator - log_denominator
+
+            result["log_likelihood"] = log_likelihood
+            result["loss"] = -torch.sum(log_likelihood)
 
         return result
 
