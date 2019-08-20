@@ -106,6 +106,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
             # Shape: (batch_size, seqlen)
             alpha = self._arithmetic_weights_predictor(encoding).squeeze()
         elif in_type == "multiple_spans":
+            #TODO: currenttly not using it...
             alpha = self._multispan_weights_predictor(encoding).squeeze()
         else:
             # Shape: (batch_size, #num of numbers, seqlen)
