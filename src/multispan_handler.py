@@ -6,17 +6,16 @@ import numpy as np
 class MultiSpanHandler:
     def __init__(self, 
                  bert_dim: int,
+                 multi_span_predictor: torch.nn.Sequential,
+                 crf: ConditionalRandomField,
                  dropout_prob: float = 0.1) -> None:
         self.dropout = dropout_prob
 
-        self.multi_span_predictor = self.ff(bert_dim, bert_dim, 3)
+        self.multi_span_predictor = multi_span_predictor        
 
-        include_start_end_transitions = True
-        constraints = allowed_transitions('BIO', {0: 'O', 1: 'B', 2: 'I'})
+        self.crf = crf
 
-        self.crf = ConditionalRandomField(3, constraints, include_start_end_transitions)
-
-    def forward(self, bert_out, span_labels, pad_mask, span_wordpiece_mask):
+    def forward(self, bert_out, span_labels, pad_mask, span_wordpiece_mask):       
         if span_labels is None:
             return {"loss": 0, "log_likelihood": torch.zeros(bert_out.shape[0]), "predicted_tags": []}
 
@@ -43,12 +42,6 @@ class MultiSpanHandler:
             result["loss"] = -torch.sum(log_likelihood)
 
         return result
-
-    def ff(self, input_dim, hidden_dim, output_dim):
-        return torch.nn.Sequential(torch.nn.Linear(input_dim, hidden_dim),
-                                    torch.nn.ReLU(),
-                                    torch.nn.Dropout(self.dropout),
-                                    torch.nn.Linear(hidden_dim, output_dim))
 
     def decode_spans_from_tags(self, tags, question_passage_tokens):
         spans_tokens = []
@@ -101,7 +94,7 @@ def tokenlist_to_passage(token_text):
     string = string.replace(" ' s", "'s")
     return string
 
-def token_to_text_in_sentence(token_text):
+def token_to_text_in_sentence(x):
     if len(x)>2 and x[:2]=="##":
         return x[2:]
 
@@ -109,3 +102,17 @@ def token_to_text_in_sentence(token_text):
         return x
 
     return " " + x
+
+def default_multispan_predictor(bert_dim, dropout):
+    return ff(bert_dim, bert_dim, 3, dropout)
+
+def default_crf():
+    include_start_end_transitions = True
+    constraints = allowed_transitions('BIO', {0: 'O', 1: 'B', 2: 'I'})
+    return ConditionalRandomField(3, constraints, include_start_end_transitions)
+
+def ff(input_dim, hidden_dim, output_dim, dropout):
+    return torch.nn.Sequential(torch.nn.Linear(input_dim, hidden_dim),
+                                torch.nn.ReLU(),
+                                torch.nn.Dropout(dropout),
+                                torch.nn.Linear(hidden_dim, output_dim))

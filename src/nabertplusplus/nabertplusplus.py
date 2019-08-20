@@ -15,7 +15,7 @@ import pickle
 
 from src.nhelpers import tokenlist_to_passage, beam_search, evaluate_postfix
 
-from src.multispan_handler import MultiSpanHandler
+from src.multispan_handler import MultiSpanHandler, default_multispan_predictor, default_crf
 
 logger = logging.getLogger(__name__)
 
@@ -91,7 +91,9 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 self.ff(bert_dim, bert_dim, max_count + 1) 
 
         if "multiple_spans" in self.answering_abilities:
-            self._multi_span_handler = MultiSpanHandler(bert_dim, dropout_prob)
+            self._multispan_predictor = default_multispan_predictor(bert_dim, dropout_prob)
+            self._multispan_crf = default_crf()
+            self._multi_span_handler = MultiSpanHandler(bert_dim, self._multispan_predictor, self._multispan_crf, dropout_prob)
 
         self._drop_metrics = DropEmAndF1()
         initializer(self)
