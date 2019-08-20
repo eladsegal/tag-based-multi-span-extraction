@@ -14,7 +14,7 @@ from allennlp.tools.drop_eval import answer_json_to_strings
 
 import numpy as np
 
-from src.multispan_handler import MultiSpanHandler
+from src.multispan_handler import MultiSpanHandler, default_multispan_predictor, default_crf
 
 @Model.register('multi_span_bert')
 class MultiSpanBert(Model):
@@ -42,7 +42,9 @@ class MultiSpanBert(Model):
         
         self.dropout = dropout_prob
 
-        self.multi_span_handler = MultiSpanHandler(bert_dim, dropout_prob)
+        self._multispan_predictor = default_multispan_predictor(bert_dim, dropout_prob)
+        self._multispan_crf = default_crf()
+        self.multi_span_handler = MultiSpanHandler(bert_dim, self._multispan_predictor, self._multispan_crf, dropout_prob)
 
         self._drop_metrics = DropEmAndF1()
         initializer(self)
