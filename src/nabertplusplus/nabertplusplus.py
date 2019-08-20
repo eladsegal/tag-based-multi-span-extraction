@@ -9,6 +9,7 @@ from allennlp.models.reading_comprehension.util import get_best_span
 from allennlp.nn import util, InitializerApplicator, RegularizerApplicator
 from allennlp.nn.util import masked_softmax
 from allennlp.training.metrics.drop_em_and_f1 import DropEmAndF1
+from allennlp.tools.drop_eval import answer_json_to_strings
 from pytorch_pretrained_bert import BertModel, BertTokenizer
 import pickle
 
@@ -313,8 +314,12 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         with torch.no_grad():
             # Compute the metrics and add the tokenized input to the output.
             if metadata is not None:
-                output_dict["question_id"] = []
+                output_dict["passage_id"] = []
+                output_dict["query_id"] = []
+                output_dict["answer_json"] = []
                 output_dict["answer"] = []
+                output_dict['predicted_ability'] = []
+                output_dict['ground_truth'] = []
                 question_tokens = []
                 passage_tokens = []
                 for i in range(batch_size):
@@ -322,6 +327,9 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                         predicted_ability_str = self.answering_abilities[best_answer_ability[i]]
                     else:
                         predicted_ability_str = self.answering_abilities[0]
+
+                    output_dict['predicted_ability'].append(predicted_ability_str)
+                    
                     answer_json: Dict[str, Any] = {}
                     
                     # We did not consider multi-mention answers here
@@ -349,15 +357,18 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
-                        answer_json["value"], answer_json["spans"] = \
-                            self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i],  metadata[i]['question_passage_tokens'])
+                        answer_json["value"] = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'])
+                        answer_json["spans"] = answer_json["value"]
                     else:
                         raise ValueError(f"Unsupported answer ability: {predicted_ability_str}")
-
-                    output_dict["question_id"].append(metadata[i]["question_id"])
-                    output_dict["answer"].append(answer_json)
+                    
+                    output_dict["passage_id"].append(metadata[i]["passage_id"])
+                    output_dict["query_id"].append(metadata[i]["question_id"])
+                    output_dict["answer_json"].append(answer_json["value"])               
+                    output_dict["answer"].append(answer_json)                    
                     answer_annotations = metadata[i].get('answer_annotations', [])
                     if answer_annotations:
+                        output_dict['ground_truth'].append([answer_json_to_strings(annotation)[0] for annotation in answer_annotations])
                         self._drop_metrics(answer_json["value"], answer_annotations)
 
         return output_dict

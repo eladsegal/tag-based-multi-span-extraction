@@ -93,8 +93,19 @@ class MultiSpanHandler:
 
 
 def tokenlist_to_passage(token_text):
-    str_list = list(map(lambda x : x[2:] if len(x)>2 and x[:2]=="##" else " " + x, token_text))
+    str_list = list(map(token_to_text_in_sentence, token_text))
     string = "".join(str_list)
     if string[0] == " ":
         string = string[1:]
+
+    string = string.replace(" ' s", "'s")
     return string
+
+def token_to_text_in_sentence(token_text):
+    if len(x)>2 and x[:2]=="##":
+        return x[2:]
+
+    if x == "-":
+        return x
+
+    return " " + x
