@@ -26,7 +26,7 @@
     "train_data_path": "data/drop_dataset_train.json",
     "validation_data_path": "data/drop_dataset_dev.json",
     "trainer": {
-        "cuda_device": -1,
+        "cuda_device": 0,
         "keep_serialized_model_every_num_seconds": 3600,
         "num_epochs": 20,
         "optimizer": {
