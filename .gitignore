@@ -105,20 +105,10 @@ venv.bak/
 
 # visual studio	
 *.vs/
+*.vs*
 
 # PyCharm
 .idea/
-
-node_modules/
-.DS_Store
-*.tgz
-template/src/__tests__/__snapshots__/
-lerna-debug.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-/.changelog
-.npm/
 
 # dependencies
 /.pnp
