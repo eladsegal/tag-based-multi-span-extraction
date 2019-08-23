@@ -1,5 +1,6 @@
 from allennlp.modules import ConditionalRandomField, FeedForward
 from allennlp.modules.conditional_random_field import allowed_transitions
+from allennlp.nn import util
 import torch
 import numpy as np
 
@@ -15,14 +16,20 @@ class MultiSpanHandler:
 
         self.crf = crf
 
-    def forward(self, bert_out, span_labels, pad_mask, span_wordpiece_mask):       
-        if span_labels is None:
-            return {"loss": 0, "log_likelihood": torch.zeros(bert_out.shape[0]), "predicted_tags": []}
-
+    def forward(self, bert_out, span_labels, pad_mask, span_wordpiece_mask):            
         loss_mask = pad_mask
 
         if span_wordpiece_mask is not None:
             loss_mask = span_wordpiece_mask & loss_mask
+
+        non_bio_mask = None
+
+        if span_labels is not None:
+            non_bio_mask = torch.ones(loss_mask.shape[0], dtype=torch.long, device = bert_out.device)
+
+            for i in np.arange(loss_mask.shape[0]):
+                if span_labels[i].sum() <= 0:
+                    non_bio_mask[i] = 0 
 
         logits = self.multi_span_predictor(bert_out)
 
@@ -37,6 +44,8 @@ class MultiSpanHandler:
             log_numerator = self.crf._joint_likelihood(logits, span_labels, loss_mask)
 
             log_likelihood = log_numerator - log_denominator
+            
+            log_likelihood = util.replace_masked_values(log_likelihood, non_bio_mask, -1e7)
 
             result["log_likelihood"] = log_likelihood
             result["loss"] = -torch.sum(log_likelihood)
@@ -82,7 +91,7 @@ class MultiSpanHandler:
 
         spans = [tokenlist_to_passage(tokens) for tokens in spans_tokens]              
 
-        return spans
+        return list(set(spans))
 
 
 def tokenlist_to_passage(token_text):

@@ -6,19 +6,20 @@
             "pretrained_model": "bert-base-uncased"
         },
         "token_indexers": {
-            "tokens": {
-                "type": "bert-drop",
-                "pretrained_model": "bert-base-uncased"
-            }   
+          "tokens": {
+            "type": "bert-drop",
+            "pretrained_model": "bert-base-uncased"
+          }   
         },
-        "extra_numbers": [100, 1]
+        "extra_numbers": [ 100, 1 ],
+        "bio_types": [ "multiple_span" ]
     },
     "iterator": {
         "type": "basic",
         "batch_size": 12
     },
     "model": {
-        "type": "nabert++V2",
+        "type": "nabert++",
         "bert_pretrained_model": "bert-base-uncased",
         "dropout_prob": 0.1,
         "special_numbers": [100, 1]

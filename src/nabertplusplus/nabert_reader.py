@@ -34,6 +34,7 @@ class NaBertDropReader(DatasetReader):
                  max_spans: int = 10,
                  max_numbers_expression: int = 2,
                  answer_type: List[str] = None,
+                 bio_types: List[str] = None,
                  use_validated: bool = True,
                  wordpiece_numbers: bool = True,
                  number_tokenizer: Tokenizer = None,
@@ -51,6 +52,7 @@ class NaBertDropReader(DatasetReader):
         self.max_instances = max_instances
         self.max_numbers_expression = max_numbers_expression
         self.answer_type = answer_type
+        self.bio_types = bio_types or ['single_span', 'multiple_span']
         self.use_validated = use_validated
         self.wordpiece_numbers = wordpiece_numbers
         self.number_tokenizer = number_tokenizer or WordTokenizer()
@@ -328,7 +330,7 @@ class NaBertDropReader(DatasetReader):
             
             fields["num_spans"] = LabelField(num_spans, skip_indexing=True)
             
-            if answer_type in SPAN_ANSWER_TYPES or answer_type == SPAN_ANSWER_TYPE:
+            if answer_type in self.bio_types:
                 qp_token_indices: Dict[Token, List[int]] = defaultdict(list)
                 for i, token in enumerate(question_passage_tokens): 
                     qp_token_indices[token].append(i)
