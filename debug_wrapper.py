@@ -1,0 +1,38 @@
+#import ptvsd
+# Allow other computers to attach to ptvsd at this IP address and port.
+#ptvsd.enable_attach(address=('localhost', 5678), redirect_output=True)
+# Pause the program until a remote debugger is attached
+#ptvsd.wait_for_attach()
+
+import json
+import shutil
+import sys
+
+from allennlp.commands import main
+
+config_file = "configs/nabertplusplusV2.json"
+
+# Use overrides to train on CPU.
+USE_CPU = False
+overrides = json.dumps({"trainer": {"cuda_device": -1}}) if USE_CPU else json.dumps({})
+
+serialization_dir = "/tmp/debugger_train"
+
+# Training will fail if the serialization directory already
+# has stuff in it. If you are running the same training loop
+# over and over again for debugging purposes, it will.
+# Hence we wipe it out in advance.
+# BE VERY CAREFUL NOT TO DO THIS FOR ACTUAL TRAINING!
+shutil.rmtree(serialization_dir, ignore_errors=True)
+
+# Assemble the command into sys.argv
+sys.argv = [
+    "allennlp",  # command name, not used by main
+    "train",
+    config_file,
+    "-s", serialization_dir,
+    "--include-package", "src",
+    "-o", overrides,
+]
+
+main()
