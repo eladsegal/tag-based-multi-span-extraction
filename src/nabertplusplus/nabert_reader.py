@@ -114,8 +114,10 @@ class NaBertDropReader(DatasetReader):
                 question_id = question_answer["query_id"]
                 question_text = question_answer["question"].strip()
                 answer_annotations = []
+                specific_answer_type = None
                 if "answer" in question_answer:
-                    if self.answer_type is not None and get_answer_type(question_answer['answer']) not in self.answer_type:
+                    specific_answer_type = get_answer_type(question_answer['answer'])
+                    if self.answer_type is not None and specific_answer_type not in self.answer_type:
                         continue
                     answer_annotations.append(question_answer["answer"])
                 if self.use_validated and "validated_answers" in question_answer:
@@ -129,7 +131,8 @@ class NaBertDropReader(DatasetReader):
                                                  number_len,
                                                  question_id,
                                                  passage_id,
-                                                 answer_annotations)
+                                                 answer_annotations,
+                                                 specific_answer_type)
                 if instance is not None:
                     instances.append(instance)
 
@@ -149,8 +152,8 @@ class NaBertDropReader(DatasetReader):
                          number_len: List[int],
                          question_id: str = None, 
                          passage_id: str = None,
-                         answer_annotations: List[Dict] = None
-                         ) -> Union[Instance, None]:
+                         answer_annotations: List[Dict] = None,
+                         specific_answer_type: str = None) -> Union[Instance, None]:
         # Tokenize question and passage
         question_tokens = self.tokenizer.tokenize(question_text)
         qlen = len(question_tokens)
@@ -330,7 +333,7 @@ class NaBertDropReader(DatasetReader):
             
             fields["num_spans"] = LabelField(num_spans, skip_indexing=True)
             
-            if answer_type in self.bio_types:
+            if specific_answer_type in self.bio_types and (answer_type == SPAN_ANSWER_TYPE or answer_type in SPAN_ANSWER_TYPES):
                 qp_token_indices: Dict[Token, List[int]] = defaultdict(list)
                 for i, token in enumerate(question_passage_tokens): 
                     qp_token_indices[token].append(i)
