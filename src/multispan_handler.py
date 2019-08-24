@@ -91,7 +91,7 @@ class MultiSpanHandler:
 
         spans = [tokenlist_to_passage(tokens) for tokens in spans_tokens]              
 
-        return list(set(spans))
+        return list(set(spans)), list()
 
 
 def tokenlist_to_passage(token_text):

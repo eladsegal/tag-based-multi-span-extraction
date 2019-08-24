@@ -8,7 +8,7 @@ from allennlp.models.model import Model
 from allennlp.models.reading_comprehension.util import get_best_span
 from allennlp.nn import util, InitializerApplicator, RegularizerApplicator
 from allennlp.nn.util import masked_softmax
-from allennlp.training.metrics.drop_em_and_f1 import DropEmAndF1
+from src.custom_drop_em_and_f1 import CustomDropEmAndF1
 from allennlp.tools.drop_eval import answer_json_to_strings
 from pytorch_pretrained_bert import BertModel, BertTokenizer
 import pickle
@@ -95,7 +95,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
             self._multispan_crf = default_crf()
             self._multi_span_handler = MultiSpanHandler(bert_dim, self._multispan_predictor, self._multispan_crf, dropout_prob)
 
-        self._drop_metrics = DropEmAndF1()
+        self._drop_metrics = CustomDropEmAndF1()
         initializer(self)
 
     def summary_vector(self, encoding, mask, in_type = "passage"):
@@ -316,21 +316,20 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         with torch.no_grad():
             # Compute the metrics and add the tokenized input to the output.
             if metadata is not None:
-                output_dict["passage_id"] = []
-                output_dict["query_id"] = []
-                output_dict["answer_json"] = []
-                output_dict["answer"] = []
-                output_dict['predicted_ability'] = []
-                output_dict['ground_truth'] = []
-                question_tokens = []
-                passage_tokens = []
+                if not self.training:
+                    output_dict["passage_id"] = []
+                    output_dict["query_id"] = []
+                    output_dict["answer"] = []
+                    output_dict["predicted_ability"] = []
+                    output_dict["maximizing_ground_truth"] = []
+                    output_dict["em"] = []
+                    output_dict["f1"] = []
+
                 for i in range(batch_size):
                     if len(self.answering_abilities) > 1:
                         predicted_ability_str = self.answering_abilities[best_answer_ability[i]]
                     else:
                         predicted_ability_str = self.answering_abilities[0]
-
-                    output_dict['predicted_ability'].append(predicted_ability_str)
                     
                     answer_json: Dict[str, Any] = {}
                     
@@ -359,19 +358,24 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
-                        answer_json["value"] = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'])
-                        answer_json["spans"] = answer_json["value"]
+                        answer_json["value"], answer_json["spans"] = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'])
                     else:
                         raise ValueError(f"Unsupported answer ability: {predicted_ability_str}")
                     
-                    output_dict["passage_id"].append(metadata[i]["passage_id"])
-                    output_dict["query_id"].append(metadata[i]["question_id"])
-                    output_dict["answer_json"].append(answer_json["value"])               
-                    output_dict["answer"].append(answer_json)                    
+                    maximizing_ground_truth = None
+                    em, f1 = None, None
                     answer_annotations = metadata[i].get('answer_annotations', [])
                     if answer_annotations:
-                        output_dict['ground_truth'].append([answer_json_to_strings(annotation)[0] for annotation in answer_annotations])
-                        self._drop_metrics(answer_json["value"], answer_annotations)
+                        (em, f1), maximizing_ground_truth = self._drop_metrics.call(answer_json["value"], answer_annotations)
+
+                    if not self.training:
+                        output_dict["passage_id"].append(metadata[i]["passage_id"])
+                        output_dict["query_id"].append(metadata[i]["question_id"])
+                        output_dict["answer"].append(answer_json)
+                        output_dict["predicted_ability"].append(predicted_ability_str)
+                        output_dict["maximizing_ground_truth"].append(maximizing_ground_truth)
+                        output_dict["em"].append(em)
+                        output_dict["f1"].append(f1)
 
         return output_dict
     
@@ -683,5 +687,9 @@ class NumericallyAugmentedBERTPlusPlus(Model):
     
     
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
-        exact_match, f1_score = self._drop_metrics.get_metric(reset)
-        return {'em': exact_match, 'f1': f1_score}
+        (exact_match, f1_score), scores_per_answer_type = self._drop_metrics.get_metric(reset)
+        metrics = {'em': exact_match, 'f1': f1_score}
+        for answer_type, (answer_type_exact_match, answer_type_f1_score) in scores_per_answer_type.items():
+            metrics[f'_em_{answer_type}'] = answer_type_exact_match 
+            metrics[f'_f1_{answer_type}'] = answer_type_f1_score 
+        return metrics

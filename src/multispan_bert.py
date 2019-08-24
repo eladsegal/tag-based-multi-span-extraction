@@ -90,9 +90,9 @@ class MultiSpanBert(Model):
                 output["query_id"].append(metadata[i]["question_id"])
                 answer_annotations = metadata[i].get('answer_annotations', [])
                 if answer_annotations:                
-                    answer_spans = self.multi_span_handler.decode_spans_from_tags(predicted_tags[i],  metadata[i]['question_passage_tokens'])
-                    output['answer'].append(answer_spans)                    
-                    self._drop_metrics(answer_spans, answer_annotations)
+                    answer_value, answer_spans = self.multi_span_handler.decode_spans_from_tags(predicted_tags[i],  metadata[i]['question_passage_tokens'])
+                    output['answer'].append(answer_value)                    
+                    self._drop_metrics(answer_value, answer_annotations)
 
                     output['ground_truth'].append([answer_json_to_strings(annotation)[0] for annotation in answer_annotations])
 
