@@ -1,4 +1,4 @@
-from typing import Tuple, List, Union
+from typing import Tuple, List, Union, Dict
 
 from collections import defaultdict
 
@@ -60,7 +60,7 @@ class CustomDropEmAndF1(Metric):
         return (exact_match, f1_score), ground_truth_answer_strings[maximizing_ground_truth_index]
 
     @overrides
-    def get_metric(self, reset: bool = False) -> Tuple[float, float]:
+    def get_metric(self, reset: bool = False) -> Tuple[Tuple[float, float], Dict[str, float]]:
         """
         Returns
         -------
@@ -78,7 +78,7 @@ class CustomDropEmAndF1(Metric):
         
         if reset:
             self.reset()
-        return exact_match, f1_score
+        return (exact_match, f1_score), scores_per_answer_type
 
     @overrides
     def reset(self):
