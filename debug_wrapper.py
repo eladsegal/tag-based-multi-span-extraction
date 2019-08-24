@@ -1,20 +1,23 @@
-#import ptvsd
-# Allow other computers to attach to ptvsd at this IP address and port.
-#ptvsd.enable_attach(address=('localhost', 5678), redirect_output=True)
-# Pause the program until a remote debugger is attached
-#ptvsd.wait_for_attach()
-
 import json
 import shutil
 import sys
 
 from allennlp.commands import main
 
-config_file = "configs/nabertplusplusV2.json"
+config_file = "configs/nabertplusplusV2_only_bio.json"
 
-# Use overrides to train on CPU.
-USE_CPU = False
-overrides = json.dumps({"trainer": {"cuda_device": -1}}) if USE_CPU else json.dumps({})
+overrides_dict = {}
+USE_CPU = False # Use overrides to train on CPU.
+overrides_dict['train_data_path'] = 'data/drop_sample.json'
+overrides_dict['validation_data_path'] = None
+
+
+
+if USE_CPU:
+    overrides_dict['trainer'] = {"cuda_device": -1}
+
+overrides = json.dumps(overrides_dict)
+
 
 serialization_dir = "/tmp/debugger_train"
 
