@@ -72,9 +72,9 @@ class CustomDropEmAndF1(Metric):
         
         scores_per_answer_type = {}
         for answer_type, count in self._answer_type_count.items():
-            exact_match = self._answer_type_em[answer_type] / count if count > 0 else 0
-            f1_score = self._answer_type_f1[answer_type] / count if count > 0 else 0
-            scores_per_answer_type[answer_type] = exact_match, f1_score
+            type_exact_match = self._answer_type_em[answer_type] / count if count > 0 else 0
+            type_f1_score = self._answer_type_f1[answer_type] / count if count > 0 else 0
+            scores_per_answer_type[answer_type] = type_exact_match, type_f1_score
         
         if reset:
             self.reset()
