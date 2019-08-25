@@ -1,0 +1,3073 @@
+{
+  "nfl_1184": {
+    "passage": " Hoping to rebound from their loss to the Patriots, the Raiders stayed at home for a Week 16 duel with the Houston Texans.  Oakland would get the early lead in the first quarter as quarterback JaMarcus Russell completed a 20-yard touchdown pass to rookie wide receiver Chaz Schilens.  The Texans would respond with fullback Vonta Leach getting a 1-yard touchdown run, yet the Raiders would answer with kicker Sebastian Janikowski getting a 33-yard and a 30-yard field goal.  Houston would tie the game in the second quarter with kicker Kris Brown getting a 53-yard and a 24-yard field goal. Oakland would take the lead in the third quarter with wide receiver Johnnie Lee Higgins catching a 29-yard touchdown pass from Russell, followed up by an 80-yard punt return for a touchdown.  The Texans tried to rally in the fourth quarter as Brown nailed a 40-yard field goal, yet the Raiders' defense would shut down any possible attempt.",
+    "qa_pairs": [
+      {
+        "question": "Who scored the first touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Chaz Schilens"
+          ]
+        },
+        "query_id": "f37e81fa-ef7b-4583-b671-762fc433faa9",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Chaz Schilens"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "JaMarcus Russell"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many field goals did Kris Brown kick?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "ac6ba235-3024-4f63-a6ab-730a14def4cb",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Which team won the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Raiders"
+          ]
+        },
+        "query_id": "2c7c93f6-69ed-47cc-a5af-94a00c185a26",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Raiders"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Raiders"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Raiders"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "the Raiders"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "the Raiders"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many field goals did both teams kick in the first half?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "7dfd2b64-f39e-4bb4-aeb0-1900adda6018",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many more yards was Kris Browns's first field goal over his second?",
+        "answer": {
+          "number": "29",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "121a8f57-7752-4373-a9ba-748b2c577cd2",
+        "validated_answers": [
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "20",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Who threw the longest pass?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Russell"
+          ]
+        },
+        "query_id": "05d06269-191b-4638-97ca-e1304e7883d1",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "JaMarcus Russell"
+            ]
+          },
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Russell"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "JaMarcus Russell"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Russell"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many yards was the longest touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "80-yard"
+          ]
+        },
+        "query_id": "01c67c32-9281-4d13-afd2-33aa922994dc",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "80-yard punt return"
+            ]
+          },
+          {
+            "number": "80",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "80",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "80",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "80",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many field goals did Sebastian Janikowski and Kris Brown both score each?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "03fdc8a0-d62b-49a0-8087-af92e6659650",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "5",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many yards difference is there between Sebastian Janikowski's longest field goal and his shortest field goal?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "17bdcfb1-8ad9-46b5-8a3b-1f9769dfd60a",
+        "validated_answers": [
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many yards difference is there between Kris Brown's longest and shortest field goals?",
+        "answer": {
+          "number": "29",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "d4547161-dd97-4164-93a1-144986d94c51",
+        "validated_answers": [
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many yards longer was the 80-yard punt than the touchdown pass from Russell to Johnnie Lee Higgins?",
+        "answer": {
+          "number": "51",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "0aa153e9-057a-4347-acb7-8114cb1d68e8",
+        "validated_answers": [
+          {
+            "number": "51",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "51",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "51",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "51",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many touchdowns were scored in the game?",
+        "answer": {
+          "number": "4",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "142b8af7-b9b0-446b-9cb6-a6940b80461f",
+        "validated_answers": [
+          {
+            "number": "4",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "4",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many of the touchdowns were passing touchdowns?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "4fbb0c95-06a8-4205-9edb-156a22eecaa7",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many yards was the longest passing touchdown?",
+        "answer": {
+          "number": "29",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "0a92ef8a-1780-4379-8ab8-6f2939fce562",
+        "validated_answers": [
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many yards longer was the longest passing touchdown than the shortest?",
+        "answer": {
+          "number": "9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "43810a23-d66e-49bb-816b-16f5a331fbb0",
+        "validated_answers": [
+          {
+            "number": "9",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "9",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many field goals were scored in the game?",
+        "answer": {
+          "number": "5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "084814c7-cc64-40a6-a308-4de211d531b4",
+        "validated_answers": [
+          {
+            "number": "5",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "5",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many yards was the longest field goal in the game?",
+        "answer": {
+          "number": "53",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "17e35029-a5d0-44d3-844e-edd0759d5797",
+        "validated_answers": [
+          {
+            "number": "53",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "53",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many yards was the shortest field goal in the game?",
+        "answer": {
+          "number": "24",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "fe7754d3-322e-41b2-b1b7-a9bc0cbca9a2",
+        "validated_answers": [
+          {
+            "number": "24",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "24",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many yards longer was the longest field goal than the shortest?",
+        "answer": {
+          "number": "29",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "8b442d27-241b-4fd9-87d4-1e5bee19cb2e",
+        "validated_answers": [
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "29",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/Earl's_Court"
+  },
+  "nfl_995": {
+    "passage": " Still searching for their first win, the Bengals flew to Texas Stadium for a Week 5 interconference duel with the Dallas Cowboys.  In the first quarter, Cincinnati trailed early as Cowboys kicker Nick Folk got a 30-yard field goal, along with RB Felix Jones getting a 33-yard TD run.  In the second quarter, Dallas increased its lead as QB Tony Romo completed a 4-yard TD pass to TE Jason Witten.  The Bengals would end the half with kicker Shayne Graham getting a 41-yard and a 31-yard field goal. In the third quarter, Cincinnati tried to rally as QB Carson Palmer completed an 18-yard TD pass to WR T. J. Houshmandzadeh.  In the fourth quarter, the Bengals got closer as Graham got a 40-yard field goal, yet the Cowboys answered with Romo completing a 57-yard TD pass to WR Terrell Owens.  Cincinnati tried to come back as Palmer completed a 10-yard TD pass to Houshmandzadeh (with a failed 2-point conversion), but Dallas pulled away with Romo completing a 15-yard TD pass to WR Patrick Crayton.",
+    "qa_pairs": [
+      {
+        "question": "Which Bengals receiver scored two touchdowns?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "T. J. Houshmandzadeh"
+          ]
+        },
+        "query_id": "5b6a9699-f8a9-44f4-8912-0adfa49decc0",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Houshmandzadeh"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "T. J. Houshmandzadeh"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "Who caught the last touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "WR Patrick Crayton"
+          ]
+        },
+        "query_id": "3e0f9c3d-2bd8-46b4-960d-42457b3e2802",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Patrick Crayton"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Patrick Crayton"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many field goals did Shayne Graham kick in the first half?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "e2169f5d-b3b9-4931-8bfa-f99b9bc4348e",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Which player had the longest rushing TD?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Felix Jones"
+          ]
+        },
+        "query_id": "ddbb57c6-c1d5-4a25-93fd-9bea7cf5ff50",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Terrell Owens"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Felix Jones"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "What was the longest TD pass of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "57-yard"
+          ]
+        },
+        "query_id": "405ab3fb-9392-4a23-9589-8c9c5d9b9508",
+        "validated_answers": [
+          {
+            "number": "57",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "57",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many second quarter field goals did the Bengals get?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "66eed2c2-e1d9-4092-b21d-5dc2551a3118",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Which team scored the final TD of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Dallas"
+          ]
+        },
+        "query_id": "bdf5020a-ec3e-49fb-925c-4a967b6bb911",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Dallas"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Dallas"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many touchdowns did T.J. Houshmandzadeh have?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "08c59a80-401a-446b-966b-7a87818b20f4",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many touchdowns did Jones have?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "fec21716-8ca2-4565-9f88-d6e1cb74ce3a",
+        "validated_answers": [
+          {
+            "number": "1",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "1",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many passed did Houshmandzadeh catch?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "3c6c2eaf-12ea-40ab-963d-c029828634e4",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many touchdowns did Crayton have?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "e1e183dc-566f-4bcf-ab3e-c0df5b1a292b",
+        "validated_answers": [
+          {
+            "number": "1",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "1",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many wins did the Bengals have before this game?",
+        "answer": {
+          "number": "0",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "eaf004f3-b98b-4456-ae5e-fade5744f222",
+        "validated_answers": [
+          {
+            "number": "0",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "0",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "0",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many points did Dallas score in the first quarter?",
+        "answer": {
+          "number": "10",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "4d3c49da-0c96-466d-a20b-e83e68fda2de",
+        "validated_answers": [
+          {
+            "number": "17",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "10",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many field goals did the Bengals have in the first half?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "f38d7fa8-910c-44fd-b6ee-026fa5d585fd",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Which team scored the least points?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Bengals"
+          ]
+        },
+        "query_id": "ae75262b-f7d5-466f-a24b-e1ee32b20e02",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Bengals"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Cowboys"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many field goals were there in the fourth quarter?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "375e6679-1834-4769-97cf-7cc04196e43c",
+        "validated_answers": [
+          {
+            "number": "1",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "1",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "1",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "1",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "1",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many touchdown passes did Tony Romo throw?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "ee308676-57f9-4932-af29-c756bf7fe15d",
+        "validated_answers": [
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Which player had the longest touchdown reception?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "WR Terrell Owens"
+          ]
+        },
+        "query_id": "0f3ed05c-4173-4db4-97eb-e30f7342bcb5",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Terrell Owens"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Terrell Owens"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Terrell Owens"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Terrell Owens"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many times did the Cowboys score in the first half?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "37b4f978-9915-457d-be0a-691e2373fd89",
+        "validated_answers": [
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many first-half field goals were kicked by Shayne Graham?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "a9e66c93-3995-4aa7-b065-a3d679dad2ce",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/Earl's_Court"
+  },
+  "nfl_2684": {
+    "passage": " Coming off their road loss to Green Bay, Washington returned home for a duel at FedExField with the Detroit Lions, matching up with them for the first time since 2010, but the first time in DC since 2007. After teams exchanged punts in the first, Washington struck first when Lions quarterback Matthew Stafford was intercepted by Redskins cornerback DeAngelo Hall who returned the interception 9 yards for a 7-0 Washington lead.Detroit responded right away, however, as running back Joique Bell broke numerous tackles on his way to a 12-yard touchdown, evening the score at 7-7. The first quarter would conclude without any further scoring. Early in the second, Detroit finished off a drive with Stafford finding tight end Joseph Fauria for a 5-yard score to give Detroit the 14-7 lead. Later in the second, after a few missed opportunities by both teams, Redskins running back Alfred Morris took off for a 30-yard score, evening the score at 14-14 late in the second. Washington's much-maligned defense, however, could not hold it and Detroit retook the lead before halftime thanks to a David Akers 32-yard field goal, giving Detroit a 17-14 edge and halfway to its first win ever in Washington. Early in the third, Washington was able to equalize with John Potter making his first career field goal from 43 yards out.Both teams failed to score again, and the teams went into the final quarter tied at 17. Early in the fourth, Detroit took the lead again, this time by way of Akers hitting a 28-yard field goal, giving Detroit a 20-17 lead. On Washington's ensuing possession, it appeared as if Washington took the lead, as Robert Griffin III found wide receiver Aldrick Robinson for a 57-yard score and an apparent 24-20 lead. However, upon video replay, it showed Robinson was bobbling the ball as he fell to the ground, thus the apparent pass was ruled incomplete, and Washington could not score again, punting. Detroit marched down the field and all but sealed the deal, as Stafford connected with superstar Calvin Johnson with just under four minutes remaining in the game. Washington didn't give up, however, and John Potter connected from 21 yards out to cut the lead to 27-20. However, after not recovering the onside kick, Washington needed to stop Detroit. They did this, and got the ball back with just under 50 seconds remaining. Washington got to midfield, but Griffin's hail mary pass was off the mark, and Washington lost once again. With the loss. Washington fell to 0-3 for the first time since 2001, and also lost to the Detroit Lions for the third straight time, having not beaten them since 2008 when they didn't even manage to win a single game. However, Washington lost to Detroit at home for the first time since 1935, when they were still the Boston Redskins. They had never, prior to this day, lost to Detroit in Washington or Landover.",
+    "qa_pairs": [
+      {
+        "question": "What was the score at the end of the first quarter?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "7-7"
+          ]
+        },
+        "query_id": "23c5518b-f815-48f9-9bd8-c2d6d2623385",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "7-7"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "7-7"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "7\u20137"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "7-7"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many points were scored in the first quarter?",
+        "answer": {
+          "number": "7",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "48970b45-42fc-4e9d-85b8-44c7f1c5b1dc",
+        "validated_answers": [
+          {
+            "number": "14",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "14",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "14",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "how many yards did Hall intercept?",
+        "answer": {
+          "number": "9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "43700c9b-bf7a-4db3-968a-235107dc8430",
+        "validated_answers": [
+          {
+            "number": "9",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "9",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "9",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "how many yards did Morris take off?",
+        "answer": {
+          "number": "30",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "e9636c00-bafb-4bc4-a5a3-1be4104e6c8f",
+        "validated_answers": [
+          {
+            "number": "30",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "30",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "30",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "how many yards did Akers lead with?",
+        "answer": {
+          "number": "32",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "4f50b238-b6e6-410e-a94c-ed0547137f01",
+        "validated_answers": [
+          {
+            "number": "32",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "32",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "32",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "how many yards did Potter make?",
+        "answer": {
+          "number": "43",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "22ca04bb-c2a0-44b1-89ca-bc675b725f1c",
+        "validated_answers": [
+          {
+            "number": "64",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "64",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "64",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "how many yards did akers hit?",
+        "answer": {
+          "number": "28",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "5fa158fe-15c0-4aed-a0f4-1b15f36c033f",
+        "validated_answers": [
+          {
+            "number": "28",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "28",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "60",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "how many yards did Robinson score?",
+        "answer": {
+          "number": "57",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "90bdfffd-1344-4f84-92a9-ff8f43f9c9fd",
+        "validated_answers": [
+          {
+            "number": "57",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "57",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "0",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Which team did the Packers win in the prior weeks game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Washington"
+          ]
+        },
+        "query_id": "2231ec20-d9de-44f5-8923-82f9acedc78e",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Redskins"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Redskins"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many total field goals were kicked in the game?",
+        "answer": {
+          "number": "4",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "cbc985a5-d1d4-4098-87cf-87e6ff3515f3",
+        "validated_answers": [
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Which player scored the final touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Calvin Johnson"
+          ]
+        },
+        "query_id": "efabf8d7-b400-445d-9194-ad163c53b7fb",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "John Potter"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "John Potter"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many total points were scored in the game?",
+        "answer": {
+          "number": "47",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "41a51703-271e-42c9-abbc-cebb9ffa6038",
+        "validated_answers": [
+          {
+            "number": "47",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "47",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many points did the Lions win by?",
+        "answer": {
+          "number": "7",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "0cb83948-14bd-4d18-9c85-e91acad81d70",
+        "validated_answers": [
+          {
+            "number": "7",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "7",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many points ahead was Detroit over Washington when Akers hit his 28-yard field goal?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "82868589-492b-4ee2-a6b8-2de6cd57adda",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "tied at 17"
+            ]
+          },
+          {
+            "number": "0",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "After Akers 32-yard field goal, how many points behind was Washington?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "35ee11f4-a4dd-4cd6-8907-54b034077342",
+        "validated_answers": [
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "3",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many points were scored in the first half?",
+        "answer": {
+          "number": "31",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "4993a0cf-744a-4581-b5a7-bd4c75d8f2b4",
+        "validated_answers": [
+          {
+            "number": "31",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "31",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many total points were scored?",
+        "answer": {
+          "number": "47",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "e0668d77-5c82-4dd6-8f73-30aa3fd54796",
+        "validated_answers": [
+          {
+            "number": "47",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "47",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many points did Detroit win by?",
+        "answer": {
+          "number": "7",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "0a90795c-3f54-4f5a-9d1f-4e9b6bd744eb",
+        "validated_answers": [
+          {
+            "number": "7",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "7",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many touchdowns were scored in the first quarter?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "80cc359b-dd90-4e8e-9029-5aea3955bca8",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Which player scored more field goals, David Akers or John Potter ?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "David Akers"
+          ]
+        },
+        "query_id": "6fabe697-1ef3-4c86-9983-3045b754b3df",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "David Akers"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "David Akers"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "Which player scored the first touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "DeAngelo Hall"
+          ]
+        },
+        "query_id": "d7a6006c-ee51-4881-a701-43bc73bb046c",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "DeAngelo Hall"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "DeAngelo Hall"
+            ]
+          }
+        ]
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/Earl's_Court"
+  },
+  "history_655": {
+    "passage": "In 1085, Guadalajara was retaken by the Christian forces of Alfonso VI . The chronicles say that the Christian army was led by Alvar Fanez de Minaya, one of the lieutenants  of El Cid. From 1085 until the Battle of Las Navas de Tolosa in 1212, the city suffered wars against the Almoravid and the Almohad Empires. In spite of the wars, the Christian population could definitely settle down in the area thanks to the repopulation with people from the North  who received their first fuero in 1133 from Alfonso VII.In 1219, the king Fernando III gave a new fuero to the city .During the reign of Alfonso X of Castile, the protection of the king allowed the city to develop its economy by protecting merchants and allowing markets.",
+    "qa_pairs": [
+      {
+        "question": "How many years did the city suffer wars against Almoravid and the Almohad Empires?",
+        "answer": {
+          "number": "127",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "228c133a-45ef-4827-b55a-9f2e6ad99a86",
+        "validated_answers": [
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many years after the people of the North received their first fuero from Alfonso VII did king Fernando III give a new fuero to the city?",
+        "answer": {
+          "number": "86",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "1dd611e3-4757-4e79-b677-a26f2f1164ce",
+        "validated_answers": [
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many years before Guadalajara received there first fuero was the city retaken by christian forces?",
+        "answer": {
+          "number": "48",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "e7acfedb-5fd2-43dc-9d5a-08d9d956ff89",
+        "validated_answers": [
+          {
+            "number": "48",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "48",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many years after Guadalajara received there first fuero did the receive a new one?",
+        "answer": {
+          "number": "86",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c64b21c5-b4d0-4b10-ab4a-c7837bea8c01",
+        "validated_answers": [
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many years passed after Guadalajara was retaken and the Battle of Las Navas de Tolosa?",
+        "answer": {
+          "number": "127",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c09ad09b-2ad7-485d-a5cb-9473a5d7d7b5",
+        "validated_answers": [
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many years passed between the city receiving its first fuero and its new one from king Fernando III?",
+        "answer": {
+          "number": "86",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "7cededcf-aa82-44cb-9612-006add18dd08",
+        "validated_answers": [
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many years passed from when Guadalajara was retaken by the Christian forces of Alfonso VI  until the Battle of Las Navas de Tolosa?",
+        "answer": {
+          "number": "127",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2b8fef21-e463-40c0-a204-34dccb9251c9",
+        "validated_answers": [
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Which occured first, the Battle of Las Navas de Tolosa or king Fernando III gave a new fuero to the city?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Battle of Las Navas de Tolosa"
+          ]
+        },
+        "query_id": "874e3050-9118-4edd-b2d4-744105572c9d",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Battle of Las Navas de Tolosa"
+            ]
+          },
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": [
+              "Battle of Las Navas de Tolosa"
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How many empires attacked Guadalajara?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "342038f4-c59b-4cb1-a802-50f895471124",
+        "validated_answers": [
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "2",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "When did the first battle against Guadalajara take place?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": "1085"
+          },
+          "spans": []
+        },
+        "query_id": "95b02abd-70ba-4aa6-b215-1a83d63cfd8b",
+        "validated_answers": [
+          {
+            "number": "",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": "1085"
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many years after the last Battle IN Guadalajara did king Fernando III give a new fuero to the city?",
+        "answer": {
+          "number": "7",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "45f95b62-3ce8-473d-ac2e-2f54d875df34",
+        "validated_answers": [
+          {
+            "number": "7",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "48",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "7",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "134",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "7",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "134",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "7",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many years went by between the king giving a new fuero to the city and the first fuero?",
+        "answer": {
+          "number": "86",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6dda0444-c311-4fb9-ae03-3aa3660e6e38",
+        "validated_answers": [
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "86",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "How many years did the city suffer wars against the Almoravid and Almohad Empires?",
+        "answer": {
+          "number": "127",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "cebb3478-5456-4e66-82fa-031c875fea18",
+        "validated_answers": [
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          },
+          {
+            "number": "127",
+            "date": {
+              "day": "",
+              "month": "",
+              "year": ""
+            },
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/Earl's_Court"
+  }
+}

@@ -1,0 +1,4760 @@
+{
+  "nfl_2201": {
+    "passage": "To start the season, the Lions traveled south to Tampa, Florida to take on the Tampa Bay Buccaneers. The Lions scored first in the first quarter with a 23-yard field goal by Jason Hanson. The Buccaneers tied it up with a 38-yard field goal by Connor Barth, then took the lead when Aqib Talib intercepted a pass from Matthew Stafford and ran it in 28 yards. The Lions responded with a 28-yard field goal. In the second quarter, Detroit took the lead with a 36-yard touchdown catch by Calvin Johnson, and later added more points when Tony Scheffler caught an 11-yard TD pass. Tampa Bay responded with a 31-yard field goal just before halftime. The second half was relatively quiet, with each team only scoring one touchdown. First, Detroit's Calvin Johnson caught a 1-yard pass in the third quarter. The game's final points came when Mike Williams of Tampa Bay caught a 5-yard pass.  The Lions won their regular season opener for the first time since 2007",
+    "qa_pairs": [
+      {
+        "question": "How many points did the buccaneers need to tie in the first?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "f16c0ee7-f131-4a8b-a6ac-4d275ea68066"
+      },
+      {
+        "question": "How many field goals did the Lions score?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c9582e03-b01b-42ed-83e0-b90a5334aefa"
+      },
+      {
+        "question": "How long was the Lion's longest field goal?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "28-yard"
+          ]
+        },
+        "query_id": "f703d43d-73fa-4fda-8913-d81bd5569700"
+      },
+      {
+        "question": "Who caught the touchdown for the fewest yard?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Mike Williams"
+          ]
+        },
+        "query_id": "2fd4f473-af2b-44ce-929a-20c82fa6be2c"
+      },
+      {
+        "question": "Who caught the shortest touchdown pass?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Calvin Johnson"
+          ]
+        },
+        "query_id": "6592e06d-4ad6-484f-a9a5-5cb72c76dfee"
+      },
+      {
+        "question": "How many field goals were scored in the first quarter?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "99a50d10-ec43-4040-8c8e-2eb5bafe1906"
+      },
+      {
+        "question": "How many yards was the shortest touchdown scoring play?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "af0f2cbd-abf2-4570-ae0e-89f335da4f60",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many touchdowns were scored in the second quarter?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c93cd84b-d76c-48e3-b73b-ef1d67003e4b",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Which player scored the first points of the game for Tampa Bay?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Connor Barth"
+          ]
+        },
+        "query_id": "a237ff8b-a6a3-4c68-baf8-f883ec5dac7e",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many yards Hanson score with in the first?",
+        "answer": {
+          "number": "23",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "e1afeb0e-9ad7-4733-bcc2-c977344de287",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many field goals were made in the first quarter?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "2f4bb460-7f65-411f-9cd3-b3653a534942",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Who threw the first touchdown pass of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Matthew Stafford"
+          ],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "b04a6f58-2860-445b-8770-d309a467fe30",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many touchdowns were scored in the 2nd half?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "76e0e522-14a7-4073-9138-0f2a7b039333",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Who caught the longest touchdown reception of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Calvin Johnson"
+          ],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "3810d97f-133b-4433-b615-3d0b1b2da032",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many points were scored first?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "33f9f7bd-518b-45ae-86d5-c1475167d54f"
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "nfl_478": {
+    "passage": "Trying to snap a two-game skid, the Bills flew to Gillette Stadium for a Week 3 divisional fight with the New England Patriots.  In the first quarter, QB J. P. Losman was immediately injured on the first offensive play of the game.  He would finish the series, but ended up on the bench for the rest of the game.  After New England took the lead with kicker Stephen Gostkowski's 24-yard field goal, rookie QB Trent Edwards played the rest of the game for Buffalo.  The Bills would get their only score of the game as RB Marshawn Lynch got an 8-yard TD run, and a Rian Lindell extra point put the Bills ahead surprisingly 7-3.  However, in the second quarter, the Patriots were able to open up their running game when Bills rookie standout Paul Posluszny was lost due to a broken arm. This left passing lanes open, and for the rest of the game, the Patriots dominated. QB Tom Brady's 8-yard TD pass to TE Benjamin Watson and a 3-yard TD pass to WR Randy Moss made it 17-7 at the half.  In the third quarter, New England continued its conquest with Brady's 4-yard TD pass to WR Jabar Gaffney and RB Sammy Morris' 4-yard TD run.  In the fourth quarter, the Patriots ended the day with Brady and Moss hooking up with each other again on a 45-yard TD pass.",
+    "qa_pairs": [
+      {
+        "question": "How many games had the Bills won before this game?",
+        "answer": {
+          "number": "0",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "8d865c44-8b45-42f4-bd6a-65651f363667"
+      },
+      {
+        "question": "Which team scored first?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "New England"
+          ]
+        },
+        "query_id": "81e9d225-4234-4391-ab00-2488b066d7f8"
+      },
+      {
+        "question": "Which team was losing at the half?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Bills"
+          ]
+        },
+        "query_id": "c901a338-d8c2-4fe9-acf0-ef7aef137d94"
+      },
+      {
+        "question": "How many quarters  did Trent Edwards play?",
+        "answer": {
+          "number": "4",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "16916544-1e32-4dc2-affb-924530416d96"
+      },
+      {
+        "question": "How many points did Moss get at the end of the game?",
+        "answer": {
+          "number": "6",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "3c7eab55-3f16-482a-bae4-f1bb8c99219e"
+      },
+      {
+        "question": "How many field goals were in the game?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "926aff87-8f52-4c37-a6e1-b9439e1b292d"
+      },
+      {
+        "question": "How many points were scored in the first half?",
+        "answer": {
+          "number": "24",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "f341fa0a-7df1-4608-b324-a520bdbdf06b"
+      },
+      {
+        "question": "How many yards was the longest pass?",
+        "answer": {
+          "number": "45",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "ae7c4737-8662-471c-a3be-430ba8a0cd75"
+      },
+      {
+        "question": "Who threw for more touchdowns in the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Tom Brady"
+          ]
+        },
+        "query_id": "1478859c-7be8-4f13-aca3-57c739b9737b"
+      },
+      {
+        "question": "How many touchdowns did Randy Moss catch?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "f8ab82c3-d1f4-46e7-8efd-9928d6d55b59"
+      },
+      {
+        "question": "How many yards for a touchdown did randy moss catch?",
+        "answer": {
+          "number": "48",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "37cbfb87-8c3f-4095-9a66-8b32bc0cc308"
+      },
+      {
+        "question": "How many points were scored in the first half?",
+        "answer": {
+          "number": "24",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2f0a329c-eb28-4b7f-af99-bfcd15456722",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many touchdown passes did Brady throw in the second quarter?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c43e5838-b8d9-4ad3-92a9-5f5b0f1743df",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many times did the Bills score in the game?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6585df06-0312-4f15-bf64-b3f601f1f30e",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Which players scored exactly 8-yard touchdowns?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Marshawn Lynch",
+            "Benjamin Watson"
+          ]
+        },
+        "query_id": "f88ed123-ec60-47d6-822e-3b2e4967beb5",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards were all Brady's TD passes combined?",
+        "answer": {
+          "number": "15",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "d33e83dc-41d1-4545-8d27-5a6827c1de8e",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more touchdowns did the Patriots score than the Bills?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "1c65652a-11c6-43df-a24a-5a4812d2fe2c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many points were scored in the first half?",
+        "answer": {
+          "number": "24",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "d74aed55-dc80-4c07-a04a-c1ce252d8f5e",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "history_690": {
+    "passage": "The French king, John II, had been held captive in England. The Treaty of Br\u00e9tigny set his ransom at 3\u00a0million\u00a0crowns and allowed for hostages to be held in lieu of John. The hostages included two of his sons, several princes and nobles, four inhabitants of Paris, and two citizens from each of the nineteen principal towns of France. While these hostages were held, John returned to France to try and raise funds to pay the ransom. In 1362 John's son Louis of Anjou, a hostage in English-held Calais, escaped captivity. So, with his stand-in hostage gone, John felt honor-bound to return to captivity in England. The French crown had been at odds with Navarre  since 1354, and in 1363 the Navarrese used the captivity of John II in London and the political weakness of the Dauphin to try to seize power. Although there was no formal treaty, Edward III supported the Navarrese moves, particularly as there was a prospect that he might gain control over the northern and western provinces as a consequence. With this in mind, Edward deliberately slowed the peace negotiations. In 1364, John II died in London, while still in honourable captivity. Charles V succeeded him as king of France. On 7 May 1364, one month after the dauphin's accession and three days before his coronation as Charles V, the Navarrese suffered a crushing defeat at the Battle of Cocherel.",
+    "qa_pairs": [
+      {
+        "question": "How many years before Navarrase used the captivity of John II?",
+        "answer": {
+          "number": "9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "4c219d65-8fe2-4029-9da0-70f5e2857bdb"
+      },
+      {
+        "question": "What did one of John II's replacements do in captivity?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "escaped captivity"
+          ]
+        },
+        "query_id": "c420c10d-1384-47f1-9850-ec9269570ca8"
+      },
+      {
+        "question": "How many years was the French crown at odds with Navarre before Charles V succeeded as king?",
+        "answer": {
+          "number": "9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6977dd13-98cc-4bf2-b73b-220f686d69f4"
+      },
+      {
+        "question": "How many more inhabitants of Paris than sons of John II could be hostages held in lieu?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "67e071b5-0839-4f4a-bce2-ff874d068f6b"
+      },
+      {
+        "question": "How many citizens from principal towns in France could be held as hostage in lieu of John II?",
+        "answer": {
+          "number": "18",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "90539a00-6d82-49da-aa9d-5c92e2d556f7"
+      },
+      {
+        "question": "How many years passed betwwen the French dispute with Navarre and the leverage of the captivity of John II?",
+        "answer": {
+          "number": "9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "531424d7-ffc1-4a01-8a04-d93b77393410"
+      },
+      {
+        "question": "How many years after John II returned to captivity did he die?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "8aa1518e-e932-4286-81a2-fd7709e92085"
+      },
+      {
+        "question": "John II died how many years after his son was taken hostage in English-held Calais?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "56999bdc-3454-4179-9c5d-be56980ed73d"
+      },
+      {
+        "question": "Dauphin to try to seize power how many years before John II died in London?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "d819dd7f-6e59-482d-8262-0bcc8f4db810"
+      },
+      {
+        "question": "How many groups were held hostage in lieu of John II?",
+        "answer": {
+          "number": "4",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6b2f6674-fb72-4377-8786-b6d2723ad584"
+      },
+      {
+        "question": "How many years passed between the French being at odds with Navarre and the Navarrese attempting to seize power?",
+        "answer": {
+          "number": "9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "1c2d273f-80c7-4909-9516-33363cc3ad96"
+      },
+      {
+        "question": "Was John in captivity when he died?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "while still in honourable captivity"
+          ]
+        },
+        "query_id": "ba98b224-4aa3-409c-8cf3-c7b811ec7877"
+      },
+      {
+        "question": "Who was king first, John II or Charles V?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "John II"
+          ]
+        },
+        "query_id": "c5410346-090c-4882-90bd-c822251c4fbd"
+      },
+      {
+        "question": "Which happened first, the Treaty of Br\u00e9tigny or the Battle of Cocherel?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Treaty of Br\u00e9tigny"
+          ]
+        },
+        "query_id": "629b40e4-cdb9-41e5-8674-98ee98e51003"
+      },
+      {
+        "question": "At least how many people were held hostage in place of John II?",
+        "answer": {
+          "number": "44",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "340b0f7f-f53e-4fa1-951a-1735f4a388ec"
+      },
+      {
+        "question": "How many years did John II live after returning to captivity in Ingland in 1362?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "624cb026-54d2-4572-af00-7e02bdb2e8a7"
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "history_2184": {
+    "passage": "As of the census of 2000, there were 218,590 people, 79,667 households, and 60,387 families residing in the county.  The population density was 496 people per square mile (192/km\u00b2). There were 83,146 housing units at an average density of 189 per square mile (73/km\u00b2). The racial makeup of the county was 86.77% Race (United States Census), 9.27% Race (United States Census), 0.23% Race (United States Census), 1.52% Race (United States Census), 0.06% Race (United States Census), 0.69% from Race (United States Census), and 1.47% from two or more races.  1.91% of the population were Race (United States Census) or Race (United States Census) of any race. 22.5% were of German people, 13.1% Irish people, 9.8% Italian people, 9.2% English, 8.1% \"American\" and 6.0% Polish ancestry.",
+    "qa_pairs": [
+      {
+        "question": "How many more people were there than families?",
+        "answer": {
+          "number": "158203",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c312a5d0-5318-4bbb-806e-22333f00e990",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many percentage points more do German people make up of the population than Irish?",
+        "answer": {
+          "number": "9.4",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "90593aa9-b662-40cf-873e-90aac421b146",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many percentage points more do Irish people make up of the population than Italian?",
+        "answer": {
+          "number": "3.3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "f478fcc5-6d7c-4bd3-9220-6abc0e6e5fbc",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many more housing units were there than houses?",
+        "answer": {
+          "number": "3479",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2a4da2f7-22e9-404c-9a0b-bdf2e634a022",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many more people are there than households?",
+        "answer": {
+          "number": "138923",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "ad479062-cd2b-4515-80ae-33f78d72a421",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many more people are there than families?",
+        "answer": {
+          "number": "158203",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "24dd470f-611b-4530-9793-6b481812f1f6",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many more people are there than housing units?",
+        "answer": {
+          "number": "135444",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "33f06667-614b-4ca2-b186-161628435f4d",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many more households are there than families?",
+        "answer": {
+          "number": "19280",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "77527fbe-63d3-4784-841e-ea49b1554b3e",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many more housing units are there than families?",
+        "answer": {
+          "number": "22759",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "4ba8556c-e83c-462e-8ef9-35f16fcc9ec0",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many more housing units are there than households?",
+        "answer": {
+          "number": "3479",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "d65d2f82-f3d9-4fba-9914-c73a1e851730",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many percent of people were not from 2 or more races?",
+        "answer": {
+          "number": "98.53",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "90fbb98f-0367-4b07-810b-bd0c630d5b70",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many percent were not German?",
+        "answer": {
+          "number": "77.5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "ab86c26b-4eef-47a3-b06f-76956ff34128",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many percent were not  Irish?",
+        "answer": {
+          "number": "86.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "143d3393-d8c9-48fb-99e7-4b00fe27a916",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many percent were not  Italian?",
+        "answer": {
+          "number": "90.2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "791c7049-afc7-4be7-86fb-96070915f16f",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many percent were not  American?",
+        "answer": {
+          "number": "91.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6bbf1900-2cef-4fc2-815b-91b661cce636",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many percent were not  Polish?",
+        "answer": {
+          "number": "94",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2118f769-3ed8-4c8a-baf9-24faa183eada",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many more people are there than households?",
+        "answer": {
+          "number": "138923",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "92a49b09-13c0-43e6-8dbd-c66cbe43eb66",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than families?",
+        "answer": {
+          "number": "158203",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "4fb892fc-3b72-4e11-be7c-81526e858d3b",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than housing units?",
+        "answer": {
+          "number": "135444",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "b0b82761-9847-461e-879b-ad2c4cd63765",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more households are there than families?",
+        "answer": {
+          "number": "19280",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "78f47611-5119-42dc-af43-f40dcfd6fe96",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more housing units are there than families?",
+        "answer": {
+          "number": "22759",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "0fe30258-7fc0-4236-9f6d-3330d65df08f",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more housing units are there than households?",
+        "answer": {
+          "number": "3479",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "c1084d20-57f9-4d4d-a154-766c1db9bde8",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent of people were not from 2 or more races?",
+        "answer": {
+          "number": "98.53",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "29689d16-27ca-4ea7-be33-ca0d7944e3b8",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not German?",
+        "answer": {
+          "number": "77.5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "04e10d50-4ba2-4dd8-b6b6-0b54c37b9549",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not  Irish?",
+        "answer": {
+          "number": "86.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "8603663e-c53b-46db-a482-a867f12ff3b4",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not  english?",
+        "answer": {
+          "number": "90.8",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "058c63ba-c81a-42f0-8764-c4be5c72c615",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not  Italian?",
+        "answer": {
+          "number": "90.2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "928fd407-19d7-4a38-97d3-3022ec48f01c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not  American?",
+        "answer": {
+          "number": "91.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "43989606-830f-4a57-a506-2a751316d2e6",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't German?",
+        "answer": {
+          "number": "77.5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "712e0c96-3255-49b7-b201-3ecee897b77f",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't Irish?",
+        "answer": {
+          "number": "86.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "38d480e4-9efc-4d20-93da-20a81f9eabf5",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't Italian?",
+        "answer": {
+          "number": "90.2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "90167be8-fae9-4b86-b242-ddba3319d6ef",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't English?",
+        "answer": {
+          "number": "90.8",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "bf15aa2f-bd1d-4ab6-99ba-911395061716",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't American?",
+        "answer": {
+          "number": "91.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "7dc5c6d9-33ce-4e26-a054-baff419aba8c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't Polish?",
+        "answer": {
+          "number": "94",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "a2f02664-a032-4b4a-b388-299d7b95fb7a",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is larger: German or Irish?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "German"
+          ],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "3bb4323b-3a35-49e9-bb0c-5f78fd132d3a",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is smaller: German or Irish?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Irish"
+          ],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "8fac9dea-d6e7-4439-b822-943cab0abe47",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is larger: German or Italian?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "German"
+          ],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "0b487ee5-ff8d-494a-8eb4-fcab73217b31",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is smaller: German or Italian?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Italian"
+          ],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "6acd6dec-a558-403a-97a4-9e8107760fe2",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is larger: German or English?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "German"
+          ],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "4c45d3aa-8c73-4922-b0dd-00fcde5d6e4e",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is smaller: German or English?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "English"
+          ],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "96a5a7af-29a8-49ee-a749-8a5d13bda3e2",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than households?",
+        "answer": {
+          "number": "138923",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c73f465e-fb0c-41d3-997f-12ad82631d15",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than families?",
+        "answer": {
+          "number": "158203",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6b4ee027-ad46-4645-8122-0cd57beea9da",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than housing units?",
+        "answer": {
+          "number": "135444",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6d2c18be-fb99-4e92-b5e6-3fa20f54da5d",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more households are there than families?",
+        "answer": {
+          "number": "19280",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "8a0bf55f-d2cf-46a7-a6f3-167beb95d9b5",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more housing units are there than families?",
+        "answer": {
+          "number": "22759",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c7142117-4e5b-4aaf-a49c-fd1c6213e74a",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more housing units are there than households?",
+        "answer": {
+          "number": "3479",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "91036d35-79b7-4271-817b-adbf8a14e032",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not German?",
+        "answer": {
+          "number": "77.5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "740c1a4e-9400-4830-b586-5f70115ddd07",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not Irish?",
+        "answer": {
+          "number": "86.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "78ef79dc-5382-4aed-be25-ff2de7724270",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not english?",
+        "answer": {
+          "number": "90.8",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "412526cc-e3e2-421d-9c8d-bb006c87b7f9",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not American?",
+        "answer": {
+          "number": "91.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "9238783b-6f52-4db6-8ec6-ca0774a289ce",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not Polish?",
+        "answer": {
+          "number": "94",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "a67ef0a4-b117-4e43-9894-f0f6a876bf6b",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent of people were not from 2 or more races?",
+        "answer": {
+          "number": "98.53",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "4c94d617-7c74-4608-89c2-d4e45cdeb944",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral groups are at least 10%?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "German",
+            "Irish"
+          ]
+        },
+        "query_id": "f5f7dea7-cd51-467f-8ad7-5ed82cc4324c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral groups are smaller than 11%?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Italian",
+            "English",
+            "American",
+            "Polish",
+            "German",
+            "English"
+          ]
+        },
+        "query_id": "54223218-c27b-4d92-b1be-d85f7a550c97",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't German?",
+        "answer": {
+          "number": "77.5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "5da84e41-00e1-4fc4-bcea-725713bd5dfd",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't Irish?",
+        "answer": {
+          "number": "86.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "31b36417-aad1-412c-b0e5-9c1faaed233f",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't Italian?",
+        "answer": {
+          "number": "90.2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "baf366d5-b254-4ae6-a6ce-8b1b5969a8d5",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't English?",
+        "answer": {
+          "number": "90.8",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "42192f6f-93aa-4d14-91a8-35fcb0462b7a",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't Polish?",
+        "answer": {
+          "number": "94",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "d81490e4-b828-43d0-9fb7-a075dc06a559",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't American?",
+        "answer": {
+          "number": "91.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "dabcce94-0227-4105-9b15-9f35b442f8e5",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is larger: German or Irish?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "German"
+          ]
+        },
+        "query_id": "64ad3eca-d3ac-4834-b7dc-7a3e0d1dc736",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is smaller: German or Irish?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Irish"
+          ]
+        },
+        "query_id": "95d77ca6-ba47-40ac-8c33-9f9cbdba0a90",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is larger: German or English?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "German"
+          ]
+        },
+        "query_id": "bef5ee29-0a55-417f-b142-391792e278be",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which group from the census is smaller: German or English?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "English"
+          ]
+        },
+        "query_id": "ac7444d1-db8d-44b8-9f8f-0059d12a3695",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not German?",
+        "answer": {
+          "number": "77.5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "fd7d9029-77ad-4433-b98b-d2723545ac8d",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not  Irish",
+        "answer": {
+          "number": "86.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "ac9552da-5fdb-45fc-a993-ed679c701527",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not  Italian?",
+        "answer": {
+          "number": "90.2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "ee83273f-119b-4609-93eb-21ee6c260b40",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not  english?",
+        "answer": {
+          "number": "90.8",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "1b512489-d29e-40ab-b7b7-37a2853ac374",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not  American?",
+        "answer": {
+          "number": "91.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "1e34e85e-4925-421a-9e3a-2445c7a7141c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not  Polish?",
+        "answer": {
+          "number": "94",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "4b4688cc-da45-4eac-9ade-ef54e7938861",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than households?",
+        "answer": {
+          "number": "138923",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "042535d2-60a5-4b9d-b17e-66e173dd6181",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than families?",
+        "answer": {
+          "number": "158203",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "1a6a2a30-4688-4637-b641-77777219f76c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than housing units?",
+        "answer": {
+          "number": "135444",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2d3dd149-e72d-4ba3-b19e-bbc561403ff6",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more housing units are there than families?",
+        "answer": {
+          "number": "22759",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c8981606-0374-49b0-8c1b-55ccf222d572",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more housing units are there than households?",
+        "answer": {
+          "number": "3479",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "8325597b-4440-4ee7-84d5-0979f5d52e89",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more households are there than families?",
+        "answer": {
+          "number": "19280",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "5b3b919d-6895-43ec-a065-6de13ac56e2f",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent of people were not from 2 or more races?",
+        "answer": {
+          "number": "98.53",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "a976f1ff-d543-4d45-a179-7cbebf12d013",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not German?",
+        "answer": {
+          "number": "77.5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "cb403a84-35b2-4e2b-8e72-96f983eff764",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not Irish?",
+        "answer": {
+          "number": "86.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "34fb2af0-0b77-457f-883a-9e0dfa648b83",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not Italian?",
+        "answer": {
+          "number": "90.2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "753c35b1-4cbf-45fd-b8cf-2ff14c58677f",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not english?",
+        "answer": {
+          "number": "90.8",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "e0112c2e-6659-4ea5-bf6f-e3a52ae2a92a",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not American?",
+        "answer": {
+          "number": "91.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "8f890a6a-a41b-454d-a6ae-db30b0cf4ce3",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many percent were not Polish?",
+        "answer": {
+          "number": "94",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "cf4e37e5-c287-4b28-a65e-15aa2818e5c5",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than households?",
+        "answer": {
+          "number": "138923",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6cc1f089-3de1-40ed-8616-2d0b6316edf4",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than families?",
+        "answer": {
+          "number": "158203",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "15798bed-882d-4038-a875-97ca81252687",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more people are there than housing units?",
+        "answer": {
+          "number": "135444",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "9c1296b5-ea33-4315-8275-fe528427821a",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more housing units are there than families?",
+        "answer": {
+          "number": "22759",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "696fa8d1-e585-4640-a98e-ba15e0199304",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many more housing units are there than households?",
+        "answer": {
+          "number": "3479",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "0a888cdf-8473-41f5-86bd-0c71a25ce815",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral groups are at least 10%?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "German",
+            "Irish"
+          ]
+        },
+        "query_id": "47d3780c-18fd-44fc-9253-44ea27fac5e9",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral groups are smaller than 11%?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Italian",
+            "English",
+            "American",
+            "Polish",
+            "Italian",
+            "English"
+          ]
+        },
+        "query_id": "117108fb-edfe-4bb9-877e-22dc5e0b2ada",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't German?",
+        "answer": {
+          "number": "77.5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "3d5fdd37-7869-42d4-ab41-79e7f5bbb706",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't Irish?",
+        "answer": {
+          "number": "86.9",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "cee5b047-4497-4fb6-ac85-2254878998e3",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't Italian?",
+        "answer": {
+          "number": "90.2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6cb2dbc3-9be5-41d7-ae4f-dd95d1666a8e",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many in percent from the census weren't English?",
+        "answer": {
+          "number": "90.8",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "758bff77-45f7-4e1c-9e0e-6f1e49cb846d",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral group is larger: German or Irish?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "German"
+          ]
+        },
+        "query_id": "8bde27d4-7749-41ef-8cdb-e49c577ec021",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral group is smaller: German or Irish?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Irish"
+          ]
+        },
+        "query_id": "b646c981-6f46-4113-a3b0-b44509c77c6f",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral group is larger: German or Italian?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "German"
+          ]
+        },
+        "query_id": "49259aec-f7fe-48e5-aafc-82bedeaaad23",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral group is smaller: German or Italian?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Italian"
+          ]
+        },
+        "query_id": "0c7372b0-f0cf-4483-beb4-f576e7f3eec3",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral group is larger: English or Italian?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Italian"
+          ]
+        },
+        "query_id": "54248892-12c3-4824-810e-237a3f3c539c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which ancestral group is smaller: English or Italian?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "English"
+          ]
+        },
+        "query_id": "f2570d0b-043f-4984-9273-d1d0e84ba760",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "history_1328": {
+    "passage": "From 1231, Goryeo was intermittently invaded by the Mongol Empire. During this time, Goryeo was controlled by a military regime led by the Choe family. In 1232 the government under the nominal king fled to Ganghwa Island, which Mongol horse riders were unable to land on, and resisted the Mongol invasion. Unfortunately because of its fragile foundation, Goryeo faced frequent rebellions. The 1258 rebellion resulted in the establishment of Ssangseong  and Dongnyeong Prefectures  by the Mongols. Unlike these rebels, the Sambyeolcho  were an organ of the military government. They were organized by the Choe family to maintain security. However, unlike the Choe private guards unit , the Sambyeolcho assumed public functions performed by police and combat forces, effectively replacing the Six Divisions of the military. In 1258, Choe Ui, the fourth of the Choe family, was overthrown by Kim Jun  using the Sambyeolcho. Kim Jun took a pro-Mongol policy and sent Crown Prince Wang Jeon to the Mongol Empire. At the same time, King Gojong and the crown prince approached the Mongols to restore power from Kim Jun. In 1268, however, Kim Jun was annihilated by the Sambyeolcho under the order of Im Yeon. The next year, Im Yeon's attempt to replace King Wonjong was reversed by the crown prince  with the help from the Mongol force. In 1270, Im Yeon's successor Im Yumu was killed by the pro-Mongol faction using the Sambyeolcho. It marked the end of the military regime.",
+    "qa_pairs": [
+      {
+        "question": "What happened first: intermittent invasion of Goryeo or fleeing of king to Ganghwa Island?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "intermittent invasion of Goryeo"
+          ]
+        },
+        "query_id": "55f77b24-24bf-4c30-b45b-f33a641db7cd"
+      },
+      {
+        "question": "What happened second: intermittent invasion of Goryeo or fleeing of king to Ganghwa Island?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "fleeing of king to Ganghwa Island"
+          ]
+        },
+        "query_id": "9175d921-c6a9-44f1-8406-5d5ec894866f"
+      },
+      {
+        "question": "Who helped the Crown Prince to replace King Wonjong, Im Yeon or Mongol force?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Mongol force"
+          ]
+        },
+        "query_id": "3e460eed-a8ed-4b2c-8cc4-e535cc8fedf5",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many Mongol prefectures were established due to the rebellion in 1258?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "94476247-8151-4400-8cbb-710f804f9f04",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Which was successful in 1258, Choe Ui or  Kim Jun?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Kim Jun"
+          ]
+        },
+        "query_id": "982756ad-a810-42da-8323-da1293b574f6",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "nfl_1162": {
+    "passage": "Hoping to rebound from their tough overtime road loss to the Raiders, the Jets went home for a Week 8 duel with the Kansas City Chiefs.  In the first quarter, New York took flight as QB Brett Favre completed an 18-yard TD pass to RB Leon Washington.  In the second quarter, the Chiefs tied the game as QB Tyler Thigpen completed a 19-yard TD pass to TE Tony Gonzalez.  The Jets would answer with Washington getting a 60-yard TD run.  Kansas City closed out the half as Thigpen completed an 11-yard TD pass to WR Mark Bradley. In the third quarter, the Chiefs took the lead as kicker Connor Barth nailed a 30-yard field goal, yet New York replied with RB Thomas Jones getting a 1-yard TD run.  In the fourth quarter, Kansas City got the lead again as CB Brandon Flowers returned an interception 91 yards for a touchdown.  Fortunately, the Jets pulled out the win with Favre completing the game-winning 15-yard TD pass to WR Laveranues Coles. During halftime, the Jets celebrated the 40th anniversary of their Super Bowl III championship team.",
+    "qa_pairs": [
+      {
+        "question": "How many points did each team have at halftime?",
+        "answer": {
+          "number": "14",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "8f176cb2-ea5e-4bc7-aeca-4fa670a85ad5"
+      },
+      {
+        "question": "How long was the last touchdown?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "15-yard"
+          ]
+        },
+        "query_id": "52db14ed-5426-46ec-b0ae-4ef843b2d692"
+      },
+      {
+        "question": "How many yards was the first TD pass?",
+        "answer": {
+          "number": "18",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "f693675a-ae04-4a19-8b91-eba22d87b56a"
+      },
+      {
+        "question": "Which QB had the longest TD pass?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Tyler Thigpen"
+          ]
+        },
+        "query_id": "4c3b504e-a216-4c4a-95c8-738aa50d622c"
+      },
+      {
+        "question": "How many yards was the longest TD of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "91"
+          ]
+        },
+        "query_id": "c84e975a-c166-40b7-b079-3df55ae2e76b"
+      },
+      {
+        "question": "How many first half touchdowns did the Chiefs score?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "932c40f6-1608-4219-a37e-75c58efd1154"
+      },
+      {
+        "question": "How many defensive touchdowns were scored?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "b7c3d07d-69b8-4ac5-bfb0-9d2f4a688a4e"
+      },
+      {
+        "question": "Who scored the longest rushing touchdown?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Leon Washington"
+          ]
+        },
+        "query_id": "05d18210-bf41-455a-92bd-bad12a80ba79",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many yards was the game winning touchdown pass?",
+        "answer": {
+          "number": "15",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "7e2f15ce-8658-41b0-a078-5a6cd1b4bcbe",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Who scored the first touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Leon Washington"
+          ]
+        },
+        "query_id": "6edc5f14-f0e6-4878-b126-128556242d4c",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many yards was the longest rushing touchdown of the game?",
+        "answer": {
+          "number": "60",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "de81fe71-d92c-448a-8072-b56fac632724",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many touchdowns did Leon Washington score?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "e1e029b5-fbbe-46f4-90aa-7c0e68c0f53d",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Who scored the final touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Laveranues Coles"
+          ]
+        },
+        "query_id": "fb3f4513-3fa5-449c-ab27-dbee0e00d4cf",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Which team scored during the first quarter?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "New York"
+          ]
+        },
+        "query_id": "a0f72643-efde-4f84-8d66-7f36dde12305",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many touchdowns were scored from passes in the first half?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "48f73e78-297d-4c08-b9cc-99cec94fd83e",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards was the longest touchdown pass of the game?",
+        "answer": {
+          "number": "19",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "66c48386-9f4b-4261-b02f-c25ce317cf45",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "What all touchdowns did Tyler Thigpen make?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "19-yard",
+            "11-yard"
+          ]
+        },
+        "query_id": "d8f249ea-8eb2-4d22-88e5-6cc6fd2fc12e",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards difference was Brett Favre\u2019s first touchdown pass compared to his second?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "648f6cbd-a3a8-4531-bd68-104cad26cf06",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Who scored on the longest touchdown play of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Brandon Flowers"
+          ]
+        },
+        "query_id": "7aaff956-dc28-4985-bbae-55aec0665651",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which players caught touchdown passes in the first half?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Leon Washington",
+            "Tony Gonzalez",
+            "Mark Bradley"
+          ]
+        },
+        "query_id": "64712c5c-b2b2-475e-82db-02e0ceea2016",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many touchdown passes did Tyler Thigpen throw in the first half?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c4d4b0ec-1124-4400-b8bf-f5ea4b09a642",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How long were each of Tyler Thigpen's touchdown passes?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "11-yard",
+            "19-yard"
+          ]
+        },
+        "query_id": "a593e1bd-e8c9-4e42-9c60-e038a2b7b069",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many total yards did Tyler Thigpen throw for touchdowns?",
+        "answer": {
+          "number": "30",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "ce50d839-0184-453e-af0a-a7f8c591b8d7",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Who threw the second longest touchdown pass?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Brett Favre"
+          ]
+        },
+        "query_id": "3e9731e5-0248-43fc-b2b7-cef105dc3120",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player scored touchdowns running and receiving?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Leon Washington"
+          ]
+        },
+        "query_id": "716f1ac5-931f-4937-96ec-5a54942ac6ba",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "nfl_1491": {
+    "passage": "Coming off their road win over the Redskins, the Chiefs went home, donned their Dallas Texans throwbacks, and played a Week 7 AFL Legacy game with the San Diego Chargers. Kansas City would find themselves trailing in the first quarter as Chargers quarterback Philip Rivers completed a 3-yard touchdown pass to wide receiver Malcom Floyd, followed by a 10-yard touchdown pass to wide receiver Vincent Jackson. San Diego would add onto their lead in the second quarter with a 20-yard and a 39-yard field goal from kicker Nate Kaeding. The Chiefs would get onto the board in the third quarter with quarterback Matt Cassel completing a 7-yard touchdown pass to wide receiver Dwayne Bowe, but the Chargers kept their momentum going with Rivers finding running back Darren Sproles on a 58-yard touchdown pass. In the fourth quarter, San Diego sealed the win with Kaeding's 19-yard field goal and fullback Jacob Hester recovering a blocked punt in the end zone for a touchdown. With the loss, Kansas City went into their bye week at 1-6. Larry Johnson was suspended for two weeks after he made offensive comments about Todd Haley and made offensive comments about homosexuals on Twitter and in public.",
+    "qa_pairs": [
+      {
+        "question": "how short was the shortest touchdown pass",
+        "answer": {
+          "number": "",
+          "date": {},
+          "spans": [
+            "3-yard touchdown pass to wide receiver Malcom Floyd"
+          ]
+        },
+        "workerid": "A3AFC26CB0AXMI",
+        "workerscore": 0.0,
+        "query_id": "6045571a-6901-4933-8948-9c0a47442d02",
+        "ai_answer": "58-yard"
+      },
+      {
+        "question": "which player scored the longest field goal?",
+        "answer": {
+          "number": "",
+          "date": {},
+          "spans": [
+            "Nate Kaeding"
+          ]
+        },
+        "workerid": "A3AFC26CB0AXMI",
+        "workerscore": 0.0,
+        "query_id": "a849cb71-b6da-4c1a-9791-b962c9ff2d65",
+        "ai_answer": "San Diego"
+      },
+      {
+        "question": "How many touchdowns did Philip Rivers throw in the first quarter?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "143e8ec1-db95-40e0-bd2f-e76b5a558908",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Who had the most receiving yards?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Darren Sproles"
+          ]
+        },
+        "query_id": "bfed1d83-121b-44ab-8355-8b77a43bcbb6",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many yards was Kaeding's fourth quarter field goal?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "19-yard"
+          ]
+        },
+        "query_id": "a5884921-5717-4193-a021-2ff65eabcfa5",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many yards was the Chiefs longest touchdown?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "7-yard"
+          ]
+        },
+        "query_id": "0cb58281-ae66-4b98-9e9e-53c2c1b242bc",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Who lost to Petrova in the Australian Open?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Nicole Pratt",
+            "Anne Kremer",
+            "Ekaterina Makarova"
+          ]
+        },
+        "query_id": "073c9470-a5ea-48c4-b60f-f7affbbe0717",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards were accumulated on touchdowns measuring 10-yards or shorter in length?",
+        "answer": {
+          "number": "20",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "5e5c3427-791b-4b75-aa5b-25c36d526184",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which receiver scored the third shortest touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Vincent Jackson"
+          ]
+        },
+        "query_id": "597a8933-73fb-4367-9e6a-7ab9a980f096",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which running back score the longest touchdown reception of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Darren Sproles"
+          ]
+        },
+        "query_id": "efd357fc-b2b9-41b8-bb0a-de58ef024c87",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "What distance were each of Nate Kaeding's field goals?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "20-yard",
+            "39-yard",
+            "19-yard"
+          ]
+        },
+        "query_id": "ab6ebe83-fa2f-4ede-9b98-29e8c517f9da",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Who threw the second longest touchdown pass?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Philip Rivers"
+          ]
+        },
+        "query_id": "29e4662f-7412-4efe-a326-e4c072783030",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many total yards did Philip Rivers throw for on touchdown passes?",
+        "answer": {
+          "number": "71",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "a05a5b79-6323-444d-b9ad-be81454afbb9",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which players caught touchdown passes from Philip Rivers?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Malcom Floyd",
+            "Vincent Jackson",
+            "Darren Sproles"
+          ]
+        },
+        "query_id": "76286aaa-3147-4ab3-895b-d6fbcd3aea3c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player scored a special teams touchdown?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Jacob Hester"
+          ]
+        },
+        "query_id": "e3d18516-fe9f-45af-bfa7-f1bde37ab170",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "nfl_3075": {
+    "passage": "Drew Brees threw for 312 yards and two touchdown passes, as New Orleans defeated Tampa Bay 24-17. The Saints jumped out to a 14-0 lead in the second quarter, and led 17-10 at halftime. Tampa Bay made the score 24-17 after Jameis Winston threw a touchdown pass to Adam Humphries with just under 9 minutes left in regulation. Trailing by 7, the Buccaneers got the ball back with 5:22 to go, but went 3-and-out. The Saints were then able to run out the clock to secure the win.",
+    "qa_pairs": [
+      {
+        "question": "how many points did new orleans defeat tampa by?",
+        "answer": {
+          "number": "24",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2d560a12-2b8f-4c4f-9c9f-85e7a73114f5"
+      },
+      {
+        "question": "What was the final score?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "24-17"
+          ]
+        },
+        "query_id": "01b7dcf6-3e4b-4230-bfe1-37fa515e0d5c"
+      },
+      {
+        "question": "How many receptions did Adam Humphries receive?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "863b9910-b0d3-47d4-af3d-a38e1a2e6d8c"
+      },
+      {
+        "question": "How many points were scored in the first half?",
+        "answer": {
+          "number": "27",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "3914aa05-3043-4663-bfe3-b967a8220168",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many points did the Saints win by?",
+        "answer": {
+          "number": "7",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2eed971d-11d9-4138-bd43-a835a0dac47a",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Which player scored the last touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Adam Humphries"
+          ]
+        },
+        "query_id": "720634d5-a065-4275-905f-a3e75d90b8f5",
+        "highlights": [],
+        "question_type": []
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "nfl_1820": {
+    "passage": "Hoping to break their current losing streak the Cowboys played on home ground for an Interconference duel with the Jaguars. In the first quarter the Cowboys took the lead as kicker David Buehler hit a 34-yard field goal. But they fell behind with QB David Garrard getting a 10-yard TD pass to WR Mike Sims-Walker. In the second quarter, the Cowboys struggled further with Garrard finding TE Marcedes Lewis on a 42-yard TD pass, then in the third quarter he found WR Mike Thomas on a 15-yard TD pass, and then he found Lewis again on a 9-yard TD pass. The Cowboys responded in the 4th quarter with RB Marion Barber getting a 1-yard TD run. But the Jaguars scored again with Garrard scrambling 2 yards to the endzone for a touchdown. The Cowboys replied with QB Jon Kitna making an 8-yard TD pass to TE Jason Witten.",
+    "qa_pairs": [
+      {
+        "question": "Which quarterback threw more touchdowns?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "David Garrard"
+          ]
+        },
+        "query_id": "cf6e61f7-ce75-4e40-a563-2f6f4a298c69"
+      },
+      {
+        "question": "Which player caught two touchdowns in the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Marcedes Lewis"
+          ]
+        },
+        "query_id": "660cf86d-14cd-4cc7-bc7c-1dd371d95f80"
+      },
+      {
+        "question": "How long was Jason Witten's touchdown?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "8-yard"
+          ]
+        },
+        "query_id": "ffb531a5-f2b5-4e30-9ebd-f46817da27f5"
+      },
+      {
+        "question": "How many points were the Cowboy's trailing at halftime?",
+        "answer": {
+          "number": "11",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "0720b39b-5a90-46ac-ada3-5245347fd1a4"
+      },
+      {
+        "question": "How many yards was the longest touchdown pass?",
+        "answer": {
+          "number": "42",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6bcc8ce2-8447-4dfe-ad8c-2597782d63cd"
+      },
+      {
+        "question": "How many touchdown passes did Garrard throw?",
+        "answer": {
+          "number": "4",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6db50f47-c4b4-4810-8765-519b3c6e2f92"
+      },
+      {
+        "question": "How many yards difference was David Garrard's first touchdown pass compared to his second?",
+        "answer": {
+          "number": "32",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "ceca535b-e7fa-4798-9723-30bd83bffbe1",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards difference was David Garrard's third touchdown pass compared to his fourth?",
+        "answer": {
+          "number": "6",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [],
+          "worker_id": "",
+          "hit_id": ""
+        },
+        "query_id": "4db8b112-ac10-45b5-b731-ac8118aae34d",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player had the longest score of the first quarter?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "David Buehler"
+          ]
+        },
+        "query_id": "66059220-c619-49c9-94b3-636723800800",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player caught the first TD of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Mike Sims-Walker"
+          ]
+        },
+        "query_id": "2512dbf6-02c6-46ec-92f0-dedbe76bcaf8",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "What was the shortest TD pass of the third quarter?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "9-yard TD pass"
+          ]
+        },
+        "query_id": "41d37a6a-aa84-4ad9-89cd-491c8170f541",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which team scored the least points in the first half?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Cowboys"
+          ]
+        },
+        "query_id": "9c7132be-5b44-40e9-9bbe-39c14a86a4d1",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which team scored the last points of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Cowboys"
+          ]
+        },
+        "query_id": "ab9623a3-eccf-4c52-967f-04d3617939df",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player scored the last points for the Jaguars?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Garrard"
+          ]
+        },
+        "query_id": "c05f803d-1070-40a6-bbcf-f4f41c37be19",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which team failed to score in the third quarter?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Cowboys"
+          ]
+        },
+        "query_id": "e1e97f1b-f9a4-41df-b90f-5300e4c91a06",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which quarter were the most points scored?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "third"
+          ]
+        },
+        "query_id": "4e0371f6-46bc-4639-a998-46c6750d3b8f",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which team allowed the most points all game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Cowboys"
+          ]
+        },
+        "query_id": "a40a7cae-1c07-438e-9fa1-70c35130a233",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which team did Kitna play for?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Cowboys"
+          ]
+        },
+        "query_id": "f70581ba-6d9c-4af5-a651-c0d3461e4ce9",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player caught the longest TD pass?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "TE Marcedes Lewis"
+          ]
+        },
+        "query_id": "4f6f49a9-9e00-4260-bcd2-2dbf96dc8985",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Who threw the most touchdown passes?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "David Garrard"
+          ]
+        },
+        "query_id": "3b0f558c-6d57-45f6-9901-d3a3169c0329",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards was the longest touchdown?",
+        "answer": {
+          "number": "42",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "7db800b4-8a4e-4072-8353-025cee6c3747",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards longer was the longest touchdown compared to the shortest?",
+        "answer": {
+          "number": "41",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "9c1c10c6-3d23-4396-937e-473cb3008dee",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards was the second longest touchdown?",
+        "answer": {
+          "number": "15",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "8cdeb631-cefc-43bb-b035-831dbe0de5f9",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Who caught the most touchdown passes?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Marcedes Lewis"
+          ]
+        },
+        "query_id": "b835f442-ade4-47c0-aad0-42bc157cf234",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards longer was  Marcedes Lewis's longest touchdown compared to his shortest?",
+        "answer": {
+          "number": "33",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "4630e575-6f3b-4960-b703-f4107ce1dfc1",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many touchdowns were scored in between 1 and 11 yards?",
+        "answer": {
+          "number": "5",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "f5074a50-3140-4250-b427-21ede7b93088",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many touchdowns were scored longer than 11 yards?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "6443d704-26b0-4683-81e9-75822b6d9dfd",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards were David Garrard's touchdown passes on average?",
+        "answer": {
+          "number": "19",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "f397ab6a-c0d6-40c2-b62b-cc0d5f69dad4",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which players threw touchdown passes?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "David Garrard",
+            "Jon Kitna"
+          ]
+        },
+        "query_id": "c0bfa438-71e3-45e8-993e-b8a656fb67d7",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which players scored rushing touchdowns?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Marion Barber",
+            "David Garrard"
+          ]
+        },
+        "query_id": "fd16e71c-037e-4138-b3f3-dde990fcef68",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "In what quarter did David Garrard throw his third longest touchdown pass?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "first quarter"
+          ]
+        },
+        "query_id": "43de0ec9-784f-4d6b-a81f-96c1169fc2ed",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Who threw the third longest touchdown pass?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "David Garrard"
+          ]
+        },
+        "query_id": "341f8bcc-1483-4d05-b455-71bd9e128be2",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "What are the top two longest touchdown passes made?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "42-yard",
+            "15-yard",
+            "David Garrard"
+          ]
+        },
+        "query_id": "a2a83b3a-3bb9-4c01-a855-1e3d413b9aaa",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards difference is there between David Garrard's longest and shortest touchdown pass?",
+        "answer": {
+          "number": "33",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "c0111915-c2af-4d58-b9a7-9cda3a2bebe0",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards longer was David Garrard's second touchdown pass compared to his first?",
+        "answer": {
+          "number": "32",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "fc25086b-04e2-4fcb-add9-55f71eadfa46",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many total yards did David Garrard throw for touchdowns?",
+        "answer": {
+          "number": "76",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "82d7d57a-b92a-4c05-ba73-97492746e6f6",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which players had touchdown passes longer than 5 yards?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "David Garrard",
+            "Jon Kitna"
+          ]
+        },
+        "query_id": "11fba4de-8147-4c4a-9c3d-d6e130e9269c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player had the second most number of touchdown passes?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Jon Kitna"
+          ]
+        },
+        "query_id": "9a22cdf1-5b23-4e79-9a04-fa64fcb79ee6",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which players made at least one field goal?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "David Buehler"
+          ]
+        },
+        "query_id": "f92c49c4-f8e3-4b17-bc7e-d5849ae0c72c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player threw more touchdown passes, David Garrard or Jon Kitna?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "David Garrard"
+          ]
+        },
+        "query_id": "c4f599b0-6c5e-451b-b462-34808a93df26",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many touchdown passes between 5 and 25 yards were made?",
+        "answer": {
+          "number": "4",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "b8ae509a-0127-4d8a-bed8-40eadbe048de",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many total yards of TD passes were made from over 10 yards?",
+        "answer": {
+          "number": "57",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "de6dca02-683d-4862-aeb7-43a22382fd11",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "nfl_1606": {
+    "passage": "Coming off their road win over the Lions, the Steelers went home for a divisional match with the Cleveland Browns.  After a scoreless first quarter, Pittsburgh came out striking in the second quarter as quarterback Ben Roethlisberger completed an 8-yard touchdown pass to tight end Heath Miller and a 52-yard touchdown pass to wide receiver Hines Ward.  The Browns immediately struck back as wide receiver Joshua Cribbs returned a kickoff 98&#160;yards for a touchdown. Pittsburgh would close out the half with a 32-yard field goal from kicker Jeff Reed. Cleveland tried to catch up as quarterback Derek Anderson completed a 1-yard touchdown pass to fullback Lawrence Vickers, yet the Steelers answered with a 2-yard touchdown run from running back Rashard Mendenhall.  Pittsburgh would then close the game out in the fourth quarter with Reed kicking a 39-yard field goal. With their 12th-straight win over the Browns, the Steelers improved to 4-2.  With the Ravens' loss to the Vikings, and the Bengals' loss to the Texans that same week, the Steelers are now tied with the Bengals at the top of the AFC North.",
+    "qa_pairs": [
+      {
+        "question": "How many is the difference in the yards of the TD pass to Miller and the yards of the TD pass to Ward?",
+        "answer": {
+          "number": "34",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "9acdc884-7483-4f09-ac96-e52ef51c2b0e"
+      },
+      {
+        "question": "How many is the difference in the yards of the TD pass to MillerTD and the yards of the TD run by Mendenhall?",
+        "answer": {
+          "number": "6",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "55462b2f-f61c-47ef-b4fa-8da812ba3148"
+      },
+      {
+        "question": "How many is the difference in the yards of the TD pass to Miller and the yards of the TD pass to Vickers?",
+        "answer": {
+          "number": "7",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "f22feb73-01cd-42de-b592-8b40f78f0a40"
+      },
+      {
+        "question": "How many is the difference in the yards of the TD pass to Ward and the yards of the TD run by Mendenhall?",
+        "answer": {
+          "number": "50",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "877dabf3-822c-41cb-9937-1dfde03f8863"
+      },
+      {
+        "question": "How many is the difference in the yards of the TD run by Mendenhall and the yards of the TD pass to Vickers?",
+        "answer": {
+          "number": "51",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2a4213fe-307d-4766-84cb-033d22fd0dc3"
+      },
+      {
+        "question": "How many touchdown passes did Roethlisberger throw in the second quarter?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "7af3f9af-be1c-417c-b35f-394ccc7546b5"
+      },
+      {
+        "question": "How many yards was the games longest TD?",
+        "answer": {
+          "number": "52",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "3cc70395-1abd-4305-95f2-4e68c202a709"
+      },
+      {
+        "question": "How many field goals did Reed kick?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "5d11714d-5f28-461a-b860-3529c2bb0e23"
+      },
+      {
+        "question": "How many points were scored in the first quarter?",
+        "answer": {
+          "number": "0",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "63f28e4d-28ba-4805-ba2c-3b595ef98dba"
+      },
+      {
+        "question": "How many field goals did Jeff Reed kick?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "b6b0f78a-9c26-47ed-8dd5-6d7aa8a6626c"
+      },
+      {
+        "question": "What team did the lions lose to the previous week?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Steelers"
+          ]
+        },
+        "query_id": "5366c6fa-4968-4824-a539-2ddedc3cd0c9",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Which team scored first?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Steelers"
+          ]
+        },
+        "query_id": "3f3e820b-c1e8-4787-8154-97ededdf5a39",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many touchdowns were scored in the first half?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2e9689fe-acb1-4f80-a9f1-06a661cbdfa1",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Was the shortest touchdown from a pass or a run?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "pass"
+          ]
+        },
+        "query_id": "2e5d447a-cbed-4148-9dec-e818f69ccb1f",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many wins did the Steelers have before this game?",
+        "answer": {
+          "number": "3",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "5922368d-e7f7-4089-b508-8b57627df92b",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many total points were scored in the first quarter?",
+        "answer": {
+          "number": "0",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "99634c67-cbd2-4e74-85eb-e77a0df40358",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player threw the first touchdown pass of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Ben Roethlisberger"
+          ]
+        },
+        "query_id": "29adea25-7951-4956-b5ec-2c927ac4ea99",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many touchdown passes did Ben Roethlisberger throw in the second quarter?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "e6b860a6-a6ad-41d7-bc81-26b46cc73ca4",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "What are the top two longest touchdown passes thrown in the second quarter?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "8-yard",
+            "52-yard"
+          ]
+        },
+        "query_id": "8835bc61-e819-44bc-ab72-ea8974d4b6cb",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards was the shortest touchdown run?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "abe46b50-90b7-49fd-b738-3ec6c99d5e6a",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "Which player scored the last touchdown of the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Rashard Mendenhall"
+          ]
+        },
+        "query_id": "732eb5ab-1b8e-40be-b2fa-108ac60364c6",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards was the shortest touchdown pass?",
+        "answer": {
+          "number": "8",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "3ba06c0d-91c1-4d38-9847-ae93172aaea5",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards was the longest touchdown pass?",
+        "answer": {
+          "number": "52",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "1eb187fd-57c8-4eb3-a267-528b0b3cfd09",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards was the shortest field goal?",
+        "answer": {
+          "number": "32",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "0990ab23-4b2c-4875-82c4-31c9b04ae22c",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      },
+      {
+        "question": "How many yards longer was Jeff Reed's second field goal compared to his first?",
+        "answer": {
+          "number": "7",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "879b348d-629e-4679-bb63-6d95046afb5d",
+        "highlights": [],
+        "question_type": [],
+        "validated_answers": [],
+        "expert_answers": []
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "nfl_425": {
+    "passage": "Coming off their Bye Week, the Redskins avenged their Week 2 loss by defeating the Dallas Cowboys after a wild final minute of the fourth quarter which ended with a game-winning 47-yard field goal by kicker Nick Novak. With less than a minute left in the fourth quarter, Dallas kicker Mike Vanderjagt's field goal was blocked by newly signed Redskins cornerback Troy Vincent, and recovered by Redskins free safety Sean Taylor, who ran the ball down to the Dallas 45-yard line with no time remaining. During the runback by Taylor, Dallas offensive lineman Kyle Kosier was flagged for a 15-yard facemask penalty, which moved the ball down to the Cowboys 30-yard line.  The NFL Rulebook states that a game cannot end on a defensive penalty, thus, Washington was awarded one un-timed down. With the playclock at 0:00, Novak completed a 47-yard field goal to win the game, sending FedEx field into pandemoneum and improving the Redskins record to 3-5. Stats",
+    "qa_pairs": [
+      {
+        "question": "Which team does Nick Novak play for?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Redskins"
+          ]
+        },
+        "query_id": "3d9f5f00-9aef-4594-835e-91150f926bb8"
+      },
+      {
+        "question": "Which team won the game?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Redskins"
+          ]
+        },
+        "query_id": "169fab50-e3ff-4551-9ac0-18dd659e4250"
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  },
+  "history_269": {
+    "passage": "In 1344, Momchil, the independent Bulgarian ruler of the Rhodope and Aegean regions, whose army grew to 2,000 men, took an important role in the Byzantine civil war. While at first he supported John Kantakouzenos, from the spring of 1344 Momchil reneged, provoked by the aggression of the Ottoman allies. In June he defeated the Ottoman fleet near the Portogalos bay. According to sources, at night the Bulgarian ruler sent boats to burn the anchored Ottoman ships and soon after he defeated the army of Kantakouzenos at Mosynopolis. Probably the first local ruler to become aware of the impending Ottoman threat, Momchil unsuccessfully pleaded with the emperors of Bulgaria and Byzantium for help. Even though his troops continued the resistance in the Eastern Rhodopes, in May 1345 the Turks led by Umur Beg marched from Asia Minor and devastated Bulgarian territories driving away people and livestock. Soon after, on 7 July 1345, Ottoman forces under Umur Beg defeated Momchil's army in the battle of Peritor near his capital Xanthi. Sources attest that the independent ruler perished in the battle without leaving asuccessor, and with little political will or leadership left to counter the Ottoman invasion.",
+    "qa_pairs": [
+      {
+        "question": "How many years span these events?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "551aab6a-aee5-4df7-b270-99aa39632158"
+      },
+      {
+        "question": "What event happened later, Ottoman forces defeating Momchil's army, or the Turks marching from Asian Minor to devastate Bulgarian territories?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Ottoman forces defeating Momchil's army"
+          ]
+        },
+        "query_id": "6d0e584e-ffbd-460d-bf12-30fb51683119"
+      },
+      {
+        "question": "How many wars were there?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "2d075325-1e93-4f76-a36f-6b7a83e99890"
+      },
+      {
+        "question": "When did the war with the Momchis end?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "7",
+            "month": "July",
+            "year": "1345"
+          },
+          "spans": []
+        },
+        "query_id": "5cace600-9cd1-4f4e-8619-05aadb3571c1"
+      },
+      {
+        "question": "How many years passed from when Momchil ruled the Aegean regions to when they were defeated by the Ottoman?",
+        "answer": {
+          "number": "1",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "d39ee8b4-bf7e-4ddd-9420-68abbe86064f"
+      },
+      {
+        "question": "Which two armies did Momchil defeat in 1344?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Ottoman",
+            "army of Kantakouzenos"
+          ]
+        },
+        "query_id": "8d598f05-16ea-481f-a83f-5515e6ab6278",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "Which two groups experienced defeat in 1345?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "Bulgarian territories",
+            "Momchil's army"
+          ]
+        },
+        "query_id": "4c360726-f991-48a9-b4a3-5335c206b656",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "In defeating armies, which did Momchil defeat second in 1344?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": [
+            "the army of Kantakouzenos"
+          ]
+        },
+        "query_id": "c661c483-d9fb-43f1-b1cb-4b8ce51784b9",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "When did the first success of a defeat happen for Momchil?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "June",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "fff72e27-13c3-4f1d-8705-39c0548c0c7e",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "When did Momchil defeat the Ottoman fleet near the Portogalos bay?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "",
+            "month": "June",
+            "year": "1344"
+          },
+          "spans": []
+        },
+        "query_id": "3637ce9d-203d-49e0-a454-b8a49e376148",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "How many months after the Turks led by Umur Beg marched from Asia Minor did Ottoman forces under Umur Beg defeat Momchil's army in the battle of Peritor?",
+        "answer": {
+          "number": "2",
+          "date": {
+            "day": "",
+            "month": "",
+            "year": ""
+          },
+          "spans": []
+        },
+        "query_id": "8f256797-e4c2-4a4d-b7aa-898207e1d82b",
+        "highlights": [],
+        "question_type": []
+      },
+      {
+        "question": "When did Momchil die?",
+        "answer": {
+          "number": "",
+          "date": {
+            "day": "7",
+            "month": "July",
+            "year": "1345"
+          },
+          "spans": []
+        },
+        "query_id": "4600e413-5dc2-480f-a561-631214c52782",
+        "highlights": [],
+        "question_type": []
+      }
+    ],
+    "wiki_url": "https://en.wikipedia.org/wiki/2014_Cleveland_Browns"
+  }
+}
