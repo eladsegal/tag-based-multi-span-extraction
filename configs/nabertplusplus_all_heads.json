@@ -15,7 +15,7 @@
     },
     "iterator": {
         "type": "basic",
-        "batch_size": 8
+        "batch_size": 12
     },
     "model": {
         "type": "nabert++",
