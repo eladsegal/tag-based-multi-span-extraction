@@ -126,8 +126,8 @@ class NaBertDropReader(DatasetReader):
                 question_text = qa_pair["question"].strip()
                 answer = qa_pair['answer']
 
-                answer_type = get_answer_type(answer)
-                if answer_type not in self.answer_types:
+                specific_answer_type = get_answer_type(answer)
+                if specific_answer_type not in self.answer_types:
                     continue
 
                 answer_annotations: List[Dict] = list()
@@ -145,7 +145,8 @@ class NaBertDropReader(DatasetReader):
                                                  number_len,
                                                  question_id,
                                                  passage_id,
-                                                 answer_annotations)
+                                                 answer_annotations,
+                                                 specific_answer_type)
                 if instance is not None:
                     instances.append(instance)
 
@@ -165,7 +166,8 @@ class NaBertDropReader(DatasetReader):
                          number_len: List[int],
                          question_id: str = None,
                          passage_id: str = None,
-                         answer_annotations: List[Dict] = None) -> Union[Instance, None]:
+                         answer_annotations: List[Dict] = None,
+                         specific_answer_type: str = None) -> Union[Instance, None]:
         # Tokenize question and passage
         question_tokens = self.tokenizer.tokenize(question_text)
         question_tokens = fill_token_indices(question_tokens, question_text, self._uncased)
@@ -342,7 +344,7 @@ class NaBertDropReader(DatasetReader):
             wordpiece_mask = np.array(wordpiece_mask)
             fields['bio_wordpiece_mask'] = ArrayField(wordpiece_mask, dtype=np.int64)
             
-            if answer_type in self.bio_types and answer_type == SPAN_ANSWER_TYPE:
+            if specific_answer_type in self.bio_types and answer_type == SPAN_ANSWER_TYPE:
                 bio_labels = create_bio_labels(valid_question_spans + valid_passage_spans, len(qp_field))
                 fields['span_bio_labels'] = SequenceLabelField(bio_labels, sequence_field=qp_field)
             else:

@@ -20,10 +20,10 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
     tokenizer = tokenizer = BertDropTokenizer(pretrained_model)
     drop_sample_path = os.path.join(os.path.dirname(__file__), 'resources', 'drop_sample.json')        
 
-    def test_read_instances_from_correct_type(self):
+    def spans_decoding_test(self):
         instances_to_read = 1
 
-        reader = NaBertDropReader(self.tokenizer, {'tokens': self.token_indexer}, max_instances = instances_to_read, extra_numbers=[100, 1], answer_type=['multiple_span'])
+        reader = NaBertDropReader(self.tokenizer, {'tokens': self.token_indexer}, max_instances = instances_to_read, extra_numbers=[100, 1], answer_types=['multiple_span'])
         instances = reader._read(self.drop_sample_path)
 
         vocab = Vocabulary() #self.token_indexer.vocab
@@ -33,7 +33,7 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
         
         instance = instances[0]
 
-        tags = list(instance.fields['span_labels'])
+        tags = list(instance.fields['span_bio_labels'])
 
         span_texts, spans_indices, invalid_tokens = handler.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
 
