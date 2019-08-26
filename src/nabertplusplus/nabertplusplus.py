@@ -35,7 +35,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  answering_abilities: List[str] = None,
                  number_rep: str = 'first',
                  arithmetic: str = 'base',
-                 special_numbers : List[int] = None) -> None:
+                 special_numbers: List[int] = None) -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
@@ -68,10 +68,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
         if "question_span_extraction" in self.answering_abilities:
             self._question_span_extraction_index = self.answering_abilities.index("question_span_extraction")
-            self._question_span_start_predictor = \
-                self.ff(2 * bert_dim, bert_dim, 1)
-            self._question_span_end_predictor = \
-                self.ff(2 * bert_dim, bert_dim, 1)
+            self._question_span_start_predictor = self.ff(2 * bert_dim, bert_dim, 1)
+            self._question_span_end_predictor = self.ff(2 * bert_dim, bert_dim, 1)
 
         if "arithmetic" in self.answering_abilities:
             self.arithmetic = arithmetic
@@ -87,8 +85,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
         if "counting" in self.answering_abilities:
             self._counting_index = self.answering_abilities.index("counting")
-            self._count_number_predictor = \
-                self.ff(bert_dim, bert_dim, max_count + 1) 
+            self._count_number_predictor = self.ff(bert_dim, bert_dim, max_count + 1)  # `+1` for 0
 
         if "multiple_spans" in self.answering_abilities:
             self._multispan_predictor = default_multispan_predictor(bert_dim, dropout_prob)
@@ -98,7 +95,24 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         self._drop_metrics = CustomDropEmAndF1()
         initializer(self)
 
-    def summary_vector(self, encoding, mask, in_type = "passage"):
+    def summary_vector(self, encoding, mask, in_type="passage"):
+        """
+        In NABERT (and in NAQANET), a 'summary_vector' is created for some entities, such as the
+        passage or the question. This vector is created as a weighted sum of the elements of the
+        entity, e.g. the passage summary vector is a weighted sum of the passage tokens.
+
+        The specific weighting for every entity type is a learned.
+
+        Parameters
+        ----------
+        encoding : BERT's output layer
+        mask : a Tensor with 1s only at the positions relevant to ``in_type``
+        in_type : the entity we want to summarize, e.g the passage
+
+        Returns
+        -------
+        The summary vector according to ``in_type``.
+        """
         if in_type == "passage":
             # Shape: (batch_size, seqlen)
             alpha = self._passage_weights_predictor(encoding).squeeze()
@@ -155,14 +169,13 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 question_passage: Dict[str, torch.LongTensor],
                 number_indices: torch.LongTensor,
                 mask_indices: torch.LongTensor,
-                num_spans: torch.LongTensor = None,
                 answer_as_passage_spans: torch.LongTensor = None,
                 answer_as_question_spans: torch.LongTensor = None,
                 answer_as_expressions: torch.LongTensor = None,
                 answer_as_expressions_extra: torch.LongTensor = None,
                 answer_as_counts: torch.LongTensor = None,
-                span_labels: torch.LongTensor = None,
-                span_wordpiece_mask: torch.LongTensor = None,
+                span_bio_labels: torch.LongTensor = None,
+                bio_wordpiece_mask: torch.LongTensor = None,
                 metadata: List[Dict[str, Any]] = None) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
         # Shape: (batch_size, seqlen)
@@ -214,7 +227,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     passage_out,
                     1,
                     clamped_number_indices.unsqueeze(-1).expand(-1, -1, passage_out.size(-1)))
-            op_mask = torch.ones((batch_size,self.num_ops + 1),device=number_mask.device).long()
+            op_mask = torch.ones((batch_size, self.num_ops + 1), device=number_mask.device).long()
             options_mask = torch.cat([op_mask, number_mask], -1)
             ops = self.op_embeddings(torch.arange(self.num_ops + 1, device=number_mask.device).expand(batch_size,-1))
             options = torch.cat([self.Wo(ops), self.Wc(encoded_numbers)], 1)
@@ -238,7 +251,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 self._question_span_module(passage_vector, question_out, question_mask)
 
         if "multiple_spans" in self.answering_abilities:
-            multi_span_result = self._multi_span_handler.forward(passage_out, span_labels, pad_mask, span_wordpiece_mask)
+            multi_span_result = self._multi_span_handler.forward(passage_out, span_bio_labels, pad_mask, bio_wordpiece_mask)
             
         if "arithmetic" in self.answering_abilities:
             if self.arithmetic == "base":
