@@ -13,7 +13,7 @@ DATE_ANSWER_TYPE = 'date'
 SINGLE_SPAN = 'single_span'
 MULTIPLE_SPAN = 'multiple_span'
 SPAN_ANSWER_TYPES = [SINGLE_SPAN, MULTIPLE_SPAN]
-ANSWER_TYPES = SPAN_ANSWER_TYPES + ['number', 'date']
+ALL_ANSWER_TYPES = SPAN_ANSWER_TYPES + ['number', 'date']
 
 
 def load_dataset(path):
@@ -28,13 +28,13 @@ def save_dataset(dataset, path):
 
 def get_answer_type(answer):
     if answer['number']:
-        return 'number'
+        return NUMBER_ANSWER_TYPE
     elif answer['spans']:
         if len(answer['spans']) == 1:
             return SINGLE_SPAN
         return MULTIPLE_SPAN
     elif any(answer['date'].values()):
-        return 'date'
+        return DATE_ANSWER_TYPE
     else:
         return None
 
@@ -68,3 +68,19 @@ def deep_dict_update(d, u):
             d[k] = v
     return d
 
+def fill_token_indices(tokens, text, uncased):
+    new_tokens = []    
+    text_idx = 0
+
+    if uncased:
+        text = text.lower()
+
+    for token in tokens:
+        first_char_idx = 2 if len(token.text) > 2 and token.text[:2] == "##" else 0
+        while token.text[first_char_idx] != text[text_idx]:
+            text_idx += 1
+        
+        new_tokens.append(Token(text=token.text, idx = text_idx))        
+        text_idx += len(token.text) - first_char_idx
+
+    return new_tokens

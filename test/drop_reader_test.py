@@ -1,10 +1,12 @@
+import os
+#print(os.environ.get("PATH")) # Run it when the environment is activated and use the related env values to overwrite the PATH variable 
+os.environ['PATH'] = 'C:\\Users\\Elad\\Anaconda3\\envs\\allennlp;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\mingw-w64\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\usr\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Scripts;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\bin;C:\\Users\\Elad\\Anaconda3\\condabin;'
+
 import unittest
 from src.bert_tokenizer import BertDropTokenizer
 from src.bert_reader import BertDropReader
 from allennlp.data.token_indexers import PretrainedBertIndexer
 from overrides import overrides
-import os
-from pytorch_pretrained_bert import BertTokenizer
 
 class DropReaderUnitTests(unittest.TestCase):
     pretrained_model = "bert-base-cased"
