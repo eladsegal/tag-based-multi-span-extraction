@@ -97,7 +97,7 @@ class MultiSpanHandler:
         valid_tokens, invalid_tokens = validate_tokens_spans(spans_tokens)
         spans_text, spans_indices = decode_token_spans(valid_tokens, passage_text, question_text)
 
-        return list(set(spans_text)), spans_indices, invalid_tokens
+        return spans_text, spans_indices, invalid_tokens
 
 def validate_tokens_spans(spans_tokens):
     valid_tokens = []

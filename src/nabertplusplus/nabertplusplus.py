@@ -35,7 +35,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  answering_abilities: List[str] = None,
                  number_rep: str = 'first',
                  arithmetic: str = 'base',
-                 special_numbers: List[int] = None) -> None:
+                 special_numbers: List[int] = None,
+                 unique_on_multispan: bool = True) -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
@@ -91,6 +92,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
             self._multispan_predictor = default_multispan_predictor(bert_dim, dropout_prob)
             self._multispan_crf = default_crf()
             self._multi_span_handler = MultiSpanHandler(bert_dim, self._multispan_predictor, self._multispan_crf, dropout_prob)
+            self._unique_on_multispan = unique_on_multispan
 
         self._drop_metrics = CustomDropEmAndF1()
         initializer(self)
@@ -377,6 +379,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
                         answer_json["value"], answer_json["spans"], invalid_spans = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'], metadata[i]['original_passage'], metadata[i]['original_question'])
+                        if self.__unique_on_multispan:
+                            answer_json["value"] = list(set(answer_json["value"]))
                     else:
                         raise ValueError(f"Unsupported answer ability: {predicted_ability_str}")
                     
