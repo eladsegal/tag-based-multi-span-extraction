@@ -21,9 +21,9 @@ class CustomDropEmAndF1(Metric):
         self._total_em = 0.0
         self._total_f1 = 0.0
         self._count = 0
-        self._answer_type_em = defaultdict(float)
-        self._answer_type_f1 = defaultdict(float)
-        self._answer_type_count = defaultdict(int)
+        self._answer_type_head_em = defaultdict(lambda: defaultdict(float))
+        self._answer_type_head_f1 = defaultdict(lambda: defaultdict(float))
+        self._answer_type_head_count = defaultdict(lambda: defaultdict(int))
 
     @overrides
     def __call__(self, prediction: Union[str, List], ground_truths: List):  # type: ignore
@@ -38,7 +38,7 @@ class CustomDropEmAndF1(Metric):
         """
         self.call(prediction, ground_truths)
 
-    def call(self, prediction: Union[str, List], ground_truths: List) -> Union[str, List]:
+    def call(self, prediction: Union[str, List], ground_truths: List, predicted_ability: str) -> Union[str, List]:
         # If you wanted to split this out by answer type, you could look at [1] here and group by
         # that, instead of only keeping [0].
         ground_truth_answer_strings, ground_truth_answer_types = list(zip(*[answer_json_to_strings(annotation) for annotation in ground_truths]))
@@ -53,9 +53,9 @@ class CustomDropEmAndF1(Metric):
 
         # Have to select one ground truth, so might as well be the maximizing one
         answer_type = ground_truth_answer_types[maximizing_ground_truth_index]
-        self._answer_type_em[answer_type] += exact_match
-        self._answer_type_f1[answer_type] += f1_score
-        self._answer_type_count[answer_type] += 1
+        self._answer_type_head_em[answer_type][predicted_ability] += exact_match
+        self._answer_type_head_f1[answer_type][predicted_ability] += f1_score
+        self._answer_type_head_count[answer_type][predicted_ability] += 1
 
         return (exact_match, f1_score), ground_truth_answer_strings[maximizing_ground_truth_index]
 
@@ -70,27 +70,28 @@ class CustomDropEmAndF1(Metric):
         exact_match = self._total_em / self._count if self._count > 0 else 0
         f1_score = self._total_f1 / self._count if self._count > 0 else 0
         
-        scores_per_answer_type = {}
-        for answer_type, count in self._answer_type_count.items():
-            type_exact_match = self._answer_type_em[answer_type] / count if count > 0 else 0
-            type_f1_score = self._answer_type_f1[answer_type] / count if count > 0 else 0
-            scores_per_answer_type[answer_type] = type_exact_match, type_f1_score
+        scores_per_answer_type_and_head = defaultdict(lambda: defaultdict(float))
+        for answer_type, head_count in self._answer_type_head_count.items():
+            for head, count in head_count.items():
+                type_head_exact_match = self._answer_type_head_em[answer_type][head] / count if count > 0 else 0
+                type_head_f1_score = self._answer_type_head_f1[answer_type][head] / count if count > 0 else 0
+                scores_per_answer_type_and_head[answer_type][head] = type_head_exact_match, type_head_f1_score
         
         if reset:
             self.reset()
-        return (exact_match, f1_score), scores_per_answer_type
+        return (exact_match, f1_score), scores_per_answer_type_and_head
 
     @overrides
     def reset(self):
         self._total_em = 0.0
         self._total_f1 = 0.0
         self._count = 0
-        self._answer_type_em = defaultdict(float)
-        self._answer_type_f1 = defaultdict(float)
-        self._answer_type_count = defaultdict(int)
+        self._answer_type_head_em = defaultdict(lambda: defaultdict(float))
+        self._answer_type_head_f1 = defaultdict(lambda: defaultdict(float))
+        self._answer_type_head_count = defaultdict(lambda: defaultdict(int))
     
     def __str__(self):
-        return f"CustomDropEmAndF1(em={self._total_em}, f1={self._total_f1}, answer_type_em={self._answer_type_em}, answer_type_f1={self._answer_type_f1})"
+        return f"CustomDropEmAndF1(em={self._total_em}, f1={self._total_f1}, _answer_type_head_em={self._answer_type_head_em}, _answer_type_head_count={self._answer_type_head_count})"
 
 
     @staticmethod

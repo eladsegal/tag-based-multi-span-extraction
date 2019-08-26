@@ -384,7 +384,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     em, f1 = None, None
                     answer_annotations = metadata[i].get('answer_annotations', [])
                     if answer_annotations:
-                        (em, f1), maximizing_ground_truth = self._drop_metrics.call(answer_json["value"], answer_annotations)
+                        (em, f1), maximizing_ground_truth = self._drop_metrics.call(answer_json["value"], answer_annotations, predicted_ability_str)
 
                     if not self.training:
                         output_dict["passage_id"].append(metadata[i]["passage_id"])
@@ -706,9 +706,14 @@ class NumericallyAugmentedBERTPlusPlus(Model):
     
     
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
-        (exact_match, f1_score), scores_per_answer_type = self._drop_metrics.get_metric(reset)
+        (exact_match, f1_score), scores_per_answer_type_and_head = self._drop_metrics.get_metric(reset)
         metrics = {'em': exact_match, 'f1': f1_score}
-        for answer_type, (answer_type_exact_match, answer_type_f1_score) in scores_per_answer_type.items():
-            metrics[f'_em_{answer_type}'] = answer_type_exact_match 
-            metrics[f'_f1_{answer_type}'] = answer_type_f1_score 
+        for answer_type, scores_per_head in scores_per_answer_type_and_head.items():
+            for head, (answer_type_head_exact_match, answer_type_head_f1_score) in scores_per_head.items():
+                if 'multi' not in head:
+                    metrics[f'_em_{answer_type}_{head}'] = answer_type_head_exact_match
+                    metrics[f'_f1_{answer_type}_{head}'] = answer_type_head_f1_score
+                else:
+                    metrics[f'em_{answer_type}_{head}'] = answer_type_head_exact_match
+                    metrics[f'f1_{answer_type}_{head}'] = answer_type_head_f1_score
         return metrics
