@@ -52,24 +52,29 @@ class MultiSpanHandler:
 
         return result
 
-    def decode_spans_from_tags(self, tags, question_passage_tokens):
+    def decode_spans_from_tags(self, tags, question_passage_tokens, passage_text, question_text):
         spans_tokens = []
         prev = 0 # 0 = O
             
         current_tokens = []
 
+        context = 'q'
+
         for i in np.arange(len(tags)):      
-            token = question_passage_tokens[i].text
+            token = question_passage_tokens[i]
+
+            if token.text == '[SEP]':
+                context = 'p'
 
             # If it is the same word so just add it to current tokens
-            if token[:2] == '##':
+            if token.text[:2] == '##':
                 if prev != 0:
                     current_tokens.append(token)
                 continue
 
             if tags[i] == 1: # 1 = B
                 if prev != 0:
-                    spans_tokens.append(current_tokens)
+                    spans_tokens.append((context, current_tokens))
                     current_tokens = []
 
                 current_tokens.append(token)
@@ -82,35 +87,47 @@ class MultiSpanHandler:
                 continue
 
             if tags[i] == 0 and prev != 0:
-                spans_tokens.append(current_tokens)
+                spans_tokens.append((context, current_tokens))
                 current_tokens = []
                 prev = 0
 
         if current_tokens:
-            spans_tokens.append(current_tokens)
+            spans_tokens.append((context, current_tokens))
 
-        spans = [tokenlist_to_passage(tokens) for tokens in spans_tokens]              
+        valid_tokens, invalid_tokens = validate_tokens_spans(spans_tokens)
+        spans_text, spans_indices = decode_token_spans(valid_tokens, passage_text, question_text)
 
-        return list(set(spans)), list()
+        return list(set(spans_text)), spans_indices, invalid_tokens
 
+def validate_tokens_spans(spans_tokens):
+    valid_tokens = []
+    invalid_tokens = []
+    for context, tokens in spans_tokens:
+        tokens_text = [token.text for token in tokens]
+        
+        if '[CLS]' in tokens_text or '[SEP]' in tokens_text:
+            invalid_tokens.append(tokens)
+        else:
+            valid_tokens.append((context, tokens))
 
-def tokenlist_to_passage(token_text):
-    str_list = list(map(token_to_text_in_sentence, token_text))
-    string = "".join(str_list)
-    if string[0] == " ":
-        string = string[1:]
+    return valid_tokens, invalid_tokens
 
-    string = string.replace(" ' s", "'s")
-    return string
+def decode_token_spans(spans_tokens, passage_text, question_text):
+    spans_text = []
+    spans_indices = []
 
-def token_to_text_in_sentence(x):
-    if len(x)>2 and x[:2]=="##":
-        return x[2:]
+    for context, tokens in spans_tokens:
+        text_start = tokens[0].idx
+        text_end = tokens[-1].idx + len(tokens[-1].text)
 
-    if x == "-":
-        return x
+        spans_indices.append((context, text_start, text_end))
 
-    return " " + x
+        if context == 'p':
+            spans_text.append(passage_text[text_start:text_end])
+        else:
+            spans_text.append(question_text[text_start:text_end])
+
+    return spans_text, spans_indices
 
 def default_multispan_predictor(bert_dim, dropout):
     return ff(bert_dim, bert_dim, 3, dropout)

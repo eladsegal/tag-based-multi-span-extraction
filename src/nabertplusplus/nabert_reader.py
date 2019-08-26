@@ -16,8 +16,8 @@ from allennlp.data.fields import Field, TextField, IndexField, LabelField, ListF
                                  MetadataField, SequenceLabelField, SpanField, ArrayField
 import numpy as np
 
-from src.preprocessing.utils import SPAN_ANSWER_TYPES, ALL_ANSWER_TYPES
-from src.preprocessing.utils import get_answer_type, find_span
+from src.preprocessing.utils import SPAN_ANSWER_TYPE, SPAN_ANSWER_TYPES, ALL_ANSWER_TYPES
+from src.preprocessing.utils import get_answer_type, find_span, fill_token_indices
 
 from src.nhelpers import *
 
@@ -42,7 +42,8 @@ class NaBertDropReader(DatasetReader):
                  exp_search: str = 'add_sub',
                  max_depth: int = 3,
                  extra_numbers: List[float] = [],
-                 max_instances = -1):
+                 max_instances = -1,
+                 uncased: bool = True):
         super(NaBertDropReader, self).__init__(lazy)
         self.tokenizer = tokenizer
         self.token_indexers = token_indexers
@@ -74,6 +75,8 @@ class NaBertDropReader(DatasetReader):
             self.word_to_num = get_number_from_word
         else:
             self.word_to_num = DropReader.convert_word_to_number
+
+        self._uncased = uncased
     
     @overrides
     def _read(self, file_path: str):
@@ -115,6 +118,8 @@ class NaBertDropReader(DatasetReader):
                 passage_tokens += wordpieces
                 curr_index += num_wordpieces
             
+            passage_tokens = fill_token_indices(passage_tokens, passage_text, self._uncased)
+
             # Process questions from this passage
             for qa_pair in passage_info["qa_pairs"]:
                 question_id = qa_pair["query_id"]
@@ -140,8 +145,7 @@ class NaBertDropReader(DatasetReader):
                                                  number_len,
                                                  question_id,
                                                  passage_id,
-                                                 answer_annotations,
-                                                 answer_type)
+                                                 answer_annotations)
                 if instance is not None:
                     instances.append(instance)
 
@@ -156,15 +160,16 @@ class NaBertDropReader(DatasetReader):
                          passage_text: str,
                          passage_tokens: List[Token],
                          numbers_in_passage: List[Any],
-                         number_words : List[str],
+                         number_words: List[str],
                          number_indices: List[int],
                          number_len: List[int],
                          question_id: str = None,
                          passage_id: str = None,
-                         answer_annotations: List[Dict] = None,
-                         answer_type: str = None) -> Union[Instance, None]:
+                         answer_annotations: List[Dict] = None) -> Union[Instance, None]:
         # Tokenize question and passage
         question_tokens = self.tokenizer.tokenize(question_text)
+        question_tokens = fill_token_indices(question_tokens, question_text, self._uncased)
+
         qlen = len(question_tokens)
 
         qp_tokens = [Token('[CLS]')] + question_tokens + [Token('[SEP]')] + passage_tokens
@@ -329,29 +334,16 @@ class NaBertDropReader(DatasetReader):
             if not count_fields:
                 count_fields.append(LabelField(-1, skip_indexing=True))
             fields["answer_as_counts"] = ListField(count_fields)
-            
+
             # add BIO-related fields
 
             # in a word broken up into pieces, every piece except the first should be ignored when calculating the loss
             wordpiece_mask = [not token.text.startswith('##') for token in qp_tokens]
             wordpiece_mask = np.array(wordpiece_mask)
             fields['bio_wordpiece_mask'] = ArrayField(wordpiece_mask, dtype=np.int64)
-
-            if answer_type in self.bio_types and answer_type in SPAN_ANSWER_TYPES:
-                qp_token_indices: Dict[Token, List[int]] = defaultdict(list)
-                for i, token in enumerate(qp_tokens):
-                    qp_token_indices[token].append(i)
-
-                # We use the first answer annotation, like in NABERT
-                answer_texts = answer_annotations[0]['spans']
-
-                spans = []
-                for answer_text in answer_texts:
-                    answer_tokens = self.tokenizer.tokenize(answer_text)
-                    answer_span = find_span(answer_tokens, qp_token_indices, len(qp_field))
-                    spans.extend(answer_span)
-
-                bio_labels = create_bio_labels(spans, len(qp_field))
+            
+            if answer_type in self.bio_types and answer_type == SPAN_ANSWER_TYPE:
+                bio_labels = create_bio_labels(valid_question_spans + valid_passage_spans, len(qp_field))
                 fields['span_bio_labels'] = SequenceLabelField(bio_labels, sequence_field=qp_field)
             else:
                 # create all 'O' BIO labels for non-span questions
