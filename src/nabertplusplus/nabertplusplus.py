@@ -324,6 +324,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     output_dict["maximizing_ground_truth"] = []
                     output_dict["em"] = []
                     output_dict["f1"] = []
+                    output_dict["invalid_spans"] = []                                 
 
                 for i in range(batch_size):
                     if len(self.answering_abilities) > 1:
@@ -331,7 +332,11 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     else:
                         predicted_ability_str = self.answering_abilities[0]
                     
+                    predicted_ability_str = "multiple_spans"
+
                     answer_json: Dict[str, Any] = {}
+
+                    invalid_spans = []
                     
                     # We did not consider multi-mention answers here
                     if predicted_ability_str == "passage_span_extraction":
@@ -358,7 +363,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
-                        answer_json["value"], answer_json["spans"] = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'])
+                        answer_json["value"], answer_json["spans"], invalid_spans = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'], metadata[i]['original_passage'], metadata[i]['original_question'])
                     else:
                         raise ValueError(f"Unsupported answer ability: {predicted_ability_str}")
                     
@@ -376,6 +381,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                         output_dict["maximizing_ground_truth"].append(maximizing_ground_truth)
                         output_dict["em"].append(em)
                         output_dict["f1"].append(f1)
+                        output_dict["invalid_spans"].append(invalid_spans)
 
         return output_dict
     

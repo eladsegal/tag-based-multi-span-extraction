@@ -16,8 +16,7 @@ from allennlp.data.fields import Field, TextField, IndexField, LabelField, ListF
                                  MetadataField, SequenceLabelField, SpanField, ArrayField
 import numpy as np
 
-from src.preprocessing.utils import SPAN_ANSWER_TYPES, SPAN_ANSWER_TYPE
-from src.preprocessing.utils import get_answer_type, find_span
+from src.preprocessing.utils import SPAN_ANSWER_TYPES, SPAN_ANSWER_TYPE, get_answer_type, find_span, fill_token_indices
 
 from src.nhelpers import *
 
@@ -42,7 +41,8 @@ class NaBertDropReader(DatasetReader):
                  exp_search: str = 'add_sub',
                  max_depth: int = 3,
                  extra_numbers: List[float] = [],
-                 max_instances = -1):
+                 max_instances = -1,
+                 uncased: bool = True):
         super(NaBertDropReader, self).__init__(lazy)
         self.tokenizer = tokenizer
         self.token_indexers = token_indexers
@@ -75,6 +75,8 @@ class NaBertDropReader(DatasetReader):
             self.word_to_num = get_number_from_word
         else:
             self.word_to_num = DropReader.convert_word_to_number
+
+        self._uncased = uncased
     
     @overrides
     def _read(self, file_path: str):
@@ -109,6 +111,8 @@ class NaBertDropReader(DatasetReader):
                 passage_tokens += wordpieces
                 curr_index += num_wordpieces
             
+            passage_tokens = fill_token_indices(passage_tokens, passage_text, self._uncased)
+
             # Process questions from this passage
             for question_answer in passage_info["qa_pairs"]:
                 question_id = question_answer["query_id"]
@@ -156,6 +160,8 @@ class NaBertDropReader(DatasetReader):
                          specific_answer_type: str = None) -> Union[Instance, None]:
         # Tokenize question and passage
         question_tokens = self.tokenizer.tokenize(question_text)
+        question_tokens = fill_token_indices(question_tokens, question_text, self._uncased)
+
         qlen = len(question_tokens)
         plen = len(passage_tokens)
 
@@ -333,21 +339,8 @@ class NaBertDropReader(DatasetReader):
             
             fields["num_spans"] = LabelField(num_spans, skip_indexing=True)
             
-            if specific_answer_type in self.bio_types and (answer_type == SPAN_ANSWER_TYPE or answer_type in SPAN_ANSWER_TYPES):
-                qp_token_indices: Dict[Token, List[int]] = defaultdict(list)
-                for i, token in enumerate(question_passage_tokens): 
-                    qp_token_indices[token].append(i)
-
-                # We use the first answer annotation, like in NABERT
-                answer_texts = answer_annotations[0]['spans']
-
-                spans = []
-                for answer_text in answer_texts:
-                    answer_tokens = self.tokenizer.tokenize(answer_text)
-                    answer_span = find_span(answer_tokens, qp_token_indices, len(question_passage_field))
-                    spans.extend(answer_span)
-
-                bio_labels = create_bio_labels(spans, len(question_passage_field))
+            if specific_answer_type in self.bio_types and (answer_type == SPAN_ANSWER_TYPE or answer_type in SPAN_ANSWER_TYPES):      
+                bio_labels = create_bio_labels(valid_question_spans + valid_passage_spans, len(question_passage_field))
                 fields['span_labels'] = SequenceLabelField(bio_labels, sequence_field=question_passage_field)
 
                 # in a word broken up into pieces, every piece except the first should be ignored when calculating the loss
