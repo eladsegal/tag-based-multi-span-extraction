@@ -5,13 +5,6 @@ from word2number.w2n import word_to_num
 from allennlp.nn.util import replace_masked_values
 from itertools import permutations
 
-def tokenlist_to_passage(token_text):
-    str_list = list(map(lambda x : x[2:] if len(x)>2 and x[:2]=="##" else " " + x, token_text))
-    string = "".join(str_list)
-    if string[0] == " ":
-        string = string[1:]
-    return string
-
 def get_number_from_word(word):
     punctruations = string.punctuation.replace('-', '')
     word = word.strip(punctruations)

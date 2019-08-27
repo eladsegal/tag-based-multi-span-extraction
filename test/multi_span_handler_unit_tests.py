@@ -20,7 +20,7 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
     tokenizer = tokenizer = BertDropTokenizer(pretrained_model)
     drop_sample_path = os.path.join(os.path.dirname(__file__), 'resources', 'drop_sample.json')        
 
-    def spans_decoding_test(self):
+    def test_bio_spans_decoding(self):
         instances_to_read = 1
 
         reader = NaBertDropReader(self.tokenizer, {'tokens': self.token_indexer}, max_instances = instances_to_read, extra_numbers=[100, 1], answer_types=['multiple_span'])
