@@ -10,7 +10,7 @@ class CustomDropMetricTest(unittest.TestCase):
     def testStandard(self):
         drop_metrics = CustomDropEmAndF1()
         prediction = ['good']
-        score, maximizing_ground_truth = drop_metrics.call(prediction, [{'spans': ['not good']}, {'spans': ['good']}])
+        score, maximizing_ground_truth = drop_metrics.call(prediction, [{'spans': ['not good']}, {'spans': ['good']}], 'some ability')
         self.assertEqual(tuple([1.0, 1.0]), score)
         self.assertEqual(tuple(prediction), maximizing_ground_truth)
 
