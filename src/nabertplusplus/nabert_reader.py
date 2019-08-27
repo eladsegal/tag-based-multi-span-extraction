@@ -222,11 +222,7 @@ class NaBertDropReader(DatasetReader):
                     "passage_id": passage_id,
                     "question_id": question_id}
 
-        if answer_annotations:
-            for annotation in answer_annotations:
-                tokenized_spans = [[token.text for token in self.tokenizer.tokenize(answer)] for answer in annotation['spans']]
-                annotation['spans'] = [tokenlist_to_passage(token_list) for token_list in tokenized_spans]
-            
+        if answer_annotations:            
             # Get answer type, answer text, tokenize
             answer_type, answer_texts = DropReader.extract_answer_info_from_annotation(answer_annotations[0])
             tokenized_answer_texts = []

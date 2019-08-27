@@ -13,9 +13,9 @@ from allennlp.tools.drop_eval import answer_json_to_strings
 from pytorch_pretrained_bert import BertModel, BertTokenizer
 import pickle
 
-from src.nhelpers import tokenlist_to_passage, beam_search, evaluate_postfix
+from src.nhelpers import beam_search, evaluate_postfix
 
-from src.multispan_handler import MultiSpanHandler, default_multispan_predictor, default_crf
+from src.multispan_handler import MultiSpanHandler, default_multispan_predictor, default_crf, decode_token_spans
 
 logger = logging.getLogger(__name__)
 
@@ -355,11 +355,11 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     if predicted_ability_str == "passage_span_extraction":
                         answer_json["answer_type"] = "passage_span"
                         answer_json["value"], answer_json["spans"] = \
-                            self._span_prediction(question_passage_tokens[i], best_passage_span[i])
+                            self._span_prediction(metadata[i]['question_passage_tokens'], best_passage_span[i], metadata[i]['original_passage'], metadata[i]['original_question'], 'p')
                     elif predicted_ability_str == "question_span_extraction":
                         answer_json["answer_type"] = "question_span"
                         answer_json["value"], answer_json["spans"] = \
-                            self._span_prediction(question_passage_tokens[i], best_question_span[i])
+                            self._span_prediction(metadata[i]['question_passage_tokens'], best_question_span[i], metadata[i]['original_passage'], metadata[i]['original_question'], 'q')
                     elif predicted_ability_str == "arithmetic":  # plus_minus combination answer
                         answer_json["answer_type"] = "arithmetic"
                         original_numbers = metadata[i]['original_numbers']
@@ -377,7 +377,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
                         answer_json["value"], answer_json["spans"], invalid_spans = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'], metadata[i]['original_passage'], metadata[i]['original_question'])
-                        if self.__unique_on_multispan:
+                        if self._unique_on_multispan:
                             answer_json["value"] = list(set(answer_json["value"]))
                     else:
                         raise ValueError(f"Unsupported answer ability: {predicted_ability_str}")
@@ -451,12 +451,12 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         return log_marginal_likelihood_for_passage_span
     
     
-    def _span_prediction(self, question_passage_tokens, best_span):
+    def _span_prediction(self, question_passage_tokens, best_span, passage_text, question_text, context):
         (predicted_start, predicted_end)  = tuple(best_span.detach().cpu().numpy())
-        answer_tokens = question_passage_tokens[predicted_start:predicted_end + 1].detach().cpu().numpy()
-        token_lst = self.tokenizer.convert_ids_to_tokens(answer_tokens)
-        predicted_answer = tokenlist_to_passage(token_lst)
-        return predicted_answer, [(predicted_start, predicted_end)]
+        answer_tokens = question_passage_tokens[predicted_start:predicted_end + 1]
+        spans_text, spans_indices = decode_token_spans([(context, answer_tokens)], passage_text, question_text)
+        predicted_answer = spans_text[0]
+        return predicted_answer, spans_indices
 
     
     def _question_span_module(self, passage_vector, question_out, question_mask):

@@ -77,10 +77,17 @@ def fill_token_indices(tokens, text, uncased):
 
     for token in tokens:
         first_char_idx = 2 if len(token.text) > 2 and token.text[:2] == "##" else 0
-        while token.text[first_char_idx] != text[text_idx]:
+
+        while text[text_idx] == ' ':
             text_idx += 1
         
-        new_tokens.append(Token(text=token.text, idx = text_idx))        
-        text_idx += len(token.text) - first_char_idx
+        new_tokens.append(Token(text=token.text, idx = text_idx))             
+        
+        token_len = len(token.text) - first_char_idx
+
+        if token.text == '[UNK]':
+            token_len = 1
+
+        text_idx += token_len
 
     return new_tokens
