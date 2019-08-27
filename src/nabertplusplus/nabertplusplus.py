@@ -347,8 +347,6 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     else:
                         predicted_ability_str = self.answering_abilities[0]
                     
-                    predicted_ability_str = "multiple_spans"
-
                     answer_json: Dict[str, Any] = {}
 
                     invalid_spans = []
