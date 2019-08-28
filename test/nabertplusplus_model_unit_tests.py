@@ -1,3 +1,7 @@
+import os
+#print(os.environ.get("PATH")) # Run it when the environment is activated and use the related env values to overwrite the PATH variable 
+os.environ['PATH'] = 'C:\\Users\\Elad\\Anaconda3\\envs\\allennlp;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\mingw-w64\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\usr\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Scripts;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\bin;C:\\Users\\Elad\\Anaconda3\\condabin;'
+
 import unittest
 from src.bert_indexer import BertDropTokenIndexer
 from src.bert_tokenizer import BertDropTokenizer
@@ -15,7 +19,7 @@ class NabertPlusPlusModelUnitTests(unittest.TestCase):
     token_indexer = BertDropTokenIndexer(pretrained_model)
     tokenizer = tokenizer = BertDropTokenizer(pretrained_model)
     
-    drop_sample_path = os.path.join(r"data\drop_dataset_train.json")        
+    drop_sample_path = os.path.join(r"data\drop_dataset_train_sample.json")        
 
     def test_nabertplusplus_sanity(self):
         instances_to_read = 12

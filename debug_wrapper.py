@@ -1,15 +1,21 @@
+DEBUG = True
+if DEBUG:
+    import ptvsd
+    ptvsd.enable_attach(address=('localhost', 5679), redirect_output=True)
+    ptvsd.wait_for_attach()
+
 import json
 import shutil
 import sys
 
 from allennlp.commands import main
 
-config_file = "configs/nabertplusplusV2_only_bio.json"
+config_file = "configs/nabertplusplus_all_heads.json"
 
 overrides_dict = {}
 USE_CPU = False # Use overrides to train on CPU.
-overrides_dict['train_data_path'] = 'data/drop_sample.json'
-overrides_dict['validation_data_path'] = None
+overrides_dict['train_data_path'] = 'data/drop_dataset_train_sample.json'
+overrides_dict['validation_data_path'] = 'data/drop_dataset_dev_sample.json'
 
 
 

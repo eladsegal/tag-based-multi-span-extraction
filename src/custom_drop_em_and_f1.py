@@ -70,16 +70,40 @@ class CustomDropEmAndF1(Metric):
         exact_match = self._total_em / self._count if self._count > 0 else 0
         f1_score = self._total_f1 / self._count if self._count > 0 else 0
         
-        scores_per_answer_type_and_head = defaultdict(lambda: defaultdict(float))
+        scores_per_answer_type_and_head = defaultdict(lambda: {})
+        scores_per_answer_type = {}
+        scores_per_head = {}
+
+        em_per_head = defaultdict(float)
+        f1_per_head = defaultdict(float)
+        count_per_head = defaultdict(int)
+
         for answer_type, head_count in self._answer_type_head_count.items():
+            type_count = 0
+            type_em = 0.0
+            type_f1 = 0.0
+
             for head, count in head_count.items():
-                type_head_exact_match = self._answer_type_head_em[answer_type][head] / count if count > 0 else 0
-                type_head_f1_score = self._answer_type_head_f1[answer_type][head] / count if count > 0 else 0
+                type_count += count
+                type_em += self._answer_type_head_em[answer_type][head]
+                type_f1 += self._answer_type_head_f1[answer_type][head]
+
+                em_per_head[head] += self._answer_type_head_em[answer_type][head]
+                f1_per_head[head] += self._answer_type_head_f1[answer_type][head]
+                count_per_head[head] += count
+
+                type_head_exact_match = self._answer_type_head_em[answer_type][head] / count
+                type_head_f1_score = self._answer_type_head_f1[answer_type][head] / count
                 scores_per_answer_type_and_head[answer_type][head] = type_head_exact_match, type_head_f1_score
+            
+            scores_per_answer_type[answer_type] = type_em / type_count, type_f1 / type_count
+
+        for head, count in count_per_head.items():
+            scores_per_head[head] = em_per_head[head] / count, f1_per_head[head] / count
         
         if reset:
             self.reset()
-        return (exact_match, f1_score), scores_per_answer_type_and_head
+        return (exact_match, f1_score), scores_per_answer_type_and_head, scores_per_answer_type, scores_per_head
 
     @overrides
     def reset(self):

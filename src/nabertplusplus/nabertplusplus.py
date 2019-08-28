@@ -10,7 +10,7 @@ from allennlp.nn import util, InitializerApplicator, RegularizerApplicator
 from allennlp.nn.util import masked_softmax
 from src.custom_drop_em_and_f1 import CustomDropEmAndF1
 from allennlp.tools.drop_eval import answer_json_to_strings
-from pytorch_pretrained_bert import BertModel, BertTokenizer
+from pytorch_transformers import BertModel
 import pickle
 
 from src.nhelpers import beam_search, evaluate_postfix
@@ -47,7 +47,6 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         self.number_rep = number_rep
         
         self.BERT = BertModel.from_pretrained(bert_pretrained_model)
-        self.tokenizer = BertTokenizer.from_pretrained(bert_pretrained_model)
         bert_dim = self.BERT.pooler.dense.out_features
         
         self.dropout = dropout_prob
@@ -201,7 +200,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         question_mask = (1 - seqlen_ids) * pad_mask * cls_sep_mask
         
         # Shape: (batch_size, seqlen, bert_dim)
-        bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask, output_all_encoded_layers=False)
+        bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask)
         # Shape: (batch_size, qlen, bert_dim)
         question_end = max(mask[:,1])
         question_out = bert_out[:,:question_end]
@@ -708,14 +707,33 @@ class NumericallyAugmentedBERTPlusPlus(Model):
     
     
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
-        (exact_match, f1_score), scores_per_answer_type_and_head = self._drop_metrics.get_metric(reset)
+        (exact_match, f1_score), scores_per_answer_type_and_head, \
+        scores_per_answer_type, scores_per_head = self._drop_metrics.get_metric(reset)
         metrics = {'em': exact_match, 'f1': f1_score}
-        for answer_type, scores_per_head in scores_per_answer_type_and_head.items():
-            for head, (answer_type_head_exact_match, answer_type_head_f1_score) in scores_per_head.items():
-                if 'multi' not in head:
-                    metrics[f'_em_{answer_type}_{head}'] = answer_type_head_exact_match
-                    metrics[f'_f1_{answer_type}_{head}'] = answer_type_head_f1_score
-                else:
+
+        for answer_type, type_scores_per_head in scores_per_answer_type_and_head.items():
+            for head, (answer_type_head_exact_match, answer_type_head_f1_score) in type_scores_per_head.items():
+                if 'multi' in head and 'span' in answer_type:
                     metrics[f'em_{answer_type}_{head}'] = answer_type_head_exact_match
                     metrics[f'f1_{answer_type}_{head}'] = answer_type_head_f1_score
+                else:
+                    metrics[f'_em_{answer_type}_{head}'] = answer_type_head_exact_match
+                    metrics[f'_f1_{answer_type}_{head}'] = answer_type_head_f1_score
+        
+        for answer_type, (type_exact_match, type_f1_score) in scores_per_answer_type.items():
+            if 'span' in answer_type:
+                metrics[f'em_{answer_type}'] = type_exact_match
+                metrics[f'f1_{answer_type}'] = type_f1_score
+            else:
+                metrics[f'_em_{answer_type}'] = type_exact_match
+                metrics[f'_f1_{answer_type}'] = type_f1_score
+
+        for head, (head_exact_match, head_f1_score) in scores_per_head.items():
+            if 'multi' in head:
+                metrics[f'em_{head}'] = head_exact_match
+                metrics[f'f1_{head}'] = head_f1_score
+            else:
+                metrics[f'_em_{head}'] = head_exact_match
+                metrics[f'_f1_{head}'] = head_f1_score
+        
         return metrics
