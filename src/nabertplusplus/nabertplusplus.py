@@ -640,7 +640,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         original_numbers = self.special_numbers + original_numbers
         predicted_signs = [sign_remap[it] for it in best_signs_for_numbers.detach().cpu().numpy()]
         result = sum([sign * number for sign, number in zip(predicted_signs, original_numbers)])
-        predicted_answer = str(result)
+        predicted_answer = str(round(result, 5))
         numbers = []
         for value, sign in zip(original_numbers, predicted_signs):
             numbers.append({'value': value, 'sign': sign})
