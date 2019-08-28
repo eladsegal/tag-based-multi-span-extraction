@@ -51,8 +51,8 @@ class CustomDropEmAndF1(Metric):
         self._total_f1 += f1_score
         self._count += 1
 
-        # Have to select one ground truth, so might as well be the maximizing one
-        answer_type = ground_truth_answer_types[maximizing_ground_truth_index]
+        # Would've selected the maximizing one, but looks like other papers just use the first one
+        answer_type = ground_truth_answer_types[0]
         self._answer_type_head_em[answer_type][predicted_ability] += exact_match
         self._answer_type_head_f1[answer_type][predicted_ability] += f1_score
         self._answer_type_head_count[answer_type][predicted_ability] += 1
