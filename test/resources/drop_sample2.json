@@ -1,0 +1,667 @@
+{
+  "nfl_227": {
+        "passage": " In their Week 2 home-opener, the Vikings faced the Carolina Panthers in a low-scoring fight. The Vikings would draw first blood with a 26-yard field goal by kicker Ryan Longwell. In the second quarter, Carolina got a field goal with opposing kicker John Kasay. The Vikings would respond with another Longwell field goal (a 22-yard FG), but they fell before halftime with opposing RB DeAngelo Williams getting a 3-yard run for the Panthers. The Vikings trailed a bit further in the third quarter, as Karney kicked a 26-yard field goal. The Vikings started their own comeback. In the fourth quarter, Longwell faked a field goal try and threw a 16-yard TD pass to FB Richard Owens to tie the game up going into overtime. In OT, Longwell booted the game-winning 19-yard field goal to give Minnesota the win. It was the first time in Vikings history that a coach started 2-0 in his first year.",
+        "qa_pairs": [
+            {
+                "question": "How many yards did the Vickings make first?",
+                "answer": {
+                    "number": "26",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "7a7d895c-5d6d-47f0-bcdf-e072ba83af7b",
+                "validated_answers": [
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many yards did Karney kick?",
+                "answer": {
+                    "number": "26",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "a6ead493-cd74-4e79-81d7-aac424a4e312",
+                "validated_answers": [
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "26",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "What was the opening move?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard field goal"
+                    ]
+                },
+                "query_id": "c9a3fcd4-bb14-4dd2-a2cb-9d9540fdc990",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "26-yard field goal"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "26-yard field goal"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "26-yard field goal"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "26-yard field goal"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "26-yard field goal"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Who made the winning move?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Minnesota"
+                    ]
+                },
+                "query_id": "fd182724-41b7-4024-9846-6373efbd709e",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Longwell"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Minnesota"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Longwell"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Minnesota"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Longwell"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Who kicked most number of field goals?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Ryan Longwell"
+                    ]
+                },
+                "query_id": "89c9a58f-f199-4f44-b16a-e6592004f0e6",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Ryan Longwell"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Ryan Longwell"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Longwell"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Ryan Longwell"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Longwell"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "How many more field goals did Longwell boot over Kasay?",
+                "answer": {
+                    "number": "2",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "72ba1e8f-d879-4523-a98b-36663c9d8f9d",
+                "validated_answers": [
+                    {
+                        "number": "1",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "1",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "1",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many more yards was Longwell's longest field goal over his shortest one?",
+                "answer": {
+                    "number": "7",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "40e8c8ad-3f73-4dc4-bc9f-66ca2eaadd03",
+                "validated_answers": [
+                    {
+                        "number": "7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many more yards was Longwell's longest field goal over his second longest one?",
+                "answer": {
+                    "number": "4",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "011d1a62-e157-4ae4-a3a9-0c5fc8b7f705",
+                "validated_answers": [
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "Which quarter saw the most field goals?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "second quarter"
+                    ]
+                },
+                "query_id": "bea1a14c-cfcc-405c-b465-e8e0962ca148",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "second"
+                        ]
+                    },
+                    {
+                        "number": "2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "second"
+                        ]
+                    },
+                    {
+                        "number": "2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "second"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "How many more yards was Karney's field goal over Longwell's shortest field goal?",
+                "answer": {
+                    "number": "7",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "ef94ebec-a145-4a1b-b4bc-e817e341fc04",
+                "validated_answers": [
+                    {
+                        "number": "7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "Which two players both booted a single field goal?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Kasay",
+                        "Karney"
+                    ]
+                },
+                "query_id": "04f796e2-1860-4455-905e-7479f0465000",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "Karney",
+                            "Kasay"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "John Kasay",
+                            "Karney"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "wiki_url": "https://en.wikipedia.org/wiki/Earl's_Court"
+    }
+}

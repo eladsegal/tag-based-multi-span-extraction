@@ -1,0 +1,839 @@
+{
+    "history_2044": {
+        "passage": "The first issue in 1942 consisted of denominations of 1, 5, 10 and 50 centavos and 1, 5, and 10 Pesos. The next year brought \"replacement notes\" of the 1, 5 and 10 Pesos while 1944 ushered in a 100 Peso note and soon after an inflationary 500 Pesos note. In 1945, the Japanese issued a 1,000 Pesos note. This set of new money, which was printed even before the war, became known in the Philippines as Mickey Mouse money due to its very low value caused by severe inflation. Anti-Japanese newspapers portrayed stories of going to the market laden with suitcases or \"bayong\" (native bags made of woven coconut or Corypha leaf strips) overflowing with the Japanese-issued bills. In 1944, a box of matches cost more than 100 Mickey Mouse pesos. In 1945, a kilogram of camote cost around 1000 Mickey Mouse pesos. Inflation plagued the country with the devaluation of the Japanese money, evidenced by a 60% inflation experienced in January 1944.",
+        "qa_pairs": [
+            {
+                "question": "How many different denominations of centavos were there in 1942?",
+                "answer": {
+                    "number": "4",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "b32c5736-a96f-4669-b4a1-398e7c18fdf6",
+                "validated_answers": [
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many different denominations of Pesos were there in 1942?",
+                "answer": {
+                    "number": "3",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "03de9d38-94da-4197-9e0e-6d1c67384476",
+                "validated_answers": [
+                    {
+                        "number": "3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "What year were the replacement notes of the 1, 5 and 10 pesos issued?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": "1943"
+                    },
+                    "spans": []
+                },
+                "query_id": "4ef57f34-8c7c-4500-bc1f-2d2512e35523",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1943"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1943"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1943"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1943"
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "Was the largest peso note printed in 1944 or 1945?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1945"
+                    ]
+                },
+                "query_id": "44524b32-f04f-435f-94d5-53cb38ccbe2b",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1945"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1945"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1945"
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many denominations existed for centavos in 1942?",
+                "answer": {
+                    "number": "4",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "52e368aa-4c2a-426b-a0c2-e2f16ac16de3",
+                "validated_answers": [
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "In which year were there replacement notes of the 1, 5, and 10 pesos?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": "1943"
+                    },
+                    "spans": []
+                },
+                "query_id": "0903294b-08fc-4061-937a-44890a55ca78",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1943"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1943"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "1943",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many new Peso notes were presented in 1944?",
+                "answer": {
+                    "number": "2",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "8ab0d875-9954-4084-97e1-c08839638744",
+                "validated_answers": [
+                    {
+                        "number": "2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "Which new peso notes were the highest created by 1944?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "100 Peso note",
+                        "500 Pesos note"
+                    ]
+                },
+                "query_id": "8b7f7ee7-a1cf-4656-bb92-fcc74acdae82",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "500 Pesos note"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "100",
+                            "500"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "500 Pesos note"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Which item cost the highest mickey mouse pesos in the 1940s, a kilogram of Camote or matches?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "kilogram of camote"
+                    ]
+                },
+                "query_id": "ba507d2f-895e-4227-b78f-e7268854a71f",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "a kilogram of camote"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "a kilogram of camote"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "kilogram of Camote"
+                        ]
+                    }
+                ]
+            },
+            {
+                "question": "Which year ushered in the largest Pesos note, 1944 or 1945?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": "1945"
+                    },
+                    "spans": []
+                },
+                "query_id": "6a77cfec-7ab9-4a3a-9752-9a56324c1e32",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1945"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1945"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1945"
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many denominations were there in 1942?",
+                "answer": {
+                    "number": "8",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "c2199450-9f92-4daf-8898-a791371fbc37",
+                "validated_answers": [
+                    {
+                        "number": "7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many denominations were there in 1944?",
+                "answer": {
+                    "number": "10",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "f674af49-6fc8-44f5-a598-b35410adecc1",
+                "validated_answers": [
+                    {
+                        "number": "5",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "7",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "Which year brought \"replacement notes\" of the 1, 5, 10 and Pesos?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": "1943"
+                    },
+                    "spans": []
+                },
+                "query_id": "7c72066b-f148-4554-8b81-4d74fbe61101",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1942"
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": "1943"
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many years after the first issue of 1, 5, 10 and 50 centavos did the Japanese issue a 1,000 Pesos note?",
+                "answer": {
+                    "number": "3",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "de2e55e7-4cb7-454f-aac5-ebabc5d715c8",
+                "validated_answers": [
+                    {
+                        "number": "3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many different denominations of centavos were there over 6?",
+                "answer": {
+                    "number": "2",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "2b4badb9-9723-494c-8a66-76d41893f71b",
+                "validated_answers": [
+                    {
+                        "number": "2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "2",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many denominations of Pesos under 50 were there in 1944?",
+                "answer": {
+                    "number": "3",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "17f2bfd7-37a4-4e97-bb1a-4ce3203ebaf1",
+                "validated_answers": [
+                    {
+                        "number": "3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "3",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many pesos was the Mickey Mouse money created by the Japanese worth?",
+                "answer": {
+                    "number": "1000",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "581ced8b-43ce-4d8d-a275-2924c60957ee",
+                "validated_answers": [
+                    {
+                        "number": "1000",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "How many denominations of centavos were there in 1942?",
+                "answer": {
+                    "number": "4",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                },
+                "query_id": "1840100d-60a4-4b48-818a-d8133400c381",
+                "validated_answers": [
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "4",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "What was the largest denomination of centavos in 1942?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "50"
+                    ]
+                },
+                "query_id": "2a73d828-3261-44f3-8478-b1d95eb7833a",
+                "validated_answers": [
+                    {
+                        "number": "50",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "50",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "What was the largest denomination of Pesos notes ever issued?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1,000 Pesos"
+                    ]
+                },
+                "query_id": "a9d4c05c-d2d0-4c0e-9fba-72610a519757",
+                "validated_answers": [
+                    {
+                        "number": "1000",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    },
+                    {
+                        "number": "1000",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": []
+                    }
+                ]
+            },
+            {
+                "question": "What was more expensive, matches in 1944 or a kilogram of camote in 1945?",
+                "answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "a kilogram of camote"
+                    ]
+                },
+                "query_id": "81d1686a-e380-44ed-a796-cafb13e12eef",
+                "validated_answers": [
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "kilogram of camote"
+                        ]
+                    },
+                    {
+                        "number": "",
+                        "date": {
+                            "day": "",
+                            "month": "",
+                            "year": ""
+                        },
+                        "spans": [
+                            "kilogram of camote"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "wiki_url": "https://en.wikipedia.org/wiki/Earl's_Court"
+    }
+}
