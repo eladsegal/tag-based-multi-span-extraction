@@ -1,6 +1,7 @@
 {
     "dataset_reader": {
         "type": "nabert++",
+        "lazy": true,
         "tokenizer": {
             "type": "bert-drop",
             "pretrained_model": "bert-base-uncased"

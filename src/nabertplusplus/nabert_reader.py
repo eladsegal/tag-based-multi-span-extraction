@@ -84,7 +84,7 @@ class NaBertDropReader(DatasetReader):
         with open(file_path) as dataset_file:
             dataset = json.load(dataset_file)
             
-        instances = []
+        instances_count = 0
         for passage_id, passage_info in tqdm(dataset.items()):
             passage_text = passage_info["passage"].strip()
             
@@ -122,6 +122,9 @@ class NaBertDropReader(DatasetReader):
 
             # Process questions from this passage
             for qa_pair in passage_info["qa_pairs"]:
+                if 0 < self.max_instances <= instances_count:
+                    return
+
                 question_id = qa_pair["query_id"]
                 question_text = qa_pair["question"].strip()
                 answer = qa_pair['answer']
@@ -148,12 +151,8 @@ class NaBertDropReader(DatasetReader):
                                                  answer_annotations,
                                                  specific_answer_type)
                 if instance is not None:
-                    instances.append(instance)
-
-                if 0 < self.max_instances <= len(instances):
-                    return instances
-
-        return instances
+                    instances_count += 1
+                    yield instance
                 
     @overrides
     def text_to_instance(self,

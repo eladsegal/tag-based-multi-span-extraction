@@ -21,7 +21,7 @@ class NabertPlusPlusModelUnitTests(unittest.TestCase):
         instances_to_read = 12
 
         reader = NaBertDropReader(self.tokenizer, {'tokens': self.token_indexer}, max_instances = instances_to_read, extra_numbers=[100, 1])
-        instances = reader._read(self.drop_sample_path)
+        instances = reader.read(self.drop_sample_path)
 
         vocab = Vocabulary() 
         model = NumericallyAugmentedBERTPlusPlus(vocab, self.pretrained_model, special_numbers=[100, 1])
