@@ -1,3 +1,7 @@
+import os
+#print(os.environ.get("PATH")) # Run it when the environment is activated and use the related env values to overwrite the PATH variable 
+os.environ['PATH'] = 'C:\\Users\\Elad\\Anaconda3\\envs\\allennlp;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\mingw-w64\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\usr\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Scripts;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\bin;C:\\Users\\Elad\\Anaconda3\\condabin;'
+
 import unittest
 from src.multispan_handler import MultiSpanHandler, default_multispan_predictor, default_crf
 from src.bert_indexer import BertDropTokenIndexer
@@ -24,7 +28,7 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
         instances_to_read = 1
 
         reader = NaBertDropReader(self.tokenizer, {'tokens': self.token_indexer}, max_instances = instances_to_read, extra_numbers=[100, 1], answer_types=['multiple_span'])
-        instances = reader._read(self.drop_sample_path)
+        instances = reader.read(self.drop_sample_path)
 
         vocab = Vocabulary() #self.token_indexer.vocab
         handler = MultiSpanHandler(512, default_multispan_predictor(512, 0.1), default_crf())
