@@ -10,6 +10,7 @@ from allennlp.nn import util, InitializerApplicator, RegularizerApplicator
 from allennlp.nn.util import masked_softmax
 from src.custom_drop_em_and_f1 import CustomDropEmAndF1
 from allennlp.tools.drop_eval import answer_json_to_strings
+from pytorch_transformers import BertModel
 import pickle
 
 from src.nhelpers import beam_search, evaluate_postfix
@@ -45,12 +46,6 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         else:
             self.answering_abilities = answering_abilities
         self.number_rep = number_rep
-
-        self.use_pytorch_transformers = use_pytorch_transformers
-        if self.use_pytorch_transformers:
-            from pytorch_transformers import BertModel
-        else:
-            from pytorch_pretrained_bert import BertModel
 
         self.BERT = BertModel.from_pretrained(bert_pretrained_model)
         bert_dim = self.BERT.pooler.dense.out_features
@@ -206,10 +201,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         question_mask = (1 - seqlen_ids) * pad_mask * cls_sep_mask
         
         # Shape: (batch_size, seqlen, bert_dim)
-        if self.use_pytorch_transformers:
-            bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask)
-        else:
-            bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask, output_all_encoded_layers=False)
+        bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask)
         # Shape: (batch_size, qlen, bert_dim)
         question_end = max(mask[:,1])
         question_out = bert_out[:,:question_end]
