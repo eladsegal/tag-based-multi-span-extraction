@@ -19,6 +19,9 @@ class MultiSpanHandler:
     def forward(self, bert_out, span_labels, pad_mask, span_wordpiece_mask, is_bio_mask):            
         loss_mask = pad_mask
 
+        if span_wordpiece_mask is not None:
+            loss_mask = span_wordpiece_mask & loss_mask
+
         non_bio_mask = None
 
         logits = self.multi_span_predictor(bert_out)
