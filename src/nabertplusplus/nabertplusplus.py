@@ -15,8 +15,7 @@ import pickle
 
 from src.nhelpers import beam_search, evaluate_postfix
 
-from src.multispan_handler import MultiSpanHandler, default_multispan_predictor, default_crf, decode_token_spans
-from src.multispan_heads import SimpleBIO
+from src.multispan_heads import multispan_heads_mapping, decode_token_spans
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +36,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  number_rep: str = 'first',
                  arithmetic: str = 'base',
                  special_numbers: List[int] = None,
-                 unique_on_multispan: bool = True) -> None:
+                 unique_on_multispan: bool = True,
+                 multispan_head_name: str = 'crf_loss_bio') -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
@@ -89,14 +89,14 @@ class NumericallyAugmentedBERTPlusPlus(Model):
             self._count_number_predictor = self.ff(bert_dim, bert_dim, max_count + 1)  # `+1` for 0
 
         if "multiple_spans" in self.answering_abilities:
-            self._multispan_predictor = default_multispan_predictor(bert_dim, dropout_prob)
-            self._multispan_crf = default_crf()
-            self._multi_span_handler = MultiSpanHandler(bert_dim, self._multispan_predictor, self._multispan_crf, dropout_prob)
+            # self._multispan_predictor = default_multispan_predictor(bert_dim, dropout_prob)
+            # self._multispan_crf = default_crf()
+            # self._multi_span_handler = MultiSpanHandler(bert_dim, self._multispan_predictor, self._multispan_crf, dropout_prob)
+            self.multispan_head = multispan_heads_mapping[multispan_head_name](bert_dim)
+            self._multispan_module = self.multispan_head.module
+            self._multispan_log_likelihood = self.multispan_head.log_likelihood
+            self._multispan_prediction = self.multispan_head.prediction
             self._unique_on_multispan = unique_on_multispan
-            # self.multispan_head = SimpleBIO(bert_dim)
-            # self._multispan_module = self.multispan_head.module
-            # self._multispan_log_likelihood = self.multispan_head.log_likelihood
-            # self._multispan_prediction = self.multispan_head.prediction
 
 
         self._drop_metrics = CustomDropEmAndF1()
@@ -206,6 +206,10 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         # Shape: (batch_size, seqlen)
         question_mask = (1 - seqlen_ids) * pad_mask * cls_sep_mask
         question_and_passage_mask = question_mask | passage_mask
+        if bio_wordpiece_mask is None:
+            multispan_mask = question_and_passage_mask
+        else:
+            multispan_mask = question_and_passage_mask * bio_wordpiece_mask
 
         # Shape: (batch_size, seqlen, bert_dim)
         bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask)
@@ -260,8 +264,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 self._question_span_module(passage_vector, question_out, question_mask)
 
         if "multiple_spans" in self.answering_abilities:
-            multi_span_result = self._multi_span_handler.forward(passage_out, span_bio_labels, pad_mask, bio_wordpiece_mask, is_bio_mask)
-            # multispan_log_probs, multispan_logits = self._multispan_module(passage_out)
+            # multi_span_result = self._multi_span_handler.forward(passage_out, span_bio_labels, pad_mask, bio_wordpiece_mask, is_bio_mask)
+            multispan_log_probs, multispan_logits = self._multispan_module(passage_out)
             
         if "arithmetic" in self.answering_abilities:
             if self.arithmetic == "base":
@@ -323,12 +327,14 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     log_marginal_likelihood_list.append(log_marginal_likelihood_for_count)
 
                 elif answering_ability == "multiple_spans":
-                    log_marginal_likelihood_list.append(multi_span_result["log_likelihood"])
-                    # log_marginal_likelihood_for_multispan = \
-                    #     self._multispan_log_likelihood(span_bio_labels,
-                    #                                    multispan_log_probs,
-                    #                                    question_and_passage_mask)
-                    # log_marginal_likelihood_list.append(log_marginal_likelihood_for_multispan)
+                    # log_marginal_likelihood_list.append(multi_span_result["log_likelihood"])
+                    log_marginal_likelihood_for_multispan = \
+                        self._multispan_log_likelihood(span_bio_labels,
+                                                       multispan_log_probs,
+                                                       multispan_mask,
+                                                       is_bio_mask,
+                                                       logits=multispan_logits)
+                    log_marginal_likelihood_list.append(log_marginal_likelihood_for_multispan)
                 else:
                     raise ValueError(f"Unsupported answering ability: {answering_ability}")
 
@@ -392,11 +398,11 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                             self._count_prediction(best_count_number[i])
 
                     elif predicted_ability_str == "multiple_spans":
-                        answer_json["answer_type"] = "multiple_spans"
-                        answer_json["value"], answer_json["spans"], invalid_spans = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'], metadata[i]['original_passage'], metadata[i]['original_question'])
-                        # answer_json["value"], answer_json["spans"], invalid_spans = \
-                        #     self._multispan_prediction(multispan_logits[i], qp_tokens, p_text, q_text,
-                        #                                question_and_passage_mask[i])
+                        # answer_json["answer_type"] = "multiple_spans"
+                        # answer_json["value"], answer_json["spans"], invalid_spans = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'], metadata[i]['original_passage'], metadata[i]['original_question'])
+                        answer_json["value"], answer_json["spans"], invalid_spans = \
+                            self._multispan_prediction(multispan_logits[i], qp_tokens, p_text, q_text,
+                                                       question_and_passage_mask[i])
                         if self._unique_on_multispan:
                             answer_json["value"] = list(set(answer_json["value"]))
                     else:

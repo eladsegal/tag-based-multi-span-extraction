@@ -3,6 +3,7 @@ from allennlp.nn.util import replace_masked_values, masked_mean
 import numpy as np
 import torch
 
+
 class MultiSpanHead:
     def __init__(self,
                  bert_dim: int,
@@ -15,7 +16,7 @@ class MultiSpanHead:
     def module(self, bert_out):
         raise NotImplementedError
 
-    def log_likelihood(self, gold_labels, log_probs, mask):
+    def log_likelihood(self, gold_labels, log_probs, likelihood_mask, is_bio_mask):
         raise NotImplementedError
 
     def prediction(self, logits, qp_tokens, p_text, q_text, mask):
@@ -79,23 +80,22 @@ class SimpleBIO(MultiSpanHead):
         super().__init__(bert_dim, predictor, dropout_prob)
 
         # create crf for tag decoding
-        constraints = allowed_transitions('BIO', {0: 'O', 1: 'B', 2: 'I'})
-        self.crf = ConditionalRandomField(3, constraints)
+        self.crf = default_crf()
 
     def module(self, bert_out):
-        logits = self.predictor(bert_out)  #.squeeze(-1)
+        logits = self.predictor(bert_out)  # .squeeze(-1)
         log_probs = torch.nn.functional.log_softmax(logits, dim=-1)
         # Unlike other `_module` methods (e.g `_passage_span_module`), we do not return our best
         # prediction here, just the log probabilities and the logits. This is a speed issue:
-        # decoding a valid BIO sequence from the logits requires using viterby, which makes the
+        # decoding a valid BIO sequence from the logits requires using viterbi, which makes the
         # training much slower. Instead, we choose to decode the BIO labels only during evaluation.
         # We are aware that this impacts any metric computed on the training set.
         return log_probs, logits
 
     # sum version
-    def log_likelihood(self, gold_labels, log_probs, mask):
+    def log_likelihood(self, gold_labels, log_probs, likelihood_mask, is_bio_mask, **kwargs):
 
-        # take the lob probability only for the gold labels
+        # take the log probability only for the gold labels
         log_likelihoods_for_multispan = \
             torch.gather(log_probs, dim=-1, index=gold_labels.unsqueeze(-1)).squeeze(-1)
 
@@ -137,6 +137,58 @@ class SimpleBIO(MultiSpanHead):
         predicted_tags = [x for x, y in predicted_tags_with_score]
 
         return self.decode_spans_from_tags(predicted_tags,  qp_tokens, p_text, q_text)
+
+
+class CRFLossBIO(MultiSpanHead):
+
+    def __init__(self, bert_dim: int, predictor=None, dropout_prob: float = 0.1) -> None:
+        super().__init__(bert_dim, predictor, dropout_prob)
+
+        # create crf for tag decoding
+        self.crf = default_crf()
+
+    def module(self, bert_out):
+        logits = self.predictor(bert_out)
+        # Unlike non-multispan `_module` methods (e.g `_passage_span_module`), we do not return our
+        # best prediction here, just the log probabilities and the logits. This is a speed issue:
+        # decoding a valid BIO sequence from the logits requires using viterbi, which makes the
+        # training much slower. Instead, we choose to decode the BIO labels only during evaluation.
+        # We are aware that this impacts any metric computed on the training set.
+
+        # In addition, all other `_module` methods, (including the other multispan ones), are
+        # expected to return the log probabilities, not the log likelihoods. In all other heads,
+        # first you calculate the logits, then from the logits you calculate the log probabilities,
+        # and you return them. In turn, the `_log_likelihood` method use the log probabilities to
+        # compute the log likelihood, and return it.
+        # However, as this head uses the crf loss, and as the `allennlp` crf implementation computes
+        # the log likelihood directly (skipping the computation of the log probabilities).
+        # This is why here we return the log probabilities as `None`: they are not used in this class
+        log_probs = None
+        return log_probs, logits
+
+    def log_likelihood(self, gold_labels, log_probs, likelihood_mask, is_bio_mask, **kwargs):
+
+        logits = kwargs['logits']
+
+        if gold_labels is not None:
+            log_denominator = self.crf._input_likelihood(logits, likelihood_mask)
+            log_numerator = self.crf._joint_likelihood(logits, gold_labels, likelihood_mask)
+
+            log_likelihood = log_numerator - log_denominator
+
+            log_likelihood = replace_masked_values(log_likelihood, is_bio_mask, -1e7)
+
+            return log_likelihood
+
+    def prediction(self, logits, qp_tokens, p_text, q_text, mask):
+
+        predicted_tags_with_score = self.crf.viterbi_tags(logits.unsqueeze(0), mask.unsqueeze(0))
+        predicted_tags = [x for x, y in predicted_tags_with_score]
+
+        return self.decode_spans_from_tags(predicted_tags,  qp_tokens, p_text, q_text)
+
+
+multispan_heads_mapping = {'simple_bio': SimpleBIO, 'crf_loss_bio': CRFLossBIO}
 
 
 def ff(input_dim, hidden_dim, output_dim, dropout):
@@ -182,3 +234,9 @@ def decode_token_spans(spans_tokens, passage_text, question_text):
             spans_text.append(question_text[text_start:text_end])
 
     return spans_text, spans_indices
+
+
+def default_crf():
+    include_start_end_transitions = True
+    constraints = allowed_transitions('BIO', {0: 'O', 1: 'B', 2: 'I'})
+    return ConditionalRandomField(3, constraints, include_start_end_transitions)
