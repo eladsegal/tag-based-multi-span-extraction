@@ -178,6 +178,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 answer_as_counts: torch.LongTensor = None,
                 span_bio_labels: torch.LongTensor = None,
                 bio_wordpiece_mask: torch.LongTensor = None,
+                is_bio_mask: torch.LongTensor = None,
                 metadata: List[Dict[str, Any]] = None) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
         # Shape: (batch_size, seqlen)
@@ -253,7 +254,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 self._question_span_module(passage_vector, question_out, question_mask)
 
         if "multiple_spans" in self.answering_abilities:
-            multi_span_result = self._multi_span_handler.forward(passage_out, span_bio_labels, pad_mask, bio_wordpiece_mask)
+            multi_span_result = self._multi_span_handler.forward(passage_out, span_bio_labels, pad_mask, bio_wordpiece_mask, is_bio_mask)
             
         if "arithmetic" in self.answering_abilities:
             if self.arithmetic == "base":

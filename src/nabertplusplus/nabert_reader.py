@@ -17,7 +17,7 @@ from allennlp.data.fields import Field, TextField, IndexField, LabelField, ListF
 import numpy as np
 
 from src.preprocessing.utils import SPAN_ANSWER_TYPE, SPAN_ANSWER_TYPES, ALL_ANSWER_TYPES
-from src.preprocessing.utils import get_answer_type, find_span, fill_token_indices
+from src.preprocessing.utils import get_answer_type, find_span, fill_token_indices, MULTIPLE_SPAN
 
 from src.nhelpers import *
 
@@ -43,7 +43,8 @@ class NaBertDropReader(DatasetReader):
                  max_depth: int = 3,
                  extra_numbers: List[float] = [],
                  max_instances = -1,
-                 uncased: bool = True):
+                 uncased: bool = True,
+                 is_training: bool = False):
         super(NaBertDropReader, self).__init__(lazy)
         self.tokenizer = tokenizer
         self.token_indexers = token_indexers
@@ -52,7 +53,7 @@ class NaBertDropReader(DatasetReader):
         self.max_instances = max_instances
         self.max_numbers_expression = max_numbers_expression
         self.answer_types = answer_types or ALL_ANSWER_TYPES
-        self.bio_types = bio_types or SPAN_ANSWER_TYPES
+        self.bio_types = bio_types or [MULTIPLE_SPAN]
         self.use_validated = use_validated
         self.wordpiece_numbers = wordpiece_numbers
         self.number_tokenizer = number_tokenizer or WordTokenizer()
@@ -77,6 +78,7 @@ class NaBertDropReader(DatasetReader):
             self.word_to_num = DropReader.convert_word_to_number
 
         self._uncased = uncased
+        self._is_training = is_training
     
     @overrides
     def _read(self, file_path: str):
@@ -243,13 +245,23 @@ class NaBertDropReader(DatasetReader):
             valid_passage_spans = DropReader.find_valid_spans(passage_tokens, tokenized_answer_texts)
             for span_ind, span in enumerate(valid_passage_spans):
                 valid_passage_spans[span_ind] = (span[0] + qlen + 2, span[1] + qlen + 2)
-        
+
+            # throw away an instance in training if a span appearing in the answer is missing from the question and passage
+            if self._is_training:
+                if specific_answer_type in SPAN_ANSWER_TYPES:
+                    for tokenized_answer_text in tokenized_answer_texts:
+                        temp_question_spans = DropReader.find_valid_spans(question_tokens, [tokenized_answer_text])
+                        temp_answer_spans = DropReader.find_valid_spans(passage_tokens, [tokenized_answer_text])
+                        if (len(temp_question_spans) == 0 and len(temp_answer_spans) == 0):
+                            return None
+
             # Get target numbers
             target_numbers = []
-            for answer_text in answer_texts:
-                number = self.word_to_num(answer_text)
-                if number is not None:
-                    target_numbers.append(number)
+            if specific_answer_type != MULTIPLE_SPAN:
+                for answer_text in answer_texts:
+                    number = self.word_to_num(answer_text)
+                    if number is not None:
+                        target_numbers.append(number)
             
             # Get possible ways to arrive at target numbers with add/sub
             valid_expressions: List[List[int]] = []
@@ -294,12 +306,16 @@ class NaBertDropReader(DatasetReader):
             metadata["answer_info"] = answer_info
         
             # Add answer fields
-            passage_span_fields: List[Field] = [SpanField(span[0], span[1], qp_field) for span in valid_passage_spans]
+            passage_span_fields: List[Field] = []
+            if specific_answer_type != MULTIPLE_SPAN:
+                passage_span_fields: List[Field] = [SpanField(span[0], span[1], qp_field) for span in valid_passage_spans]
             if not passage_span_fields:
                 passage_span_fields.append(SpanField(-1, -1, qp_field))
             fields["answer_as_passage_spans"] = ListField(passage_span_fields)
 
-            question_span_fields: List[Field] = [SpanField(span[0], span[1], qp_field) for span in valid_question_spans]
+            question_span_fields: List[Field] = []
+            if specific_answer_type != MULTIPLE_SPAN:
+                question_span_fields: List[Field] = [SpanField(span[0], span[1], qp_field) for span in valid_question_spans]
             if not question_span_fields:
                 question_span_fields.append(SpanField(-1, -1, qp_field))
             fields["answer_as_question_spans"] = ListField(question_span_fields)
@@ -335,20 +351,20 @@ class NaBertDropReader(DatasetReader):
                 count_fields.append(LabelField(-1, skip_indexing=True))
             fields["answer_as_counts"] = ListField(count_fields)
 
-            # add BIO-related fields
-
             # in a word broken up into pieces, every piece except the first should be ignored when calculating the loss
             wordpiece_mask = [not token.text.startswith('##') for token in qp_tokens]
             wordpiece_mask = np.array(wordpiece_mask)
             fields['bio_wordpiece_mask'] = ArrayField(wordpiece_mask, dtype=np.int64)
             
-            if specific_answer_type in self.bio_types and answer_type == SPAN_ANSWER_TYPE:
+            if (specific_answer_type in self.bio_types) and (len(valid_passage_spans) > 0 or len(valid_question_spans) > 0):
                 bio_labels = create_bio_labels(valid_question_spans + valid_passage_spans, len(qp_field))
                 fields['span_bio_labels'] = SequenceLabelField(bio_labels, sequence_field=qp_field)
+                fields["is_bio_mask"] = LabelField(1, skip_indexing=True)
             else:
                 # create all 'O' BIO labels for non-span questions
                 fields['span_bio_labels'] = SequenceLabelField([0] * len(qp_tokens),
                                                                sequence_field=qp_field)
+                fields["is_bio_mask"] = LabelField(0, skip_indexing=True)
 
         fields["metadata"] = MetadataField(metadata)
         

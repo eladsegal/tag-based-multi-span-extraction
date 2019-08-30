@@ -16,20 +16,10 @@ class MultiSpanHandler:
 
         self.crf = crf
 
-    def forward(self, bert_out, span_labels, pad_mask, span_wordpiece_mask):            
+    def forward(self, bert_out, span_labels, pad_mask, span_wordpiece_mask, is_bio_mask):            
         loss_mask = pad_mask
 
-        if span_wordpiece_mask is not None:
-            loss_mask = span_wordpiece_mask & loss_mask
-
         non_bio_mask = None
-
-        if span_labels is not None:
-            non_bio_mask = torch.ones(loss_mask.shape[0], dtype=torch.long, device = bert_out.device)
-
-            for i in np.arange(loss_mask.shape[0]):
-                if span_labels[i].sum() <= 0:
-                    non_bio_mask[i] = 0 
 
         logits = self.multi_span_predictor(bert_out)
 
@@ -45,7 +35,7 @@ class MultiSpanHandler:
 
             log_likelihood = log_numerator - log_denominator
             
-            log_likelihood = util.replace_masked_values(log_likelihood, non_bio_mask, -1e7)
+            log_likelihood = util.replace_masked_values(log_likelihood, is_bio_mask, -1e7)
 
             result["log_likelihood"] = log_likelihood
             result["loss"] = -torch.sum(log_likelihood)
