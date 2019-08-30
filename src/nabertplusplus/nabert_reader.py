@@ -1,4 +1,5 @@
 from collections import defaultdict
+import itertools
 import json
 from overrides import overrides
 import operator
@@ -44,7 +45,8 @@ class NaBertDropReader(DatasetReader):
                  extra_numbers: List[float] = [],
                  max_instances = -1,
                  uncased: bool = True,
-                 is_training: bool = False):
+                 is_training: bool = False,
+                 target_number_rounding: bool = True):
         super(NaBertDropReader, self).__init__(lazy)
         self.tokenizer = tokenizer
         self.token_indexers = token_indexers
@@ -79,6 +81,7 @@ class NaBertDropReader(DatasetReader):
 
         self._uncased = uncased
         self._is_training = is_training
+        self.target_number_rounding = target_number_rounding
     
     @overrides
     def _read(self, file_path: str):
@@ -278,10 +281,17 @@ class NaBertDropReader(DatasetReader):
                         valid_expressions = list(zipped[0])
                         exp_strings = list(zipped[1])
                 elif self.exp_search == 'add_sub':
-                    valid_expressions = \
-                        DropReader.find_valid_add_sub_expressions(self.extra_numbers + numbers_in_passage, 
-                                                                  target_numbers, 
-                                                                  self.max_numbers_expression)
+                    if self.target_number_rounding:
+                        valid_expressions = \
+                            find_valid_add_sub_expressions_with_rounding(
+                                self.extra_numbers + numbers_in_passage,
+                                target_numbers,
+                                self.max_numbers_expression)
+                    else:
+                        valid_expressions = \
+                            DropReader.find_valid_add_sub_expressions(self.extra_numbers + numbers_in_passage,
+                                                                      target_numbers,
+                                                                      self.max_numbers_expression)
                 elif self.exp_search == 'template':
                     valid_expressions, exp_strings = \
                         get_template_exp(self.extra_numbers + numbers_in_passage, 
@@ -385,3 +395,25 @@ def create_bio_labels(spans: List[Tuple[int, int]], n_labels: int):
         labels[start+1:end+1] = [2] * (end - start)
 
     return labels
+
+
+def find_valid_add_sub_expressions_with_rounding(numbers: List[int],
+                                   targets: List[int],
+                                   max_number_of_numbers_to_consider: int = 2) -> List[List[int]]:
+    valid_signs_for_add_sub_expressions = []
+    # TODO: Try smaller numbers?
+    for number_of_numbers_to_consider in range(2, max_number_of_numbers_to_consider + 1):
+        possible_signs = list(itertools.product((-1, 1), repeat=number_of_numbers_to_consider))
+        for number_combination in itertools.combinations(enumerate(numbers), number_of_numbers_to_consider):
+            indices = [it[0] for it in number_combination]
+            values = [it[1] for it in number_combination]
+            for signs in possible_signs:
+                eval_value = sum(sign * value for sign, value in zip(signs, values))
+                # our added rounding
+                eval_value = round(eval_value, 5)
+                if eval_value in targets:
+                    labels_for_numbers = [0] * len(numbers)  # 0 represents ``not included''.
+                    for index, sign in zip(indices, signs):
+                        labels_for_numbers[index] = 1 if sign == 1 else 2  # 1 for positive, 2 for negative
+                    valid_signs_for_add_sub_expressions.append(labels_for_numbers)
+    return valid_signs_for_add_sub_expressions
