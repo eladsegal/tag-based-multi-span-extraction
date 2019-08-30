@@ -36,8 +36,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  number_rep: str = 'first',
                  arithmetic: str = 'base',
                  special_numbers: List[int] = None,
-                 unique_on_multispan: bool = True,
-                 use_pytorch_transformers: bool = False) -> None:
+                 unique_on_multispan: bool = True) -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
