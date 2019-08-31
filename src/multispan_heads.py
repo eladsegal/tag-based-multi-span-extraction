@@ -11,7 +11,7 @@ class MultiSpanHead:
                  dropout_prob: float = 0.1) -> None:
         self.bert_dim = bert_dim
         self.dropout = dropout_prob
-        self.predictor = predictor or self.default_predictor(self.bert_dim, self.dropout)
+        self.predictor = predictor or MultiSpanHead.default_predictor(self.bert_dim, self.dropout)
 
     def module(self, bert_out):
         raise NotImplementedError
@@ -136,7 +136,7 @@ class SimpleBIO(MultiSpanHead):
         predicted_tags_with_score = self.crf.viterbi_tags(logits.unsqueeze(0), mask.unsqueeze(0))
         predicted_tags = [x for x, y in predicted_tags_with_score]
 
-        return self.decode_spans_from_tags(predicted_tags,  qp_tokens, p_text, q_text)
+        return MultiSpanHead.decode_spans_from_tags(predicted_tags,  qp_tokens, p_text, q_text)
 
 
 class CRFLossBIO(MultiSpanHead):
@@ -185,7 +185,7 @@ class CRFLossBIO(MultiSpanHead):
         predicted_tags_with_score = self.crf.viterbi_tags(logits.unsqueeze(0), mask.unsqueeze(0))
         predicted_tags = [x for x, y in predicted_tags_with_score]
 
-        return self.decode_spans_from_tags(predicted_tags, qp_tokens, p_text, q_text)
+        return MultiSpanHead.decode_spans_from_tags(predicted_tags, qp_tokens, p_text, q_text)
 
 
 multispan_heads_mapping = {'simple_bio': SimpleBIO, 'crf_loss_bio': CRFLossBIO}

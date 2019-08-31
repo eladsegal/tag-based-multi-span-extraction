@@ -3,7 +3,7 @@ import os
 #os.environ['PATH'] = 'C:\\Users\\Elad\\Anaconda3\\envs\\allennlp;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\mingw-w64\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\usr\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Scripts;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\bin;C:\\Users\\Elad\\Anaconda3\\condabin;'
 
 import unittest
-from src.multispan_heads import CRFLossBIO
+from src.multispan_heads import CRFLossBIO, MultiSpanHead
 from src.bert_indexer import BertDropTokenIndexer
 from src.bert_tokenizer import BertDropTokenizer
 from src.nabertplusplus.nabert_reader import NaBertDropReader
@@ -41,7 +41,7 @@ class CRFLossBIOUnitTests(unittest.TestCase):
 
         tags = list(instance.fields['span_bio_labels'])
 
-        span_texts, spans_indices, invalid_tokens = multispan_head.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
+        span_texts, spans_indices, invalid_tokens = MultiSpanHead.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
 
         self.assertFalse(invalid_tokens)
 
@@ -80,7 +80,7 @@ class CRFLossBIOUnitTests(unittest.TestCase):
 
         tags = list(instance.fields['span_bio_labels'])
 
-        span_texts, spans_indices, invalid_tokens = multispan_head.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
+        span_texts, spans_indices, invalid_tokens = MultiSpanHead.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
 
         self.assertFalse(invalid_tokens)
 
@@ -119,7 +119,7 @@ class CRFLossBIOUnitTests(unittest.TestCase):
 
         tags = list(instance.fields['span_bio_labels'])
 
-        span_texts, spans_indices, invalid_tokens = multispan_head.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
+        span_texts, spans_indices, invalid_tokens = MultiSpanHead.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
 
         self.assertFalse(invalid_tokens)
 
