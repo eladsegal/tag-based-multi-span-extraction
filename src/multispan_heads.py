@@ -2,16 +2,17 @@ from allennlp.modules.conditional_random_field import ConditionalRandomField, al
 from allennlp.nn.util import replace_masked_values, masked_mean
 import numpy as np
 import torch
+from torch.nn import Module
 
 
 class MultiSpanHead:
     def __init__(self,
                  bert_dim: int,
-                 predictor=None,
+                 predictor: Module = None,
                  dropout_prob: float = 0.1) -> None:
         self.bert_dim = bert_dim
         self.dropout = dropout_prob
-        self.predictor = predictor or MultiSpanHead.default_predictor(self.bert_dim, self.dropout)
+        self.predictor = (predictor or MultiSpanHead.default_predictor(self.bert_dim, self.dropout)).cuda()
 
     def module(self, bert_out):
         raise NotImplementedError
@@ -76,11 +77,11 @@ class MultiSpanHead:
 
 
 class SimpleBIO(MultiSpanHead):
-    def __init__(self, bert_dim: int, predictor=None, dropout_prob: float = 0.1) -> None:
+    def __init__(self, bert_dim: int, predictor: Module = None, dropout_prob: float = 0.1) -> None:
         super().__init__(bert_dim, predictor, dropout_prob)
 
         # create crf for tag decoding
-        self.crf = default_crf()
+        self.crf = default_crf().cuda()
 
     def module(self, bert_out):
         logits = self.predictor(bert_out)  # .squeeze(-1)
@@ -141,11 +142,11 @@ class SimpleBIO(MultiSpanHead):
 
 class CRFLossBIO(MultiSpanHead):
 
-    def __init__(self, bert_dim: int, predictor=None, dropout_prob: float = 0.1) -> None:
+    def __init__(self, bert_dim: int, predictor: Module = None, dropout_prob: float = 0.1) -> None:
         super().__init__(bert_dim, predictor, dropout_prob)
 
         # create crf for tag decoding
-        self.crf = default_crf()
+        self.crf = default_crf().cuda()
 
     def module(self, bert_out):
         logits = self.predictor(bert_out)
@@ -236,7 +237,7 @@ def decode_token_spans(spans_tokens, passage_text, question_text):
     return spans_text, spans_indices
 
 
-def default_crf():
+def default_crf() -> ConditionalRandomField:
     include_start_end_transitions = True
     constraints = allowed_transitions('BIO', {0: 'O', 1: 'B', 2: 'I'})
     return ConditionalRandomField(3, constraints, include_start_end_transitions)
