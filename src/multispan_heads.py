@@ -79,7 +79,7 @@ class MultiSpanHead(Module):
 
 class SimpleBIO(MultiSpanHead):
     def __init__(self, bert_dim: int, predictor: Module = None, dropout_prob: float = 0.1) -> None:
-        super().__init__(bert_dim, predictor, dropout_prob)
+        super(SimpleBIO, self).__init__(bert_dim, predictor, dropout_prob)
 
         # create crf for tag decoding
         self.crf = default_crf()
@@ -144,7 +144,7 @@ class SimpleBIO(MultiSpanHead):
 class CRFLossBIO(MultiSpanHead):
 
     def __init__(self, bert_dim: int, predictor: Module = None, dropout_prob: float = 0.1) -> None:
-        super().__init__(bert_dim, predictor, dropout_prob)
+        super(CRFLossBIO, self).__init__(bert_dim, predictor, dropout_prob)
 
         # create crf for tag decoding
         self.crf = default_crf()
