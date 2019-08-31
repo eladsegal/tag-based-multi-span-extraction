@@ -40,7 +40,6 @@ class NaBertDropReader(DatasetReader):
                  wordpiece_numbers: bool = True,
                  number_tokenizer: Tokenizer = None,
                  custom_word_to_num: bool = True,
-                 exp_search: str = 'add_sub',
                  max_depth: int = 3,
                  extra_numbers: List[float] = [],
                  max_instances = -1,
@@ -59,7 +58,6 @@ class NaBertDropReader(DatasetReader):
         self.use_validated = use_validated
         self.wordpiece_numbers = wordpiece_numbers
         self.number_tokenizer = number_tokenizer or WordTokenizer()
-        self.exp_search = exp_search
         self.max_depth = max_depth
         self.extra_numbers = extra_numbers
         self.op_dict = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv}
@@ -270,35 +268,17 @@ class NaBertDropReader(DatasetReader):
             valid_expressions: List[List[int]] = []
             exp_strings = None
             if answer_type in ["number", "date"]:
-                if self.exp_search == 'full':
-                    expressions = get_full_exp(list(enumerate(self.extra_numbers + numbers_in_passage)),
-                                               target_numbers,
-                                               self.operations,
-                                               self.op_dict,
-                                               self.max_depth)
-                    zipped = list(zip(*expressions))
-                    if zipped:
-                        valid_expressions = list(zipped[0])
-                        exp_strings = list(zipped[1])
-                elif self.exp_search == 'add_sub':
-                    if self.target_number_rounding:
-                        valid_expressions = \
-                            find_valid_add_sub_expressions_with_rounding(
-                                self.extra_numbers + numbers_in_passage,
-                                target_numbers,
-                                self.max_numbers_expression)
-                    else:
-                        valid_expressions = \
-                            DropReader.find_valid_add_sub_expressions(self.extra_numbers + numbers_in_passage,
-                                                                      target_numbers,
-                                                                      self.max_numbers_expression)
-                elif self.exp_search == 'template':
-                    valid_expressions, exp_strings = \
-                        get_template_exp(self.extra_numbers + numbers_in_passage, 
-                                         target_numbers,
-                                         self.templates,
-                                         self.template_strings)
-                    exp_strings = sum(exp_strings, [])
+                if self.target_number_rounding:
+                    valid_expressions = \
+                        find_valid_add_sub_expressions_with_rounding(
+                            self.extra_numbers + numbers_in_passage,
+                            target_numbers,
+                            self.max_numbers_expression)
+                else:
+                    valid_expressions = \
+                        DropReader.find_valid_add_sub_expressions(self.extra_numbers + numbers_in_passage,
+                                                                    target_numbers,
+                                                                    self.max_numbers_expression)
 
             # Get possible ways to arrive at target numbers with counting
             valid_counts: List[int] = []
@@ -311,8 +291,6 @@ class NaBertDropReader(DatasetReader):
                            "answer_question_spans": valid_question_spans,
                            "expressions": valid_expressions,
                            "counts": valid_counts}
-            if self.exp_search in ['template', 'full']:
-                answer_info['expr_text'] = exp_strings
             metadata["answer_info"] = answer_info
         
             # Add answer fields
@@ -330,31 +308,20 @@ class NaBertDropReader(DatasetReader):
                 question_span_fields.append(SpanField(-1, -1, qp_field))
             fields["answer_as_question_spans"] = ListField(question_span_fields)
             
-            if self.exp_search == 'add_sub':
-                add_sub_signs_field: List[Field] = []
-                extra_signs_field: List[Field] = []
-                for signs_for_one_add_sub_expressions in valid_expressions:
-                    extra_signs = signs_for_one_add_sub_expressions[:len(self.extra_numbers)]
-                    normal_signs = signs_for_one_add_sub_expressions[len(self.extra_numbers):]
-                    add_sub_signs_field.append(SequenceLabelField(normal_signs, numbers_in_passage_field))
-                    extra_signs_field.append(SequenceLabelField(extra_signs, extra_numbers_field))
-                if not add_sub_signs_field:
-                    add_sub_signs_field.append(SequenceLabelField([0] * len(number_tokens), numbers_in_passage_field))
-                if not extra_signs_field:
-                    extra_signs_field.append(SequenceLabelField([0] * len(self.extra_numbers), extra_numbers_field))
-                fields["answer_as_expressions"] = ListField(add_sub_signs_field)
-                if self.extra_numbers:
-                    fields["answer_as_expressions_extra"] = ListField(extra_signs_field)
-            elif self.exp_search in ['template', 'full']:
-                expression_indices = []
-                for expression in valid_expressions:
-                    if not expression:
-                        expression.append(3 * [-1])
-                    expression_indices.append(ArrayField(np.array(expression), padding_value=-1))
-                if not expression_indices:
-                    expression_indices = \
-                        [ArrayField(np.array([3 * [-1]]), padding_value=-1) for _ in range(len(self.templates))]
-                fields["answer_as_expressions"] = ListField(expression_indices)
+            add_sub_signs_field: List[Field] = []
+            extra_signs_field: List[Field] = []
+            for signs_for_one_add_sub_expressions in valid_expressions:
+                extra_signs = signs_for_one_add_sub_expressions[:len(self.extra_numbers)]
+                normal_signs = signs_for_one_add_sub_expressions[len(self.extra_numbers):]
+                add_sub_signs_field.append(SequenceLabelField(normal_signs, numbers_in_passage_field))
+                extra_signs_field.append(SequenceLabelField(extra_signs, extra_numbers_field))
+            if not add_sub_signs_field:
+                add_sub_signs_field.append(SequenceLabelField([0] * len(number_tokens), numbers_in_passage_field))
+            if not extra_signs_field:
+                extra_signs_field.append(SequenceLabelField([0] * len(self.extra_numbers), extra_numbers_field))
+            fields["answer_as_expressions"] = ListField(add_sub_signs_field)
+            if self.extra_numbers:
+                fields["answer_as_expressions_extra"] = ListField(extra_signs_field)
 
             count_fields: List[Field] = [LabelField(count_label, skip_indexing=True) for count_label in valid_counts]
             if not count_fields:
