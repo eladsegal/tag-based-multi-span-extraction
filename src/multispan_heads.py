@@ -185,7 +185,7 @@ class CRFLossBIO(MultiSpanHead):
         predicted_tags_with_score = self.crf.viterbi_tags(logits.unsqueeze(0), mask.unsqueeze(0))
         predicted_tags = [x for x, y in predicted_tags_with_score]
 
-        return self.decode_spans_from_tags(predicted_tags,  qp_tokens, p_text, q_text)
+        return self.decode_spans_from_tags(predicted_tags, qp_tokens, p_text, q_text)
 
 
 multispan_heads_mapping = {'simple_bio': SimpleBIO, 'crf_loss_bio': CRFLossBIO}
