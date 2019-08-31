@@ -201,11 +201,16 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         passage_mask = seqlen_ids * pad_mask * cls_sep_mask
         # Shape: (batch_size, seqlen)
         question_mask = (1 - seqlen_ids) * pad_mask * cls_sep_mask
-        question_and_passage_mask = question_mask | passage_mask
+        # question_and_passage_mask = question_mask | passage_mask
+        # if bio_wordpiece_mask is None:
+        #     multispan_mask = question_and_passage_mask
+        # else:
+        #     multispan_mask = question_and_passage_mask * bio_wordpiece_mask
+
         if bio_wordpiece_mask is None:
-            multispan_mask = question_and_passage_mask
+            multispan_mask = pad_mask
         else:
-            multispan_mask = question_and_passage_mask * bio_wordpiece_mask
+            multispan_mask = pad_mask & bio_wordpiece_mask
 
         # Shape: (batch_size, seqlen, bert_dim)
         bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask)
@@ -395,7 +400,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                         answer_json["answer_type"] = "multiple_spans"
                         answer_json["value"], answer_json["spans"], invalid_spans = \
                             self._multispan_prediction(multispan_logits[i], qp_tokens, p_text, q_text,
-                                                       question_and_passage_mask[i])
+                                                       pad_mask[i])
                         if self._unique_on_multispan:
                             answer_json["value"] = list(set(answer_json["value"]))
                     else:
