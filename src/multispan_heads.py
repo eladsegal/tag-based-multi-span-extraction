@@ -5,14 +5,15 @@ import torch
 from torch.nn import Module
 
 
-class MultiSpanHead:
+class MultiSpanHead(Module):
     def __init__(self,
                  bert_dim: int,
                  predictor: Module = None,
                  dropout_prob: float = 0.1) -> None:
+        super(MultiSpanHead, self).__init__()
         self.bert_dim = bert_dim
         self.dropout = dropout_prob
-        self.predictor = (predictor or MultiSpanHead.default_predictor(self.bert_dim, self.dropout)).cuda()
+        self.predictor = predictor or MultiSpanHead.default_predictor(self.bert_dim, self.dropout)
 
     def module(self, bert_out):
         raise NotImplementedError
@@ -81,7 +82,7 @@ class SimpleBIO(MultiSpanHead):
         super().__init__(bert_dim, predictor, dropout_prob)
 
         # create crf for tag decoding
-        self.crf = default_crf().cuda()
+        self.crf = default_crf()
 
     def module(self, bert_out):
         logits = self.predictor(bert_out)  # .squeeze(-1)
@@ -146,7 +147,7 @@ class CRFLossBIO(MultiSpanHead):
         super().__init__(bert_dim, predictor, dropout_prob)
 
         # create crf for tag decoding
-        self.crf = default_crf().cuda()
+        self.crf = default_crf()
 
     def module(self, bert_out):
         logits = self.predictor(bert_out)
