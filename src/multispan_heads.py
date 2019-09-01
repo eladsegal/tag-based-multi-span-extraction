@@ -1,5 +1,5 @@
 from allennlp.modules.conditional_random_field import ConditionalRandomField, allowed_transitions
-from allennlp.nn.util import replace_masked_values, masked_mean
+from allennlp.nn.util import replace_masked_values
 import numpy as np
 import torch
 from torch.nn import Module
