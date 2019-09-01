@@ -97,8 +97,8 @@ def token_to_span(token):
     end = token.idx + len(token.text)
 
     if token.text.startswith("##"):
-        text_end -= 2
+        end -= 2
 
     if token.text == '[UNK]':
-        text_end -= 4
+        end -= 4
     return (start, end)
