@@ -273,8 +273,9 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     output_dict["maximizing_ground_truth"] = []
                     output_dict["em"] = []
                     output_dict["f1"] = []
-                    output_dict["invalid_spans"] = []    
-                    output_dict["is_clipped"] = []                             
+                    output_dict["invalid_spans"] = []
+                    output_dict["is_clipped"] = []
+                    output_dict["max_passage_length"] = []
 
                 for i in range(batch_size):
                     if len(self.answering_abilities) > 1:
@@ -329,6 +330,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                         output_dict["f1"].append(f1)
                         output_dict["invalid_spans"].append(invalid_spans)
                         output_dict["is_clipped"].append(metadata[i]["is_clipped"])
+                        output_dict["max_passage_length"].append(metadata[i]["max_passage_length"])
 
         return output_dict
     
