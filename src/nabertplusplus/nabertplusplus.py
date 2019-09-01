@@ -170,11 +170,6 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         passage_mask = seqlen_ids * pad_mask * cls_sep_mask
         # Shape: (batch_size, seqlen)
         question_mask = (1 - seqlen_ids) * pad_mask * cls_sep_mask
-        # question_and_passage_mask = question_mask | passage_mask
-        # if bio_wordpiece_mask is None:
-        #     multispan_mask = question_and_passage_mask
-        # else:
-        #     multispan_mask = question_and_passage_mask * bio_wordpiece_mask
 
         if bio_wordpiece_mask is None:
             multispan_mask = pad_mask
