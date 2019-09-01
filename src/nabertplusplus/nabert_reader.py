@@ -19,6 +19,7 @@ import numpy as np
 
 from src.preprocessing.utils import SPAN_ANSWER_TYPE, SPAN_ANSWER_TYPES, ALL_ANSWER_TYPES
 from src.preprocessing.utils import get_answer_type, find_span, fill_token_indices, MULTIPLE_SPAN
+from src.preprocessing.utils import token_to_span
 
 from src.nhelpers import *
 
@@ -180,6 +181,7 @@ class NaBertDropReader(DatasetReader):
 
         # if qp has more than max_pieces tokens (including CLS and SEP), clip the passage
         is_clipped = False
+        max_passage_length = None
         if len(qp_tokens) > self.max_pieces - 1:
             is_clipped = True
             qp_tokens = qp_tokens[:self.max_pieces - 1]
@@ -187,6 +189,7 @@ class NaBertDropReader(DatasetReader):
             plen = len(passage_tokens)
             number_indices, number_len, numbers_in_passage = \
                 clipped_passage_num(number_indices, number_len, numbers_in_passage, plen)
+            max_passage_length = token_to_span(passage_tokens[-1])[1] if plen > 0 else 0
         
         qp_tokens += [Token('[SEP]')]
         # update the indices of the numbers with respect to the question.
@@ -225,7 +228,8 @@ class NaBertDropReader(DatasetReader):
                     "question_passage_tokens": qp_tokens,
                     "passage_id": passage_id,
                     "question_id": question_id,
-                    "is_clipped": is_clipped}
+                    "is_clipped": is_clipped,
+                    "max_passage_length": max_passage_length}
 
         if answer_annotations:            
             # Get answer type, answer text, tokenize

@@ -91,3 +91,14 @@ def fill_token_indices(tokens, text, uncased):
         text_idx += token_len
 
     return new_tokens
+
+def token_to_span(token):
+    start = token.idx
+    end = token.idx + len(token.text)
+
+    if token.text.startswith("##"):
+        text_end -= 2
+
+    if token.text == '[UNK]':
+        text_end -= 4
+    return (start, end)
