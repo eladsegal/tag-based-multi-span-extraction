@@ -8,16 +8,13 @@ from allennlp.models.model import Model
 from allennlp.models.reading_comprehension.util import get_best_span
 from allennlp.nn import util, InitializerApplicator, RegularizerApplicator
 from allennlp.nn.util import masked_softmax
-from src.custom_drop_em_and_f1 import CustomDropEmAndF1
-from allennlp.tools.drop_eval import answer_json_to_strings
 from pytorch_transformers import BertModel
-import pickle
 
-from src.nhelpers import beam_search, evaluate_postfix
-
-from src.multispan_handler import MultiSpanHandler, default_multispan_predictor, default_crf, decode_token_spans
+from src.custom_drop_em_and_f1 import CustomDropEmAndF1
+from src.multispan_heads import multispan_heads_mapping, decode_token_spans
 
 logger = logging.getLogger(__name__)
+
 
 @Model.register("nabert++")
 class NumericallyAugmentedBERTPlusPlus(Model):
@@ -34,7 +31,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  regularizer: Optional[RegularizerApplicator] = None,
                  answering_abilities: List[str] = None,
                  special_numbers: List[int] = None,
-                 unique_on_multispan: bool = True) -> None:
+                 unique_on_multispan: bool = True,
+                 multispan_head_name: str = 'crf_loss_bio') -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
@@ -80,9 +78,10 @@ class NumericallyAugmentedBERTPlusPlus(Model):
             self._count_number_predictor = self.ff(bert_dim, bert_dim, max_count + 1)  # `+1` for 0
 
         if "multiple_spans" in self.answering_abilities:
-            self._multispan_predictor = default_multispan_predictor(bert_dim, dropout_prob)
-            self._multispan_crf = default_crf()
-            self._multi_span_handler = MultiSpanHandler(bert_dim, self._multispan_predictor, self._multispan_crf, dropout_prob)
+            self.multispan_head = multispan_heads_mapping[multispan_head_name](bert_dim)
+            self._multispan_module = self.multispan_head.module
+            self._multispan_log_likelihood = self.multispan_head.log_likelihood
+            self._multispan_prediction = self.multispan_head.prediction
             self._unique_on_multispan = unique_on_multispan
 
         self._drop_metrics = CustomDropEmAndF1()
@@ -168,7 +167,12 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         passage_mask = seqlen_ids * pad_mask * cls_sep_mask
         # Shape: (batch_size, seqlen)
         question_mask = (1 - seqlen_ids) * pad_mask * cls_sep_mask
-        
+
+        if bio_wordpiece_mask is None:
+            multispan_mask = pad_mask
+        else:
+            multispan_mask = pad_mask & bio_wordpiece_mask
+
         # Shape: (batch_size, seqlen, bert_dim)
         bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask)
         # Shape: (batch_size, qlen, bert_dim)
@@ -204,7 +208,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 self._question_span_module(passage_vector, question_out, question_mask)
 
         if "multiple_spans" in self.answering_abilities:
-            multi_span_result = self._multi_span_handler.forward(passage_out, span_bio_labels, pad_mask, bio_wordpiece_mask, is_bio_mask)
+            multispan_log_probs, multispan_logits = self._multispan_module(passage_out)
             
         if "arithmetic" in self.answering_abilities:
             number_mask = (number_indices[:,:,0].long() != -1).long()
@@ -249,7 +253,13 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     log_marginal_likelihood_list.append(log_marginal_likelihood_for_count)
 
                 elif answering_ability == "multiple_spans":
-                    log_marginal_likelihood_list.append(multi_span_result["log_likelihood"])
+                    log_marginal_likelihood_for_multispan = \
+                        self._multispan_log_likelihood(span_bio_labels,
+                                                       multispan_log_probs,
+                                                       multispan_mask,
+                                                       is_bio_mask,
+                                                       logits=multispan_logits)
+                    log_marginal_likelihood_list.append(log_marginal_likelihood_for_multispan)
                 else:
                     raise ValueError(f"Unsupported answering ability: {answering_ability}")
 
@@ -286,16 +296,18 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     answer_json: Dict[str, Any] = {}
 
                     invalid_spans = []
-                    
-                    # We did not consider multi-mention answers here
+
+                    q_text = metadata[i]['original_question']
+                    p_text = metadata[i]['original_passage']
+                    qp_tokens = metadata[i]['question_passage_tokens']
                     if predicted_ability_str == "passage_span_extraction":
                         answer_json["answer_type"] = "passage_span"
                         answer_json["value"], answer_json["spans"] = \
-                            self._span_prediction(metadata[i]['question_passage_tokens'], best_passage_span[i], metadata[i]['original_passage'], metadata[i]['original_question'], 'p')
+                            self._span_prediction(qp_tokens, best_passage_span[i], p_text, q_text, 'p')
                     elif predicted_ability_str == "question_span_extraction":
                         answer_json["answer_type"] = "question_span"
                         answer_json["value"], answer_json["spans"] = \
-                            self._span_prediction(metadata[i]['question_passage_tokens'], best_question_span[i], metadata[i]['original_passage'], metadata[i]['original_question'], 'q')
+                            self._span_prediction(qp_tokens, best_question_span[i], p_text, q_text, 'q')
                     elif predicted_ability_str == "arithmetic":  # plus_minus combination answer
                         answer_json["answer_type"] = "arithmetic"
                         original_numbers = metadata[i]['original_numbers']
@@ -308,7 +320,9 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
-                        answer_json["value"], answer_json["spans"], invalid_spans = self._multi_span_handler.decode_spans_from_tags(multi_span_result["predicted_tags"][i], metadata[i]['question_passage_tokens'], metadata[i]['original_passage'], metadata[i]['original_question'])
+                        answer_json["value"], answer_json["spans"], invalid_spans = \
+                            self._multispan_prediction(multispan_logits[i], qp_tokens, p_text, q_text,
+                                                       pad_mask[i])
                         if self._unique_on_multispan:
                             answer_json["value"] = list(set(answer_json["value"]))
                     else:
@@ -333,8 +347,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                         output_dict["max_passage_length"].append(metadata[i]["max_passage_length"])
 
         return output_dict
-    
-    
+
     def _passage_span_module(self, passage_out, passage_mask):
         # Shape: (batch_size, passage_length)
         passage_span_start_logits = self._passage_span_start_predictor(passage_out).squeeze(-1)
@@ -353,8 +366,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         # Shape: (batch_size, 2)
         best_passage_span = get_best_span(passage_span_start_logits, passage_span_end_logits)
         return passage_span_start_log_probs, passage_span_end_log_probs, best_passage_span
-    
-    
+
     def _passage_span_log_likelihood(self,
                                      answer_as_passage_spans,
                                      passage_span_start_log_probs,
@@ -383,8 +395,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         # Shape: (batch_size, )
         log_marginal_likelihood_for_passage_span = util.logsumexp(log_likelihood_for_passage_spans)
         return log_marginal_likelihood_for_passage_span
-    
-    
+
     def _span_prediction(self, question_passage_tokens, best_span, passage_text, question_text, context):
         (predicted_start, predicted_end)  = tuple(best_span.detach().cpu().numpy())
         answer_tokens = question_passage_tokens[predicted_start:predicted_end + 1]
@@ -392,7 +403,6 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         predicted_answer = spans_text[0]
         return predicted_answer, spans_indices
 
-    
     def _question_span_module(self, passage_vector, question_out, question_mask):
         # Shape: (batch_size, question_length)
         encoded_question_for_span_prediction = \
@@ -415,8 +425,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         # Shape: (batch_size, 2)
         best_question_span = get_best_span(question_span_start_logits, question_span_end_logits)
         return question_span_start_log_probs, question_span_end_log_probs, best_question_span
-    
-    
+
     def _question_span_log_likelihood(self, 
                                       answer_as_question_spans, 
                                       question_span_start_log_probs, 
@@ -448,8 +457,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         log_marginal_likelihood_for_question_span = \
             util.logsumexp(log_likelihood_for_question_spans)
         return log_marginal_likelihood_for_question_span
-    
-    
+
     def _count_module(self, passage_vector):
         # Shape: (batch_size, 10)
         count_number_logits = self._count_number_predictor(passage_vector)
@@ -458,7 +466,6 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         # Shape: (batch_size,)
         best_count_number = torch.argmax(count_number_log_probs, -1)
         return count_number_log_probs, best_count_number
-    
 
     def _count_log_likelihood(self, answer_as_counts, count_number_log_probs):
         # Count answers are padded with label -1,
@@ -474,14 +481,12 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         # Shape: (batch_size, )
         log_marginal_likelihood_for_count = util.logsumexp(log_likelihood_for_counts)
         return log_marginal_likelihood_for_count
-    
-    
+
     def _count_prediction(self, best_count_number):
         predicted_count = best_count_number.detach().cpu().numpy()
         predicted_answer = str(predicted_count)
         return predicted_answer, predicted_count
-    
-    
+
     def _base_arithmetic_module(self, passage_vector, passage_out, number_indices, number_mask):
         number_indices = number_indices[:,:,0].long()
         clamped_number_indices = util.replace_masked_values(number_indices, number_mask, 0)
@@ -510,8 +515,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         # For padding numbers, the best sign masked as 0 (not included).
         best_signs_for_numbers = util.replace_masked_values(best_signs_for_numbers, number_mask, 0)
         return number_sign_log_probs, best_signs_for_numbers, number_mask
-    
-    
+
     def _base_arithmetic_log_likelihood(self,
                                         answer_as_expressions,
                                         number_sign_log_probs,
@@ -538,8 +542,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         # Shape: (batch_size,)
         log_marginal_likelihood_for_add_sub = util.logsumexp(log_likelihood_for_add_subs)
         return log_marginal_likelihood_for_add_sub
-    
-    
+
     def _base_arithmetic_prediction(self, original_numbers, number_indices, best_signs_for_numbers):
         sign_remap = {0: 0, 1: 1, 2: -1}
         original_numbers = self.special_numbers + original_numbers

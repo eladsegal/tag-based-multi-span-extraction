@@ -3,7 +3,7 @@ import os
 #os.environ['PATH'] = 'C:\\Users\\Elad\\Anaconda3\\envs\\allennlp;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\mingw-w64\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\usr\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Library\\bin;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\Scripts;C:\\Users\\Elad\\Anaconda3\\envs\\allennlp\\bin;C:\\Users\\Elad\\Anaconda3\\condabin;'
 
 import unittest
-from src.multispan_handler import MultiSpanHandler, default_multispan_predictor, default_crf
+from src.multispan_heads import CRFLossBIO, MultiSpanHead
 from src.bert_indexer import BertDropTokenIndexer
 from src.bert_tokenizer import BertDropTokenizer
 from src.nabertplusplus.nabert_reader import NaBertDropReader
@@ -18,7 +18,7 @@ from src.bert_tokenizer import BertDropTokenizer
 from allennlp.data import Vocabulary
 
 
-class MultiSpanHandlerUnitTests(unittest.TestCase):
+class CRFLossBIOUnitTests(unittest.TestCase):
     pretrained_model = "bert-base-uncased"
     token_indexer = BertDropTokenIndexer(pretrained_model)
     tokenizer = tokenizer = BertDropTokenizer(pretrained_model)
@@ -33,7 +33,7 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
         instances = reader.read(self.drop_sample_path)
 
         vocab = Vocabulary() #self.token_indexer.vocab
-        handler = MultiSpanHandler(512, default_multispan_predictor(512, 0.1), default_crf())
+        multispan_head = CRFLossBIO(bert_dim=512, dropout_prob=0.1)
 
         self.assertEqual(instances_to_read, len(instances))
         
@@ -41,7 +41,7 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
 
         tags = list(instance.fields['span_bio_labels'])
 
-        span_texts, spans_indices, invalid_tokens = handler.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
+        span_texts, spans_indices, invalid_tokens = MultiSpanHead.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
 
         self.assertFalse(invalid_tokens)
 
@@ -72,7 +72,7 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
         instances = reader.read(self.drop_sample2_path)
 
         vocab = Vocabulary() #self.token_indexer.vocab
-        handler = MultiSpanHandler(512, default_multispan_predictor(512, 0.1), default_crf())
+        multispan_head = CRFLossBIO(bert_dim=512, dropout_prob=0.1)
 
         self.assertEqual(instances_to_read, len(instances))
         
@@ -80,7 +80,7 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
 
         tags = list(instance.fields['span_bio_labels'])
 
-        span_texts, spans_indices, invalid_tokens = handler.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
+        span_texts, spans_indices, invalid_tokens = MultiSpanHead.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
 
         self.assertFalse(invalid_tokens)
 
@@ -111,7 +111,7 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
         instances = reader.read(self.drop_sample3_path)
 
         vocab = Vocabulary() #self.token_indexer.vocab
-        handler = MultiSpanHandler(512, default_multispan_predictor(512, 0.1), default_crf())
+        multispan_head = CRFLossBIO(bert_dim=512, dropout_prob=0.1)
 
         self.assertEqual(instances_to_read, len(instances))
         
@@ -119,7 +119,7 @@ class MultiSpanHandlerUnitTests(unittest.TestCase):
 
         tags = list(instance.fields['span_bio_labels'])
 
-        span_texts, spans_indices, invalid_tokens = handler.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
+        span_texts, spans_indices, invalid_tokens = MultiSpanHead.decode_spans_from_tags(tags, instance['metadata']['question_passage_tokens'], instance['metadata']['original_passage'], instance['metadata']['original_question'])
 
         self.assertFalse(invalid_tokens)
 
