@@ -10,7 +10,7 @@ import sys
 
 from allennlp.commands import main
 
-config_file = "configs/nabertplusplus_all_heads.json"
+config_file = "configs/all_heads_mos.json"
 
 overrides_dict = {}
 USE_CPU = False # Use overrides to train on CPU.
