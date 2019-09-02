@@ -16,7 +16,7 @@ from allennlp.data.fields import (Field, TextField, IndexField, LabelField, List
 from tqdm import tqdm
 
 from src.nhelpers import *
-from src.preprocessing.utils import SPAN_ANSWER_TYPES, ALL_ANSWER_TYPES, MULTIPLE_SPAN
+from src.preprocessing.utils import SPAN_ANSWER_TYPE, SPAN_ANSWER_TYPES, ALL_ANSWER_TYPES, MULTIPLE_SPAN
 from src.preprocessing.utils import get_answer_type, fill_token_indices, token_to_span
 
 
@@ -229,11 +229,16 @@ class NaBertDropReader(DatasetReader):
 
         if answer_annotations:            
             # Get answer type, answer text, tokenize
+            # For multi-span, remove repeating answers. Although possible, in the dataset it is mostly mistakes.
             answer_type, answer_texts = DropReader.extract_answer_info_from_annotation(answer_annotations[0])
+            if answer_type == SPAN_ANSWER_TYPE:
+                answer_texts = list(set(answer_texts))
             tokenized_answer_texts = []
             for answer_text in answer_texts:
                 answer_tokens = self.tokenizer.tokenize(answer_text)
-                tokenized_answer_texts.append(' '.join(token.text for token in answer_tokens))
+                tokenized_answer_text = ' '.join(token.text for token in answer_tokens)
+                if (tokenized_answer_text not in tokenized_answer_texts) and (answer_type == SPAN_ANSWER_TYPE):
+                    tokenized_answer_texts.append(tokenized_answer_text)
 
             metadata["answer_annotations"] = answer_annotations
             metadata["answer_texts"] = answer_texts
