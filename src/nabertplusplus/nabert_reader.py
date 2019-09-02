@@ -176,7 +176,7 @@ class NaBertDropReader(DatasetReader):
 
         # if qp has more than max_pieces tokens (including CLS and SEP), clip the passage
         is_clipped = False
-        max_passage_length = None
+        max_passage_length = -1
         if len(qp_tokens) > self.max_pieces - 1:
             is_clipped = True
             qp_tokens = qp_tokens[:self.max_pieces - 1]
@@ -223,9 +223,8 @@ class NaBertDropReader(DatasetReader):
                     "question_passage_tokens": qp_tokens,
                     "passage_id": passage_id,
                     "question_id": question_id,
-                    "is_clipped": is_clipped}
-        if max_passage_length is not None:
-            metadata["max_passage_length"] = max_passage_length
+                    "is_clipped": is_clipped,
+                    "max_passage_length": max_passage_length}
 
         if answer_annotations:            
             # Get answer type, answer text, tokenize
