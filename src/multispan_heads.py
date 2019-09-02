@@ -97,21 +97,22 @@ class SimpleBIO(MultiSpanHead):
     # sum version
     def log_likelihood(self, gold_labels, log_probs, likelihood_mask, is_bio_mask, **kwargs):
 
-        # take the log probability only for the gold labels
+        # we only want the log probabilities of the gold labels
+        # what we get is:
+        # log_likelihoods_for_multispan[i,j] == log_probs[i,j, gold_labels[i,j]]
         log_likelihoods_for_multispan = \
             torch.gather(log_probs, dim=-1, index=gold_labels.unsqueeze(-1)).squeeze(-1)
 
-        # Our marginal likelihood is the sum of all the gold label likelihoods, ignoring the [CLS]
-        # and [SEP] tokens, as well as the padding tokens.
+        # Our marginal likelihood is the sum of all the gold label likelihoods, ignoring the
+        # padding tokens.
         log_likelihoods_for_multispan = \
-            replace_masked_values(log_likelihoods_for_multispan, gold_labels != 0, 0.0)
+            replace_masked_values(log_likelihoods_for_multispan, likelihood_mask, 0.0)
 
         log_marginal_likelihood_for_multispan = log_likelihoods_for_multispan.sum(dim=-1)
 
         # For questions without spans, we set their log probabilities to be very small negative value
-        has_spans_mask = gold_labels.sum(dim=-1) != 0
         log_marginal_likelihood_for_multispan = \
-            replace_masked_values(log_marginal_likelihood_for_multispan, has_spans_mask, -1e7)
+            replace_masked_values(log_marginal_likelihood_for_multispan, is_bio_mask, -1e7)
 
         return log_marginal_likelihood_for_multispan
 
