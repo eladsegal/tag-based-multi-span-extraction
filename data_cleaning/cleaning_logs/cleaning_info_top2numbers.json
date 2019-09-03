@@ -1,0 +1,1785 @@
+{
+    "nfl_1820": {
+        "a2a83b3a-3bb9-4c01-a855-1e3d413b9aaa": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "42-yard",
+                        "15-yard",
+                        "David Garrard"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "42-yard",
+                        "15-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_895": {
+        "6c9a6286-3acb-42a8-87f3-f0453ec37be8": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "39-yard",
+                        "44-yard",
+                        "Tony Romo"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "39-yard",
+                        "44-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_661": {
+        "5306dcbc-8555-4b26-944f-593119dbe690": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "3-yard",
+                        "7-yard",
+                        "Daunte Culpepper"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "3-yard",
+                        "7-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2375": {
+        "e86e13ac-53ed-452e-a77c-7b17baad2ca2": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "6-yard",
+                        "6-yard",
+                        "Peyton Manning",
+                        "Carson Palmer"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "6-yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_263": {
+        "c4134b26-ce88-4f92-802c-6598eaef2573": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "52-yard",
+                        "45-yard",
+                        "Bruce Gradkowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "52-yard",
+                        "45-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1839": {
+        "ce9e5638-87ca-477d-b179-2d5f5ea430ef": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "25-yard",
+                        "41-yard",
+                        "Matt Prater",
+                        "Ryan Succop",
+                        "Matt Prater"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "25-yard",
+                        "41-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1777": {
+        "ea3c2be1-79e6-4033-8d85-00a55a79cc89": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "17-yard",
+                        "19-yard",
+                        "Brett Favre"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "17-yard",
+                        "19-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1302": {
+        "0310e25d-e4f5-4542-aed4-7b8fb3b9782c": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2 yards",
+                        "3",
+                        "Shaun Suisham",
+                        "Nick Folk"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2 yards",
+                        "3"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_651": {
+        "ad8bb354-3d01-4a05-8bb9-5989588fc5e0": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "24-yard",
+                        "27-yard",
+                        "Adam Vinatieri"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "24-yard",
+                        "27-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1087": {
+        "39688612-1678-433b-954d-aba0fa9832c6": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "12-yard",
+                        "9-yard",
+                        "Adam Vinatieri",
+                        "Stephen Gostkowski",
+                        "Stephen Gostkowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "12-yard",
+                        "9-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1221": {
+        "d1fc543f-f353-4958-81ca-3d710287617a": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "47-yard",
+                        "35-yard",
+                        "Nate Kaeding",
+                        "Stephen Gostkowski",
+                        "Philip Rivers"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "47-yard",
+                        "35-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2027": {
+        "2eee0a87-821b-4df1-a6f7-924b00022c2d": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "13-yard",
+                        "8-yard",
+                        "Michael Vick",
+                        "Matt Schaub"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "13-yard",
+                        "8-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1685": {
+        "0f8adf02-ec52-42da-8a48-b6c35fc0e404": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "8-yard",
+                        "17-yard",
+                        "Mike Nugent"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "8-yard",
+                        "17-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1254": {
+        "47d2c592-f8f9-453e-b1ab-5b8b1ab9e6ab": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "10-yard",
+                        "8-yard",
+                        "Olindo Mare",
+                        "Shaun Suisham"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "10-yard",
+                        "8-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1868": {
+        "f09508c7-8ea7-4041-8c7a-a39bf56e3384": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "7-yard",
+                        "15-yard",
+                        "Tony Romo"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "7-yard",
+                        "15-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_71": {
+        "638418ca-5776-4632-915c-5af062598296": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "41-yard",
+                        "Willie Parker"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "41-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3426": {
+        "30d524ab-2a2c-4871-b6ae-c680c7118f7b": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "29-yard",
+                        "37",
+                        "Kai Forbath",
+                        "Chris Boswell"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "29-yard",
+                        "37"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_875": {
+        "fbcf8cc2-d96a-4857-91c2-f1f63a2a20d7": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "3-yard",
+                        "Quinn Gray"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "3-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_569": {
+        "7e8387cd-fdaf-4efe-bb02-18754d03abb4": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "3-yard",
+                        "Greg Jones",
+                        "Travis Henry"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "3-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2015": {
+        "304a8b6f-84e6-4640-b161-c0dab5aa7430": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "4-yard",
+                        "6-yard",
+                        "Adam Vinatieri",
+                        "Sebastian Janikowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "4-yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2055": {
+        "93e3eb7c-653a-4ea5-8e81-5ef24304bd3f": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "3-yard",
+                        "6-yard",
+                        "Kyle Orton",
+                        "Philip Rivers",
+                        "Philip Rivers"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "3-yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2186": {
+        "2b332df8-4b73-4814-ad1b-8c9a1e1063ff": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "21",
+                        "Sebastian Janikowski",
+                        "Matt Prater"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "21"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1707": {
+        "5d163c8a-4341-47e1-b7d1-79190b7d3e78": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "31-yard",
+                        "4",
+                        "Troy Smith"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "31-yard",
+                        "4"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3279": {
+        "8e227b75-5087-4ec7-bedf-8b2500a083f5": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "42-yard",
+                        "39-yard",
+                        "Ka'imi Fairbairn",
+                        "Randy Bullock"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "42-yard",
+                        "39-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2071": {
+        "0c3f9d28-7dc9-4821-af59-9d19a6b46323": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "31-yard",
+                        "Shane Andrus",
+                        "Jay Feely"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "31-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_593": {
+        "d084cce2-da76-4612-ad7d-2fa9612b3faa": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "2-yard",
+                        "Marion Barber",
+                        "8-yard",
+                        "16-yard"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "2-yard",
+                        "8-yard",
+                        "16-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1027": {
+        "be4ab34f-7877-4100-89de-d914166b15c6": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "27-yard",
+                        "13-yard",
+                        "Stephen Gostkowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "27-yard",
+                        "13-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1048": {
+        "64bcc64e-f288-4055-bc6b-5ee556c5e9dd": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "25-yard",
+                        "Ryan Longwell",
+                        "Jason Hanson"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "25-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1740": {
+        "1258ec13-8e61-4dc4-a80f-a9af622b6ddc": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "32-yard",
+                        "43-yard",
+                        "Rian Lindell",
+                        "Dan Carpenter"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "32-yard",
+                        "43-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2155": {
+        "7b2b9cad-473c-4d8d-a419-e639d3956a26": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "39-yard",
+                        "David Akers"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "39-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2099": {
+        "7cc074cb-ee74-4a3b-9039-be4b95786dc1": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "5-yard",
+                        "16-yard",
+                        "Sam Bradford",
+                        "Troy Smith"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "5-yard",
+                        "16-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2094": {
+        "7cbcf00b-1070-493c-b5da-fd38bdf2a1f1": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "31-yard",
+                        "30-yard",
+                        "Josh Brown",
+                        "Olindo Mare",
+                        "30-yard",
+                        "31-yard"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "31-yard",
+                        "30-yard",
+                        "30-yard",
+                        "31-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2122": {
+        "1298f912-583d-4cdd-9c54-2c980a499a78": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "6-yard",
+                        "Matt Prater"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1641": {
+        "deca8775-5b7e-404e-941f-c519f1ad03f2": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "36-yard",
+                        "37-yard",
+                        "Joe Nedney",
+                        "Olindo Mare"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "36-yard",
+                        "37-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_501": {
+        "b023367f-236b-40d6-a69c-71d9086e6bcf": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "45-yard",
+                        "29-yard",
+                        "John Kasay"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "45-yard",
+                        "29-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_453": {
+        "4ce9e150-6e12-4d58-adc4-1f62681ea361": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "21-yard",
+                        "33-yard",
+                        "Byron Leftwich",
+                        "Drew Brees",
+                        "Byron Leftwich"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "21-yard",
+                        "33-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1770": {
+        "5b657f53-beea-47c7-abfc-3011714d6e90": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "nine-yard",
+                        "Jay Cutler"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "nine-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_355": {
+        "af4eada1-433b-45ab-a1f1-a7eab75d1b46": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "5-yard",
+                        "48-yard",
+                        "Drew Brees"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "5-yard",
+                        "48-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2749": {
+        "7a2a682b-c970-4e69-ab8f-eb29ad23e32e": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "35-yard",
+                        "40-yard",
+                        "Robbie Gould",
+                        "Matt Prater"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "35-yard",
+                        "40-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_873": {
+        "f4c5e026-578c-4b8c-9cf1-b6aed5f0d9de": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "35-yard",
+                        "Rob Bironas",
+                        "Sebastian Janikowski",
+                        "Sebastian Janikowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "35-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1583": {
+        "be5565b1-c59f-4d5f-a3d6-03605cb44b13": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "41-yard",
+                        "Sebastian Janikowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "41-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2653": {
+        "cceebe58-d57d-4511-9815-45305745fbe4": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "20-yard",
+                        "23",
+                        "Dan Carpenter",
+                        "Shaun Suisham"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "20-yard",
+                        "23"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_817": {
+        "c1896da6-42a9-42b6-8292-237a87bfe7ae": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "35-yard",
+                        "Joe Nedney"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "35-yard"
+                    ]
+                }
+            }
+        },
+        "90fcec1a-f7ab-4d60-8b55-4095be9e646f": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "35-yard",
+                        "Joe Nedney",
+                        "Jeff Wilkins",
+                        "Joe Nedney"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "35-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_814": {
+        "26b79543-ffd9-4b04-8531-5eb4c123c127": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "29-yard",
+                        "26-yard",
+                        "Alex Smith",
+                        "Drew Brees"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "29-yard",
+                        "26-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1066": {
+        "ffd80141-8934-4d9e-9e20-2a4743758b09": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "13-yard",
+                        "14-yard",
+                        "Matt Schaub"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "13-yard",
+                        "14-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1477": {
+        "9c841da3-7807-4bfe-bfb1-6171f8d4df4d": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "50-yard",
+                        "Matt Schaub"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "50-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2248": {
+        "e53bb9ce-1887-4121-8390-31058f0874b3": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "9-yard",
+                        "Tom Brady",
+                        "Mark Sanchez"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "9-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1025": {
+        "e61d7e48-0404-49be-9b6c-b83b66238c3c": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "27-yard",
+                        "31-yard",
+                        "Jeff Garcia"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "27-yard",
+                        "31-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2038": {
+        "2b243840-6047-4854-abe0-a76824a44d49": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "39-yard",
+                        "27-yard",
+                        "Ben Roethlisberger",
+                        "Carson Palmer"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "39-yard",
+                        "27-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1908": {
+        "4593e95e-a1de-4160-867e-e4afbd93b672": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "25-yard",
+                        "41-yard",
+                        "Ryan Succop"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "25-yard",
+                        "41-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1473": {
+        "9b0e5a2c-1d65-4194-8931-38077a9e211f": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "7-yard",
+                        "8-yard",
+                        "Matt Schaub"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "7-yard",
+                        "8-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1325": {
+        "c1a2f072-6132-46d2-83f9-13fd19bd8c69": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "9-yard",
+                        "Chad Pennington"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "9-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1487": {
+        "4bfbb5d4-75ee-46e4-919e-48ed752fe775": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "9-yard",
+                        "13-yard",
+                        "Kevin Kolb",
+                        "Matt Cassel"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "9-yard",
+                        "13-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1694": {
+        "ca8391a6-dfdc-4759-b909-8e1138368804": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "54-yard",
+                        "46-yard",
+                        "17 yard",
+                        "6-yard",
+                        "Jason Campbell"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "54-yard",
+                        "46-yard",
+                        "17 yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_576": {
+        "c423ea2a-de58-48a5-927a-3549d65a20fd": {
+            "TopTwoNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "21-yard",
+                        "41-yard TD",
+                        "Jay Cutler"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "21-yard",
+                        "41-yard TD"
+                    ]
+                }
+            }
+        }
+    }
+}
