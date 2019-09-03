@@ -1,0 +1,103 @@
+{
+    "nfl_528": {
+        "081d5db9-501a-46d3-90ce-97c309b6d9a5": {
+            "TopNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "8-yard",
+                        "8-yard",
+                        "Carson Palmer"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "8-yard",
+                        "8-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2300": {
+        "da360f6f-cfef-4f12-9de0-1b13b9370feb": {
+            "TopNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "39-yard",
+                        "39-yard",
+                        "Billy Cundiff"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "39-yard",
+                        "39-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_466": {
+        "b443ae38-f0c9-4bd0-9501-4334e70b1567": {
+            "TopNumbers": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "31-yard",
+                        "36-yard",
+                        "Matt Stover",
+                        "Jeff Wilkins",
+                        "Matt Stover"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "31-yard",
+                        "36-yard"
+                    ]
+                }
+            }
+        }
+    }
+}

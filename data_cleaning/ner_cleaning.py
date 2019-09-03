@@ -3,7 +3,7 @@ from overrides import overrides
 import os
 import json
 from src.preprocessing.utils import get_answer_type
-from data_cleaning.top_two_numbers import TopTwoNumbers
+from data_cleaning.top_numbers import TopNumbers
 
 '''
 General instructions:
@@ -15,16 +15,16 @@ If there are only few example that doesn't look good, whitelis them in the clean
 
 # Define dataset cleaning objectives
 cleaning_objectives = [
-    TopTwoNumbers()
+    TopNumbers()
 ]
 
 # Define output path
-out_dir = ''
-cleaning_info_path = 'cleaning_info.json'
+out_dir = 'data_cleaning\cleaning_logs'
+cleaning_info_path = 'cleaning_info_top_numbers.json'
 cleaning_dataset_path = 'drop_dataset_train_clean.json'
 
 # Load dataset
-drop_path = os.path.join(r"data\drop_dataset_train.json")
+drop_path = os.path.join(r"data\drop_dataset_train_clean.json")
 
 with open(drop_path, 'r') as f:
     drop = json.load(f)
