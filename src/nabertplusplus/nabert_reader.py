@@ -284,6 +284,13 @@ class NaBertDropReader(DatasetReader):
                                                                     target_numbers,
                                                                     self.max_numbers_expression)
 
+                if answer_type == "number" and len(valid_expressions) == 0 and self._is_training:
+                    if all([self.max_count < number for number in target_numbers]):
+                        # The number to predict can't be derived from any head, so we shouldn't train on it.
+                        # arithmetic - no expressions that yield the number to predict
+                        # counting - the maximal predicted count is smaller than the number to predict 
+                        return None
+
             # Get possible ways to arrive at target numbers with counting
             valid_counts: List[int] = []
             if answer_type in ["number"]:
