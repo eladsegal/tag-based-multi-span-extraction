@@ -5,6 +5,7 @@ import json
 from src.preprocessing.utils import get_answer_type
 from data_cleaning.remove_non_number_spans import RemoveNonNumberSpans
 from data_cleaning.remove_non_per_spans import RemoveNonPerSpans
+from data_cleaning.remove_non_org_spans import RemoveNonOrgSpans
 
 '''
 General instructions:
@@ -18,13 +19,14 @@ debug_question = None
 
 # Define dataset cleaning objectives
 cleaning_objectives = [
-    RemoveNonPerSpans()
+    #RemoveNonPerSpans(),
+    RemoveNonOrgSpans()
 ]
 
 # Define output path
 out_dir = 'data_cleaning\cleaning_logs'
-cleaning_info_path = 'cleaning_info_who_o3.json'
-cleaning_dataset_path = 'drop_dataset_train_clea3.json'
+cleaning_info_path = 'cleaning_info_remove_non_org.json'
+cleaning_dataset_path = 'drop_dataset_train_clean.json'
 
 # Load dataset
 drop_path = os.path.join(r"data\drop_dataset_train_clean.json")
@@ -71,6 +73,7 @@ for passage_id, data in drop.items():
             if qa_pair['query_id'] not in cleaning_info[passage_id]:
                 cleaning_info[passage_id][qa_pair['query_id']] = dict()
 
+            cleaning_info[passage_id][qa_pair['query_id']]['question'] = qa_pair['question']
             cleaning_info[passage_id][qa_pair['query_id']][co.name] = dict()
 
             if 'passage' in clean_result:
