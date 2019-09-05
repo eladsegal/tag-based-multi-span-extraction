@@ -3,7 +3,8 @@ from overrides import overrides
 import os
 import json
 from src.preprocessing.utils import get_answer_type
-from data_cleaning.top_numbers import TopNumbers
+from data_cleaning.remove_non_number_spans import RemoveNonNumberSpans
+from data_cleaning.remove_non_per_spans import RemoveNonPerSpans
 
 '''
 General instructions:
@@ -13,15 +14,17 @@ If it looks good then drop_dataset_train_cleaned is clean.
 If there are only few example that doesn't look good, whitelis them in the cleaning objective and rerun.
 '''
 
+debug_question = None
+
 # Define dataset cleaning objectives
 cleaning_objectives = [
-    TopNumbers()
+    RemoveNonPerSpans()
 ]
 
 # Define output path
 out_dir = 'data_cleaning\cleaning_logs'
-cleaning_info_path = 'cleaning_info_top_numbers.json'
-cleaning_dataset_path = 'drop_dataset_train_clean.json'
+cleaning_info_path = 'cleaning_info_who_o3.json'
+cleaning_dataset_path = 'drop_dataset_train_clea3.json'
 
 # Load dataset
 drop_path = os.path.join(r"data\drop_dataset_train_clean.json")
@@ -39,6 +42,9 @@ for passage_id, data in drop.items():
     ner_tagging_passage = None
 
     for qa_pair in data['qa_pairs']:
+        if debug_question is not None and debug_question != qa_pair['query_id']:
+            continue
+
         for co in cleaning_objectives:
             ner_tagging_question = None
 

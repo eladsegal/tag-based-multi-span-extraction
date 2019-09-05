@@ -1,0 +1,290 @@
+{
+    "nfl_2752": {
+        "c34303c6-1fdd-4415-b0e4-3df732ccd3b6": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Matt Forte",
+                        "11",
+                        "13",
+                        "second",
+                        "third"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Matt Forte"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2048": {
+        "393cf1db-b11c-44c7-b80f-9c560ab712fc": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "San Diego trailed early when",
+                        "kicker Olindo Mare",
+                        "made a 23-yard field goal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "San Diego trailed early when",
+                        "kicker Olindo Mare"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1114": {
+        "8b2a9944-2d3c-4ba0-b32d-1598ba7da4c0": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "Rob Bironas",
+                        "49-yard field goal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "Rob Bironas"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2691": {
+        "350f7e69-0639-4921-aa3e-fb660e2b287a": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Gould",
+                        "45-yard"
+                    ],
+                    "worker_id": "",
+                    "hit_id": ""
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Gould"
+                    ],
+                    "worker_id": "",
+                    "hit_id": ""
+                }
+            }
+        }
+    },
+    "nfl_748": {
+        "22e7bd01-cb06-44e6-84a8-34dd9d770c2f": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Tatum Bell",
+                        "14-yard TD run",
+                        "end the game"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Tatum Bell"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2443": {
+        "1f601043-a1ca-4b77-b951-c41765d5f176": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Giants' kicker Lawrence Tynes",
+                        "via a 50-yard field goal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Giants' kicker Lawrence Tynes"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_873": {
+        "f484c39b-514a-4547-b990-cf17071851ad": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Raiders kicker Sebastian Janikowski",
+                        "50-yard field goal",
+                        "43-yard and a 54-yard",
+                        "field goal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Raiders kicker Sebastian Janikowski"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_776": {
+        "582268ca-cd9b-449d-8c7f-a6350dd48686": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Brian Dawkins",
+                        "Philadelphia's third interception",
+                        "midway through the final quarter"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Brian Dawkins",
+                        "Philadelphia's third interception"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_414": {
+        "1cd2ee26-1af2-4c65-a78f-812ac6ac7c7c": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "kicker Rob Bironas nailed it",
+                        "from 49 yards out"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "kicker Rob Bironas nailed it"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_804": {
+        "4b304c4f-ee6e-42a3-91c1-ea2fc56e21b3": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "38-yard TD pass to",
+                        "WR Vincent Jackson"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "WR Vincent Jackson"
+                    ]
+                }
+            }
+        }
+    }
+}
