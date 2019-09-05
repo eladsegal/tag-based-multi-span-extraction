@@ -1,0 +1,31 @@
+{
+    "nfl_2048": {
+        "393cf1db-b11c-44c7-b80f-9c560ab712fc": {
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "San Diego trailed early when",
+                        "kicker Olindo Mare"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "kicker Olindo Mare"
+                    ]
+                }
+            }
+        }
+    }
+}

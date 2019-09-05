@@ -1,6 +1,8 @@
 
 class CleaningObejective(object):
 
+    whitelist = []
+
     def is_fitting_objective(self, passage, question, answer):
         raise NotImplementedError
 

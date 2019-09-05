@@ -46,6 +46,9 @@ for passage_id, data in drop.items():
             continue
 
         for co in cleaning_objectives:
+            if qa_pair['query_id'] in co.whitelist:
+                continue
+
             ner_tagging_question = None
 
             if not co.is_fitting_objective(data['passage'], qa_pair['question'], qa_pair['answer']):

@@ -16,16 +16,14 @@ class RemoveNonPerSpans(RemoveSpansBase):
         "who kicked",
     ]
 
+    # Two questions where the result is ORG, ignoring them and removing the ORG for the PER expected to get better results.
     whitelist = [
+        "370330a3-3c6a-47d0-ab82-abe55d6bc6d3",
+        "26739a0f-3e6e-49ee-9595-add767692a82",
         ]
 
     def should_remove_span(self, span_tags):
-        return all(not tag.endswith('PER') and not tag.endswith('ORG') for tag in span_tags)
+        return all(not tag.endswith('PER') for tag in span_tags)
 
     def should_remove_answer(self, answer_text):
         return answer_text.isdigit()
-
-
-    #TEST
-    # 370330a3-3c6a-47d0-ab82-abe55d6bc6d3
-    # 26739a0f-3e6e-49ee-9595-add767692a82
