@@ -12,6 +12,7 @@ class RemoveNonOrgSpans(RemoveSpansBase):
 
     question_prefixes = [
         "which team",
+        "which two teams"
     ]
    
     whitelist = [
@@ -27,6 +28,12 @@ class RemoveNonOrgSpans(RemoveSpansBase):
         "896e98ac-42e1-46cf-9c81-b5d7654297d6",
         "7919a072-29cd-4b00-a75c-2a56b7621ceb",
         "5f625b65-595a-4657-959c-570d435adce8",
+        "43d68c95-ba4b-4c9c-93f5-71df8a350a4f",
+        "fe8f63f8-723f-45d8-8912-9c214c414e54",
+        "dfc989ee-83f4-4cfa-b6ed-9805e6ecacde",
+        "14aeb856-40a6-4bce-aa63-5c66050e1a0b",
+        "f207990-f965-49c9-bb2d-5331adbd62fa",
+        "925e1347-a239-4429-8a8a-6917dd00a2fa",
         ]
 
     def should_remove_span(self, span_tags):
