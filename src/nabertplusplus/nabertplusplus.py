@@ -320,7 +320,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
-                        answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"] = \
+                        answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
                             self._multispan_prediction(multispan_logits[i], qp_tokens, p_text, q_text,
                                                        pad_mask[i])
                         if self._unique_on_multispan:

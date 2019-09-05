@@ -74,7 +74,7 @@ class MultiSpanHead(Module):
         valid_tokens, invalid_tokens = validate_tokens_spans(spans_tokens)
         spans_text, spans_indices = decode_token_spans(valid_tokens, passage_text, question_text)
 
-        return spans_text, spans_indices, invalid_tokens, [str(tag) + '_' + str(token.text) for tag, token in zip(tags, question_passage_tokens)]
+        return spans_text, spans_indices, invalid_tokens, tags, [token.text for token in question_passage_tokens]
 
 
 class SimpleBIO(MultiSpanHead):
