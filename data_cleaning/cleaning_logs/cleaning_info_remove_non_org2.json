@@ -1,0 +1,34 @@
+{
+    "history_2003": {
+        "653e92b1-c86e-449c-93ec-d79336150a9d": {
+            "question": "Which two teams qualify for the postseason after being 15 games under .500?",
+            "RemoveNonOrgSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Astros won a wild card",
+                        "becoming the first team since",
+                        "1914 Boston Braves"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Astros won a wild card",
+                        "1914 Boston Braves"
+                    ]
+                }
+            }
+        }
+    }
+}
