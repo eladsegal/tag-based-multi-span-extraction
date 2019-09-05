@@ -74,7 +74,7 @@ class MultiSpanHead(Module):
         valid_tokens, invalid_tokens = validate_tokens_spans(spans_tokens)
         spans_text, spans_indices = decode_token_spans(valid_tokens, passage_text, question_text)
 
-        return spans_text, spans_indices, invalid_tokens
+        return spans_text, spans_indices, invalid_tokens, tags
 
 
 class SimpleBIO(MultiSpanHead):
@@ -139,7 +139,7 @@ class SimpleBIO(MultiSpanHead):
         predicted_tags_with_score = self.crf.viterbi_tags(logits.unsqueeze(0), mask.unsqueeze(0))
         predicted_tags = [x for x, y in predicted_tags_with_score]
 
-        return MultiSpanHead.decode_spans_from_tags(predicted_tags[0],  qp_tokens, p_text, q_text)
+        return MultiSpanHead.decode_spans_from_tags(predicted_tags[0], qp_tokens, p_text, q_text)
 
 
 class CRFLossBIO(MultiSpanHead):
