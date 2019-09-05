@@ -14,12 +14,19 @@ class RemoveNonPerSpans(RemoveSpansBase):
         "who scored",
         "who caught",
         "who kicked",
+        "which players",
+        "what players",
     ]
-
-    # Two questions where the result is ORG, ignoring them and removing the ORG for the PER expected to get better results.
+    
     whitelist = [
-        "370330a3-3c6a-47d0-ab82-abe55d6bc6d3",
-        "26739a0f-3e6e-49ee-9595-add767692a82",
+            # Two questions where the result is ORG, ignoring them and removing the ORG for the PER expected to get better results.
+            "370330a3-3c6a-47d0-ab82-abe55d6bc6d3",
+            "26739a0f-3e6e-49ee-9595-add767692a82",
+
+            # Person is no recognized as PER
+            "afa06d9f-51fd-4488-a676-ea4c6ac05010",
+            "0f801133-dfd0-42fd-b5d1-789a1a0cc735",
+            "02ba8a32-bf89-4d0d-bc52-61f3d4ca96c7",
         ]
 
     def should_remove_span(self, span_tags):
