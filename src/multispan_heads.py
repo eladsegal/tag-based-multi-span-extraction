@@ -37,7 +37,7 @@ class MultiSpanHead(Module):
 
         context = 'q'
 
-        for i in np.arange(len(tags)):
+        for i in np.arange(len(question_passage_tokens)):
             token = question_passage_tokens[i]
 
             if token.text == '[SEP]':
