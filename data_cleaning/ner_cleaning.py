@@ -6,6 +6,7 @@ from src.preprocessing.utils import get_answer_type
 from data_cleaning.remove_non_number_spans import RemoveNonNumberSpans
 from data_cleaning.remove_non_per_spans import RemoveNonPerSpans
 from data_cleaning.remove_non_org_spans import RemoveNonOrgSpans
+from data_cleaning.trim_spans import TrimSpans
 
 '''
 General instructions:
@@ -20,7 +21,8 @@ debug_question = None
 # Define dataset cleaning objectives
 cleaning_objectives = [
     #RemoveNonPerSpans(),
-    RemoveNonOrgSpans()
+    #RemoveNonOrgSpans()
+    TrimSpans()
 ]
 
 # Define output path
