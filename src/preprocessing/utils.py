@@ -1,6 +1,9 @@
+import html
+import re
 import json
 import os
 from typing import Dict, List, Tuple
+
 
 from allennlp.data.tokenizers import Token
 
@@ -102,3 +105,22 @@ def token_to_span(token):
     if token.text == '[UNK]':
         end -= 4
     return (start, end)
+
+
+def standardize_text(text):
+    # I don't see a reason to differentiate between "No-Break Space" and regular space
+    text = text.replace('&#160;', ' ')
+
+    text = html.unescape(text)
+
+    # There is a pattern that repeats itself 97 times in the train set and 16 in the
+    # dev set: "<letters>.:<digits>". It originates from the method of parsing the
+    # Wikipedia pages. In such an occurrence, "<letters>." is the last word of a
+    # sentence, followed by a period. Then, in the wikipedia page, follows a superscript
+    # of digits within square brackets, which is a hyperlink to a reference. After the
+    # hyperlink there is a colon, ":", followed by <digits>. These digits are the page
+    # within the reference.
+    # Example: https://en.wikipedia.org/wiki/Polish%E2%80%93Ottoman_War_(1672%E2%80%931676)
+    if '.:' in text:
+        text = re.sub('\.:d+', '\.', text)
+    return text
