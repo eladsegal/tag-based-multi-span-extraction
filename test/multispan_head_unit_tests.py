@@ -9,7 +9,6 @@ from src.bert_tokenizer import BertDropTokenizer
 from src.nabertplusplus.nabert_reader import NaBertDropReader
 from src.nabertplusplus.nabertplusplus import NumericallyAugmentedBERTPlusPlus
 from allennlp.data.token_indexers import PretrainedBertIndexer
-from pytorch_pretrained_bert import BertTokenizer
 from overrides import overrides
 import os
 

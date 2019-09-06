@@ -10,7 +10,6 @@ from src.nabertplusplus.nabertplusplus import NumericallyAugmentedBERTPlusPlus
 from allennlp.data.token_indexers import PretrainedBertIndexer
 from overrides import overrides
 import os
-from pytorch_pretrained_bert import BertTokenizer
 
 from allennlp.data import Vocabulary
 

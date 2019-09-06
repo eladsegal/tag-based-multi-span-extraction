@@ -1,4 +1,4 @@
-DEBUG = True
+DEBUG = False
 if DEBUG:
     import ptvsd
     ptvsd.enable_attach(address=('localhost', 5679), redirect_output=True)
@@ -13,11 +13,12 @@ from allennlp.commands import main
 config_file = "configs/all_heads_mos.json"
 
 overrides_dict = {}
-#overrides_dict['train_data_path'] = 'data/drop_dataset_train_sample.json'
-#overrides_dict['validation_data_path'] = 'data/drop_dataset_dev_sample.json'
+overrides_dict['train_data_path'] = '../Results/single_to_predict.json'
+overrides_dict['validation_data_path'] = 'data/drop_dataset_dev_sample.json'
+#overrides_dict['dataset_reader'] = {"max_instances": 2}
 
 
-USE_CPU = False # Use overrides to train on CPU.
+USE_CPU = True # Use overrides to train on CPU.
 if USE_CPU:
     overrides_dict['trainer'] = {"cuda_device": -1}
 
@@ -38,14 +39,21 @@ shutil.rmtree(serialization_dir, ignore_errors=True)
 # allennlp evaluate model.tar.gz data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json --include-package src
 
 # Assemble the command into sys.argv
+'''sys.argv = [
+    "allennlp",  # command name, not used by main
+    "train",
+    config_file,
+    "-s", serialization_dir,
+    "--include-package", "src",
+    "-o", overrides
+]'''
+
 sys.argv = [
     "allennlp",  # command name, not used by main
     "evaluate",
-    "model.tar.gz",
-    "data/drop_dataset_dev.json",
-    "--cuda-device", "0",
+    "../model_flexible_loss_4.tar.gz",
+    "../Results/single_to_predict.json",
     "--include-package", "src",
-    "-o", overrides,
     "--output-file", "eval.json"
 ]
 
