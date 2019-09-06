@@ -81,7 +81,7 @@ def fill_token_indices(tokens, text, uncased):
     for token in tokens:
         first_char_idx = 2 if len(token.text) > 2 and token.text[:2] == "##" else 0
 
-        while text[text_idx] == ' ':
+        while text[text_idx] == ' ' or text[text_idx] == '\xa0':
             text_idx += 1
         
         new_tokens.append(Token(text=token.text, idx = text_idx))             
