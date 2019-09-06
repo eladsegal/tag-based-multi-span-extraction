@@ -19,13 +19,13 @@ debug_question = None
 
 # Define dataset cleaning objectives
 cleaning_objectives = [
-    #RemoveNonPerSpans(),
+    RemoveNonPerSpans(),
     RemoveNonOrgSpans()
 ]
 
 # Define output path
 out_dir = 'data_cleaning\cleaning_logs'
-cleaning_info_path = 'cleaning_info_remove_non_org2.json'
+cleaning_info_path = 'cleaning_info_find_span_fix.json'
 cleaning_dataset_path = 'drop_dataset_train_clean.json'
 
 # Load dataset
