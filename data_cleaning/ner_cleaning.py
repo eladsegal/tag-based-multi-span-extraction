@@ -1,3 +1,6 @@
+import sys
+sys.path.append()
+
 from allennlp import pretrained
 from overrides import overrides
 import os
@@ -7,6 +10,7 @@ from data_cleaning.remove_non_number_spans import RemoveNonNumberSpans
 from data_cleaning.remove_non_per_spans import RemoveNonPerSpans
 from data_cleaning.remove_non_org_spans import RemoveNonOrgSpans
 from data_cleaning.trim_spans import TrimSpans
+from data_cleaning.remove_diff_spans import RemoveDiffSpans
 
 '''
 General instructions:
@@ -22,12 +26,13 @@ debug_question = None
 cleaning_objectives = [
     #RemoveNonPerSpans(),
     #RemoveNonOrgSpans()
-    TrimSpans()
+    #TrimSpans()
+    RemoveDiffSpans()
 ]
 
 # Define output path
 out_dir = 'data_cleaning\cleaning_logs'
-cleaning_info_path = 'cleaning_info_allow_misc.json'
+cleaning_info_path = 'cleaning_info_remove_diff2.json'
 cleaning_dataset_path = 'drop_dataset_train_clean.json'
 
 # Load dataset
