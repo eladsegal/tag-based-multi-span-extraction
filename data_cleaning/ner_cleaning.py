@@ -12,20 +12,20 @@ General instructions:
 Write a class that implement CleaningObjective and add it with\instead the current obejctives.
 Run once and observe the expected changes in cleaning_info.json.
 If it looks good then drop_dataset_train_cleaned is clean.
-If there are only few example that doesn't look good, whitelis them in the cleaning objective and rerun.
+If there are only few example that doesn't look good, whitelist them in the cleaning objective and rerun.
 '''
 
 debug_question = None
 
 # Define dataset cleaning objectives
 cleaning_objectives = [
-    RemoveNonPerSpans(),
+    #RemoveNonPerSpans(),
     RemoveNonOrgSpans()
 ]
 
 # Define output path
 out_dir = 'data_cleaning\cleaning_logs'
-cleaning_info_path = 'cleaning_info_find_span_fix.json'
+cleaning_info_path = 'cleaning_info_allow_misc.json'
 cleaning_dataset_path = 'drop_dataset_train_clean.json'
 
 # Load dataset
