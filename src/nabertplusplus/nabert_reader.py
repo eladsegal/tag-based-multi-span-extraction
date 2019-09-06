@@ -2,7 +2,7 @@ import itertools
 import json
 from overrides import overrides
 import operator
-from typing import Dict, List, Union, Tuple, Any
+from typing import Dict, List, Optional, Tuple, Any
 
 from allennlp.common.file_utils import cached_path
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
@@ -17,9 +17,7 @@ from tqdm import tqdm
 
 from src.nhelpers import *
 from src.preprocessing.utils import SPAN_ANSWER_TYPE, SPAN_ANSWER_TYPES, ALL_ANSWER_TYPES, MULTIPLE_SPAN
-from src.preprocessing.utils import get_answer_type, fill_token_indices, token_to_span
-
-
+from src.preprocessing.utils import get_answer_type, fill_token_indices, token_to_span, standardize_text
 
 @DatasetReader.register("nabert++")
 class NaBertDropReader(DatasetReader):
@@ -41,7 +39,12 @@ class NaBertDropReader(DatasetReader):
                  max_instances=-1,
                  uncased: bool = True,
                  is_training: bool = False,
-                 target_number_rounding: bool = True):
+                 target_number_rounding: bool = True,
+                 standardize_texts: bool = True,
+                 improve_number_extraction: bool = True,
+                 discard_impossible_number_questions: bool = True,
+                 keep_impossible_number_questions_which_exist_as_spans: bool = True,
+                 ):
         super(NaBertDropReader, self).__init__(lazy)
         self.tokenizer = tokenizer
         self.token_indexers = token_indexers
@@ -76,17 +79,36 @@ class NaBertDropReader(DatasetReader):
         self._uncased = uncased
         self._is_training = is_training
         self.target_number_rounding = target_number_rounding
+        self.standardize_texts = standardize_texts
+        self.improve_number_extraction = improve_number_extraction
+        self.keep_impossible_number_questions_which_exist_as_spans = \
+            keep_impossible_number_questions_which_exist_as_spans
+        self.discard_impossible_number_questions = discard_impossible_number_questions
     
     @overrides
     def _read(self, file_path: str):
         file_path = cached_path(file_path)
         with open(file_path) as dataset_file:
             dataset = json.load(dataset_file)
-            
+
+        if self.standardize_texts:
+            for passage_info in dataset.values():
+                passage_info['passage'] = standardize_text(passage_info['passage'])
+                for qa_pair in passage_info["qa_pairs"]:
+                    qa_pair['question'] = standardize_text(qa_pair['question'])
+
+                    answer = qa_pair['answer']
+                    if 'spans' in answer:
+                        answer['spans'] = [standardize_text(span) for span in answer['spans']]
+                    if 'validated_answers' in qa_pair:
+                        for validated_answer in qa_pair['validated_answers']:
+                            if 'spans' in answer:
+                                validated_answer['spans'] = [standardize_text(span) for span in validated_answer['spans']]
+
         instances_count = 0
         for passage_id, passage_info in tqdm(dataset.items()):
             passage_text = passage_info["passage"].strip()
-            
+
             if self.wordpiece_numbers:
                 # In this case we actually first use a basic `WordTokenizer`, where each token is
                 # additionally split on any hyphen it contains.
@@ -106,7 +128,7 @@ class NaBertDropReader(DatasetReader):
             for token in word_tokens:
                 # Wordpiece tokenization is done here.
                 # In addition, every token recognized as a number is stored for arithmetic processing.
-                number = self.word_to_num(token.text)
+                number = self.word_to_num(token.text, self.improve_number_extraction)
                 wordpieces = self.tokenizer.tokenize(token.text)
                 num_wordpieces = len(wordpieces)
                 if number is not None:
@@ -152,7 +174,7 @@ class NaBertDropReader(DatasetReader):
                 if instance is not None:
                     instances_count += 1
                     yield instance
-                
+
     @overrides
     def text_to_instance(self,
                          question_text: str,
@@ -165,7 +187,7 @@ class NaBertDropReader(DatasetReader):
                          question_id: str = None,
                          passage_id: str = None,
                          answer_annotations: List[Dict] = None,
-                         specific_answer_type: str = None) -> Union[Instance, None]:
+                         specific_answer_type: str = None) -> Optional[Instance]:
         # Tokenize question and passage
         question_tokens = self.tokenizer.tokenize(question_text)
         question_tokens = fill_token_indices(question_tokens, question_text, self._uncased)
@@ -236,7 +258,7 @@ class NaBertDropReader(DatasetReader):
             for answer_text in answer_texts:
                 answer_tokens = self.tokenizer.tokenize(answer_text)
                 tokenized_answer_text = ' '.join(token.text for token in answer_tokens)
-                if (tokenized_answer_text not in tokenized_answer_texts) and (answer_type == SPAN_ANSWER_TYPE):
+                if tokenized_answer_text not in tokenized_answer_texts:
                     tokenized_answer_texts.append(tokenized_answer_text)
 
             metadata["answer_annotations"] = answer_annotations
@@ -264,7 +286,7 @@ class NaBertDropReader(DatasetReader):
             target_numbers = []
             if specific_answer_type != MULTIPLE_SPAN:
                 for answer_text in answer_texts:
-                    number = self.word_to_num(answer_text)
+                    number = self.word_to_num(answer_text, self.improve_number_extraction)
                     if number is not None:
                         target_numbers.append(number)
             
@@ -281,8 +303,27 @@ class NaBertDropReader(DatasetReader):
                 else:
                     valid_expressions = \
                         DropReader.find_valid_add_sub_expressions(self.extra_numbers + numbers_in_passage,
-                                                                    target_numbers,
-                                                                    self.max_numbers_expression)
+                                                                  target_numbers,
+                                                                  self.max_numbers_expression)
+
+                if self.discard_impossible_number_questions:
+                    # The train set was verified to have all of its target_numbers lists of length 1.
+                    if (answer_type == "number" and
+                            len(valid_expressions) == 0 and
+                            self._is_training and
+                            self.max_count < target_numbers[0]):
+                        # The number to predict can't be derived from any head, so we shouldn't train on it.
+                        # arithmetic - no expressions that yield the number to predict.
+                        # counting - the maximal count is smaller than the number to predict.
+
+                        # However, although the answer is marked in the dataset as a number type answer,
+                        # maybe it cannot be found due to a bug in DROP's text parsing.
+                        # So in addition, we try to find the answer as a span in the text.
+                        # If the answer is indeed a span in the text, we don't discard that question.
+                        if len(valid_question_spans) == 0 and len(valid_passage_spans) == 0:
+                            return None
+                        if not self.keep_impossible_number_questions_which_exist_as_spans:
+                            return None
 
             # Get possible ways to arrive at target numbers with counting
             valid_counts: List[int] = []
