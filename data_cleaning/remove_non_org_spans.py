@@ -34,6 +34,7 @@ class RemoveNonOrgSpans(RemoveSpansBase):
         "14aeb856-40a6-4bce-aa63-5c66050e1a0b",
         "f207990-f965-49c9-bb2d-5331adbd62fa",
         "925e1347-a239-4429-8a8a-6917dd00a2fa",
+        "9f207990-f965-49c9-bb2d-5331adbd62fa",
         ]
 
     def should_remove_span(self, span_tags):

@@ -1,0 +1,214 @@
+{
+    "nfl_603": {
+        "faebaf3c-4ac8-4d3d-8812-b975b33808da": {
+            "question": "Which team won in game?",
+            "RemoveNonOrgSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "With the win, the Packers",
+                        "improved to 7-1"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "With the win, the Packers"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3428": {
+        "258d598c-5b7b-4c6e-a416-1b8f68ed19c9": {
+            "question": "Which team was leading in points until the second quarter?",
+            "RemoveNonOrgSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Steelers offense produced a 16-play",
+                        "making the score 3-0"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Steelers offense produced a 16-play"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1256": {
+        "bb7434d3-04c4-4a21-9710-8a92de60bbde": {
+            "question": "Which team won the game, Seahawks or Jets?",
+            "RemoveNonOrgSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "the Seahawks improved",
+                        "to 4-11"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "the Seahawks improved"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2368": {
+        "0758126a-1c98-4517-9cbb-12b74c7c87bd": {
+            "question": "Which team scored the most in the fourth quarter?",
+            "RemoveNonOrgSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "24-0 just before halftime",
+                        "24-21 early in the fourth",
+                        "28-24",
+                        "win for the Broncos"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "win for the Broncos"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_344": {
+        "a7499f0e-f34e-4c12-a597-94c3607541bc": {
+            "question": "Which team scored the most in the game?",
+            "RemoveNonOrgSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Arizona Cardinals",
+                        "losing 34-27"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Arizona Cardinals"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_339": {
+        "04a25d48-1499-4e8e-9bce-ef934c085dda": {
+            "question": "Which team scored the most?",
+            "RemoveNonOrgSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Chargers",
+                        "21-14"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Chargers"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3427": {
+        "caa510cb-b001-48c9-b075-b6c185e04be9": {
+            "question": "Which team was winning by halftime?",
+            "RemoveNonOrgSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Bears moved ahead",
+                        "17-7 at halftime"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Bears moved ahead"
+                    ]
+                }
+            }
+        }
+    }
+}
