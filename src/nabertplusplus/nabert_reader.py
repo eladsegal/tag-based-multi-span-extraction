@@ -44,7 +44,7 @@ class NaBertDropReader(DatasetReader):
                  standardize_texts: bool = True,
                  improve_number_extraction: bool = True,
                  discard_impossible_number_questions: bool = True,
-                 keep_impossible_number_questions_which_exist_as_spans: bool = True,
+                 keep_impossible_number_questions_which_exist_as_spans: bool = False,
                  flexibility_threshold: int = 1000):
         super(NaBertDropReader, self).__init__(lazy)
         self.tokenizer = tokenizer
