@@ -32,6 +32,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  regularizer: Optional[RegularizerApplicator] = None,
                  answering_abilities: List[str] = None,
                  special_numbers: List[int] = None,
+                 round_predicted_numbers: bool = True,
                  unique_on_multispan: bool = True,
                  multispan_head_name: str = 'crf_loss_bio',
                  multispan_generation_top_k: int = 50,
@@ -49,6 +50,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         
         self.dropout = dropout_prob
 
+        self.round_predicted_numbers = round_predicted_numbers
         self.multispan_head_name = multispan_head_name
 
         self._passage_weights_predictor = torch.nn.Linear(bert_dim, 1)
@@ -579,7 +581,10 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         original_numbers = self.special_numbers + original_numbers
         predicted_signs = [sign_remap[it] for it in best_signs_for_numbers.detach().cpu().numpy()]
         result = sum([sign * number for sign, number in zip(predicted_signs, original_numbers)])
-        predicted_answer = str(round(result, 5))
+        if self.round_predicted_numbers:
+            predicted_answer = str(round(result, 5))
+        else:
+            predicted_answer = str(result)
         numbers = []
         for value, sign in zip(original_numbers, predicted_signs):
             numbers.append({'value': value, 'sign': sign})
