@@ -1,5 +1,6 @@
 from typing import Any, Dict, List, Optional
 import logging
+from collections import OrderedDict
 
 import torch
 
@@ -32,7 +33,9 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  answering_abilities: List[str] = None,
                  special_numbers: List[int] = None,
                  unique_on_multispan: bool = True,
-                 multispan_head_name: str = 'crf_loss_bio') -> None:
+                 multispan_head_name: str = 'crf_loss_bio',
+                 multispan_generation_top_k: int = 50,
+                 multispan_prediction_beam_size: int = 3) -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
@@ -45,6 +48,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         bert_dim = self.BERT.pooler.dense.out_features
         
         self.dropout = dropout_prob
+
+        self.multispan_head_name = multispan_head_name
 
         self._passage_weights_predictor = torch.nn.Linear(bert_dim, 1)
         self._question_weights_predictor = torch.nn.Linear(bert_dim, 1)
@@ -78,11 +83,17 @@ class NumericallyAugmentedBERTPlusPlus(Model):
             self._count_number_predictor = self.ff(bert_dim, bert_dim, max_count + 1)  # `+1` for 0
 
         if "multiple_spans" in self.answering_abilities:
-            self.multispan_head = multispan_heads_mapping[multispan_head_name](bert_dim)
+            if self.multispan_head_name == "flexible_loss":
+                self.multispan_head = multispan_heads_mapping[multispan_head_name](bert_dim, 
+                    generation_top_k=multispan_generation_top_k, prediction_beam_size=multispan_prediction_beam_size)
+            else:
+                self.multispan_head = multispan_heads_mapping[multispan_head_name](bert_dim)
+            
             self._multispan_module = self.multispan_head.module
             self._multispan_log_likelihood = self.multispan_head.log_likelihood
             self._multispan_prediction = self.multispan_head.prediction
             self._unique_on_multispan = unique_on_multispan
+
 
         self._drop_metrics = CustomDropEmAndF1()
         initializer(self)
@@ -143,6 +154,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 answer_as_expressions: torch.LongTensor = None,
                 answer_as_expressions_extra: torch.LongTensor = None,
                 answer_as_counts: torch.LongTensor = None,
+                answer_as_text_to_disjoint_bios: torch.LongTensor = None,
+                answer_as_list_of_bios: torch.LongTensor = None,
                 span_bio_labels: torch.LongTensor = None,
                 bio_wordpiece_mask: torch.LongTensor = None,
                 is_bio_mask: torch.LongTensor = None,
@@ -168,10 +181,11 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         # Shape: (batch_size, seqlen)
         question_mask = (1 - seqlen_ids) * pad_mask * cls_sep_mask
 
+        question_and_passage_mask = question_mask | passage_mask
         if bio_wordpiece_mask is None:
-            multispan_mask = pad_mask
+            multispan_mask = question_and_passage_mask
         else:
-            multispan_mask = pad_mask & bio_wordpiece_mask
+            multispan_mask = question_and_passage_mask * bio_wordpiece_mask
 
         # Shape: (batch_size, seqlen, bert_dim)
         bert_out, _ = self.BERT(question_passage_tokens, seqlen_ids, pad_mask)
@@ -208,7 +222,10 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 self._question_span_module(passage_vector, question_out, question_mask)
 
         if "multiple_spans" in self.answering_abilities:
-            multispan_log_probs, multispan_logits = self._multispan_module(passage_out)
+            if self.multispan_head_name == "flexible_loss":
+                multispan_log_probs, multispan_logits = self._multispan_module(passage_out, seq_mask=multispan_mask)
+            else:
+                multispan_log_probs, multispan_logits = self._multispan_module(passage_out)
             
         if "arithmetic" in self.answering_abilities:
             number_mask = (number_indices[:,:,0].long() != -1).long()
@@ -219,7 +236,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         del passage_out, question_out
         # If answer is given, compute the loss.
         if answer_as_passage_spans is not None or answer_as_question_spans is not None \
-                or answer_as_expressions is not None or answer_as_counts is not None:
+                or answer_as_expressions is not None or answer_as_counts is not None \
+                or span_bio_labels is not None:
 
             log_marginal_likelihood_list = []
 
@@ -253,12 +271,22 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     log_marginal_likelihood_list.append(log_marginal_likelihood_for_count)
 
                 elif answering_ability == "multiple_spans":
-                    log_marginal_likelihood_for_multispan = \
-                        self._multispan_log_likelihood(span_bio_labels,
-                                                       multispan_log_probs,
-                                                       multispan_mask,
-                                                       is_bio_mask,
-                                                       logits=multispan_logits)
+                    if self.multispan_head_name == "flexible_loss":
+                        log_marginal_likelihood_for_multispan = \
+                            self._multispan_log_likelihood(answer_as_text_to_disjoint_bios,
+                                                        answer_as_list_of_bios,
+                                                        span_bio_labels,
+                                                        multispan_log_probs,
+                                                        multispan_logits,
+                                                        multispan_mask,
+                                                        is_bio_mask)
+                    else:
+                        log_marginal_likelihood_for_multispan = \
+                            self._multispan_log_likelihood(span_bio_labels,
+                                                        multispan_log_probs,
+                                                        multispan_mask,
+                                                        is_bio_mask,
+                                                        logits=multispan_logits)
                     log_marginal_likelihood_list.append(log_marginal_likelihood_for_multispan)
                 else:
                     raise ValueError(f"Unsupported answering ability: {answering_ability}")
@@ -284,7 +312,6 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     output_dict["em"] = []
                     output_dict["f1"] = []
                     output_dict["invalid_spans"] = []
-                    output_dict["is_clipped"] = []
                     output_dict["max_passage_length"] = []
 
                 for i in range(batch_size):
@@ -320,11 +347,11 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
-                        answer_json["value"], answer_json["spans"], invalid_spans = \
-                            self._multispan_prediction(multispan_logits[i], qp_tokens, p_text, q_text,
-                                                       pad_mask[i])
+                        answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
+                            self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
+                                                       multispan_mask[i])
                         if self._unique_on_multispan:
-                            answer_json["value"] = list(set(answer_json["value"]))
+                            answer_json["value"] = list(OrderedDict.fromkeys(answer_json["value"]))
                     else:
                         raise ValueError(f"Unsupported answer ability: {predicted_ability_str}")
                     
@@ -343,7 +370,6 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                         output_dict["em"].append(em)
                         output_dict["f1"].append(f1)
                         output_dict["invalid_spans"].append(invalid_spans)
-                        output_dict["is_clipped"].append(metadata[i]["is_clipped"])
                         output_dict["max_passage_length"].append(metadata[i]["max_passage_length"])
 
         return output_dict

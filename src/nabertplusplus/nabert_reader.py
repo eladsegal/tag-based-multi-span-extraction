@@ -2,7 +2,8 @@ import itertools
 import json
 from overrides import overrides
 import operator
-from typing import Dict, List, Union, Tuple, Any
+from typing import Dict, List, Optional, Tuple, Any
+from collections import OrderedDict
 
 from allennlp.common.file_utils import cached_path
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
@@ -17,9 +18,7 @@ from tqdm import tqdm
 
 from src.nhelpers import *
 from src.preprocessing.utils import SPAN_ANSWER_TYPE, SPAN_ANSWER_TYPES, ALL_ANSWER_TYPES, MULTIPLE_SPAN
-from src.preprocessing.utils import get_answer_type, fill_token_indices, token_to_span
-
-
+from src.preprocessing.utils import get_answer_type, fill_token_indices, token_to_span, standardize_text
 
 @DatasetReader.register("nabert++")
 class NaBertDropReader(DatasetReader):
@@ -41,7 +40,12 @@ class NaBertDropReader(DatasetReader):
                  max_instances=-1,
                  uncased: bool = True,
                  is_training: bool = False,
-                 target_number_rounding: bool = True):
+                 target_number_rounding: bool = True,
+                 standardize_texts: bool = True,
+                 improve_number_extraction: bool = True,
+                 discard_impossible_number_questions: bool = True,
+                 keep_impossible_number_questions_which_exist_as_spans: bool = True,
+                 flexibility_threshold: int = 1000):
         super(NaBertDropReader, self).__init__(lazy)
         self.tokenizer = tokenizer
         self.token_indexers = token_indexers
@@ -76,17 +80,37 @@ class NaBertDropReader(DatasetReader):
         self._uncased = uncased
         self._is_training = is_training
         self.target_number_rounding = target_number_rounding
+        self.standardize_texts = standardize_texts
+        self.improve_number_extraction = improve_number_extraction
+        self.keep_impossible_number_questions_which_exist_as_spans = \
+            keep_impossible_number_questions_which_exist_as_spans
+        self.discard_impossible_number_questions = discard_impossible_number_questions
+        self.flexibility_threshold = flexibility_threshold
     
     @overrides
     def _read(self, file_path: str):
         file_path = cached_path(file_path)
         with open(file_path) as dataset_file:
             dataset = json.load(dataset_file)
-            
+
+        if self.standardize_texts:
+            for passage_info in dataset.values():
+                passage_info['passage'] = standardize_text(passage_info['passage'])
+                for qa_pair in passage_info["qa_pairs"]:
+                    qa_pair['question'] = standardize_text(qa_pair['question'])
+
+                    answer = qa_pair['answer']
+                    if 'spans' in answer:
+                        answer['spans'] = [standardize_text(span) for span in answer['spans']]
+                    if 'validated_answers' in qa_pair:
+                        for validated_answer in qa_pair['validated_answers']:
+                            if 'spans' in answer:
+                                validated_answer['spans'] = [standardize_text(span) for span in validated_answer['spans']]
+
         instances_count = 0
         for passage_id, passage_info in tqdm(dataset.items()):
             passage_text = passage_info["passage"].strip()
-            
+
             if self.wordpiece_numbers:
                 # In this case we actually first use a basic `WordTokenizer`, where each token is
                 # additionally split on any hyphen it contains.
@@ -106,7 +130,7 @@ class NaBertDropReader(DatasetReader):
             for token in word_tokens:
                 # Wordpiece tokenization is done here.
                 # In addition, every token recognized as a number is stored for arithmetic processing.
-                number = self.word_to_num(token.text)
+                number = self.word_to_num(token.text, self.improve_number_extraction)
                 wordpieces = self.tokenizer.tokenize(token.text)
                 num_wordpieces = len(wordpieces)
                 if number is not None:
@@ -152,7 +176,7 @@ class NaBertDropReader(DatasetReader):
                 if instance is not None:
                     instances_count += 1
                     yield instance
-                
+
     @overrides
     def text_to_instance(self,
                          question_text: str,
@@ -165,7 +189,7 @@ class NaBertDropReader(DatasetReader):
                          question_id: str = None,
                          passage_id: str = None,
                          answer_annotations: List[Dict] = None,
-                         specific_answer_type: str = None) -> Union[Instance, None]:
+                         specific_answer_type: str = None) -> Optional[Instance]:
         # Tokenize question and passage
         question_tokens = self.tokenizer.tokenize(question_text)
         question_tokens = fill_token_indices(question_tokens, question_text, self._uncased)
@@ -175,10 +199,8 @@ class NaBertDropReader(DatasetReader):
         qp_tokens = [Token('[CLS]')] + question_tokens + [Token('[SEP]')] + passage_tokens
 
         # if qp has more than max_pieces tokens (including CLS and SEP), clip the passage
-        is_clipped = False
         max_passage_length = -1
         if len(qp_tokens) > self.max_pieces - 1:
-            is_clipped = True
             qp_tokens = qp_tokens[:self.max_pieces - 1]
             passage_tokens = passage_tokens[:self.max_pieces - qlen - 3]
             plen = len(passage_tokens)
@@ -223,7 +245,6 @@ class NaBertDropReader(DatasetReader):
                     "question_passage_tokens": qp_tokens,
                     "passage_id": passage_id,
                     "question_id": question_id,
-                    "is_clipped": is_clipped,
                     "max_passage_length": max_passage_length}
 
         if answer_annotations:            
@@ -231,12 +252,12 @@ class NaBertDropReader(DatasetReader):
             # For multi-span, remove repeating answers. Although possible, in the dataset it is mostly mistakes.
             answer_type, answer_texts = DropReader.extract_answer_info_from_annotation(answer_annotations[0])
             if answer_type == SPAN_ANSWER_TYPE:
-                answer_texts = list(set(answer_texts))
+                answer_texts = list(OrderedDict.fromkeys(answer_texts))
             tokenized_answer_texts = []
             for answer_text in answer_texts:
                 answer_tokens = self.tokenizer.tokenize(answer_text)
                 tokenized_answer_text = ' '.join(token.text for token in answer_tokens)
-                if (tokenized_answer_text not in tokenized_answer_texts) and (answer_type == SPAN_ANSWER_TYPE):
+                if tokenized_answer_text not in tokenized_answer_texts:
                     tokenized_answer_texts.append(tokenized_answer_text)
 
             metadata["answer_annotations"] = answer_annotations
@@ -255,16 +276,15 @@ class NaBertDropReader(DatasetReader):
             if self._is_training:
                 if specific_answer_type in SPAN_ANSWER_TYPES:
                     for tokenized_answer_text in tokenized_answer_texts:
-                        temp_question_spans = DropReader.find_valid_spans(question_tokens, [tokenized_answer_text])
-                        temp_answer_spans = DropReader.find_valid_spans(passage_tokens, [tokenized_answer_text])
-                        if (len(temp_question_spans) == 0 and len(temp_answer_spans) == 0):
+                        temp_spans = DropReader.find_valid_spans(qp_field, [tokenized_answer_text])
+                        if len(temp_spans) == 0:
                             return None
 
             # Get target numbers
             target_numbers = []
             if specific_answer_type != MULTIPLE_SPAN:
                 for answer_text in answer_texts:
-                    number = self.word_to_num(answer_text)
+                    number = self.word_to_num(answer_text, self.improve_number_extraction)
                     if number is not None:
                         target_numbers.append(number)
             
@@ -281,8 +301,27 @@ class NaBertDropReader(DatasetReader):
                 else:
                     valid_expressions = \
                         DropReader.find_valid_add_sub_expressions(self.extra_numbers + numbers_in_passage,
-                                                                    target_numbers,
-                                                                    self.max_numbers_expression)
+                                                                  target_numbers,
+                                                                  self.max_numbers_expression)
+
+                if self.discard_impossible_number_questions:
+                    # The train set was verified to have all of its target_numbers lists of length 1.
+                    if (answer_type == "number" and
+                            len(valid_expressions) == 0 and
+                            self._is_training and
+                            self.max_count < target_numbers[0]):
+                        # The number to predict can't be derived from any head, so we shouldn't train on it.
+                        # arithmetic - no expressions that yield the number to predict.
+                        # counting - the maximal count is smaller than the number to predict.
+
+                        # However, although the answer is marked in the dataset as a number type answer,
+                        # maybe it cannot be found due to a bug in DROP's text parsing.
+                        # So in addition, we try to find the answer as a span in the text.
+                        # If the answer is indeed a span in the text, we don't discard that question.
+                        if len(valid_question_spans) == 0 and len(valid_passage_spans) == 0:
+                            return None
+                        if not self.keep_impossible_number_questions_which_exist_as_spans:
+                            return None
 
             # Get possible ways to arrive at target numbers with counting
             valid_counts: List[int] = []
@@ -337,14 +376,66 @@ class NaBertDropReader(DatasetReader):
             wordpiece_mask = np.array(wordpiece_mask)
             fields['bio_wordpiece_mask'] = ArrayField(wordpiece_mask, dtype=np.int64)
             
+            no_answer_bios = SequenceLabelField([0] * len(qp_tokens), sequence_field=qp_field)
             if (specific_answer_type in self.bio_types) and (len(valid_passage_spans) > 0 or len(valid_question_spans) > 0):
+                
+                # Used for flexible BIO loss
+                # START
+                
+                spans_dict = {}
+                text_to_disjoint_bios: List[ListField] = []
+                flexibility_count = 1
+                for tokenized_answer_text in tokenized_answer_texts:
+                    spans = DropReader.find_valid_spans(qp_tokens, [tokenized_answer_text])
+                    if len(spans) == 0:
+                        # possible if the passage was clipped, but not for all of the answers
+                        continue
+                    spans_dict[tokenized_answer_text] = spans
+
+                    disjoint_bios: List[SequenceLabelField] = []
+                    for span_ind, span in enumerate(spans):
+                        bios = create_bio_labels([span], len(qp_field))
+                        disjoint_bios.append(SequenceLabelField(bios, sequence_field=qp_field))
+
+                    text_to_disjoint_bios.append(ListField(disjoint_bios))
+                    flexibility_count *= ((2**len(spans)) - 1)
+
+                fields["answer_as_text_to_disjoint_bios"] = ListField(text_to_disjoint_bios)
+
+                if (flexibility_count < self.flexibility_threshold):
+                    # generate all non-empty span combinations per each text
+                    spans_combinations_dict = {}
+                    for key, spans in spans_dict.items():
+                        spans_combinations_dict[key] = all_combinations = []
+                        for i in range(1, len(spans) + 1):
+                            all_combinations += list(itertools.combinations(spans, i))
+
+                    # calculate product between all the combinations per each text
+                    packed_gold_spans_list = itertools.product(*list(spans_combinations_dict.values()))
+                    bios_list: List[SequenceLabelField] = []
+                    for packed_gold_spans in packed_gold_spans_list:
+                        gold_spans = [s for sublist in packed_gold_spans for s in sublist]
+                        bios = create_bio_labels(gold_spans, len(qp_field))
+                        bios_list.append(SequenceLabelField(bios, sequence_field=qp_field))
+                    
+                    fields["answer_as_list_of_bios"] = ListField(bios_list)
+                    fields["answer_as_text_to_disjoint_bios"] = ListField([ListField([no_answer_bios])])
+                else:
+                    fields["answer_as_list_of_bios"] = ListField([no_answer_bios])
+
+                # END
+
+                # Used for both "require-all" BIO loss and flexible loss
                 bio_labels = create_bio_labels(valid_question_spans + valid_passage_spans, len(qp_field))
                 fields['span_bio_labels'] = SequenceLabelField(bio_labels, sequence_field=qp_field)
+
                 fields["is_bio_mask"] = LabelField(1, skip_indexing=True)
             else:
+                fields["answer_as_text_to_disjoint_bios"] = ListField([ListField([no_answer_bios])])
+                fields["answer_as_list_of_bios"] = ListField([no_answer_bios])
+
                 # create all 'O' BIO labels for non-span questions
-                fields['span_bio_labels'] = SequenceLabelField([0] * len(qp_tokens),
-                                                               sequence_field=qp_field)
+                fields['span_bio_labels'] = no_answer_bios
                 fields["is_bio_mask"] = LabelField(0, skip_indexing=True)
 
         fields["metadata"] = MetadataField(metadata)
