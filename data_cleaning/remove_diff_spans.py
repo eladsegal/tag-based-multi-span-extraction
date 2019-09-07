@@ -2,6 +2,9 @@ from data_cleaning.cleaning_objective import CleaningObejective
 from allennlp.data.tokenizers import Token
 from data_cleaning.util import find_valid_spans
 
+# *****************************************
+# DID NOT SUBMIT THE DATASET FIXES FOR THIS BECAUSE THE HEURISTIC IS TOO NOISY
+# *****************************************
 class RemoveDiffSpans(CleaningObejective):
     '''
     Remove unrelated words from a span. All words in a span should be tagged with the same tag.
@@ -17,12 +20,17 @@ class RemoveDiffSpans(CleaningObejective):
         "5204020e-d2aa-4d2f-b504-784e47b50ac1",
         "ebd8398a-4559-4b90-b736-72c62edec459",
         "76604533-c5cf-4e4d-b7a2-c12e0973b4f3",
+        "baf629cb-b938-4fbb-aaa2-c6d318195f53",
+        "afc0a624-6091-4d89-a0d1-5035de5df2e0",
+        "1d7ce8e8-c2ac-4a4a-a27d-eda8b1dc2c8c",
 
         # Heurisitc of taking the majority doesn't work
-        "1d7ce8e8-c2ac-4a4a-a27d-eda8b1dc2c8c"
+        "1d7ce8e8-c2ac-4a4a-a27d-eda8b1dc2c8c",
 
         # tagging issue
-        "4616ff87-0d62-4dbc-92ba-5b05b210216b"
+        "4616ff87-0d62-4dbc-92ba-5b05b210216b",
+        "2b612783-4626-4d9a-9b4e-cc81d6f522ee",
+        "6279d474-ae67-4675-8f02-ce9397fdfaf4",        
         ]
 
     def is_fitting_objective(self, passage, question, answer):

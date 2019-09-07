@@ -1,0 +1,36 @@
+{
+    "nfl_2834": {
+        "e8f14235-2394-4306-97be-ff8d77eeef86": {
+            "question": "How long were each of Drew Brees's touchdown passes?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "15-yard TD",
+                        "11-yard",
+                        "69-yard",
+                        "Marques Coltson"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "15-yard TD",
+                        "11-yard",
+                        "69-yard"
+                    ]
+                }
+            }
+        }
+    }
+}

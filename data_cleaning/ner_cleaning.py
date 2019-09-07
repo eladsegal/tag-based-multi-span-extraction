@@ -1,6 +1,3 @@
-import sys
-sys.path.append()
-
 from allennlp import pretrained
 from overrides import overrides
 import os
@@ -27,12 +24,13 @@ cleaning_objectives = [
     #RemoveNonPerSpans(),
     #RemoveNonOrgSpans()
     #TrimSpans()
-    RemoveDiffSpans()
+    #RemoveDiffSpans()
+    RemoveNonNumberSpans()
 ]
 
 # Define output path
 out_dir = 'data_cleaning\cleaning_logs'
-cleaning_info_path = 'cleaning_info_remove_diff2.json'
+cleaning_info_path = 'cleaning_info_remove_non_number.json'
 cleaning_dataset_path = 'drop_dataset_train_clean.json'
 
 # Load dataset

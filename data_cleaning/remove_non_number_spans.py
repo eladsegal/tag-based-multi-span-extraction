@@ -21,6 +21,10 @@ class RemoveNonNumberSpans(RemoveSpansBase):
         "how many yards",
     ]
 
+    whitelist = [
+            "5f670475-4859-41e0-8547-9ce87d4fb17d"
+            ]
+
     def clean(self, passage, question, answer, passage_tagging, question_tagging):
         passage_tokens = [Token(w) for w in passage_tagging['words']]
         spans = DropReader.find_valid_spans(passage_tokens, answer['spans'])
