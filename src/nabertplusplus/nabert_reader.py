@@ -18,7 +18,7 @@ from tqdm import tqdm
 
 from src.nhelpers import *
 from src.preprocessing.utils import SPAN_ANSWER_TYPE, SPAN_ANSWER_TYPES, ALL_ANSWER_TYPES, MULTIPLE_SPAN
-from src.preprocessing.utils import get_answer_type, fill_token_indices, token_to_span, standardize_text
+from src.preprocessing.utils import get_answer_type, fill_token_indices, token_to_span, standardize_dataset
 
 @DatasetReader.register("nabert++")
 class NaBertDropReader(DatasetReader):
@@ -94,18 +94,7 @@ class NaBertDropReader(DatasetReader):
             dataset = json.load(dataset_file)
 
         if self.standardize_texts:
-            for passage_info in dataset.values():
-                passage_info['passage'] = standardize_text(passage_info['passage'])
-                for qa_pair in passage_info["qa_pairs"]:
-                    qa_pair['question'] = standardize_text(qa_pair['question'])
-
-                    answer = qa_pair['answer']
-                    if 'spans' in answer:
-                        answer['spans'] = [standardize_text(span) for span in answer['spans']]
-                    if 'validated_answers' in qa_pair:
-                        for validated_answer in qa_pair['validated_answers']:
-                            if 'spans' in answer:
-                                validated_answer['spans'] = [standardize_text(span) for span in validated_answer['spans']]
+            dataset = standardize_dataset(dataset)
 
         instances_count = 0
         for passage_id, passage_info in tqdm(dataset.items()):

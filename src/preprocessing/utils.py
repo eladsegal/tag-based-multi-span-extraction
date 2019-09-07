@@ -107,6 +107,22 @@ def token_to_span(token):
     return (start, end)
 
 
+def standardize_dataset(dataset):
+    for passage_info in dataset.values():
+        passage_info['passage'] = standardize_text(passage_info['passage'])
+        for qa_pair in passage_info["qa_pairs"]:
+            qa_pair['question'] = standardize_text(qa_pair['question'])
+
+            answer = qa_pair['answer']
+            if 'spans' in answer:
+                answer['spans'] = [standardize_text(span) for span in answer['spans']]
+            if 'validated_answers' in qa_pair:
+                for validated_answer in qa_pair['validated_answers']:
+                    if 'spans' in answer:
+                        validated_answer['spans'] = [standardize_text(span) for span in validated_answer['spans']]
+    return dataset
+
+
 def standardize_text(text):
     # I don't see a reason to differentiate between "No-Break Space" and regular space
     text = text.replace('&#160;', ' ')
