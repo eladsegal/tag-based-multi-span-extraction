@@ -2,6 +2,9 @@ from data_cleaning.cleaning_objective import CleaningObejective
 from allennlp.data.dataset_readers.reading_comprehension.drop import DropReader
 from allennlp.data.tokenizers import Token
 
+# *****************************************
+# DID NOT SUBMIT THE DATASET FIXES FOR THIS YET
+# *****************************************
 class TrimSpans(CleaningObejective):
     '''
     Remove unrelated words from a span. All words in a span should be tagged with the same tag.

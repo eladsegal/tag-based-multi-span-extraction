@@ -20,9 +20,9 @@ debug_question = None
 
 # Define dataset cleaning objectives
 cleaning_objectives = [
-    #RemoveNonPerSpans(),
-    #RemoveNonOrgSpans()
-    TrimSpans()
+    RemoveNonPerSpans(),
+    RemoveNonOrgSpans(),
+    RemoveNonNumberSpans()
 ]
 
 # Define output path
