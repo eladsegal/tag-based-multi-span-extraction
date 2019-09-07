@@ -21,7 +21,7 @@ class TrimSpans(CleaningObejective):
 ]
 
     def is_fitting_objective(self, passage, question, answer):
-        return len(answer['spans']) > 0 and any(len(span.split()) > 1 for span in answer['spans'])
+        return len(answer['spans']) > 1 and any(len(span.split()) > 1 for span in answer['spans'])
 
     def clean(self, passage, question, answer, passage_tagging, question_tagging):
         passage_tokens = [Token(w) for w in passage_tagging['words']]
