@@ -1,4 +1,4 @@
-from data_cleaning.cleaning_objective import CleaningObejective
+from src.preprocessing.data_cleaning.cleaning_objective import CleaningObejective
 from allennlp.data.dataset_readers.reading_comprehension.drop import DropReader
 from allennlp.data.tokenizers import Token
 

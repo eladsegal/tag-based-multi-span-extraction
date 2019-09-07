@@ -1,4 +1,4 @@
-from data_cleaning.cleaning_objective import CleaningObejective
+from src.preprocessing.data_cleaning.cleaning_objective import CleaningObejective
 from allennlp.data.tokenizers import Token
 import string
 from collections import defaultdict

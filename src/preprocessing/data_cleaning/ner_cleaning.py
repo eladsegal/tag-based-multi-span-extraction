@@ -3,10 +3,10 @@ from overrides import overrides
 import os
 import json
 from src.preprocessing.utils import get_answer_type
-from data_cleaning.remove_non_number_spans import RemoveNonNumberSpans
-from data_cleaning.remove_non_per_spans import RemoveNonPerSpans
-from data_cleaning.remove_non_org_spans import RemoveNonOrgSpans
-from data_cleaning.trim_spans import TrimSpans
+from src.preprocessing.data_cleaning.remove_non_number_spans import RemoveNonNumberSpans
+from src.preprocessing.data_cleaning.remove_non_per_spans import RemoveNonPerSpans
+from src.preprocessing.data_cleaning.remove_non_org_spans import RemoveNonOrgSpans
+from src.preprocessing.data_cleaning.trim_spans import TrimSpans
 
 '''
 General instructions:

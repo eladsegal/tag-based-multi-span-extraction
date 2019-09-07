@@ -1,6 +1,6 @@
-from data_cleaning.cleaning_objective import CleaningObejective
+from src.preprocessing.data_cleaning.cleaning_objective import CleaningObejective
 from allennlp.data.tokenizers import Token
-from data_cleaning.util import find_valid_spans
+from src.preprocessing.data_cleaning.util import find_valid_spans
 
 # *****************************************
 # DID NOT SUBMIT THE DATASET FIXES FOR THIS BECAUSE THE HEURISTIC IS TOO NOISY

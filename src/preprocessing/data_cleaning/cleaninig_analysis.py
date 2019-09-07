@@ -1,7 +1,7 @@
 import os 
 import json
 
-cleaning_logs_dir = os.path.join('data_cleaning', 'cleaning_logs')
+cleaning_logs_dir = os.path.join(os.path.dirname(__file__), 'cleaning_logs')
 
 questions = list()
 
