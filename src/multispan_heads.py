@@ -5,7 +5,7 @@ from torch.nn import Module
 from typing import Tuple, Dict
 
 from allennlp.modules.conditional_random_field import ConditionalRandomField, allowed_transitions
-from allennlp.nn.util import replace_masked_values, logsumexp, masked_log_softmax
+from allennlp.nn.util import replace_masked_values, logsumexp
 from src.beam_search import BeamSearch
 
 class MultiSpanHead(Module):
@@ -62,15 +62,10 @@ class MultiSpanHead(Module):
                 continue
 
             if tags[i] == 2:  # 2 = I
-                if prev != 0:
-                    current_tokens.append(token)
-                    prev = 2
-                else:
-                    prev = 0 # Illegal I, treat it as 0
-                '''# Written under the assumption that if it was meant for the BIO rules to be enforced
+                # Written under the assumption that if it was meant for the BIO rules to be enforced
                 # then it was already done for tags
                 current_tokens.append(token)
-                prev = 2'''
+                prev = 2
                 continue
 
             if tags[i] == 0 and prev != 0:
@@ -224,8 +219,8 @@ class FlexibleLoss(MultiSpanHead):
 
         return log_marginal_likelihood_for_multispan
 
-    def prediction(self, log_probs, logits, qp_tokens, p_text, q_text, seq_mask):
-        '''seq_length = log_probs.size()[0]
+    def prediction(self, log_probs, logits, qp_tokens, p_text, q_text, seq_mask, wordpiece_mask):
+        seq_length = log_probs.size()[0]
         batch_size = 1
 
         beam_search = BeamSearch(self._end_index, max_steps=seq_length, beam_size=self._prediction_beam_size, per_node_beam_size=self._per_node_beam_size)
@@ -234,11 +229,9 @@ class FlexibleLoss(MultiSpanHead):
 
         # Shape: (batch_size, beam_size, seq_length)
         top_k_predictions, seq_log_probs = beam_search.search(
-                start_predictions, {'log_probs': beam_log_probs, 'step_num': beam_log_probs.new_zeros((batch_size,)).long()}, self.take_step)
+                start_predictions, {'log_probs': beam_log_probs, 'wordpiece_mask': wordpiece_mask.unsqueeze(0), 'step_num': beam_log_probs.new_zeros((batch_size,)).long()}, self.take_step)
 
-        predicted_tags = top_k_predictions[0, 0, :]'''
-        predicted_tags = torch.argmax(logits, dim=-1)
-        predicted_tags = replace_masked_values(predicted_tags, seq_mask, 0)
+        predicted_tags = top_k_predictions[0, 0, :]
 
         return MultiSpanHead.decode_spans_from_tags(predicted_tags, qp_tokens, p_text, q_text)
 
@@ -306,11 +299,16 @@ class FlexibleLoss(MultiSpanHead):
 
         # get the relevant scores for the time step
         class_log_probabilities = state['log_probs'][:,state['step_num'][0],:]
+        is_wordpiece = (1 - state['wordpiece_mask'][:,state['step_num'][0]]).byte()
 
         # mask illegal BIO transitions
-        transitions_mask = torch.ones_like(class_log_probabilities).byte()
-        transitions_mask[:,2] &= ((last_predictions != 1) & (last_predictions != 2))
-        transitions_mask[:,1:] &= ((class_log_probabilities[:,:3] == 0.0).sum(-1) != 3).unsqueeze(-1).repeat(1,4)
+        transitions_mask = torch.cat((torch.ones_like(class_log_probabilities[:,:3]), torch.zeros_like(class_log_probabilities[:,-2:])), dim=-1).byte()
+        transitions_mask[:,2] &= ((last_predictions == 1) | (last_predictions == 2))
+        transitions_mask[:,1:3] &= ((class_log_probabilities[:,:3] == 0.0).sum(-1) != 3).unsqueeze(-1).repeat(1,2)
+
+        # assuming the wordpiece mask doesn't intersect with the other masks (pad, cls/sep)
+        transitions_mask[:,2] |= is_wordpiece & ((last_predictions == 1) | (last_predictions == 2))
+
         class_log_probabilities = replace_masked_values(class_log_probabilities, transitions_mask, -1e7)
 
         state['step_num'] = state['step_num'].clone() + 1

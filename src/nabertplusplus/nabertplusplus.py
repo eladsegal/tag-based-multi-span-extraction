@@ -35,7 +35,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  unique_on_multispan: bool = True,
                  multispan_head_name: str = 'crf_loss_bio',
                  multispan_generation_top_k: int = 50,
-                 multispan_prediction_beam_size: int = 3) -> None:
+                 multispan_prediction_beam_size: int = 1) -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
@@ -347,9 +347,14 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
-                        answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
-                            self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
-                                                       multispan_mask[i])
+                        if self.multispan_head_name == "flexible_loss":
+                            answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
+                                self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
+                                                        multispan_mask[i], bio_wordpiece_mask[i])
+                        else:
+                            answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
+                                self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
+                                                        multispan_mask[i])
                         if self._unique_on_multispan:
                             answer_json["value"] = list(OrderedDict.fromkeys(answer_json["value"]))
                     else:
