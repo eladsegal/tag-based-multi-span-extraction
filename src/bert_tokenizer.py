@@ -1,4 +1,4 @@
-from pytorch_pretrained_bert import BertTokenizer
+from pytorch_transformers import BertTokenizer
 from allennlp.data.tokenizers import Token, Tokenizer, WordTokenizer
 from typing import Dict, List, Union, Tuple, Any
 from overrides import overrides
