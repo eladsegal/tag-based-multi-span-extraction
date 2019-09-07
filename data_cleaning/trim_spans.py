@@ -10,7 +10,15 @@ class TrimSpans(CleaningObejective):
     
     name = "TrimSpans"
 
-    question_prefixes = []
+    question_prefixes = [
+        "which team",
+        "which two teams",
+        "who scored",
+        "who caught",
+        "who kicked",
+        "which players",
+        "what players",
+]
 
     def is_fitting_objective(self, passage, question, answer):
         return len(answer['spans']) > 0 and any(len(span.split()) > 1 for span in answer['spans'])
@@ -18,6 +26,9 @@ class TrimSpans(CleaningObejective):
     def clean(self, passage, question, answer, passage_tagging, question_tagging):
         passage_tokens = [Token(w) for w in passage_tagging['words']]
         spans = DropReader.find_valid_spans(passage_tokens, answer['spans'])
+
+        if not spans:
+            return None
 
         new_answer_texts = []
 
@@ -27,6 +38,8 @@ class TrimSpans(CleaningObejective):
             if len(answer_text.split()) <= 1:
                 continue
 
+            new_answer_text = answer_text
+
             for span in spans:
                 span_text = ' '.join(passage_tagging['words'][span[0]:span[1]+1]).lower()
 
@@ -35,13 +48,11 @@ class TrimSpans(CleaningObejective):
                 
                 span_tags = passage_tagging['tags'][span[0]:span[1]+1]
 
-                new_answer_text = answer_text
-
                 count_o = sum(tag == 'O' for tag in span_tags)
                 other_than_o = len(span_tags) - count_o
 
                 if count_o == 0 or other_than_o == 0:
-                    return None
+                    break
 
                 tags_to_trim = ['O'] if count_o <= other_than_o else ['ORG', 'LOC', 'PER', 'MISC']
 
@@ -69,9 +80,14 @@ class TrimSpans(CleaningObejective):
                         break
 
                 new_answer_text = ' '.join(span_words)
+                cleaned = True
+                break
                     
-            new_answer_texts.append(answer_text)
+            new_answer_texts.append(new_answer_text)
        
+        if not cleaned:
+            return None
+
         new_answer = answer.copy()
         new_answer['spans'] = new_answer_texts
 
