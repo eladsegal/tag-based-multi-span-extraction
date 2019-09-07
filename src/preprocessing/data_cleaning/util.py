@@ -3,7 +3,6 @@ from allennlp.data.tokenizers import Token
 import string
 from collections import defaultdict
 from typing import Dict, List, Union, Tuple, Any
-import re
 from allennlp.data.dataset_readers.reading_comprehension.util import (IGNORED_TOKENS,
                                                                       STRIPPED_CHARACTERS)
 

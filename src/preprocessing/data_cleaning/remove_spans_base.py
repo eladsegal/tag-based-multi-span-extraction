@@ -6,7 +6,7 @@ from typing import Dict, List, Union, Tuple, Any
 import re
 from allennlp.data.dataset_readers.reading_comprehension.util import (IGNORED_TOKENS,
                                                                       STRIPPED_CHARACTERS)
-from data_cleaning.util import find_valid_spans
+from src.preprocessing.data_cleaning.util import find_valid_spans
 
 class RemoveSpansBase(CleaningObejective):
     '''
