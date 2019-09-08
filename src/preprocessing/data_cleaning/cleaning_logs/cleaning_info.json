@@ -1,0 +1,3549 @@
+{
+    "nfl_1820": {
+        "a2a83b3a-3bb9-4c01-a855-1e3d413b9aaa": {
+            "question": "What are the top two longest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "42-yard",
+                        "15-yard",
+                        "David Garrard"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "42-yard",
+                        "15-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_381": {
+        "d3fb4c3c-d21b-480a-baa0-98d6d0d17c1d": {
+            "question": "Which team scored the longest field goal kick of the game?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Chiefs",
+                        "second",
+                        "Damon Huard",
+                        "Tony Gonzalez"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Chiefs"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2752": {
+        "c34303c6-1fdd-4415-b0e4-3df732ccd3b6": {
+            "question": "Who scored the shortest touchdown in the first half?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Matt Forte",
+                        "11",
+                        "13",
+                        "second",
+                        "third"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Matt Forte"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_895": {
+        "6c9a6286-3acb-42a8-87f3-f0453ec37be8": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "39-yard",
+                        "44-yard",
+                        "Tony Romo"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "39-yard",
+                        "44-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_661": {
+        "5306dcbc-8555-4b26-944f-593119dbe690": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "3-yard",
+                        "7-yard",
+                        "Daunte Culpepper"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "3-yard",
+                        "7-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2834": {
+        "e8f14235-2394-4306-97be-ff8d77eeef86": {
+            "question": "How long were each of Drew Brees's touchdown passes?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "15-yard TD",
+                        "11-yard",
+                        "69-yard",
+                        "Marques Coltson"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "15-yard TD",
+                        "11-yard",
+                        "69-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1065": {
+        "a163e340-60af-4c96-a415-e0a2926b8315": {
+            "question": "Which players made caught touchdown passes in the first half?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "7-yard",
+                        "17-yard"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": []
+                }
+            }
+        }
+    },
+    "nfl_2375": {
+        "e86e13ac-53ed-452e-a77c-7b17baad2ca2": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "6-yard",
+                        "6-yard",
+                        "Peyton Manning",
+                        "Carson Palmer"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "6-yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_263": {
+        "c4134b26-ce88-4f92-802c-6598eaef2573": {
+            "question": "What are the top two longest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "52-yard",
+                        "45-yard",
+                        "Bruce Gradkowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "52-yard",
+                        "45-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1839": {
+        "ce9e5638-87ca-477d-b179-2d5f5ea430ef": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "25-yard",
+                        "41-yard",
+                        "Matt Prater",
+                        "Ryan Succop",
+                        "Matt Prater"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "25-yard",
+                        "41-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_528": {
+        "081d5db9-501a-46d3-90ce-97c309b6d9a5": {
+            "question": "What are the three shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "8-yard",
+                        "8-yard",
+                        "Carson Palmer"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "8-yard",
+                        "8-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1777": {
+        "ea3c2be1-79e6-4033-8d85-00a55a79cc89": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "17-yard",
+                        "19-yard",
+                        "Brett Favre"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "17-yard",
+                        "19-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2300": {
+        "da360f6f-cfef-4f12-9de0-1b13b9370feb": {
+            "question": "What are the three shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "39-yard",
+                        "39-yard",
+                        "Billy Cundiff"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "39-yard",
+                        "39-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1302": {
+        "0310e25d-e4f5-4542-aed4-7b8fb3b9782c": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2 yards",
+                        "3",
+                        "Shaun Suisham",
+                        "Nick Folk"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2 yards",
+                        "3"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_651": {
+        "ad8bb354-3d01-4a05-8bb9-5989588fc5e0": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "24-yard",
+                        "27-yard",
+                        "Adam Vinatieri"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "24-yard",
+                        "27-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1087": {
+        "39688612-1678-433b-954d-aba0fa9832c6": {
+            "question": "What are the top two longest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "12-yard",
+                        "9-yard",
+                        "Adam Vinatieri",
+                        "Stephen Gostkowski",
+                        "Stephen Gostkowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "12-yard",
+                        "9-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1221": {
+        "d1fc543f-f353-4958-81ca-3d710287617a": {
+            "question": "What are the top two longest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "47-yard",
+                        "35-yard",
+                        "Nate Kaeding",
+                        "Stephen Gostkowski",
+                        "Philip Rivers"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "47-yard",
+                        "35-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2027": {
+        "2eee0a87-821b-4df1-a6f7-924b00022c2d": {
+            "question": "What are the top two longest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "13-yard",
+                        "8-yard",
+                        "Michael Vick",
+                        "Matt Schaub"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "13-yard",
+                        "8-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_466": {
+        "b443ae38-f0c9-4bd0-9501-4334e70b1567": {
+            "question": "What are the three shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "31-yard",
+                        "36-yard",
+                        "Matt Stover",
+                        "Jeff Wilkins",
+                        "Matt Stover"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "31-yard",
+                        "36-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1685": {
+        "0f8adf02-ec52-42da-8a48-b6c35fc0e404": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "8-yard",
+                        "17-yard",
+                        "Mike Nugent"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "8-yard",
+                        "17-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1254": {
+        "47d2c592-f8f9-453e-b1ab-5b8b1ab9e6ab": {
+            "question": "What are the top two longest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "10-yard",
+                        "8-yard",
+                        "Olindo Mare",
+                        "Shaun Suisham"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "10-yard",
+                        "8-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1868": {
+        "f09508c7-8ea7-4041-8c7a-a39bf56e3384": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "7-yard",
+                        "15-yard",
+                        "Tony Romo"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "7-yard",
+                        "15-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_71": {
+        "638418ca-5776-4632-915c-5af062598296": {
+            "question": "What are the two shortest touchdown runs made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "41-yard",
+                        "Willie Parker"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "41-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2048": {
+        "393cf1db-b11c-44c7-b80f-9c560ab712fc": {
+            "question": "Who scored the first points for the Jaguars?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "San Diego trailed early when",
+                        "kicker Olindo Mare",
+                        "made a 23-yard field goal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "kicker Olindo Mare"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3426": {
+        "30d524ab-2a2c-4871-b6ae-c680c7118f7b": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "29-yard",
+                        "37",
+                        "Kai Forbath",
+                        "Chris Boswell"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "29-yard",
+                        "37"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_875": {
+        "fbcf8cc2-d96a-4857-91c2-f1f63a2a20d7": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "3-yard",
+                        "Quinn Gray"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "3-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_569": {
+        "7e8387cd-fdaf-4efe-bb02-18754d03abb4": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "3-yard",
+                        "Greg Jones",
+                        "Travis Henry"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "3-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2015": {
+        "304a8b6f-84e6-4640-b161-c0dab5aa7430": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "4-yard",
+                        "6-yard",
+                        "Adam Vinatieri",
+                        "Sebastian Janikowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "4-yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_230": {
+        "7a7bbde4-38b5-4f9d-94a5-05ee902db838": {
+            "question": "Which team won the game, Vikings or Lions?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Vikings",
+                        "Darren Sharper got an interception",
+                        "seal the victory"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Vikings"
+                    ]
+                }
+            }
+        },
+        "478ae734-c3ff-4d8f-8bd5-3f3700fb20f4": {
+            "question": "Which team had the first lead of the game?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Vikings struck first",
+                        "a 26-yard field goal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Vikings struck first"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_22": {
+        "411e4777-4058-417d-99f5-2ccab0d9d409": {
+            "question": "Which team was winning before the second half?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Falcons could only manage",
+                        "to score a field goal",
+                        "before the half"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Falcons could only manage"
+                    ]
+                }
+            }
+        },
+        "0614bfce-8a28-4475-95fe-4e99b921bcbc": {
+            "question": "Which team score the most points in the game?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "popped loose to the Browns",
+                        "ending their chance",
+                        "for a victory"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "popped loose to the Browns"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2055": {
+        "93e3eb7c-653a-4ea5-8e81-5ef24304bd3f": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "3-yard",
+                        "6-yard",
+                        "Kyle Orton",
+                        "Philip Rivers",
+                        "Philip Rivers"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "3-yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1244": {
+        "cdec27d4-18dc-4a36-9a99-72ff08d8ad0c": {
+            "question": "Which team scored the most points?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Bills pulled away",
+                        "with QB Trent Edwards"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Bills pulled away"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_603": {
+        "30f234ab-482f-46e6-a6bb-8b5a16679fd0": {
+            "question": "Which team scored the most points in the second quarter?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Chiefs would take the lead",
+                        "into halftime"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Chiefs would take the lead"
+                    ]
+                }
+            }
+        },
+        "faebaf3c-4ac8-4d3d-8812-b975b33808da": {
+            "question": "Which team won in game?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "With the win, the Packers",
+                        "improved to 7-1"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "With the win, the Packers"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_374": {
+        "47a92c9c-23f6-49eb-ae62-f4b4e903f8c3": {
+            "question": "Which team had more touchdowns in week 1, the Rams or Denver?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Rams were unable to",
+                        "score a touchdown all game",
+                        "The defense allowed just",
+                        "one touchdown"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Rams were unable to"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1434": {
+        "b04f2638-3564-453d-94e3-404053150179": {
+            "question": "Which team scored first?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Patriots",
+                        "first",
+                        "fourth"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Patriots"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3366": {
+        "83190514-fe11-41b9-96d5-026bcd6c6c98": {
+            "question": "Which players caught interceptions?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Eddie Pleasant",
+                        "and",
+                        "Andre Hal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Eddie Pleasant",
+                        "Andre Hal"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2186": {
+        "2b332df8-4b73-4814-ad1b-8c9a1e1063ff": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "21",
+                        "Sebastian Janikowski",
+                        "Matt Prater"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "21"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1707": {
+        "5d163c8a-4341-47e1-b7d1-79190b7d3e78": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "31-yard",
+                        "4",
+                        "Troy Smith"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "31-yard",
+                        "4"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3279": {
+        "8e227b75-5087-4ec7-bedf-8b2500a083f5": {
+            "question": "What are the top two longest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "42-yard",
+                        "39-yard",
+                        "Ka'imi Fairbairn",
+                        "Randy Bullock"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "42-yard",
+                        "39-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2071": {
+        "0c3f9d28-7dc9-4821-af59-9d19a6b46323": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "31-yard",
+                        "Shane Andrus",
+                        "Jay Feely"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "31-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_271": {
+        "218f43db-bcf6-49a9-b0a2-50c4f3c653bc": {
+            "question": "Which team ended the first half with the lead?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "the second quarter",
+                        "Colts would build their lead"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Colts would build their lead"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_593": {
+        "d084cce2-da76-4612-ad7d-2fa9612b3faa": {
+            "question": "What are the two shortest touchdown runs made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "2-yard",
+                        "Marion Barber",
+                        "8-yard",
+                        "16-yard"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "2-yard",
+                        "8-yard",
+                        "16-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1114": {
+        "8b2a9944-2d3c-4ba0-b32d-1598ba7da4c0": {
+            "question": "Who kicked the longest field goal?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "Rob Bironas",
+                        "49-yard field goal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "Rob Bironas"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2435": {
+        "3b5a06af-34b6-42c6-82ad-a815281e2418": {
+            "question": "Which team scored the most points?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Saints' 4-game",
+                        "against the Falcons",
+                        "would be snapped"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Saints' 4-game",
+                        "against the Falcons"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1027": {
+        "be4ab34f-7877-4100-89de-d914166b15c6": {
+            "question": "What are the top two longest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "27-yard",
+                        "13-yard",
+                        "Stephen Gostkowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "27-yard",
+                        "13-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2691": {
+        "350f7e69-0639-4921-aa3e-fb660e2b287a": {
+            "question": "Who kicked the longest field goal?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Gould",
+                        "45-yard"
+                    ],
+                    "worker_id": "",
+                    "hit_id": ""
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Gould"
+                    ],
+                    "worker_id": "",
+                    "hit_id": ""
+                }
+            }
+        }
+    },
+    "nfl_3428": {
+        "258d598c-5b7b-4c6e-a416-1b8f68ed19c9": {
+            "question": "Which team was leading in points until the second quarter?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Steelers offense produced a 16-play",
+                        "led to a 30-yard",
+                        "field goal",
+                        "making the score 3-0"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Steelers offense produced a 16-play"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1048": {
+        "64bcc64e-f288-4055-bc6b-5ee556c5e9dd": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "25-yard",
+                        "Ryan Longwell",
+                        "Jason Hanson"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "25-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1449": {
+        "2480cf96-88f1-4070-9b68-9c46c67af40e": {
+            "question": "Which team had the last touchdown?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Seahawks",
+                        "win with a 61-yard",
+                        "interception for a TD"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "The Seahawks"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2876": {
+        "dc6b87b8-c49a-494d-80c3-ff893b60a423": {
+            "question": "Which team was leading the game by the fourth quarter?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Tampa Bay led 17-16",
+                        "in the fourth quarter"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Tampa Bay led 17-16"
+                    ]
+                }
+            }
+        },
+        "c74018fa-2182-41d1-85e1-bfcadb4dae05": {
+            "question": "Which team received a penalty in the last quarter?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Tampa Bay",
+                        "drove to the Cleveland",
+                        "28 yard line",
+                        "an offensive pass interference penalty"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Tampa Bay",
+                        "drove to the Cleveland"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1740": {
+        "1258ec13-8e61-4dc4-a80f-a9af622b6ddc": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "32-yard",
+                        "43-yard",
+                        "Rian Lindell",
+                        "Dan Carpenter"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "32-yard",
+                        "43-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2155": {
+        "7b2b9cad-473c-4d8d-a419-e639d3956a26": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "39-yard",
+                        "David Akers"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "39-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2099": {
+        "7cc074cb-ee74-4a3b-9039-be4b95786dc1": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "5-yard",
+                        "16-yard",
+                        "Sam Bradford",
+                        "Troy Smith"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "5-yard",
+                        "16-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "history_2003": {
+        "653e92b1-c86e-449c-93ec-d79336150a9d": {
+            "question": "Which two teams qualify for the postseason after being 15 games under .500?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Astros won a wild card",
+                        "becoming the first team since",
+                        "1914 Boston Braves"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Astros won a wild card",
+                        "1914 Boston Braves"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2855": {
+        "31eaa70a-c3ef-4cc5-8457-f83082d8c416": {
+            "question": "Which team score the most points in the game?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Niners held on",
+                        "for the win"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Niners held on"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2094": {
+        "7cbcf00b-1070-493c-b5da-fd38bdf2a1f1": {
+            "question": "What are the top two longest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "31-yard",
+                        "30-yard",
+                        "Josh Brown",
+                        "Olindo Mare",
+                        "30-yard",
+                        "31-yard"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "31-yard",
+                        "30-yard",
+                        "30-yard",
+                        "31-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1256": {
+        "bb7434d3-04c4-4a21-9710-8a92de60bbde": {
+            "question": "Which team won the game, Seahawks or Jets?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "With the upset win",
+                        "the Seahawks improved",
+                        "to 4-11"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "the Seahawks improved"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2122": {
+        "1298f912-583d-4cdd-9c54-2c980a499a78": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "6-yard",
+                        "Matt Prater"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1641": {
+        "deca8775-5b7e-404e-941f-c519f1ad03f2": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "36-yard",
+                        "37-yard",
+                        "Joe Nedney",
+                        "Olindo Mare"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "36-yard",
+                        "37-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_501": {
+        "b023367f-236b-40d6-a69c-71d9086e6bcf": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "45-yard",
+                        "29-yard",
+                        "John Kasay"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "45-yard",
+                        "29-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_453": {
+        "4ce9e150-6e12-4d58-adc4-1f62681ea361": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "21-yard",
+                        "33-yard",
+                        "Byron Leftwich",
+                        "Drew Brees",
+                        "Byron Leftwich"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "21-yard",
+                        "33-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2213": {
+        "c52325d0-c1f2-4ec1-86d0-316d88761768": {
+            "question": "Which team had an early fumble?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Vikings",
+                        "quarterback Christian Ponder fumbled"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Vikings"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1770": {
+        "5b657f53-beea-47c7-abfc-3011714d6e90": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "nine-yard",
+                        "Jay Cutler"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "nine-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_355": {
+        "af4eada1-433b-45ab-a1f1-a7eab75d1b46": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "5-yard",
+                        "48-yard",
+                        "Drew Brees"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "5-yard",
+                        "48-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1316": {
+        "786f2576-504c-40a5-87a1-43cb5d443ce3": {
+            "question": "Which team was winning in the third quarter?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Colts took a monster lead",
+                        "The Cardinals tried to fight",
+                        "back in the third quarter"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Colts took a monster lead",
+                        "The Cardinals tried to fight"
+                    ]
+                }
+            }
+        },
+        "a94e154f-18ea-4992-a973-b7c2f9d71936": {
+            "question": "Which team failed to score in the first quarter?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Colts",
+                        "20-yard"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Colts"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2749": {
+        "7a2a682b-c970-4e69-ab8f-eb29ad23e32e": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "35-yard",
+                        "40-yard",
+                        "Robbie Gould",
+                        "Matt Prater"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "35-yard",
+                        "40-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_748": {
+        "22e7bd01-cb06-44e6-84a8-34dd9d770c2f": {
+            "question": "Who scored the last touchdown of the game?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Tatum Bell",
+                        "14-yard TD run",
+                        "end the game"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Tatum Bell"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2443": {
+        "0d764e33-1ac0-4f1e-8717-5251e902ef4f": {
+            "question": "Which team was in the lead at halftime?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Giants' lead",
+                        "four points at the half"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Giants' lead"
+                    ]
+                }
+            }
+        },
+        "1f601043-a1ca-4b77-b951-c41765d5f176": {
+            "question": "Who kicked the longest field goal, Shaun Suisham or Lawrence Tynes?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Giants' kicker Lawrence Tynes",
+                        "via a 50-yard field goal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Giants' kicker Lawrence Tynes"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_873": {
+        "f484c39b-514a-4547-b990-cf17071851ad": {
+            "question": "Who kicked the most field goals?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Raiders kicker Sebastian Janikowski",
+                        "50-yard field goal",
+                        "43-yard and a 54-yard",
+                        "field goal"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Raiders kicker Sebastian Janikowski"
+                    ]
+                }
+            }
+        },
+        "f4c5e026-578c-4b8c-9cf1-b6aed5f0d9de": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "35-yard",
+                        "Rob Bironas",
+                        "Sebastian Janikowski",
+                        "Sebastian Janikowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "23-yard",
+                        "35-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1583": {
+        "be5565b1-c59f-4d5f-a3d6-03605cb44b13": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "41-yard",
+                        "Sebastian Janikowski"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "41-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2368": {
+        "0758126a-1c98-4517-9cbb-12b74c7c87bd": {
+            "question": "Which team scored the most in the fourth quarter?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "24-0 just before halftime",
+                        "24-21 early in the fourth",
+                        "28-24",
+                        "for a touchdown",
+                        "win for the Broncos"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "win for the Broncos"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_344": {
+        "a7499f0e-f34e-4c12-a597-94c3607541bc": {
+            "question": "Which team scored the most in the game?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Arizona Cardinals",
+                        "losing 34-27"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Arizona Cardinals"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_776": {
+        "582268ca-cd9b-449d-8c7f-a6350dd48686": {
+            "question": "Who caught an interception in the fourth quarter?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Brian Dawkins",
+                        "Philadelphia's third interception",
+                        "midway through the final quarter"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Brian Dawkins",
+                        "Philadelphia's third interception"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_414": {
+        "1cd2ee26-1af2-4c65-a78f-812ac6ac7c7c": {
+            "question": "Who scored the game-winning field goal?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "kicker Rob Bironas nailed it",
+                        "from 49 yards out"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "kicker Rob Bironas nailed it"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_804": {
+        "4b304c4f-ee6e-42a3-91c1-ea2fc56e21b3": {
+            "question": "Who caught the longest touchdown pass?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "38-yard TD pass to",
+                        "WR Vincent Jackson"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "WR Vincent Jackson"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1431": {
+        "d65c26ce-6de9-48c9-a08a-300b6718ee86": {
+            "question": "Which team was at home?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "the",
+                        "Broncos"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {},
+                    "spans": [
+                        "Broncos"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2653": {
+        "cceebe58-d57d-4511-9815-45305745fbe4": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "20-yard",
+                        "23",
+                        "Dan Carpenter",
+                        "Shaun Suisham"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "20-yard",
+                        "23"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_817": {
+        "c1896da6-42a9-42b6-8292-237a87bfe7ae": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "35-yard",
+                        "Joe Nedney"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "35-yard"
+                    ]
+                }
+            }
+        },
+        "90fcec1a-f7ab-4d60-8b55-4095be9e646f": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "35-yard",
+                        "Joe Nedney",
+                        "Jeff Wilkins",
+                        "Joe Nedney"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "28-yard",
+                        "35-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3206": {
+        "8103add7-e783-483a-acc3-3a92073ea38f": {
+            "question": "Which team took the early lead, Raiders or Panthers?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Derek Carr to put the",
+                        "Raiders up 7-0"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Raiders up 7-0"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_814": {
+        "26b79543-ffd9-4b04-8531-5eb4c123c127": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "29-yard",
+                        "26-yard",
+                        "Alex Smith",
+                        "Drew Brees"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "29-yard",
+                        "26-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1066": {
+        "ffd80141-8934-4d9e-9e20-2a4743758b09": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "13-yard",
+                        "14-yard",
+                        "Matt Schaub"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "13-yard",
+                        "14-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1477": {
+        "9c841da3-7807-4bfe-bfb1-6171f8d4df4d": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "50-yard",
+                        "Matt Schaub"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "26-yard",
+                        "50-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1078": {
+        "76f5e5da-be59-4b93-8716-799e5838489d": {
+            "question": "Which team took the first lead of the game?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Houston shot early",
+                        "in the first quarter"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Houston shot early"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_927": {
+        "84fbbafc-a588-40c6-9f1a-14628cc829f4": {
+            "question": "Which team scored the most points?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Atlanta's",
+                        "defense stiffened for the victory"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Atlanta's"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2248": {
+        "e53bb9ce-1887-4121-8390-31058f0874b3": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "9-yard",
+                        "Tom Brady",
+                        "Mark Sanchez"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "2-yard",
+                        "9-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_339": {
+        "04a25d48-1499-4e8e-9bce-ef934c085dda": {
+            "question": "Which team scored the most?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Chargers",
+                        "21-14"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Chargers"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1025": {
+        "e61d7e48-0404-49be-9b6c-b83b66238c3c": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "27-yard",
+                        "31-yard",
+                        "Jeff Garcia"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "27-yard",
+                        "31-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3427": {
+        "6728bc79-c0ee-4cd3-ba1f-bbe8f9fa06e0": {
+            "question": "Which team scored the only points in the first quarter?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Bears scored first",
+                        "only score of the quarter"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Bears scored first"
+                    ]
+                }
+            }
+        },
+        "caa510cb-b001-48c9-b075-b6c185e04be9": {
+            "question": "Which team was winning by halftime?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Bears moved ahead",
+                        "17-7 at halftime"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Bears moved ahead"
+                    ]
+                }
+            }
+        },
+        "c172322a-012b-411a-95d0-52df4679df29": {
+            "question": "Which team scored the last points?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Bears got the ball",
+                        "19-yard run",
+                        "for a touchdown"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Bears got the ball"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1735": {
+        "53aab100-fdfa-4320-b190-953931dc7992": {
+            "question": "Which team won, Ravens or Buccaneers?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Ravens would never score anymore",
+                        "managed to hold off Tampa",
+                        "their lead from being blown"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Ravens would never score anymore",
+                        "managed to hold off Tampa"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2261": {
+        "f33c4aef-d454-4d33-a498-9fe362447572": {
+            "question": "Which team scored fewer points in the first quarter?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Colts",
+                        "first"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Colts"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_2038": {
+        "2b243840-6047-4854-abe0-a76824a44d49": {
+            "question": "What are the top two longest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "39-yard",
+                        "27-yard",
+                        "Ben Roethlisberger",
+                        "Carson Palmer"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "39-yard",
+                        "27-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1908": {
+        "4593e95e-a1de-4160-867e-e4afbd93b672": {
+            "question": "What are the two shortest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "25-yard",
+                        "41-yard",
+                        "Ryan Succop"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "25-yard",
+                        "41-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_678": {
+        "f8f20b5d-0235-418f-aafc-730244382299": {
+            "question": "Which team had a kick blocked?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Vikings began to struggle",
+                        "safety Pat Watkins returned",
+                        "blocked field goal 68 yards"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Vikings began to struggle"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1703": {
+        "3a00b508-4c51-400b-9384-b07a5a3d9243": {
+            "question": "Which players returned an interception for a touchdown?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Geno Hayes returning an interception",
+                        "41 yards for a touchdown.",
+                        "and CB Aqib Talib returning",
+                        "an interception 45 yards for",
+                        "a touchdown."
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Geno Hayes returning an interception",
+                        "41 yards for a touchdown.",
+                        "and CB Aqib Talib returning",
+                        "a touchdown."
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1473": {
+        "9b0e5a2c-1d65-4194-8931-38077a9e211f": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "7-yard",
+                        "8-yard",
+                        "Matt Schaub"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "7-yard",
+                        "8-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3012": {
+        "5f09f4e7-9d58-4b59-be2a-666e55ba132c": {
+            "question": "Which team attempted an onside kick?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Jets would however score",
+                        "Eagles would stop their comeback",
+                        "recovering an onside kick"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Jets would however score",
+                        "Eagles would stop their comeback"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_3389": {
+        "449df703-9705-436f-815d-43dc4b481959": {
+            "question": "Which team scored more in the second half?",
+            "RemoveNonOrgLocMiscSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "well in the first half",
+                        "unraveled in the second",
+                        "With the loss, the Giants"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "With the loss, the Giants"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1325": {
+        "c1a2f072-6132-46d2-83f9-13fd19bd8c69": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "9-yard",
+                        "Chad Pennington"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "1-yard",
+                        "9-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1487": {
+        "4bfbb5d4-75ee-46e4-919e-48ed752fe775": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "9-yard",
+                        "13-yard",
+                        "Kevin Kolb",
+                        "Matt Cassel"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "9-yard",
+                        "13-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1694": {
+        "ca8391a6-dfdc-4759-b909-8e1138368804": {
+            "question": "What are the top two longest field goals made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "54-yard",
+                        "46-yard",
+                        "17 yard",
+                        "6-yard",
+                        "Jason Campbell"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "54-yard",
+                        "46-yard",
+                        "17 yard",
+                        "6-yard"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_576": {
+        "c423ea2a-de58-48a5-927a-3549d65a20fd": {
+            "question": "What are the two shortest touchdown passes made?",
+            "RemoveNonNumberSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "21-yard",
+                        "41-yard TD",
+                        "Jay Cutler"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "21-yard",
+                        "41-yard TD"
+                    ]
+                }
+            }
+        }
+    },
+    "nfl_1008": {
+        "411a9868-c29b-4855-80cf-3a052fa1b796": {
+            "question": "Which players kicked field goals longer than 30 yards?",
+            "RemoveNonPerSpans": {
+                "old_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Nick Folk",
+                        "Shaun Suisham",
+                        "first"
+                    ]
+                },
+                "new_answer": {
+                    "number": "",
+                    "date": {
+                        "day": "",
+                        "month": "",
+                        "year": ""
+                    },
+                    "spans": [
+                        "Nick Folk",
+                        "Shaun Suisham"
+                    ]
+                }
+            }
+        }
+    }
+}
