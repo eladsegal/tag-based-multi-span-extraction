@@ -38,6 +38,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  multispan_generation_top_k: int = 0,
                  multispan_prediction_beam_size: int = 1,
                  multispan_use_prediction_beam_search: bool = False,
+                 multispan_use_bio_wordpiece_mask: bool = True,
                  dont_add_substrings_to_ms: bool = True) -> None:
         super().__init__(vocab, regularizer)
 
@@ -56,6 +57,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         self.round_predicted_numbers = round_predicted_numbers
         self.multispan_head_name = multispan_head_name
         self.multispan_use_prediction_beam_search = multispan_use_prediction_beam_search
+        self.multispan_use_bio_wordpiece_mask = multispan_use_bio_wordpiece_mask
 
         self._passage_weights_predictor = torch.nn.Linear(bert_dim, 1)
         self._question_weights_predictor = torch.nn.Linear(bert_dim, 1)
@@ -188,7 +190,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         question_mask = (1 - seqlen_ids) * pad_mask * cls_sep_mask
 
         question_and_passage_mask = question_mask | passage_mask
-        if bio_wordpiece_mask is None:
+        if bio_wordpiece_mask is None or not self.multispan_use_bio_wordpiece_mask:
             multispan_mask = question_and_passage_mask
         else:
             multispan_mask = question_and_passage_mask * bio_wordpiece_mask

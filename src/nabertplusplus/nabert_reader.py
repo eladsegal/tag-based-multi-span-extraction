@@ -45,7 +45,8 @@ class NaBertDropReader(DatasetReader):
                  improve_number_extraction: bool = True,
                  discard_impossible_number_questions: bool = True,
                  keep_impossible_number_questions_which_exist_as_spans: bool = False,
-                 flexibility_threshold: int = 1000):
+                 flexibility_threshold: int = 1000,
+                 multispan_allow_all_heads_to_answer: bool = False):
         super(NaBertDropReader, self).__init__(lazy)
         self.tokenizer = tokenizer
         self.token_indexers = token_indexers
@@ -86,6 +87,7 @@ class NaBertDropReader(DatasetReader):
             keep_impossible_number_questions_which_exist_as_spans
         self.discard_impossible_number_questions = discard_impossible_number_questions
         self.flexibility_threshold = flexibility_threshold
+        self.multispan_allow_all_heads_to_answer = multispan_allow_all_heads_to_answer
     
     @overrides
     def _read(self, file_path: str):
@@ -271,7 +273,7 @@ class NaBertDropReader(DatasetReader):
 
             # Get target numbers
             target_numbers = []
-            if specific_answer_type != MULTIPLE_SPAN:
+            if specific_answer_type != MULTIPLE_SPAN or self.multispan_allow_all_heads_to_answer:
                 for answer_text in answer_texts:
                     number = self.word_to_num(answer_text, self.improve_number_extraction)
                     if number is not None:
@@ -327,14 +329,14 @@ class NaBertDropReader(DatasetReader):
         
             # Add answer fields
             passage_span_fields: List[Field] = []
-            if specific_answer_type != MULTIPLE_SPAN:
+            if specific_answer_type != MULTIPLE_SPAN or self.multispan_allow_all_heads_to_answer:
                 passage_span_fields: List[Field] = [SpanField(span[0], span[1], qp_field) for span in valid_passage_spans]
             if not passage_span_fields:
                 passage_span_fields.append(SpanField(-1, -1, qp_field))
             fields["answer_as_passage_spans"] = ListField(passage_span_fields)
 
             question_span_fields: List[Field] = []
-            if specific_answer_type != MULTIPLE_SPAN:
+            if specific_answer_type != MULTIPLE_SPAN or self.multispan_allow_all_heads_to_answer:
                 question_span_fields: List[Field] = [SpanField(span[0], span[1], qp_field) for span in valid_question_spans]
             if not question_span_fields:
                 question_span_fields.append(SpanField(-1, -1, qp_field))
