@@ -14,7 +14,8 @@
         "bio_types": [],
         "extra_numbers": [100, 1],
         "is_training": true,
-        "flexibility_threshold": 1000
+        "flexibility_threshold": 1000,
+        "multispan_allow_all_heads_to_answer": true
     },
     "validation_dataset_reader": {
         "type": "nabert++",
@@ -31,7 +32,8 @@
         "bio_types": [],
         "extra_numbers": [100, 1],
         "is_training": false,
-        "flexibility_threshold": 1000
+        "flexibility_threshold": 1000,
+        "multispan_allow_all_heads_to_answer": true
     },
     "iterator": {
         "type": "basic",
