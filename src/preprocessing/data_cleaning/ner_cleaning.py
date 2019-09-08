@@ -9,7 +9,7 @@ import torch
 from src.preprocessing.utils import get_answer_type
 from src.preprocessing.data_cleaning.remove_non_number_spans import RemoveNonNumberSpans
 from src.preprocessing.data_cleaning.remove_non_per_spans import RemoveNonPerSpans
-from src.preprocessing.data_cleaning.remove_non_org_spans import RemoveNonOrgSpans
+from src.preprocessing.data_cleaning.remove_non_org_spans import RemoveNonOrgLocMiscSpans
 from src.preprocessing.data_cleaning.trim_spans import TrimSpans
 
 '''
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     # Define dataset cleaning objectives
     cleaning_objectives = [
         RemoveNonPerSpans(),
-        RemoveNonOrgSpans(),
+        RemoveNonOrgLocMiscSpans(),
         RemoveNonNumberSpans()
     ]
 

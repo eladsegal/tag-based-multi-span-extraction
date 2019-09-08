@@ -3,12 +3,12 @@ from allennlp.data.dataset_readers.reading_comprehension.drop import DropReader
 from allennlp.data.tokenizers import Token
 from src.preprocessing.data_cleaning.remove_spans_base import RemoveSpansBase
 
-class RemoveNonOrgSpans(RemoveSpansBase):
+class RemoveNonOrgLocMiscSpans(RemoveSpansBase):
     '''
     Remove spans that are classified as O for multi span questions where we don't expect O
     '''
 
-    name = "RemoveNonOrgSpans"
+    name = "RemoveNonOrgLocMiscSpans"
 
     question_prefixes = [
         "which team",
@@ -23,7 +23,7 @@ class RemoveNonOrgSpans(RemoveSpansBase):
 
     def should_remove_span(self, span_tags):
         # LOC improves prediction for teams
-        return all(not tag.endswith('ORG') and not tag.endswith('LOC') for tag in span_tags)
+        return all(not tag.endswith('ORG') and not tag.endswith('LOC') and not tag.endswith('MISC') for tag in span_tags)
 
     def should_remove_answer(self, answer_text):
         return answer_text.isdigit()
