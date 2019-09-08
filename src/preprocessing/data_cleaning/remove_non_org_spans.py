@@ -23,7 +23,7 @@ class RemoveNonOrgSpans(RemoveSpansBase):
 
     def should_remove_span(self, span_tags):
         # LOC improves prediction for teams
-        return all(not tag.endswith('ORG') and not tag.endswith('LOC') and not tag.endswith('MISC') for tag in span_tags)
+        return all(not tag.endswith('ORG') and not tag.endswith('LOC') for tag in span_tags)
 
     def should_remove_answer(self, answer_text):
         return answer_text.isdigit()
