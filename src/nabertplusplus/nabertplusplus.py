@@ -12,7 +12,7 @@ from allennlp.nn.util import masked_softmax
 from pytorch_transformers import BertModel
 
 from src.custom_drop_em_and_f1 import CustomDropEmAndF1
-from src.multispan_heads import multispan_heads_mapping, decode_token_spans
+from src.multispan_heads import multispan_heads_mapping, decode_token_spans, remove_substring_from_prediction
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +37,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  multispan_head_name: str = 'crf_loss_bio',
                  multispan_generation_top_k: int = 0,
                  multispan_prediction_beam_size: int = 1,
-                 multispan_use_prediction_beam_search: bool = False) -> None:
+                 multispan_use_prediction_beam_search: bool = False,
+                 dont_add_substrings_to_ms: bool = True) -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
@@ -50,6 +51,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         bert_dim = self.BERT.pooler.dense.out_features
         
         self.dropout = dropout_prob
+        self._dont_add_substrings_to_ms = dont_add_substrings_to_ms
 
         self.round_predicted_numbers = round_predicted_numbers
         self.multispan_head_name = multispan_head_name
@@ -362,6 +364,9 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                                                         multispan_mask[i])
                         if self._unique_on_multispan:
                             answer_json["value"] = list(OrderedDict.fromkeys(answer_json["value"]))
+
+                            if self._dont_add_substrings_to_ms:
+                                answer_json["value"] = remove_substring_from_prediction(answer_json["value"])
                     else:
                         raise ValueError(f"Unsupported answer ability: {predicted_ability_str}")
                     

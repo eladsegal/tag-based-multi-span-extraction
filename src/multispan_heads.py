@@ -379,3 +379,21 @@ def default_crf() -> ConditionalRandomField:
     include_start_end_transitions = True
     constraints = allowed_transitions('BIO', {0: 'O', 1: 'B', 2: 'I'})
     return ConditionalRandomField(3, constraints, include_start_end_transitions)
+
+def remove_substring_from_prediction(spans):
+    new_spans = []
+    lspans = [s.lower() for s in spans]
+
+    for span in spans:
+        lspan = span.lower()
+
+        # remove duplicates due to casing
+        if lspans.count(lspan) > 1:
+            lspans.remove(lspan)
+            continue
+            
+        # remove some kinds of substrings
+        if not any((lspan + ' ' in s or ' ' + lspan in s or lspan + 's' in s or lspan + 'n' in s or (lspan in s and not s.startswith(lspan) and not s.endswith(lspan))) and lspan != s for s in lspans):
+            new_spans.append(span)
+
+    return new_spans
