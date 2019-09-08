@@ -35,7 +35,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  round_predicted_numbers: bool = True,
                  unique_on_multispan: bool = True,
                  multispan_head_name: str = 'crf_loss_bio',
-                 multispan_generation_top_k: int = 50,
+                 multispan_generation_top_k: int = 1,
                  multispan_prediction_beam_size: int = 1) -> None:
         super().__init__(vocab, regularizer)
 
@@ -281,6 +281,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                                                         multispan_log_probs,
                                                         multispan_logits,
                                                         multispan_mask,
+                                                        bio_wordpiece_mask,
                                                         is_bio_mask)
                     else:
                         log_marginal_likelihood_for_multispan = \

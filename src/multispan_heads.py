@@ -156,7 +156,7 @@ class CRFLossBIO(MultiSpanHead):
 
 class FlexibleLoss(MultiSpanHead):
 
-    def __init__(self, bert_dim: int, predictor: Module = None, dropout_prob: float = 0.1, use_crf=False, generation_top_k=1000, prediction_beam_size=50) -> None:
+    def __init__(self, bert_dim: int, generation_top_k, prediction_beam_size, predictor: Module = None, dropout_prob: float = 0.1, use_crf=False) -> None:
         super(FlexibleLoss, self).__init__(bert_dim, predictor, dropout_prob)
         
         self.crf = default_crf() # SHOULD BE REMOVED, USED ONLY TO LOAD OLDER MODELS
@@ -186,7 +186,7 @@ class FlexibleLoss(MultiSpanHead):
         return log_probs, logits
 
     def log_likelihood(self, answer_as_text_to_disjoint_bios, answer_as_list_of_bios, span_bio_labels, log_probs, 
-                        logits, seq_mask, is_bio_mask, **kwargs):
+                        logits, seq_mask, wordpiece_mask, is_bio_mask, **kwargs):
         # answer_as_text_to_disjoint_bios - Shape: (batch_size, # of text answers, # of spans a for text answer, seq_length)
         # answer_as_list_of_bios - Shape: (batch_size, # of correct sequences, seq_length)
         # log_probs - Shape: (batch_size, seq_length, 3)
@@ -198,12 +198,18 @@ class FlexibleLoss(MultiSpanHead):
         else:
             with torch.no_grad():
                 if answer_as_text_to_disjoint_bios.sum() > 0:
-                    #most_likely_predictions = self._generate_most_likely_predictions(log_probs)
-                    #most_likely_correct_predictions = self._filter_correct_predictions(most_likely_predictions, answer_as_text_to_disjoint_bios)
-                    #full_bio = span_bio_labels
-                    #generated_list_of_bios = self._add_full_bio(most_likely_correct_predictions, full_bio)
-                    is_pregenerated_answer_format_mask = (answer_as_list_of_bios.sum((1, 2)) > 0).long()
-                    list_of_bios = torch.cat((answer_as_list_of_bios, (span_bio_labels * (1 - is_pregenerated_answer_format_mask).unsqueeze(-1)).unsqueeze(1)), dim=1)
+                    full_bio = span_bio_labels
+                    if self._generation_top_k > 0:
+                        most_likely_predictions = self._get_top_k_sequences(log_probs, wordpiece_mask, self._generation_top_k)
+                        
+                        generated_list_of_bios = self._filter_correct_predictions(most_likely_predictions, answer_as_text_to_disjoint_bios, full_bio)
+
+                        is_pregenerated_answer_format_mask = (answer_as_list_of_bios.sum((1, 2)) > 0).unsqueeze(-1).unsqueeze(-1).long()
+                        list_of_bios = torch.cat((answer_as_list_of_bios, (generated_list_of_bios * (1 - is_pregenerated_answer_format_mask))), dim=1)
+
+                        list_of_bios = self._add_full_bio(list_of_bios, full_bio)
+                    else:
+                        list_of_bios = torch.cat((answer_as_list_of_bios, (full_bio * (1 - is_pregenerated_answer_format_mask).unsqueeze(-1)).unsqueeze(1)), dim=1)
                 else:
                     list_of_bios = answer_as_list_of_bios
 
@@ -220,53 +226,54 @@ class FlexibleLoss(MultiSpanHead):
         return log_marginal_likelihood_for_multispan
 
     def prediction(self, log_probs, logits, qp_tokens, p_text, q_text, seq_mask, wordpiece_mask):
-        seq_length = log_probs.size()[0]
-        batch_size = 1
 
-        beam_search = BeamSearch(self._end_index, max_steps=seq_length, beam_size=self._prediction_beam_size, per_node_beam_size=self._per_node_beam_size)
-        beam_log_probs = torch.nn.functional.pad(log_probs.unsqueeze(0), pad=(0, 2, 0, 0, 0, 0), value=-1e7) # add low log probabilites for start and end tags used in the beam search
-        start_predictions = beam_log_probs.new_full((1,), fill_value=self._start_index).long()
-
-        # Shape: (batch_size, beam_size, seq_length)
-        top_k_predictions, seq_log_probs = beam_search.search(
-                start_predictions, {'log_probs': beam_log_probs, 'wordpiece_mask': wordpiece_mask.unsqueeze(0), 'step_num': beam_log_probs.new_zeros((batch_size,)).long()}, self.take_step)
+        top_k_predictions = self._get_top_k_sequences(log_probs.unsqueeze(0), wordpiece_mask.unsqueeze(0), self._prediction_beam_size)
 
         predicted_tags = top_k_predictions[0, 0, :]
 
         return MultiSpanHead.decode_spans_from_tags(predicted_tags, qp_tokens, p_text, q_text)
 
-    def _generate_most_likely_predictions(self, log_probs):
+    def _get_top_k_sequences(self, log_probs, wordpiece_mask, k):
         batch_size = log_probs.size()[0]
         seq_length = log_probs.size()[1]
 
-        beam_search = BeamSearch(self._end_index, max_steps=seq_length, beam_size=self._generation_top_k, per_node_beam_size=self._per_node_beam_size)
+        beam_search = BeamSearch(self._end_index, max_steps=seq_length, beam_size=k, per_node_beam_size=self._per_node_beam_size)
         beam_log_probs = torch.nn.functional.pad(log_probs, pad=(0, 2, 0, 0, 0, 0), value=-1e7) # add low log probabilites for start and end tags used in the beam search
         start_predictions = beam_log_probs.new_full((batch_size,), fill_value=self._start_index).long()
 
         # Shape: (batch_size, beam_size, seq_length)
         top_k_predictions, seq_log_probs = beam_search.search(
-                start_predictions, {'log_probs': beam_log_probs, 'step_num': beam_log_probs.new_zeros((batch_size,)).long()}, self.take_step)
+                start_predictions, {'log_probs': beam_log_probs, 'wordpiece_mask': wordpiece_mask, 'step_num': beam_log_probs.new_zeros((batch_size,)).long()}, self.take_step)
+
+        # get rid of start and end tags if they slipped in
+        top_k_predictions[top_k_predictions > 2] = 0
 
         return top_k_predictions
 
-    def _filter_correct_predictions(self, predictions, answer_as_text_to_disjoint_bios):
+    def _filter_correct_predictions(self, predictions, answer_as_text_to_disjoint_bios, full_bio):
         texts_count = answer_as_text_to_disjoint_bios.size()[1]
         spans_count = answer_as_text_to_disjoint_bios.size()[2]
         predictions_count = predictions.size()[1]
 
         expanded_predictions = predictions.unsqueeze(2).unsqueeze(2).repeat(1, 1, texts_count, spans_count, 1)
-        expanded_answer_as_text_to_disjoint_bios = answer_as_text_to_disjoint_bios.unsqueeze(1).repeat(1, predictions_count, 1, 1, 1)
+        expanded_answer_as_text_to_disjoint_bios = answer_as_text_to_disjoint_bios.unsqueeze(1)
+        expanded_full_bio = full_bio.unsqueeze(1).unsqueeze(-2).unsqueeze(-2)
 
-        correct_mask = ((((expanded_predictions == expanded_answer_as_text_to_disjoint_bios) & (expanded_answer_as_text_to_disjoint_bios != 0)).sum(-2).sum(-1) > 0).prod(-1) != 0).long()
+        disjoint_intersections = (expanded_predictions == expanded_answer_as_text_to_disjoint_bios) & (expanded_answer_as_text_to_disjoint_bios != 0)
+        some_intersection = disjoint_intersections.sum(-1) > 0
+        only_full_intersections = (((expanded_answer_as_text_to_disjoint_bios != 0) - disjoint_intersections).sum(-1) == 0) & (expanded_answer_as_text_to_disjoint_bios.sum(-1) > 0)
+        valid_texts = (((some_intersection ^ only_full_intersections)).sum(-1) == 0) & (only_full_intersections.sum(-1) > 0)
+        correct_mask = ((valid_texts == 1).prod(-1) != 0).long()
+        correct_mask &= (((expanded_full_bio != expanded_predictions) & (expanded_predictions != 0)).sum((-1, -2, -3)) == 0).long()
 
         return predictions * correct_mask.unsqueeze(-1)
 
-    def _add_full_bio(self, most_likely_correct_predictions, full_bio):
-        predictions_count = most_likely_correct_predictions.size()[1]
+    def _add_full_bio(self, correct_most_likely_predictions, full_bio):
+        predictions_count = correct_most_likely_predictions.size()[1]
 
-        already_added = ((full_bio.unsqueeze(1).repeat(1, predictions_count, 1) == most_likely_correct_predictions).sum((-1,-2)) == 0).long()
+        not_added = ((full_bio.unsqueeze(1) == correct_most_likely_predictions).prod(-1).sum(-1) == 0).long()
 
-        return torch.cat((most_likely_correct_predictions, (full_bio * already_added.unsqueeze(-1)).unsqueeze(1)), dim=1)
+        return torch.cat((correct_most_likely_predictions, (full_bio * not_added.unsqueeze(-1)).unsqueeze(1)), dim=1)
 
     def _get_combined_likelihood(self, answer_as_list_of_bios, log_probs):
         # answer_as_list_of_bios - Shape: (batch_size, # of correct sequences, seq_length)
