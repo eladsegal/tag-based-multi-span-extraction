@@ -1,7 +1,11 @@
 from allennlp import pretrained
+from allennlp.predictors import Predictor
+from allennlp.models.archival import load_archive
 from overrides import overrides
 import os
 import json
+import torch
+
 from src.preprocessing.utils import get_answer_type
 from src.preprocessing.data_cleaning.remove_non_number_spans import RemoveNonNumberSpans
 from src.preprocessing.data_cleaning.remove_non_per_spans import RemoveNonPerSpans
@@ -27,18 +31,22 @@ if __name__ == "__main__":
     ]
 
     # Define output path
-    out_dir = 'data_cleaning\cleaning_logs'
-    cleaning_info_path = 'cleaning_info_trim_spans.json'
+    out_dir = os.path.join(os.path.dirname(__file__), 'cleaning_logs')
+    cleaning_info_path = 'cleaning_info.json'
     cleaning_dataset_path = 'drop_dataset_train_clean.json'
 
     # Load dataset
-    drop_path = os.path.join(r"data\drop_dataset_train_clean.json")
+    drop_path = os.path.join(r"data", "drop_dataset_train.json")
 
     with open(drop_path, 'r') as f:
         drop = json.load(f)
 
     # Load NER tagger
-    predictor = pretrained.named_entity_recognition_with_elmo_peters_2018()
+    cuda_device = 0 if torch.cuda.is_available() else -1
+    print('Running on device: ', cuda_device)
+    archive = load_archive('https://allennlp.s3.amazonaws.com/models/ner-model-2018.12.18.tar.gz', cuda_device = cuda_device)
+    predictor = Predictor.from_archive(archive, 'sentence-tagger')
+    predictor._dataset_reader._token_indexers['token_characters']._min_padding_length = 3
 
     # Clean the dataset   
     cleaning_info = dict()
@@ -109,6 +117,3 @@ if __name__ == "__main__":
     with open(os.path.join(out_dir, cleaning_dataset_path), 'w') as f:
         json.dump(drop, f, indent=4)
             
-            
-
-
