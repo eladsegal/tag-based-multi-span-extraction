@@ -237,7 +237,7 @@ class FlexibleLoss(MultiSpanHead):
             predicted_tags = top_k_predictions[0, 0, :]
         else:
             predicted_tags = torch.argmax(logits, dim=-1)
-            predicted_tags = replace_masked_values(predicted_tags, seq_mask, 0)
+        predicted_tags = replace_masked_values(predicted_tags, seq_mask, 0)
 
         return MultiSpanHead.decode_spans_from_tags(predicted_tags, qp_tokens, p_text, q_text)
 
