@@ -43,14 +43,17 @@ def split_tokens_by_hyphen(tokens: List[str]) -> List[str]:
 
     for i in range(len(tokens)):
         token = tokens[i]
-        next_token = tokens[i+1] if i+1 < len(tokens) else None
         if any(hyphen in token for hyphen in hyphens):
             unsplit_tokens = [token]
             split_tokens: List[str] = []
             for hyphen in hyphens:
                 for unsplit_token in unsplit_tokens:
-                    if hyphen in token and next_token and next_token.isdigit():
-                        split_tokens += split_token_by_delimiter(unsplit_token, hyphen)
+                    if hyphen in token:
+                        split_tokens_temp = split_token_by_delimiter(unsplit_token, hyphen)
+                        if split_tokens_temp[-1].isdigit():
+                            split_tokens += split_tokens_temp
+                        else:
+                            split_tokens.append(unsplit_token)
                     else:
                         split_tokens.append(unsplit_token)
                 unsplit_tokens, split_tokens = split_tokens, []
