@@ -227,11 +227,14 @@ class FlexibleLoss(MultiSpanHead):
 
         return log_marginal_likelihood_for_multispan
 
-    def prediction(self, log_probs, logits, qp_tokens, p_text, q_text, seq_mask, wordpiece_mask):
+    def prediction(self, log_probs, logits, qp_tokens, p_text, q_text, seq_mask, wordpiece_mask, is_training):
 
-        top_k_predictions = self._get_top_k_sequences(log_probs.unsqueeze(0), wordpiece_mask.unsqueeze(0), self._prediction_beam_size)
-
-        predicted_tags = top_k_predictions[0, 0, :]
+        if is_training:
+            predicted_tags = torch.argmax(logits, dim=-1)
+            predicted_tags = replace_masked_values(predicted_tags, seq_mask, 0)
+        else:
+            top_k_predictions = self._get_top_k_sequences(log_probs.unsqueeze(0), wordpiece_mask.unsqueeze(0), self._prediction_beam_size)
+            predicted_tags = top_k_predictions[0, 0, :]
 
         return MultiSpanHead.decode_spans_from_tags(predicted_tags, qp_tokens, p_text, q_text)
 
