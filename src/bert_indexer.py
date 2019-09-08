@@ -1,6 +1,6 @@
 from allennlp.data.token_indexers.wordpiece_indexer import WordpieceIndexer
 from allennlp.data.token_indexers.token_indexer import TokenIndexer
-from pytorch_pretrained_bert import BertTokenizer
+from pytorch_transformers import BertTokenizer
 from typing import Dict, List, Union, Tuple, Any
 from overrides import overrides
 

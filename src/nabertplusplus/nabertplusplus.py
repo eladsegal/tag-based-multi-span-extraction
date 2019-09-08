@@ -32,10 +32,12 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  regularizer: Optional[RegularizerApplicator] = None,
                  answering_abilities: List[str] = None,
                  special_numbers: List[int] = None,
+                 round_predicted_numbers: bool = True,
                  unique_on_multispan: bool = True,
                  multispan_head_name: str = 'crf_loss_bio',
-                 multispan_generation_top_k: int = 50,
-                 multispan_prediction_beam_size: int = 3) -> None:
+                 multispan_generation_top_k: int = 0,
+                 multispan_prediction_beam_size: int = 1,
+                 multispan_use_prediction_beam_search: bool = False) -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
@@ -49,7 +51,9 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         
         self.dropout = dropout_prob
 
+        self.round_predicted_numbers = round_predicted_numbers
         self.multispan_head_name = multispan_head_name
+        self.multispan_use_prediction_beam_search = multispan_use_prediction_beam_search
 
         self._passage_weights_predictor = torch.nn.Linear(bert_dim, 1)
         self._question_weights_predictor = torch.nn.Linear(bert_dim, 1)
@@ -279,6 +283,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                                                         multispan_log_probs,
                                                         multispan_logits,
                                                         multispan_mask,
+                                                        bio_wordpiece_mask,
                                                         is_bio_mask)
                     else:
                         log_marginal_likelihood_for_multispan = \
@@ -347,9 +352,14 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
-                        answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
-                            self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
-                                                       multispan_mask[i])
+                        if self.multispan_head_name == "flexible_loss":
+                            answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
+                                self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
+                                                        multispan_mask[i], bio_wordpiece_mask[i], self.multispan_use_prediction_beam_search and not self.training)
+                        else:
+                            answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
+                                self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
+                                                        multispan_mask[i])
                         if self._unique_on_multispan:
                             answer_json["value"] = list(OrderedDict.fromkeys(answer_json["value"]))
                     else:
@@ -574,7 +584,10 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         original_numbers = self.special_numbers + original_numbers
         predicted_signs = [sign_remap[it] for it in best_signs_for_numbers.detach().cpu().numpy()]
         result = sum([sign * number for sign, number in zip(predicted_signs, original_numbers)])
-        predicted_answer = str(round(result, 5))
+        if self.round_predicted_numbers:
+            predicted_answer = str(round(result, 5))
+        else:
+            predicted_answer = str(result)
         numbers = []
         for value, sign in zip(original_numbers, predicted_signs):
             numbers.append({'value': value, 'sign': sign})

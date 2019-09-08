@@ -1,4 +1,4 @@
-DEBUG = False
+DEBUG = True
 if DEBUG:
     import ptvsd
     ptvsd.enable_attach(address=('localhost', 5679), redirect_output=True)
@@ -10,15 +10,15 @@ import sys
 
 from allennlp.commands import main
 
-config_file = "configs/all_heads_mos.json"
+config_file = "configs/all_heads_mos_flexible_loss.json"
 
 overrides_dict = {}
-overrides_dict['train_data_path'] = '../Results/single_to_predict.json'
+overrides_dict['train_data_path'] = 'data/drop_dataset_train_sample.json'
 overrides_dict['validation_data_path'] = 'data/drop_dataset_dev_sample.json'
 #overrides_dict['dataset_reader'] = {"max_instances": 2}
 
 
-USE_CPU = True # Use overrides to train on CPU.
+USE_CPU = False # Use overrides to train on CPU.
 if USE_CPU:
     overrides_dict['trainer'] = {"cuda_device": -1}
 
@@ -51,8 +51,9 @@ shutil.rmtree(serialization_dir, ignore_errors=True)
 sys.argv = [
     "allennlp",  # command name, not used by main
     "evaluate",
-    "../model_flexible_loss_4.tar.gz",
-    "../Results/single_to_predict.json",
+    "../model_flexible_loss_13.tar.gz",
+    "data/drop_dataset_dev.json",
+    "--cuda-device", "0",
     "--include-package", "src",
     "--output-file", "eval.json"
 ]
