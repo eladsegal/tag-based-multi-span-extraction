@@ -62,11 +62,11 @@ class MultiSpanHead(Module):
                 continue
 
             if tags[i] == 2:  # 2 = I
-                # Written under the assumption that if it was meant for the BIO rules to be enforced
-                # then it was already done for tags
-                current_tokens.append(token)
-                prev = 2
-                continue
+                if prev != 0:
+                    current_tokens.append(token)
+                    prev = 2
+                else:
+                    prev = 0 # Illegal I, treat it as 0
 
             if tags[i] == 0 and prev != 0:
                 spans_tokens.append((context, current_tokens))
@@ -227,14 +227,14 @@ class FlexibleLoss(MultiSpanHead):
 
         return log_marginal_likelihood_for_multispan
 
-    def prediction(self, log_probs, logits, qp_tokens, p_text, q_text, seq_mask, wordpiece_mask, is_training):
+    def prediction(self, log_probs, logits, qp_tokens, p_text, q_text, seq_mask, wordpiece_mask, use_beam_search):
 
-        if is_training:
-            predicted_tags = torch.argmax(logits, dim=-1)
-            predicted_tags = replace_masked_values(predicted_tags, seq_mask, 0)
-        else:
+        if use_beam_search:
             top_k_predictions = self._get_top_k_sequences(log_probs.unsqueeze(0), wordpiece_mask.unsqueeze(0), self._prediction_beam_size)
             predicted_tags = top_k_predictions[0, 0, :]
+        else:
+            predicted_tags = torch.argmax(logits, dim=-1)
+            predicted_tags = replace_masked_values(predicted_tags, seq_mask, 0)
 
         return MultiSpanHead.decode_spans_from_tags(predicted_tags, qp_tokens, p_text, q_text)
 

@@ -36,7 +36,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  unique_on_multispan: bool = True,
                  multispan_head_name: str = 'crf_loss_bio',
                  multispan_generation_top_k: int = 0,
-                 multispan_prediction_beam_size: int = 1) -> None:
+                 multispan_prediction_beam_size: int = 1,
+                 multispan_use_prediction_beam_search: bool = False) -> None:
         super().__init__(vocab, regularizer)
 
         if answering_abilities is None:
@@ -52,6 +53,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
         self.round_predicted_numbers = round_predicted_numbers
         self.multispan_head_name = multispan_head_name
+        self.multispan_use_prediction_beam_search = multispan_use_prediction_beam_search
 
         self._passage_weights_predictor = torch.nn.Linear(bert_dim, 1)
         self._question_weights_predictor = torch.nn.Linear(bert_dim, 1)
@@ -353,7 +355,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                         if self.multispan_head_name == "flexible_loss":
                             answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
                                 self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
-                                                        multispan_mask[i], bio_wordpiece_mask[i], self.training)
+                                                        multispan_mask[i], bio_wordpiece_mask[i], self.multispan_use_prediction_beam_search and not self.training)
                         else:
                             answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
                                 self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
