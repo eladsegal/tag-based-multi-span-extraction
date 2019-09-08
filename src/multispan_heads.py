@@ -199,17 +199,18 @@ class FlexibleLoss(MultiSpanHead):
             with torch.no_grad():
                 if answer_as_text_to_disjoint_bios.sum() > 0:
                     full_bio = span_bio_labels
-                    is_pregenerated_answer_format_mask = (answer_as_list_of_bios.sum((1, 2)) > 0).unsqueeze(-1).unsqueeze(-1).long()
                     
                     if self._generation_top_k > 0:
                         most_likely_predictions = self._get_top_k_sequences(log_probs, wordpiece_mask, self._generation_top_k)
                         
                         generated_list_of_bios = self._filter_correct_predictions(most_likely_predictions, answer_as_text_to_disjoint_bios, full_bio)
 
+                        is_pregenerated_answer_format_mask = (answer_as_list_of_bios.sum((1, 2)) > 0).unsqueeze(-1).unsqueeze(-1).long()
                         list_of_bios = torch.cat((answer_as_list_of_bios, (generated_list_of_bios * (1 - is_pregenerated_answer_format_mask))), dim=1)
 
                         list_of_bios = self._add_full_bio(list_of_bios, full_bio)
                     else:
+                        is_pregenerated_answer_format_mask = (answer_as_list_of_bios.sum((1, 2)) > 0).long()
                         list_of_bios = torch.cat((answer_as_list_of_bios, (full_bio * (1 - is_pregenerated_answer_format_mask).unsqueeze(-1)).unsqueeze(1)), dim=1)
                 else:
                     list_of_bios = answer_as_list_of_bios
