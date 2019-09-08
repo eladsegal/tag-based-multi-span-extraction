@@ -35,7 +35,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                  round_predicted_numbers: bool = True,
                  unique_on_multispan: bool = True,
                  multispan_head_name: str = 'crf_loss_bio',
-                 multispan_generation_top_k: int = 1,
+                 multispan_generation_top_k: int = 0,
                  multispan_prediction_beam_size: int = 1) -> None:
         super().__init__(vocab, regularizer)
 
