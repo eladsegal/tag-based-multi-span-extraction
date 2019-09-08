@@ -197,11 +197,14 @@ class FlexibleLoss(MultiSpanHead):
             raise NotImplementedError
         else:
             with torch.no_grad():
+                answer_as_list_of_bios = answer_as_list_of_bios * seq_mask.unsqueeze(1)
                 if answer_as_text_to_disjoint_bios.sum() > 0:
                     full_bio = span_bio_labels
                     
                     if self._generation_top_k > 0:
                         most_likely_predictions = self._get_top_k_sequences(log_probs, wordpiece_mask, self._generation_top_k)
+
+                        most_likely_predictions = most_likely_predictions * seq_mask.unsqueeze(1)
                         
                         generated_list_of_bios = self._filter_correct_predictions(most_likely_predictions, answer_as_text_to_disjoint_bios, full_bio)
 
