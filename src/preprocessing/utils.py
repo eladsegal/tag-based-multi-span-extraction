@@ -140,3 +140,16 @@ def standardize_text(text):
     if '.:' in text:
         text = re.sub('\.:d+', '\.', text)
     return text
+
+import itertools
+def get_all_subsequences(full_list):
+
+    def contains_sublist(lst, sublst):
+        n = len(sublst)
+        return any((list(sublst) == lst[i:i+n]) for i in range(len(lst)-n+1))
+    
+    subsequences = []
+    for j in range(len(full_list), 0, -1):
+        subsequences.extend([' '.join(part) for part in itertools.combinations(full_list, j) if contains_sublist(full_list, part)])
+
+    return subsequences

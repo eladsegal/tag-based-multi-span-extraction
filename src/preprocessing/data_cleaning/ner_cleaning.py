@@ -12,6 +12,8 @@ from src.preprocessing.data_cleaning.remove_non_per_spans import RemoveNonPerSpa
 from src.preprocessing.data_cleaning.remove_non_org_spans import RemoveNonOrgLocMiscSpans
 from src.preprocessing.data_cleaning.trim_spans import TrimSpans
 
+from tqdm import tqdm
+
 '''
 General instructions:
 Write a class that implement CleaningObjective and add it with\instead the current obejctives.
@@ -51,7 +53,7 @@ if __name__ == "__main__":
     # Clean the dataset   
     cleaning_info = dict()
 
-    for passage_id, data in drop.items():
+    for passage_id, data in tqdm(drop.items()):
         ner_tagging_passage = None
 
         for qa_pair in data['qa_pairs']:
