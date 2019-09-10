@@ -217,6 +217,7 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                 self._answer_ability_predictor(torch.cat([passage_vector, question_vector], -1))
             answer_ability_log_probs = torch.nn.functional.log_softmax(answer_ability_logits, -1)
             best_answer_ability = torch.argmax(answer_ability_log_probs, 1)
+            top_two_answer_abilities = torch.topk(answer_ability_log_probs, k=2, dim=1)
 
         if "counting" in self.answering_abilities:
             count_number_log_probs, best_count_number = self._count_module(passage_vector)
@@ -323,7 +324,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     output_dict["invalid_spans"] = []
                     output_dict["max_passage_length"] = []
 
-                for i in range(batch_size):
+                i = 0
+                while i < batch_size:
                     if len(self.answering_abilities) > 1:
                         predicted_ability_str = self.answering_abilities[best_answer_ability[i]]
                     else:
@@ -369,6 +371,10 @@ class NumericallyAugmentedBERTPlusPlus(Model):
 
                             if self._dont_add_substrings_to_ms:
                                 answer_json["value"] = remove_substring_from_prediction(answer_json["value"])
+
+                        if len(answer_json["value"]) == 0:
+                            best_answer_ability[i] = top_two_answer_abilities.indices[i][1]
+                            continue
                     else:
                         raise ValueError(f"Unsupported answer ability: {predicted_ability_str}")
                     
@@ -388,6 +394,8 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                         output_dict["f1"].append(f1)
                         output_dict["invalid_spans"].append(invalid_spans)
                         output_dict["max_passage_length"].append(metadata[i]["max_passage_length"])
+
+                    i += 1
 
         return output_dict
 
