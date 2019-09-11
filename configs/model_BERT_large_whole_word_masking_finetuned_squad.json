@@ -3,12 +3,12 @@
         "type": "nabert++",
         "tokenizer": {
             "type": "bert-drop",
-            "pretrained_model": "bert-large-uncased"
+            "pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad"
         },
         "token_indexers": {
           "tokens": {
             "type": "bert-drop",
-            "pretrained_model": "bert-large-uncased"
+            "pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad"
           }
         },
         "bio_types": ["multiple_span", "single_span"],
@@ -20,12 +20,12 @@
         "type": "nabert++",
         "tokenizer": {
             "type": "bert-drop",
-            "pretrained_model": "bert-large-uncased"
+            "pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad"
         },
         "token_indexers": {
           "tokens": {
             "type": "bert-drop",
-            "pretrained_model": "bert-large-uncased"
+            "pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad"
           }
         },
         "bio_types": ["multiple_span", "single_span"],
@@ -39,7 +39,7 @@
     },
     "model": {
         "type": "nabert++",
-        "bert_pretrained_model": "bert-large-uncased",
+        "bert_pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad",
         "dropout_prob": 0.1,
         "special_numbers": [ 100, 1]
     },
@@ -51,7 +51,7 @@
         "num_epochs": 20,
         "optimizer": {
             "type": "bert_adam",
-            "lr": 1e-05
+            "lr": 5e-06
         },
         "patience": 10,
         "summary_interval": 100,
