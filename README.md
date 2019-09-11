@@ -1,4 +1,4 @@
-# Tag-based Multi-Span Extraction in Reading Comprehension
+# Tags-based Multi-Span Extraction in Reading Comprehension
 
 This is the code repository for our paper "Tag-based Multi-Span Extraction in Reading Comprehension".
 
