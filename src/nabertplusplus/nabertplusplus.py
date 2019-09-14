@@ -359,11 +359,11 @@ class NumericallyAugmentedBERTPlusPlus(Model):
                     elif predicted_ability_str == "multiple_spans":
                         answer_json["answer_type"] = "multiple_spans"
                         if self.multispan_head_name == "flexible_loss":
-                            answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
+                            answer_json["value"], answer_json["spans"], invalid_spans = \
                                 self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
                                                         multispan_mask[i], bio_wordpiece_mask[i], self.multispan_use_prediction_beam_search and not self.training)
                         else:
-                            answer_json["value"], answer_json["spans"], invalid_spans, answer_json["bio_seq"], answer_json["token_seq"] = \
+                            answer_json["value"], answer_json["spans"], invalid_spans = \
                                 self._multispan_prediction(multispan_log_probs[i], multispan_logits[i], qp_tokens, p_text, q_text,
                                                         multispan_mask[i])
                         if self._unique_on_multispan:

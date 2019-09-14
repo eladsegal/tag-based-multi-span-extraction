@@ -51,8 +51,8 @@ class CustomDropEmAndF1(Metric):
         self._total_f1 += f1_score
         self._count += 1
 
-        # Would've selected the maximizing one, but looks like other papers just use the first one
-        answer_type = ground_truth_answer_types[0]
+        # Best answer type is selected, just as in drop_eval
+        answer_type = ground_truth_answer_types[maximizing_ground_truth_index]
         self._answer_type_head_em[answer_type][predicted_ability] += exact_match
         self._answer_type_head_f1[answer_type][predicted_ability] += f1_score
         self._answer_type_head_count[answer_type][predicted_ability] += 1
@@ -121,15 +121,21 @@ class CustomDropEmAndF1(Metric):
     @staticmethod
     def metric_max_over_ground_truths(metric_fn, prediction, ground_truths):
         """
-        Modified from squad_eval.py in allennlp        
+        Modified from squad_eval.py in allennlp, changed to return maximizing index and match drop_eval
         
         Returns
         -------
         Maximum metric value and the matching index of ground truth
         """
-        scores_for_ground_truths = []
-        for ground_truth in ground_truths:
-            score = metric_fn(prediction, ground_truth)
-            scores_for_ground_truths.append(score)
-        maximizing_index = max(range(len(scores_for_ground_truths)), key=lambda i: scores_for_ground_truths[i])
-        return scores_for_ground_truths[maximizing_index], maximizing_index
+        max_em_score = 0.0
+        max_f1_score = 0.0
+        maximizing_index = -1
+        for i, ground_truth in enumerate(ground_truths):
+            em_score, f1_score = metric_fn(prediction, ground_truth)
+            if ground_truth[0].strip() != "":
+                max_em_score = max(max_em_score, em_score)
+                max_f1_score = max(max_f1_score, f1_score)
+                if max_em_score == em_score or max_f1_score == f1_score:
+                    maximizing_index = i
+
+        return (max_em_score, max_f1_score), maximizing_index

@@ -92,10 +92,10 @@ class NaBertDropReader(DatasetReader):
     @overrides
     def _read(self, file_path: str):
         file_path = cached_path(file_path)
-        with open(file_path) as dataset_file:
+        with open(file_path, encoding = "utf8") as dataset_file:
             dataset = json.load(dataset_file)
 
-        if self.standardize_texts:
+        if self.standardize_texts and self._is_training:
             dataset = standardize_dataset(dataset)
 
         instances_count = 0
@@ -141,16 +141,19 @@ class NaBertDropReader(DatasetReader):
 
                 question_id = qa_pair["query_id"]
                 question_text = qa_pair["question"].strip()
-                answer = qa_pair['answer']
-
-                specific_answer_type = get_answer_type(answer)
-                if specific_answer_type not in self.answer_types:
-                    continue
-
+                
                 answer_annotations: List[Dict] = list()
-                answer_annotations.append(answer)
+                specific_answer_type = None
+                if 'answer' in qa_pair and qa_pair['answer']:
+                    answer = qa_pair['answer']
 
-                if self.use_validated and "validated_answers" in qa_pair:
+                    specific_answer_type = get_answer_type(answer)
+                    if specific_answer_type not in self.answer_types:
+                        continue
+
+                    answer_annotations.append(answer)
+
+                if self.use_validated and "validated_answers" in qa_pair and qa_pair["validated_answers"]:
                     answer_annotations += qa_pair["validated_answers"]
 
                 instance = self.text_to_instance(question_text,
@@ -237,6 +240,11 @@ class NaBertDropReader(DatasetReader):
                     "passage_id": passage_id,
                     "question_id": question_id,
                     "max_passage_length": max_passage_length}
+
+        # in a word broken up into pieces, every piece except the first should be ignored when calculating the loss
+        wordpiece_mask = [not token.text.startswith('##') for token in qp_tokens]
+        wordpiece_mask = np.array(wordpiece_mask)
+        fields['bio_wordpiece_mask'] = ArrayField(wordpiece_mask, dtype=np.int64)
 
         if answer_annotations:            
             # Get answer type, answer text, tokenize
@@ -361,11 +369,6 @@ class NaBertDropReader(DatasetReader):
             if not count_fields:
                 count_fields.append(LabelField(-1, skip_indexing=True))
             fields["answer_as_counts"] = ListField(count_fields)
-
-            # in a word broken up into pieces, every piece except the first should be ignored when calculating the loss
-            wordpiece_mask = [not token.text.startswith('##') for token in qp_tokens]
-            wordpiece_mask = np.array(wordpiece_mask)
-            fields['bio_wordpiece_mask'] = ArrayField(wordpiece_mask, dtype=np.int64)
             
             no_answer_bios = SequenceLabelField([0] * len(qp_tokens), sequence_field=qp_field)
             if (specific_answer_type in self.bio_types) and (len(valid_passage_spans) > 0 or len(valid_question_spans) > 0):

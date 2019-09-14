@@ -114,8 +114,9 @@ def standardize_dataset(dataset):
             qa_pair['question'] = standardize_text(qa_pair['question'])
 
             answer = qa_pair['answer']
-            if 'spans' in answer:
-                answer['spans'] = [standardize_text(span) for span in answer['spans']]
+            if 'answer' in qa_pair:
+                if 'spans' in answer:
+                    answer['spans'] = [standardize_text(span) for span in answer['spans']]
             if 'validated_answers' in qa_pair:
                 for validated_answer in qa_pair['validated_answers']:
                     if 'spans' in answer:
