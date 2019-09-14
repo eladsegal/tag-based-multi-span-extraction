@@ -1,6 +1,6 @@
-# Tags-based Multi-Span Extraction in Reading Comprehension
+# Tag-based Multi-Span Extraction in Reading Comprehension
 
-This is the code repository for our paper "Tag-based Multi-Span Extraction in Reading Comprehension".
+This is the code repository for our paper "Tag-based Multi-Span Extraction in Reading Comprehension" (will be published soon).
 
 ## Usage
 The commands listed in this section needs to be run from the root directory of the repository.
