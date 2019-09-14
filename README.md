@@ -2,6 +2,8 @@
 
 This is the code repository for our paper "Tag-based Multi-Span Extraction in Reading Comprehension" (will be published soon).
 
+This work is done as a final project for the Spring 2019 instances of "Advanced Methods in Natural Language Processing" and "Advanced Methods in Machine Learning" at Tel Aviv University.
+
 ## Usage
 The commands listed in this section needs to be run from the root directory of the repository.
 
