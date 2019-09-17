@@ -1,0 +1,37 @@
+Exact-match accuracy 76.91
+F1 score 79.92
+76.91   &   79.92
+----
+date: 149 (1.56%)
+  Exact-match accuracy 57.718
+  F1 score 64.611
+number: 5902 (61.89%)
+  Exact-match accuracy 77.787
+  F1 score 78.208
+span: 3014 (31.61%)
+  Exact-match accuracy 79.595
+  F1 score 84.354
+spans: 471 (4.94%)
+  Exact-match accuracy 54.777
+  F1 score 77.858
+  
+^ Locally
+
+2019-09-14T06:27:59.912446457Z    Exact-match accuracy 76.95
+2019-09-14T06:27:59.912508672Z    F1 score 80.25
+2019-09-14T06:27:59.912514401Z    76.95   &   80.25
+2019-09-14T06:27:59.912519994Z    ----
+2019-09-14T06:27:59.912524937Z    date: 149 (1.56%)
+2019-09-14T06:27:59.912529952Z      Exact-match accuracy 57.718
+2019-09-14T06:27:59.912535132Z      F1 score 64.611
+2019-09-14T06:27:59.912540121Z    number: 5901 (61.88%)
+2019-09-14T06:27:59.91254492Z      Exact-match accuracy 77.800
+2019-09-14T06:27:59.912549806Z      F1 score 78.234
+2019-09-14T06:27:59.912554506Z    span: 3019 (31.66%)
+2019-09-14T06:27:59.912559248Z      Exact-match accuracy 79.629
+2019-09-14T06:27:59.912564003Z      F1 score 84.554
+2019-09-14T06:27:59.912568771Z    spans: 467 (4.90%)
+2019-09-14T06:27:59.912573518Z      Exact-match accuracy 55.032
+2019-09-14T06:27:59.912578266Z      F1 score 82.852
+
+^ Leaderboard
