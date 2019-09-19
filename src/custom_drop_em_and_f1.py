@@ -57,7 +57,7 @@ class CustomDropEmAndF1(Metric):
         self._answer_type_head_f1[answer_type][predicted_ability] += f1_score
         self._answer_type_head_count[answer_type][predicted_ability] += 1
 
-        return (exact_match, f1_score), annotation[maximizing_ground_truth_index]
+        return (exact_match, f1_score), ground_truths[maximizing_ground_truth_index]
 
     @overrides
     def get_metric(self, reset: bool = False) -> Tuple[Tuple[float, float], Dict[str, float]]:
