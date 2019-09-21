@@ -618,28 +618,31 @@ class NumericallyAugmentedBERTPlusPlus(Model):
         metrics = {'em': exact_match, 'f1': f1_score}
 
         for answer_type, type_scores_per_head in scores_per_answer_type_and_head.items():
-            for head, (answer_type_head_exact_match, answer_type_head_f1_score) in type_scores_per_head.items():
+            for head, (answer_type_head_exact_match, answer_type_head_f1_score, type_head_count) in type_scores_per_head.items():
                 if 'multi' in head and 'span' in answer_type:
                     metrics[f'em_{answer_type}_{head}'] = answer_type_head_exact_match
                     metrics[f'f1_{answer_type}_{head}'] = answer_type_head_f1_score
                 else:
                     metrics[f'_em_{answer_type}_{head}'] = answer_type_head_exact_match
                     metrics[f'_f1_{answer_type}_{head}'] = answer_type_head_f1_score
+                metrics[f'_counter_{answer_type}_{head}'] = type_head_count
         
-        for answer_type, (type_exact_match, type_f1_score) in scores_per_answer_type.items():
+        for answer_type, (type_exact_match, type_f1_score, type_count) in scores_per_answer_type.items():
             if 'span' in answer_type:
                 metrics[f'em_{answer_type}'] = type_exact_match
                 metrics[f'f1_{answer_type}'] = type_f1_score
             else:
                 metrics[f'_em_{answer_type}'] = type_exact_match
                 metrics[f'_f1_{answer_type}'] = type_f1_score
+            metrics[f'_counter_{answer_type}'] = type_count
 
-        for head, (head_exact_match, head_f1_score) in scores_per_head.items():
+        for head, (head_exact_match, head_f1_score, head_count) in scores_per_head.items():
             if 'multi' in head:
                 metrics[f'em_{head}'] = head_exact_match
                 metrics[f'f1_{head}'] = head_f1_score
             else:
                 metrics[f'_em_{head}'] = head_exact_match
                 metrics[f'_f1_{head}'] = head_f1_score
+            metrics[f'_counter_{head}'] = head_count
         
         return metrics

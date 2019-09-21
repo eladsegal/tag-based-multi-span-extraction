@@ -94,12 +94,12 @@ class CustomDropEmAndF1(Metric):
 
                 type_head_exact_match = self._answer_type_head_em[answer_type][head] / count
                 type_head_f1_score = self._answer_type_head_f1[answer_type][head] / count
-                scores_per_answer_type_and_head[answer_type][head] = type_head_exact_match, type_head_f1_score
+                scores_per_answer_type_and_head[answer_type][head] = type_head_exact_match, type_head_f1_score, count
             
-            scores_per_answer_type[answer_type] = type_em / type_count, type_f1 / type_count
+            scores_per_answer_type[answer_type] = type_em / type_count, type_f1 / type_count, type_count
 
         for head, count in count_per_head.items():
-            scores_per_head[head] = em_per_head[head] / count, f1_per_head[head] / count
+            scores_per_head[head] = em_per_head[head] / count, f1_per_head[head] / count, count
         
         if reset:
             self.reset()
