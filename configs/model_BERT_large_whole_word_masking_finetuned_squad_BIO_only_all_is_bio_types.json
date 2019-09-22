@@ -1,0 +1,61 @@
+{
+    "dataset_reader": {
+        "type": "nabert++",
+        "tokenizer": {
+            "type": "bert-drop",
+            "pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad"
+        },
+        "token_indexers": {
+          "tokens": {
+            "type": "bert-drop",
+            "pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad"
+          }
+        },
+        "bio_types": ["multiple_span", "single_span", "number", "date"],
+        "extra_numbers": [100, 1],
+        "is_training": true,
+        "flexibility_threshold": 1000
+    },
+    "validation_dataset_reader": {
+        "type": "nabert++",
+        "tokenizer": {
+            "type": "bert-drop",
+            "pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad"
+        },
+        "token_indexers": {
+          "tokens": {
+            "type": "bert-drop",
+            "pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad"
+          }
+        },
+        "bio_types": ["multiple_span", "single_span", "number", "date"],
+        "extra_numbers": [100, 1],
+        "is_training": false,
+        "flexibility_threshold": 1000
+    },
+    "iterator": {
+        "type": "basic",
+        "batch_size": 3
+    },
+    "model": {
+        "type": "nabert++",
+        "bert_pretrained_model": "bert-large-uncased-whole-word-masking-finetuned-squad",
+        "dropout_prob": 0.1,
+        "special_numbers": [ 100, 1],
+        "answering_abilities": ["arithmetic", "counting", "multiple_spans"]
+    },
+    "train_data_path": "data/drop_dataset_train_clean.json",
+    "validation_data_path": "data/drop_dataset_dev.json",
+    "trainer": {
+        "cuda_device": 0,
+        "keep_serialized_model_every_num_seconds": 3600,
+        "num_epochs": 20,
+        "optimizer": {
+            "type": "bert_adam",
+            "lr": 5e-06
+        },
+        "patience": 10,
+        "summary_interval": 100,
+        "validation_metric": "+f1"
+    }
+}

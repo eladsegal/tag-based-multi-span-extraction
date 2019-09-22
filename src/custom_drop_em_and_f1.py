@@ -135,7 +135,7 @@ class CustomDropEmAndF1(Metric):
             if ground_truth[0].strip() != "":
                 max_em_score = max(max_em_score, em_score)
                 max_f1_score = max(max_f1_score, f1_score)
-                if max_em_score == em_score and max_f1_score == f1_score:
+                if max_em_score == em_score or max_f1_score == f1_score:
                     maximizing_index = i
 
         return (max_em_score, max_f1_score), maximizing_index
