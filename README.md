@@ -7,6 +7,9 @@ This work was done as a final project for the Spring 2019 instances of "Advanced
 
 *Equal Contribution
 
+## [DROP Explorer](https://github.com/eladsegal/DROP-explorer)
+Use [DROP Explorer](https://github.com/eladsegal/DROP-explorer) to better familiarize yourself with DROP and the models' predictions.
+
 ## Usage
 The commands listed in this section needs to be run from the root directory of the repository.
 
