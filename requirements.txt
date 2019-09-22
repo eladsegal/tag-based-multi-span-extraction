@@ -1,1 +1,2 @@
 allennlp==0.8.5
+torch>=1.1.0
