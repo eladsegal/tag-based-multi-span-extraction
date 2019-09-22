@@ -1,6 +1,6 @@
 # Tag-based Multi-Span Extraction in Reading Comprehension
 
-This is the code repository for our paper "Tag-based Multi-Span Extraction in Reading Comprehension" by [Avia Efrat*](mailto:aviaefra@mail.tau.ac.il), [Elad Segal*](mailto:eladsegal@mail.tau.ac.il) and [Mor Shoham*](mailto:morshoham@mail.tau.ac.il) (will be published soon).
+This is the official code repository for the paper "Tag-based Multi-Span Extraction in Reading Comprehension" by [Avia Efrat*](mailto:aviaefra@mail.tau.ac.il), [Elad Segal*](mailto:eladsegal@mail.tau.ac.il) and [Mor Shoham*](mailto:morshoham@mail.tau.ac.il) (will be published soon).
 
 This work was done as a final project for the Spring 2019 instances of "Advanced Methods in Natural Language Processing" and "Advanced Methods in Machine Learning" at Tel Aviv University.
 
