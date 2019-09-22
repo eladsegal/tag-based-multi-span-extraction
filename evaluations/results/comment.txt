@@ -1,0 +1,1 @@
+Beam search with width 5 was used for all the evaluations
