@@ -1,6 +1,7 @@
 # Tag-based Multi-Span Extraction in Reading Comprehension
 
-This is the official code repository for the paper "Tag-based Multi-Span Extraction in Reading Comprehension" by [Avia Efrat*](mailto:aviaefra@mail.tau.ac.il), [Elad Segal*](mailto:eladsegal@mail.tau.ac.il) and [Mor Shoham*](mailto:morshoham@mail.tau.ac.il) (will be published soon).
+This is the official code repository for the paper "Tag-based Multi-Span Extraction in Reading Comprehension" by [Avia Efrat*](mailto:aviaefra@mail.tau.ac.il), [Elad Segal*](mailto:eladsegal@mail.tau.ac.il) and [Mor Shoham*](mailto:morshoham@mail.tau.ac.il) (will be published soon).  
+NABERT+ ([raylin1000/drop-bert](https://github.com/raylin1000/drop-bert/)) by Kinley and Lin was used as a basis for our work.
 
 This work was done as a final project for the Spring 2019 instances of "Advanced Methods in Natural Language Processing" and "Advanced Methods in Machine Learning" at Tel Aviv University.
 
@@ -9,22 +10,19 @@ This work was done as a final project for the Spring 2019 instances of "Advanced
 ## Usage
 The commands listed in this section needs to be run from the root directory of the repository.
 
-First, install prerequisites with 
-
+First, install prerequisites with  
 ```pip install -r requirements.txt```
 
 ### Commands
-* Train a model:
-
+* Train a model:  
 ```allennlp train configs/[config file] -s [training_directory] --include-package src```
 
-* Output predictions by a model: 
-
+* Output predictions by a model:  
 ```allennlp predict model.tar.gz data/drop_dataset_dev.json --predictor machine-comprehension --cuda-device 0 --output-file predictions.jsonl --use-dataset-reader --include-package src```
 
-* Evaluate a model:
-
+* Evaluate a model (not official evaluation code, fast):  
 ```allennlp evaluate model.tar.gz data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json --include-package src```
 
-## [DROP Explorer](https://github.com/eladsegal/DROP-explorer)
-Use [DROP Explorer](https://github.com/eladsegal/DROP-explorer) to better familiarize yourself with DROP and the models' predictions.
+* Evaluate a model (official evaluation code, slow):
+  1. ```python generate_submission_predictions.py --archive_file model.tar.gz --input_file data/drop_dataset_dev.json --output_file predictions.json --include-package src```
+  2. ```python -m allennlp.tools.drop_eval --gold_path data/drop_dataset_dev.json --prediction_path predictions.json --output_path metrics.json```
