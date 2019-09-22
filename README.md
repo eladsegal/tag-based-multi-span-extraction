@@ -25,3 +25,6 @@ First, install prerequisites with
 * Evaluate a model:
 
 ```allennlp evaluate model.tar.gz data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json --include-package src```
+
+## [DROP Explorer](https://github.com/eladsegal/DROP-explorer)
+Use [DROP Explorer](https://github.com/eladsegal/DROP-explorer) to better familiarize yourself with DROP and the models' predictions.
