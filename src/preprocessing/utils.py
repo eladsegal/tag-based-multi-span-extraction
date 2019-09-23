@@ -4,7 +4,6 @@ import json
 import os
 from typing import Dict, List, Tuple
 
-
 from allennlp.data.tokenizers import Token
 
 
@@ -71,39 +70,70 @@ def deep_dict_update(d, u):
             d[k] = v
     return d
 
-def fill_token_indices(tokens, text, uncased):
-    new_tokens = []    
-    text_idx = 0
-
+def fill_token_indices(tokens, full_text, uncased, basic_tokenizer, word_tokens=None):
     if uncased:
-        text = text.lower()
+        full_text = full_text.lower()
 
-    for token in tokens:
-        first_char_idx = 2 if len(token.text) > 2 and token.text[:2] == "##" else 0
+    new_tokens = []
+    has_unknowns = False
 
-        while text[text_idx] == ' ' or text[text_idx] == '\xa0':
-            text_idx += 1
+    temp_text = full_text
+    reconstructed_full_text = ''
+
+    absolute_index = 0
+    for i, token in enumerate(tokens):
+        token_text = token.text
+        token_text_to_search = token_text[2:] if len(token_text) > 2 and token_text[:2] == "##" else token_text
         
-        new_tokens.append(Token(text=token.text, idx = text_idx))             
-        
-        token_len = len(token.text) - first_char_idx
+        if token_text == '[UNK]':
+            new_tokens.append(Token(text = token_text, lemma_ = token_text, idx=absolute_index)) 
+            # lemma as placeholder, index to search from later
+            has_unknowns = True
+            continue
 
-        if token.text == '[UNK]':
-            token_len = 1
+        relative_index = basic_tokenizer._run_strip_accents(temp_text).find(token_text_to_search)
 
-        text_idx += token_len
+        start_idx = absolute_index + relative_index
+        end_idx = start_idx + len(token_text_to_search) # exclusive
+        absolute_index = end_idx
+        token_source_text = full_text[start_idx : end_idx]
 
+        first_part = temp_text[:relative_index]
+        second_part = token_source_text
+        reconstructed_full_text += first_part + second_part
+        temp_text = temp_text[relative_index + len(token_source_text):]
+
+        new_tokens.append(Token(text = token_text, lemma_ = token_source_text, idx = start_idx))
+
+    if has_unknowns:
+        reconstructed_full_text = ''
+        word_tokens_text = ' '.join([word_token.text for word_token in word_tokens]) if word_tokens is not None else full_text
+        basic_tokens, j, constructed_token = basic_tokenizer.tokenize(word_tokens_text), 0, ''
+        padding_idx = 0
+        for i, token in enumerate(new_tokens):
+            if token.text != '[UNK]':
+                constructed_token += token.lemma_
+                if constructed_token == basic_tokens[j]:
+                    constructed_token = ''
+                    j += 1
+            else:
+                relative_index = basic_tokenizer._run_strip_accents(full_text[token.idx:]).find(basic_tokens[j])
+                new_tokens[i] = Token(text = token.text, lemma_ = basic_tokens[j], idx = token.idx + relative_index)
+                j += 1
+            
+            padding = full_text[padding_idx : new_tokens[i].idx]
+            reconstructed_full_text += padding + full_text[new_tokens[i].idx : new_tokens[i].idx + len(new_tokens[i].lemma_)]
+            padding_idx = new_tokens[i].idx + len(new_tokens[i].lemma_)
+    
+    # Will happen in very rare cases due to accents stripping changing the length of the word
+    #if reconstructed_full_text != full_text:
+    #    raise Exception('Error with token indices')
+    
     return new_tokens
 
 def token_to_span(token):
     start = token.idx
-    end = token.idx + len(token.text)
-
-    if token.text.startswith("##"):
-        end -= 2
-
-    if token.text == '[UNK]':
-        end -= 4
+    end = token.idx + len(token.lemma_)
     return (start, end)
 
 

@@ -5,6 +5,8 @@ import operator
 from typing import Dict, List, Optional, Tuple, Any
 from collections import OrderedDict
 
+from pytorch_transformers import BasicTokenizer
+
 from allennlp.common.file_utils import cached_path
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
 from allennlp.data.dataset_readers.reading_comprehension.drop import DropReader
@@ -88,6 +90,8 @@ class NaBertDropReader(DatasetReader):
         self.discard_impossible_number_questions = discard_impossible_number_questions
         self.flexibility_threshold = flexibility_threshold
         self.multispan_allow_all_heads_to_answer = multispan_allow_all_heads_to_answer
+
+        self.basic_tokenizer = BasicTokenizer(do_lower_case=uncased)
     
     @overrides
     def _read(self, file_path: str):
@@ -132,7 +136,7 @@ class NaBertDropReader(DatasetReader):
                 passage_tokens += wordpieces
                 curr_index += num_wordpieces
             
-            passage_tokens = fill_token_indices(passage_tokens, passage_text, self._uncased)
+            passage_tokens = fill_token_indices(passage_tokens, passage_text, self._uncased, self.basic_tokenizer, word_tokens)
 
             # Process questions from this passage
             for qa_pair in passage_info["qa_pairs"]:
@@ -186,7 +190,7 @@ class NaBertDropReader(DatasetReader):
                          specific_answer_type: str = None) -> Optional[Instance]:
         # Tokenize question and passage
         question_tokens = self.tokenizer.tokenize(question_text)
-        question_tokens = fill_token_indices(question_tokens, question_text, self._uncased)
+        question_tokens = fill_token_indices(question_tokens, question_text, self._uncased, self.basic_tokenizer)
 
         qlen = len(question_tokens)
 

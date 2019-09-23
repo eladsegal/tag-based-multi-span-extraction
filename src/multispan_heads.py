@@ -360,13 +360,7 @@ def decode_token_spans(spans_tokens, passage_text, question_text):
 
     for context, tokens in spans_tokens:
         text_start = tokens[0].idx
-        text_end = tokens[-1].idx + len(tokens[-1].text)
-
-        if tokens[-1].text.startswith("##"):
-            text_end -= 2
-
-        if tokens[-1].text == '[UNK]':
-            text_end -= 4
+        text_end = tokens[-1].idx + len(tokens[-1].lemma_)
 
         spans_indices.append((context, text_start, text_end))
 
