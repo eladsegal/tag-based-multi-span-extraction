@@ -3,7 +3,7 @@
 This is the official code repository for the paper "Tag-based Multi-Span Extraction in Reading Comprehension" by [Avia Efrat*](mailto:aviaefra@mail.tau.ac.il), [Elad Segal*](mailto:eladsegal@mail.tau.ac.il) and [Mor Shoham*](mailto:morshoham@mail.tau.ac.il) (will be published soon).  
 NABERT+ ([raylin1000/drop-bert](https://github.com/raylin1000/drop-bert/)) by Kinley and Lin was used as a basis for our work.
 
-This work was done as a final project for the Spring 2019 instances of "Advanced Methods in Natural Language Processing" and "Advanced Methods in Machine Learning" at Tel Aviv University.
+This work was done as a final project for the spring 2019 instances of "Advanced Methods in Natural Language Processing" and "Advanced Methods in Machine Learning" at Tel Aviv University.
 
 *Equal Contribution
 
@@ -11,7 +11,7 @@ This work was done as a final project for the Spring 2019 instances of "Advanced
 Use [DROP Explorer](https://github.com/eladsegal/DROP-explorer) to better familiarize yourself with DROP and the models' predictions.
 
 ## Usage
-The commands listed in this section needs to be run from the root directory of the repository.
+The commands listed in this section need to be run from the root directory of the repository.
 
 First, install prerequisites with  
 ```pip install -r requirements.txt```
@@ -23,7 +23,7 @@ First, install prerequisites with
 * Output predictions by a model:  
 ```allennlp predict model.tar.gz data/drop_dataset_dev.json --predictor machine-comprehension --cuda-device 0 --output-file predictions.jsonl --use-dataset-reader --include-package src```
 
-* Evaluate a model (not official evaluation code, fast):  
+* Evaluate a model (unofficial evaluation code, fast):
 ```allennlp evaluate model.tar.gz data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json --include-package src```
 
 * Evaluate a model (official evaluation code, slow):
