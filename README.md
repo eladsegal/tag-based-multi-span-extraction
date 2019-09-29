@@ -27,5 +27,5 @@ First, install prerequisites with
 ```allennlp evaluate model.tar.gz data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json --include-package src```
 
 * Evaluate a model (official evaluation code, slow):
-  1. ```python generate_submission_predictions.py --archive_file model.tar.gz --input_file data/drop_dataset_dev.json --output_file predictions.json --include-package src```
+  1. ```python generate_submission_predictions.py --archive_file model.tar.gz --input_file data/drop_dataset_dev.json --cuda-device 0 --output_file predictions.json --include-package src```
   2. ```python -m allennlp.tools.drop_eval --gold_path data/drop_dataset_dev.json --prediction_path predictions.json --output_path metrics.json```
