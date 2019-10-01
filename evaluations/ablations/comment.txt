@@ -1,2 +1,2 @@
-Beam search with width 5 was used for all the evaluations.
+Beam search with width 5 was used for all the evaluations, except for no_beam.json.
 -o '{"model": {"multispan_use_prediction_beam_search": true, "multispan_prediction_beam_size": 5}}'
