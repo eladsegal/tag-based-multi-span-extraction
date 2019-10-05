@@ -23,7 +23,7 @@ First, install prerequisites with
 * Output predictions by a model:  
 ```allennlp predict model.tar.gz data/drop_dataset_dev.json --predictor machine-comprehension --cuda-device 0 --output-file predictions.jsonl --use-dataset-reader --include-package src```
 
-* Evaluate a model (unofficial evaluation code, fast):
+* Evaluate a model (unofficial evaluation code, fast):  
 ```allennlp evaluate model.tar.gz data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json --include-package src```
 
 * Evaluate a model (official evaluation code, slow):
