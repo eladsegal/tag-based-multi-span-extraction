@@ -1,4 +1,4 @@
-from sklearn import metrics
+import sklearn # helps with the "cannot load any more object with static TLS" error
 import argparse
 import json
 from allennlp.predictors import Predictor
