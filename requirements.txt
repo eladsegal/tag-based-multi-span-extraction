@@ -1,0 +1,3 @@
+git+git://github.com/eladsegal/allennlp@f7fa29c#egg=allennlp
+transformers==2.3.0
+XlsxWriter
