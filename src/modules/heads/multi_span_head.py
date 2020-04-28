@@ -11,7 +11,6 @@ from allennlp.data.tokenizers import Token
 from allennlp.modules import FeedForward
 
 from src.modules.heads.head import Head
-from src.modules.wordpiece_unifiers.wordpiece_unifier import WordpieceUnifier
 from src.modules.utils.viterbi_decoding import allowed_transitions, viterbi_tags
 from src.modules.utils.decoding_utils import decode_token_spans, get_token_context
 
@@ -24,13 +23,11 @@ class MultiSpanHead(Head):
                  decoding_style: str,
                  training_style: str,
                  labels: Dict[str, int],
-                 wordpiece_unifier: Optional[WordpieceUnifier] = None,
                  generation_top_k: int = 0,
                  unique_decoding: bool = True,
                  substring_unique_decoding: bool = True) -> None:
         super().__init__()
         self._output_layer = output_layer
-        self._wordpiece_unifier = wordpiece_unifier
         self._ignore_question = ignore_question
         self._generation_top_k = generation_top_k
         self._unique_decoding = unique_decoding
@@ -85,12 +82,6 @@ class MultiSpanHead(Head):
                 wordpiece_indices: torch.LongTensor,
                 **kwargs: Dict[str, Any]) -> Dict[str, torch.Tensor]:
         mask = self._get_mask(question_and_passage_mask, passage_mask, first_wordpiece_mask)
-
-        if (self._decoding_style == "single_word_representation" and 
-            self._wordpiece_unifier is not None):
-            # TODO: What we do with number_indices, just for wordpieces
-            #token_representations = self._get_wordpiece_unified_representation(token_representations, wordpiece_indices)
-            pass
 
         logits = self._output_layer(token_representations)
 
