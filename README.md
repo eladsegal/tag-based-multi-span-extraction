@@ -1,6 +1,6 @@
 # A Simple and Effective Model for Answering Multi-span Questions
 
-This repository contains an implementation of an older version of the following paper:
+This repository contains an implementation of an older version of the following paper:  
 Elad Segal*, Avia Efrat*, Mor Shoham*, Amir Globerson, Jonathan Berant. ["A Simple and Effective Model for Answering Multi-span Questions"](http://arxiv.org/abs/1909.13375).  
 The updated and improved implementation will be uploaded in the coming days.
 
