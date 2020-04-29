@@ -1,4 +1,4 @@
-local config = import '../abstract/drop_model_single_heads.jsonnet';
+local config = import '../abstract/drop_SSE.jsonnet';
 
 config {
     "pretrained_model": "roberta-large",

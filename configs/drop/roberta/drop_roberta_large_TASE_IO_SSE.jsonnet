@@ -1,4 +1,4 @@
-local config = import '../abstract/quoref_model_all_heads.jsonnet';
+local config = import '../abstract/drop_TASE_IO_SSE.jsonnet';
 
 config {
     "pretrained_model": "roberta-large",
@@ -8,7 +8,7 @@ config {
     },
     "trainer"+: {
         "optimizer"+: {
-            "lr": 1e-05
+            "lr": 5e-06
         },
         "num_steps_to_accumulate": 6
     }

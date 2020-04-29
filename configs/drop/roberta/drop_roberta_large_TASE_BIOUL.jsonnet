@@ -1,4 +1,4 @@
-local config = import '../abstract/quoref_model_all_heads_IO.jsonnet';
+local config = import '../abstract/drop_TASE_BIOUL.jsonnet';
 
 config {
     "pretrained_model": "roberta-large",

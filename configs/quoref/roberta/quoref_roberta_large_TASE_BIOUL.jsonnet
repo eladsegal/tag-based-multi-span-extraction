@@ -1,14 +1,14 @@
-local config = import '../abstract/quoref_model_all_heads.jsonnet';
+local config = import '../abstract/quoref_TASE_BIOUL.jsonnet';
 
 config {
-    "pretrained_model": "bert-large-uncased-whole-word-masking",
+    "pretrained_model": "roberta-large",
     "bert_dim": 1024,
     "iterator"+: {
         "batch_size": 2
     },
     "trainer"+: {
         "optimizer"+: {
-            "lr": 1e-05
+            "lr": 5e-06
         },
         "num_steps_to_accumulate": 6
     }

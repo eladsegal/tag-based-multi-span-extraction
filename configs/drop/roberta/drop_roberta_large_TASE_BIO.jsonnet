@@ -1,4 +1,4 @@
-local config = import '../abstract/drop_model_multi_head_BIOUL.jsonnet';
+local config = import '../abstract/drop_TASE_BIO.jsonnet';
 
 config {
     "pretrained_model": "roberta-large",
@@ -8,7 +8,7 @@ config {
     },
     "trainer"+: {
         "optimizer"+: {
-            "lr": 5e-06
+            "lr": 1e-05
         },
         "num_steps_to_accumulate": 6
     }

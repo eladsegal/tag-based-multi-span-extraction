@@ -1,7 +1,7 @@
-local config = import '../abstract/quoref_model_single_heads.jsonnet';
+local config = import '../abstract/drop_TASE_BIO_SSE.jsonnet';
 
 config {
-    "pretrained_model": "roberta-large",
+    "pretrained_model": "bert-large-uncased-whole-word-masking",
     "bert_dim": 1024,
     "iterator"+: {
         "batch_size": 2
