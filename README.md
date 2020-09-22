@@ -1,9 +1,19 @@
 # A Simple and Effective Model for Answering Multi-span Questions
 
 This repository contains the official implementation of the following paper:  
-Elad Segal*, Avia Efrat*, Mor Shoham*, Amir Globerson, Jonathan Berant. ["A Simple and Effective Model for Answering Multi-span Questions"](http://arxiv.org/abs/1909.13375).
+Elad Segal*, Avia Efrat*, Mor Shoham*, Amir Globerson, Jonathan Berant. ["A Simple and Effective Model for Answering Multi-span Questions"](http://arxiv.org/abs/1909.13375). _In EMNLP, 2020_.
 
 *Equal Contribution
+
+### Citation
+```
+@inproceedings{Segal2020TASE,
+  title={A Simple and Effective Model for Answering Multi-span Questions},
+  author={Segal, Elad and Efrat, Avia and Shoham, Mor and Globerson, Amir and Berant, Jonathan},
+  booktitle={EMNLP},
+  year={2020},
+}
+```
 
 ## [DROP Explorer](https://github.com/eladsegal/DROP-explorer)
 Use [DROP Explorer](https://github.com/eladsegal/DROP-explorer) to better understand DROP, Quoref and the models' predictions.
