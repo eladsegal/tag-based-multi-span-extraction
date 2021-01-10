@@ -37,6 +37,6 @@ First, install prerequisites with
   2. ```python -m allennlp.tools.drop_eval --gold_path drop_data/drop_dataset_dev.json --prediction_path predictions.json --output_path metrics.json```
   
 ### Trained Model
-You can download the RoBERTa TASE_IO + SSE trained model ([config](https://github.com/eladsegal/tag-based-multi-span-extraction/blob/master/configs/drop/roberta/drop_roberta_large_TASE_IO_SSE.jsonnet)) from here:
+You can download the RoBERTa TASE_IO + SSE model that is trained on DROP ([config](https://github.com/eladsegal/tag-based-multi-span-extraction/blob/master/configs/drop/roberta/drop_roberta_large_TASE_IO_SSE.jsonnet)) from here:
 https://drive.google.com/file/d/1k8MFEmmGeUXlBmghAKN8Xl_a6mbFUHdn/view
 
