@@ -1,9 +1,7 @@
 # A Simple and Effective Model for Answering Multi-span Questions
 
 This repository contains the official implementation of the following paper:  
-Elad Segal*, Avia Efrat*, Mor Shoham*, Amir Globerson, Jonathan Berant. ["A Simple and Effective Model for Answering Multi-span Questions"](http://arxiv.org/abs/1909.13375). _In EMNLP, 2020_.
-
-*Equal Contribution
+Elad Segal, Avia Efrat, Mor Shoham, Amir Globerson, Jonathan Berant. ["A Simple and Effective Model for Answering Multi-span Questions"](http://arxiv.org/abs/1909.13375). _In EMNLP, 2020_.
 
 ### Citation
 ```
