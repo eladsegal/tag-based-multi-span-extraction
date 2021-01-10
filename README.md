@@ -35,3 +35,8 @@ First, install prerequisites with
 * Evaluate a model (official evaluation code, slow):
   1. ```python tools/generate_submission_predictions.py --archive_file model.tar.gz --input_file drop_data/drop_dataset_dev.json --cuda-device 0 --output_file predictions.json --include-package src```
   2. ```python -m allennlp.tools.drop_eval --gold_path drop_data/drop_dataset_dev.json --prediction_path predictions.json --output_path metrics.json```
+  
+### Trained Model
+You can download the RoBERTa TASE_IO + SSE trained model ([config](https://github.com/eladsegal/tag-based-multi-span-extraction/blob/master/configs/drop/roberta/drop_roberta_large_TASE_IO_SSE.jsonnet)) from here:
+https://drive.google.com/file/d/1k8MFEmmGeUXlBmghAKN8Xl_a6mbFUHdn/view
+
