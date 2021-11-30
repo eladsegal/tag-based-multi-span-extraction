@@ -1,2 +1,2 @@
-git+git://github.com/eladsegal/allennlp@f1f803e#egg=allennlp
+git+git://github.com/eladsegal/allennlp@2143c7c#egg=allennlp
 transformers==2.3.0
