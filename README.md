@@ -24,17 +24,35 @@ First, install prerequisites with
 
 ### Commands
 * Train a model:  
-```allennlp train configs/[config file] -s [training_directory] --include-package src```
+```
+allennlp train configs/[config file] -s [training_directory] --include-package src
+```
 
 * Output predictions by a model:  
-```allennlp predict model.tar.gz drop_data/drop_dataset_dev.json --predictor machine-comprehension --cuda-device 0 --output-file predictions.jsonl --use-dataset-reader --include-package src -o "{'validation_dataset_reader.pickle.action': 'None'}"```
+```
+allennlp predict model.tar.gz drop_data/drop_dataset_dev.json --predictor machine-comprehension \ 
+--cuda-device 0 --output-file predictions.jsonl --use-dataset-reader --include-package src \
+-o "{'validation_dataset_reader.pickle.action': 'None'}"
+```
 
-* Evaluate a model (unofficial evaluation code, fast):  
-```allennlp evaluate model.tar.gz drop_data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json --include-package src -o "{'validation_dataset_reader.pickle.action': 'None'}"```
+* Evaluate a model (unofficial evaluation code, faster):  
+```
+allennlp evaluate model.tar.gz drop_data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json \
+--include-package src -o "{'validation_dataset_reader.pickle.action': 'None'}"
+```
 
-* Evaluate a model (official evaluation code, slow):
-  1. ```python tools/generate_submission_predictions.py --archive_file model.tar.gz --input_file drop_data/drop_dataset_dev.json --cuda-device 0 --output_file predictions.json --include-package src```
-  2. ```python -m allennlp.tools.drop_eval --gold_path drop_data/drop_dataset_dev.json --prediction_path predictions.json --output_path metrics.json```
+* Evaluate a model (official evaluation code, slower):
+
+  1. 
+    ```
+    python tools/generate_submission_predictions.py --archive_file model.tar.gz \
+    --input_file drop_data/drop_dataset_dev.json --cuda-device 0 --output_file predictions.json --include-package src
+  ```
+  2. 
+    ```
+    python -m allennlp.tools.drop_eval --gold_path drop_data/drop_dataset_dev.json --prediction_path predictions.json \
+    --output_path metrics.json
+    ```
   
 ### Trained Models
 - [RoBERTa TASE_IO + SSE](https://drive.google.com/file/d/1k8MFEmmGeUXlBmghAKN8Xl_a6mbFUHdn/view) - Trained on DROP ([config](https://github.com/eladsegal/tag-based-multi-span-extraction/blob/master/configs/drop/roberta/drop_roberta_large_TASE_IO_SSE.jsonnet))
