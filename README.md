@@ -46,12 +46,13 @@ allennlp evaluate model.tar.gz drop_data/drop_dataset_dev.json --cuda-device 0 -
   1. 
     ```
     python tools/generate_submission_predictions.py --archive_file model.tar.gz \
-    --input_file drop_data/drop_dataset_dev.json --cuda-device 0 --output_file predictions.json --include-package src
+    --input_file drop_data/drop_dataset_dev.json --cuda-device 0 --output_file predictions.json \
+    --include-package src
   ```
   2. 
     ```
-    python -m allennlp.tools.drop_eval --gold_path drop_data/drop_dataset_dev.json --prediction_path predictions.json \
-    --output_path metrics.json
+    python -m allennlp.tools.drop_eval --gold_path drop_data/drop_dataset_dev.json \
+    --prediction_path predictions.json --output_path metrics.json
     ```
   
 ### Trained Models
