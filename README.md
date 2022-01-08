@@ -30,7 +30,7 @@ allennlp train configs/[config file] -s [training_directory] --include-package s
 
 * Output predictions by a model:  
 ```
-allennlp predict model.tar.gz drop_data/drop_dataset_dev.json --predictor machine-comprehension \ 
+allennlp predict model.tar.gz drop_data/drop_dataset_dev.json --predictor machine-comprehension \
 --cuda-device 0 --output-file predictions.jsonl --use-dataset-reader --include-package src \
 -o "{'validation_dataset_reader.pickle.action': 'None'}"
 ```
