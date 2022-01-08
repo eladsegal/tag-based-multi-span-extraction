@@ -27,10 +27,10 @@ First, install prerequisites with
 ```allennlp train configs/[config file] -s [training_directory] --include-package src```
 
 * Output predictions by a model:  
-```allennlp predict model.tar.gz drop_data/drop_dataset_dev.json --predictor machine-comprehension --cuda-device 0 --output-file predictions.jsonl --use-dataset-reader --include-package src```
+```allennlp predict model.tar.gz drop_data/drop_dataset_dev.json --predictor machine-comprehension --cuda-device 0 --output-file predictions.jsonl --use-dataset-reader --include-package src -o "{'validation_dataset_reader.pickle.action': 'None'}"```
 
 * Evaluate a model (unofficial evaluation code, fast):  
-```allennlp evaluate model.tar.gz drop_data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json --include-package src```
+```allennlp evaluate model.tar.gz drop_data/drop_dataset_dev.json --cuda-device 0 --output-file eval.json --include-package src -o "{'validation_dataset_reader.pickle.action': 'None'}"```
 
 * Evaluate a model (official evaluation code, slow):
   1. ```python tools/generate_submission_predictions.py --archive_file model.tar.gz --input_file drop_data/drop_dataset_dev.json --cuda-device 0 --output_file predictions.json --include-package src```
