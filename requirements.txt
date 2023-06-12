@@ -1,2 +1,2 @@
 git+http://github.com/eladsegal/allennlp@2143c7c#egg=allennlp
-transformers==2.3.0
+transformers==4.30.0
